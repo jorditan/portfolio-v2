@@ -1,31 +1,56 @@
 ---
-const direcciones = ['Inicio', 'Proyectos', 'Contacto']
-import { MoonIcon } from "lucide-react"
+const direcciones = ["Inicio", "Proyectos", "Contacto"];
+import { MoonIcon } from "lucide-react";
 import { SunIcon } from "lucide-react";
 ---
 
 <header class="flex justify-center py-5 fixed w-full">
-  <nav class="py-4 px-4 flex glass rounded-full transition-all gap-12 items-center">
+  <nav
+    class="py-4 px-4 flex glass rounded-full transition-all gap-12 items-center"
+  >
     <div class="flex gap-4 items-center justify-center">
-      <img class="w-10 h-10 rounded-full" src="/public/foto_personal.jpeg" alt="Rounded avatar">
+      <img
+        class="w-10 h-10 rounded-full"
+        src="/public/foto_personal.jpeg"
+        alt="Rounded avatar"
+      />
       <ul class="flex gap-6">
         {
-          direcciones.map((direccion)=> {
-            return(
+          direcciones.map((direccion) => {
+            return (
               <li class="w-fit">
-                <a class="pointer text-[#fafafa] text-[16px] decoration-none cursor-pointer hover:text-[#0ea5e8] transition-all">{direccion}</a>
+                <a class="pointer text-[#fafafa] text-[16px] decoration-none cursor-pointer hover:text-[#0ea5e8] transition-all">
+                  {direccion}
+                </a>
               </li>
-            )
+            );
           })
         }
       </ul>
     </div>
     <div class="flex gap-4">
-      <button class="rounded-full" id="themeButton" >
-        <MoonIcon className="icon transition-all"/>
+      <div
+        id="tooltip-light"
+        role="tooltip"
+        class="absolute z-10 invisible inline-block px-3 py-2 text-sm font-medium text-gray-900 bg-white border border-gray-200 rounded-lg shadow-sm opacity-0 tooltip"
+      >
+        Cambia el tema
+        <div class="tooltip-arrow" data-popper-arrow></div>
+      </div>
+      <button
+        data-tooltip-target="tooltip-light"
+        class="rounded-full"
+        id="themeButton"
+      >
+        <MoonIcon className="icon transition-all" />
       </button>
-      <a target="_blank" download="Curriculum vitae" href="/public/curriculum_vitae.pdf" class="rounded-full text-[#fafafa] flex gap-1 p-2 px-4 bg-[#0ea5e8] hover:bg-[#46b0e2] transition-colors">
-          Descargar CV
+      <a
+        target="_blank"
+        download="Curriculum vitae"
+        href="/public/curriculum_vitae.pdf"
+        class="rounded-full text-[#fafafa] flex gap-1 p-2 px-4 bg-[#0ea5e8] hover:bg-[#46b0e2] transition-colors"
+      >
+        Descargar CV
       </a>
     </div>
   </nav>
@@ -35,12 +60,12 @@ import { SunIcon } from "lucide-react";
   .glass {
     background: #28282834;
     backdrop-filter: blur(20px);
-    border: solid 2px rgba(255,255,255, .2);
+    border: solid 2px rgba(255, 255, 255, 0.2);
     position: relative;
   }
   .glass:hover {
     backdrop-filter: blur(5px);
-    border: solid 2px rgba(255,255,255, .3);
+    border: solid 2px rgba(255, 255, 255, 0.3);
   }
   .icon {
     color: #fafafa;
@@ -48,14 +73,13 @@ import { SunIcon } from "lucide-react";
   .icon:hover {
     color: #46b0e2;
   }
-
 </style>
 
 <script>
-  import { toggleTheme } from '../theme/theme';
-  const buttonTheme = document.querySelector('#themeButton')
+  import { toggleTheme } from "../theme/theme";
+  const buttonTheme = document.querySelector("#themeButton");
   const root = document.documentElement;
-  buttonTheme?.addEventListener('click', () => {
-    toggleTheme()
-  })
+  buttonTheme?.addEventListener("click", () => {
+    toggleTheme();
+  });
 </script>
