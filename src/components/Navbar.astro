@@ -1,24 +1,33 @@
 ---
 const direcciones = ['Inicio', 'Proyectos', 'Contacto']
+import { MoonIcon } from "lucide-react"
+import { SunIcon } from "lucide-react";
 ---
 
 <header class="flex justify-center py-5 fixed w-full">
-  <nav class="py-4 px-8 flex glass rounded-full transition-all gap-8 items-center">
-    <ul class="flex gap-6">
-      {
-        direcciones.map((direccion)=> {
-          return(
-            <li class="w-fit">
-              <a class="pointer text-[#fafafa] decoration-none cursor-pointer hover:text-[#cfcfcf] transition-all">{direccion}</a>
-            </li>
-          )
-        })
-      }
-    </ul>
-    <a target="_blank"  download="Curriculum vitae" href="/public/curriculum_vitae.pdf" class="rounded-md text-[#fafafa] flex gap-1 p-2 bg-blue-700 hover:bg-blue-600 transition-colors">
-        <svg xmlns="http://www.w3.org/2000/svg" height="24px" viewBox="0 -960 960 960" width="24px" fill="#e8eaed"><path d="M480-337q-8 0-15-2.5t-13-8.5L308-492q-12-12-11.5-28t11.5-28q12-12 28.5-12.5T365-549l75 75v-286q0-17 11.5-28.5T480-800q17 0 28.5 11.5T520-760v286l75-75q12-12 28.5-11.5T652-548q11 12 11.5 28T652-492L508-348q-6 6-13 8.5t-15 2.5ZM240-160q-33 0-56.5-23.5T160-240v-80q0-17 11.5-28.5T200-360q17 0 28.5 11.5T240-320v80h480v-80q0-17 11.5-28.5T760-360q17 0 28.5 11.5T800-320v80q0 33-23.5 56.5T720-160H240Z"/></svg>
-        Descargar CV
-    </a>
+  <nav class="py-4 px-4 flex glass rounded-full transition-all gap-12 items-center">
+    <div class="flex gap-4 items-center justify-center">
+      <img class="w-10 h-10 rounded-full" src="/public/foto_personal.jpeg" alt="Rounded avatar">
+      <ul class="flex gap-6">
+        {
+          direcciones.map((direccion)=> {
+            return(
+              <li class="w-fit">
+                <a class="pointer text-[#fafafa] text-[16px] decoration-none cursor-pointer hover:text-[#0ea5e8] transition-all">{direccion}</a>
+              </li>
+            )
+          })
+        }
+      </ul>
+    </div>
+    <div class="flex gap-4">
+      <button class="rounded-full" id="themeButton" >
+        <MoonIcon className="icon transition-all"/>
+      </button>
+      <a target="_blank" download="Curriculum vitae" href="/public/curriculum_vitae.pdf" class="rounded-full text-[#fafafa] flex gap-1 p-2 px-4 bg-[#0ea5e8] hover:bg-[#46b0e2] transition-colors">
+          Descargar CV
+      </a>
+    </div>
   </nav>
 </header>
 
@@ -33,6 +42,20 @@ const direcciones = ['Inicio', 'Proyectos', 'Contacto']
     backdrop-filter: blur(5px);
     border: solid 2px rgba(255,255,255, .3);
   }
-
+  .icon {
+    color: #fafafa;
+  }
+  .icon:hover {
+    color: #46b0e2;
+  }
 
 </style>
+
+<script>
+  import { toggleTheme } from '../theme/theme';
+  const buttonTheme = document.querySelector('#themeButton')
+  const root = document.documentElement;
+  buttonTheme?.addEventListener('click', () => {
+    toggleTheme()
+  })
+</script>
