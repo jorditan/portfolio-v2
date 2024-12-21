@@ -7,15 +7,15 @@ import { Download } from "lucide-react";
 
 <header class="flex justify-center py-5 fixed w-full z-10">
   <nav
-    class="py-4 px-4 flex glass rounded-full transition-all gap-12 items-center"
+    class="py-2 px-4 flex glass justify-center rounded-lg transition-all gap-12 items-center"
   >
-    <div class="flex gap-4 items-center justify-center">
+    <div class="flex gap-8 items-center justify-center">
       <img
-        class="w-10 h-10 rounded-full"
-        src="/public/foto_personal.jpeg"
-        alt="Rounded avatar"
+        class="w-10 h-10 rounded-md"
+        src="/public/foto_zoom.jpg"
+        alt="Foto de perfil"
       />
-      <ul class="flex gap-6">
+      <ul class="flex gap-4">
         {
           direcciones.map((direccion) => {
             return (
@@ -28,40 +28,42 @@ import { Download } from "lucide-react";
           })
         }
       </ul>
-    </div>
-    <div class="flex gap-4 items-center justify-center">
-      <div
-        id="tooltip-light"
-        role="tooltip"
-        class="absolute z-10 invisible inline-block px-3 py-2 text-sm font-medium text-gray-900 bg-white border border-gray-200 rounded-lg shadow-sm opacity-0 tooltip"
-      >
-        Cambia el tema
-        <div class="tooltip-arrow" data-popper-arrow></div>
-      </div>
-      <div
-        id="tooltip-cv"
-        role="tooltip"
-        class="absolute z-10 invisible inline-block px-3 py-2 text-sm font-medium text-gray-900 bg-white border border-gray-200 rounded-lg shadow-sm opacity-0 tooltip"
-      >
-        Descargar CV
-        <div class="tooltip-arrow" data-popper-arrow></div>
-      </div>
-      <button
-        data-tooltip-target="tooltip-light"
-        class="rounded-full"
-        id="themeButton"
-      >
-        <MoonIcon className="icon transition-all" />
-      </button>
-      <a href="/public/CV.pdf" class="w-[32px] h-[24px]" download target="_blank">
-        <button 
-        data-tooltip-target="tooltip-cv"
-        class="rounded-full"
-        id="themeButton"
+
+      <div class="flex gap-4 items-center">
+        <div
+          id="tooltip-light"
+          role="tooltip"
+          class="absolute z-10 invisible inline-block px-3 py-2 text-sm font-medium text-gray-900 bg-white border border-gray-200 rounded-lg shadow-sm opacity-0 tooltip"
         >
-          <Download className="icon transition-all" />
+          Cambia el tema
+          <div class="tooltip-arrow" data-popper-arrow></div>
+        </div>
+        <div
+          id="tooltip-cv"
+          role="tooltip"
+          class="absolute z-10 invisible inline-block px-3 py-2 text-sm font-medium text-gray-900 bg-white border border-gray-200 rounded-lg shadow-sm opacity-0 tooltip"
+        >
+          Descargar CV
+          <div class="tooltip-arrow" data-popper-arrow></div>
+        </div>
+        <button
+          data-tooltip-target="tooltip-light"
+          class="rounded-full"
+          id="themeButton"
+        >
+          <MoonIcon className="icon transition-all" />
         </button>
-      </a>
+        <a href="/public/CV.pdf" class="w-[32px] h-[24px]" download target="_blank">
+          <button 
+          data-tooltip-target="tooltip-cv"
+          class="rounded-full"
+          id="themeButton"
+          >
+            <Download className="icon transition-all" />
+          </button>
+        </a>
+      </div>
+      </div>
     </div>
   </nav>
 </header>
