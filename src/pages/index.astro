@@ -1,8 +1,9 @@
 ---
-import Tittle from '../components/Tittle.astro';
 import Layout from '../layouts/Layout.astro';
 import Navbar from '../components/Navbar.astro'
+import Content from '@/components/Content.astro';
 import '../assets/styles/global.css'
+
 
 // Welcome to Astro! Wondering what to do next? Check out the Astro documentation at https://docs.astro.build
 // Don't want to use any of this? Delete everything in this file, the `assets`, `components`, and `layouts` directories, and start fresh.
@@ -10,8 +11,9 @@ import '../assets/styles/global.css'
 
 <Layout>
 	<Navbar />
-	<Tittle />
+	<Content/>
 </Layout>
+
 <script is:inline src="https://cdn.jsdelivr.net/npm/flowbite@2.5.2/dist/flowbite.min.js">
 		import { setInitialTheme } from '../theme/theme';
 		setInitialTheme();

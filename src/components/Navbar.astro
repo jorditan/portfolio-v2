@@ -2,9 +2,10 @@
 const direcciones = ["Inicio", "Proyectos", "Contacto"];
 import { MoonIcon } from "lucide-react";
 import { SunIcon } from "lucide-react";
+import { Download } from "lucide-react";
 ---
 
-<header class="flex justify-center py-5 fixed w-full">
+<header class="flex justify-center py-5 fixed w-full z-10">
   <nav
     class="py-4 px-4 flex glass rounded-full transition-all gap-12 items-center"
   >
@@ -28,13 +29,21 @@ import { SunIcon } from "lucide-react";
         }
       </ul>
     </div>
-    <div class="flex gap-4">
+    <div class="flex gap-4 items-center justify-center">
       <div
         id="tooltip-light"
         role="tooltip"
         class="absolute z-10 invisible inline-block px-3 py-2 text-sm font-medium text-gray-900 bg-white border border-gray-200 rounded-lg shadow-sm opacity-0 tooltip"
       >
         Cambia el tema
+        <div class="tooltip-arrow" data-popper-arrow></div>
+      </div>
+      <div
+        id="tooltip-cv"
+        role="tooltip"
+        class="absolute z-10 invisible inline-block px-3 py-2 text-sm font-medium text-gray-900 bg-white border border-gray-200 rounded-lg shadow-sm opacity-0 tooltip"
+      >
+        Descargar CV
         <div class="tooltip-arrow" data-popper-arrow></div>
       </div>
       <button
@@ -44,13 +53,14 @@ import { SunIcon } from "lucide-react";
       >
         <MoonIcon className="icon transition-all" />
       </button>
-      <a
-        target="_blank"
-        download="Curriculum vitae"
-        href="/public/curriculum_vitae.pdf"
-        class="rounded-full text-[#fafafa] flex gap-1 p-2 px-4 bg-[#0ea5e8] hover:bg-[#46b0e2] transition-colors"
-      >
-        Descargar CV
+      <a href="/public/CV.pdf" class="w-[32px] h-[24px]" download target="_blank">
+        <button 
+        data-tooltip-target="tooltip-cv"
+        class="rounded-full"
+        id="themeButton"
+        >
+          <Download className="icon transition-all" />
+        </button>
       </a>
     </div>
   </nav>
@@ -59,19 +69,18 @@ import { SunIcon } from "lucide-react";
 <style scoped>
   .glass {
     background: #28282834;
-    backdrop-filter: blur(20px);
+    backdrop-filter: blur(10px);
     border: solid 2px rgba(255, 255, 255, 0.2);
     position: relative;
   }
   .glass:hover {
-    backdrop-filter: blur(5px);
     border: solid 2px rgba(255, 255, 255, 0.3);
   }
   .icon {
     color: #fafafa;
   }
   .icon:hover {
-    color: #46b0e2;
+    scale: 1.1;
   }
 </style>
 
