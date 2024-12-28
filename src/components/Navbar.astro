@@ -16,17 +16,29 @@ import { Download } from "lucide-react";
         alt="Foto de perfil"
       />
       <ul class="flex gap-4">
-        {
-          direcciones.map((direccion) => {
-            return (
-              <li class="w-fit">
-                <a class="pointer text-[#fafafa] text-[16px] decoration-none cursor-pointer hover:text-[#3fb6ea] transition-all">
-                  {direccion}
-                </a>
-              </li>
-            );
-          })
-        }
+        <li>
+          <a
+            href="#inicio"
+            class="pointer text-[#fafafa] text-[16px] decoration-none cursor-pointer hover:text-[#3fb6ea] transition-all"
+          >
+            Inicio
+          </a>
+        </li>
+        <li>
+          <a
+            href="#proyectos"
+            class="pointer text-[#fafafa] text-[16px] decoration-none cursor-pointer hover:text-[#3fb6ea] transition-all"
+          >
+            Proyectos
+          </a>
+        </li>
+        <li>
+          <a
+            href="#contacto"
+            class="pointer text-[#fafafa] text-[16px] decoration-none cursor-pointer hover:text-[#3fb6ea] transition-all"
+          >
+            Contacto
+        </a>
       </ul>
 
       <div class="flex gap-4 items-center">
@@ -35,7 +47,7 @@ import { Download } from "lucide-react";
           role="tooltip"
           class="absolute z-10 invisible inline-block px-3 py-2 text-sm font-medium text-gray-900 bg-white border border-gray-200 rounded-lg shadow-sm opacity-0 tooltip"
         >
-          Cambia el tema
+          Cambiar tema
           <div class="tooltip-arrow" data-popper-arrow></div>
         </div>
         <div
@@ -53,7 +65,7 @@ import { Download } from "lucide-react";
         >
           <MoonIcon className="icon transition-all" />
         </button>
-        <a href="/public/CV.pdf" class="w-[32px] h-[24px]" download target="_blank">
+        <a href="/public/curriculum_vitae.pdf" class="w-[32px] h-[24px]" download target="_blank">
           <button 
           data-tooltip-target="tooltip-cv"
           class="rounded-full"
