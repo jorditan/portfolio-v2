@@ -1,5 +1,4 @@
 ---
-const direcciones = ["Inicio", "Proyectos", "Contacto"];
 import { MoonIcon } from "lucide-react";
 import { SunIcon } from "lucide-react";
 import { Download } from "lucide-react";
@@ -10,15 +9,10 @@ import { Download } from "lucide-react";
     class="py-2 px-4 flex glass justify-center rounded-lg transition-all gap-12 items-center"
   >
     <div class="flex gap-8 items-center justify-center">
-      <img
-        class="w-10 h-10 rounded-md"
-        src="/public/foto_zoom.jpg"
-        alt="Foto de perfil"
-      />
       <ul class="flex gap-4">
         <li>
           <a
-            href="#inicio"
+            href="./#inicio"
             class="pointer text-[#fafafa] text-[16px] decoration-none cursor-pointer hover:text-[#3fb6ea] transition-all"
           >
             Inicio
@@ -26,7 +20,7 @@ import { Download } from "lucide-react";
         </li>
         <li>
           <a
-            href="#proyectos"
+            href="./#proyectos"
             class="pointer text-[#fafafa] text-[16px] decoration-none cursor-pointer hover:text-[#3fb6ea] transition-all"
           >
             Proyectos
@@ -34,7 +28,15 @@ import { Download } from "lucide-react";
         </li>
         <li>
           <a
-            href="#contacto"
+            href="./#sobreMi"
+            class="pointer text-[#fafafa] text-[16px] decoration-none cursor-pointer hover:text-[#3fb6ea] transition-all"
+          >
+            Sobre mi
+          </a>
+        </li>
+        <li>
+          <a
+            href="contacto"
             class="pointer text-[#fafafa] text-[16px] decoration-none cursor-pointer hover:text-[#3fb6ea] transition-all"
           >
             Contacto

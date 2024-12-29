@@ -1,4 +1,6 @@
 ---
+import Navbar from "@/components/Navbar.astro";
+
 
 ---
 
@@ -7,10 +9,11 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width" />
-    <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+    <link rel="icon" type="image/svg+xml" href="/palette.svg" />
     <meta name="generator" content={Astro.generator} />
     <title>Matías Owen Jordán</title>
   </head>
+  <Navbar/>
   <body>
     <slot />
   </body>
@@ -28,6 +31,7 @@
     scroll-behavior: smooth;
   }
   main {
+    margin: 0;
     background-image: linear-gradient(
       to right bottom,
       #071e40,
@@ -36,6 +40,8 @@
       #16243c,
       #102053
     );
+    min-height: 100vh;
+    min-width: 100vh;
   }
   :root {
     color-scheme: dark;
