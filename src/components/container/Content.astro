@@ -1,7 +1,7 @@
 ---
 import Tittle from "../Tittle.astro";
 import Experiencia from "../Experiencia.astro";
-import MyProjects from "../MyProjects.astro";
+import MyProjects from "../MyProjects";
 import ProgressBar from "../ProgressBar.astro";
 import SobreMi from "../SobreMi.astro";
 ---
@@ -10,7 +10,7 @@ import SobreMi from "../SobreMi.astro";
     <ProgressBar/>
     <Tittle/>
     <Experiencia/>
-    <MyProjects/>
+    <MyProjects client:load/>
     <SobreMi/>
 </main>
 

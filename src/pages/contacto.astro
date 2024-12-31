@@ -1,6 +1,7 @@
 ---
 import Layout from "@/layouts/Layout.astro";
 import '../assets/styles/global.css'
+import { slide } from 'astro:transitions';
 
 ---
 
@@ -12,12 +13,12 @@ import '../assets/styles/global.css'
       <form class="max-w-sm mx-auto flex gap-4 flex-col"> 
         <div>
           <label for="email" class="block mb-2 text-sm font-medium gap-4  text-[#fafafa]">Ingresar correo</label>
-          <input type="email" id="email" aria-describedby="helper-text-explanation" class="border border-gray-700 bg-gray-800 text-sm rounded-lg focus:ring-blue-500 block w-full p-2.5  placeholder-gray-400 text-[#fafafa] focus:border-blue-500" placeholder="tucorreo@gmail.com">
+          <input type="email" id="email" aria-describedby="helper-text-explanation" class="border border-gray-700 bg-gray-800 text-sm rounded-lg focus:ring-[#3fb6ea] block w-full p-2.5  placeholder-gray-400 text-[#fafafa] focus:border-[#3fb6ea]" placeholder="tucorreo@gmail.com">
         </div>
         
         <div> 
           <label for="email" class="block mb-2 text-sm font-medium gap-4 text-[#fafafa]">Número de teléfono</label>
-          <input type="tel" id="phone-input" aria-describedby="helper-text-explanation" class="block p-2.5 w-full border rounded-lg border-gray-700 bg-gray-800 text-sm  focus:ring-blue-500  placeholder-gray-400 text-[#fafafa] focus:border-blue-500" pattern="[0-9]{2}-[0-9]{4}-[0-9]{4}" placeholder="11-1234-5678" required />
+          <input type="tel" id="phone-input" aria-describedby="helper-text-explanation" class="block p-2.5 w-full border rounded-lg border-gray-700 bg-gray-800 text-sm  focus:ring-[#3fb6ea]  placeholder-gray-400 text-[#fafafa] focus:border-[#3fb6ea]" pattern="[0-9]{2}-[0-9]{4}-[0-9]{4}" placeholder="11-1234-5678" required />
         </div>
     
         </div>
@@ -26,10 +27,10 @@ import '../assets/styles/global.css'
     
         <div>
           <label for="email" class="block mb-2 text-sm font-medium  text-[#fafafa]">Ingresar tu mensaje</label>
-          <textarea id="message" rows="4" class="block p-2.5 w-full text-smborder border-gray-700 bg-gray-800 text-sm rounded-lg focus:ring-blue-500  placeholder-gray-400 text-[#fafafa] focus:border-blue-500" placeholder="Me gustaría ponerme en contacto para..."></textarea>
+          <textarea id="message" rows="4" class="block p-2.5 w-full text-smborder border-gray-700 bg-gray-800 text-sm rounded-lg focus:ring-[#3fb6ea]  placeholder-gray-400 text-[#fafafa] focus:border-[#3fb6ea]" placeholder="Me gustaría ponerme en contacto para..."></textarea>
         </div>
     
-        <button type="submit" class="text-white w-full bg-blue-700 hover:bg-blue-800 focus:ring-4 focus:ring-blue-300 font-medium rounded-lg text-sm px-5 py-2.5 me-2 mb-2 dark:bg-blue-600 dark:hover:bg-blue-700 focus:outline-none dark:focus:ring-blue-800">Enviar</button>
+        <button type="submit" class="text-white w-full bg-[#27ace4] hover:bg-[#79cdf0] focus:ring-4 focus:ring-blue-300 font-medium rounded-lg text-sm px-5 py-2.5 me-2 mb-2 dark:bg-blue-600 dark:hover:bg-[#3fb6ea] focus:outline-none dark:focus:ring-blue-800">Enviar</button>
     
       </form>
     </section>

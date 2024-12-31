@@ -4,7 +4,7 @@ import Tecnologias from "./Tecnologias.astro";
 
 ---
 
-<section class="mx-auto pb-12 max-w-4xl" id="sobreMi">
+<section class="mx-auto pb-12 max-w-4xl transition-all" id="sobreMi">
   <article class="pb-8">
     <div class="pb-4">
       <h2 class="title text-3xl font-semibold w-fit text-[#fafafa]">Un poco sobre mi...</h2>      
@@ -25,7 +25,7 @@ import Tecnologias from "./Tecnologias.astro";
       </div>
       
       <div class="flex flex-col gap-4 justify-center items-center">
-        <img class= "rounded-lg shadow-xl dark:shadow-gray-800 ring-2 p-1 ring-gray-800 dark:ring-gray-50 w-64 h-64 object-cover object-top" src="/public/foto_slack.webp" alt="Foto sacada por mi querida novia :)">
+        <img class= "rounded-lg shadow-xl dark:shadow-gray-800 ring-2 p-1 ring-gray-800 dark:ring-gray-50 w-64 h-64 object-cover object-top" src="/foto_slack.webp" alt="Foto sacada por mi querida novia :)">
         <div class="flex gap-4 w-full justify-center items-center">
           <a
           href="https://open.spotify.com/user/d5n1per0q568urpceis2urmzz?si=569a49a882864ed6"
@@ -44,3 +44,29 @@ import Tecnologias from "./Tecnologias.astro";
 
   <Tecnologias/>
 </section>
+
+<style>
+  @keyframes show {
+    from {
+      opacity: 0;
+      scale: 25%;
+    }
+
+    to {
+      opacity: 1;
+      scale: 100%;
+    }
+  }
+
+  section {
+    view-timeline-name: --section;
+    view-timeline-axis: block;
+
+    animation-timeline: --section;
+    animation-name: show;
+
+    animation-range: entry 25% cover 30%;
+    animation-fill-mode: both;
+  }
+
+</style>
