@@ -6,14 +6,14 @@ import { Download } from "lucide-react";
 
 <header class="flex justify-center py-5 fixed w-full z-10">
   <nav
-    class="py-2 px-4 flex glass justify-center rounded-lg transition-all gap-12 items-center"
+    class="py-1 sm:py-2 px-4 flex glass justify-center rounded-lg transition-all gap-12 items-center"
   >
-    <div class="flex gap-8 items-center justify-center">
+    <div class="flex gap-4 sm:gap-8 items-center justify-center">
       <ul class="flex gap-4">
         <li>
           <a
             href="./#inicio"
-            class="pointer text-[#fafafa] text-[16px] decoration-none cursor-pointer hover:text-[#3fb6ea] transition-all"
+            class="pointer text-[#fafafa] text-[12px] sm:text-[16px] decoration-none cursor-pointer hover:text-[#3fb6ea] transition-all"
           >
             Inicio
           </a>
@@ -21,7 +21,7 @@ import { Download } from "lucide-react";
         <li>
           <a
             href="./#proyectos"
-            class="pointer text-[#fafafa] text-[16px] decoration-none cursor-pointer hover:text-[#3fb6ea] transition-all"
+            class="pointer text-[#fafafa] text-[12px] sm:text-[16px] decoration-none cursor-pointer hover:text-[#3fb6ea] transition-all"
           >
             Proyectos
           </a>
@@ -29,7 +29,7 @@ import { Download } from "lucide-react";
         <li>
           <a
             href="./#sobreMi"
-            class="pointer text-[#fafafa] text-[16px] decoration-none cursor-pointer hover:text-[#3fb6ea] transition-all"
+            class="pointer text-[#fafafa] text-[12px] sm:text-[16px] decoration-none cursor-pointer hover:text-[#3fb6ea] transition-all"
           >
             Sobre mi
           </a>
@@ -37,13 +37,13 @@ import { Download } from "lucide-react";
         <li>
           <a
             href="contacto"
-            class="pointer text-[#fafafa] text-[16px] decoration-none cursor-pointer hover:text-[#3fb6ea] transition-all"
+            class="pointer text-[#fafafa] text-[12px] sm:text-[16px] decoration-none cursor-pointer hover:text-[#3fb6ea] transition-all"
           >
             Contacto
         </a>
       </ul>
 
-      <div class="flex gap-4 items-center">
+      <div class="flex gap-2 sm:gap-4 items-center">
         <div
           id="tooltip-light"
           role="tooltip"
@@ -65,17 +65,17 @@ import { Download } from "lucide-react";
           class="rounded-full"
           id="themeButton"
         >
-          <MoonIcon className="icon transition-all" />
+          <MoonIcon className="icon transition-all h-[16px] w-[16px] sm:h-[24px] sm:w-[24px]" />
         </button>
-        <a href="/public/curriculum_vitae.pdf" class="w-[32px] h-[24px]" download target="_blank">
-          <button 
+        <button 
           data-tooltip-target="tooltip-cv"
           class="rounded-full"
           id="themeButton"
-          >
-            <Download className="icon transition-all" />
+          > 
+          <a href="/public/curriculum_vitae.pdf" class="w-fit h-fit" download target="_blank">
+            <Download className="icon transition-al h-[16px] w-[16px] sm:h-[24px] sm:w-[24px]" />
+          </a>
           </button>
-        </a>
       </div>
       </div>
     </div>
@@ -95,6 +95,7 @@ import { Download } from "lucide-react";
   .icon {
     color: #fafafa;
   }
+
   .icon:hover {
     scale: 1.1;
   }
