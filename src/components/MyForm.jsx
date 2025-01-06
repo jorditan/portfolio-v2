@@ -19,8 +19,8 @@ function MyForm() {
       <form
         className="max-w-sm mx-auto flex gap-4 flex-col"
         name="contact"
+        method="POST" 
         data-netlify="true"
-        onSubmit={(e) => e.preventDefault()} // Prevents form submission for testing purposes
       >
         <div>
           <label htmlFor="email" className="block mb-2 text-sms font-medium gap-4 text-[#fafafa]">
