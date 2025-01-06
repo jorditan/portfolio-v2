@@ -11,8 +11,8 @@ function MyProjects() {
   }
 
   return (
-    <section className="mx-4 sm:mx-auto pb-10 max-w-4xl" id="proyectos" aria-label="Mis proyectos">
-      <h2 className="pb-4 title text-3xl font-semibold w-fit text-[#fafafa]">Proyectos</h2>
+    <section className="sm:mx-auto py-6 mx-4 max-w-[32rem] md:max-w-[42rem] lg:max-w-4xl transition-all" id="proyectos" aria-label="Mis proyectos">
+      <h2 className="pb-4 title text-2xl md:text-[3xl] font-semibold w-fit text-[#fafafa]">Proyectos</h2>
       <div className="flex flex-col pb-4 gap-5 justify-center">
         <div className="text-sm flex font-medium text-center text-gray-400 border-b border-gray-400 dark:text-gray-400 dark:border-gray-700">
           <ul className="flex flex-wrap -mb-px">
