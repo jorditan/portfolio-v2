@@ -61,6 +61,7 @@ import { Download } from "lucide-react";
           <div class="tooltip-arrow" data-popper-arrow></div>
         </div>
         <button
+        name="ThemeButton"
           data-tooltip-target="tooltip-light"
           class="rounded-full"
           id="themeButton"
@@ -68,11 +69,11 @@ import { Download } from "lucide-react";
           <MoonIcon className="icon transition-all h-[16px] w-[16px] sm:h-[24px] sm:w-[24px]" />
         </button>
         <button 
+          name="DownloadButton"
           data-tooltip-target="tooltip-cv"
           class="rounded-full"
-          id="themeButton"
           > 
-          <a href="/public/curriculum_vitae.pdf" class="w-fit h-fit" download target="_blank">
+          <a download href="/public/curriculum_vitae.pdf" class="w-fit h-fit" target="_blank">
             <Download className="icon transition-al h-[16px] w-[16px] sm:h-[24px] sm:w-[24px]" />
           </a>
           </button> 
