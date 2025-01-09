@@ -23,8 +23,8 @@ function MyForm() {
         data-netlify="true"
       >
         <div>
-          <label htmlFor="email" className="block mb-2 text-sms font-medium gap-4 text-[#fafafa]">
-            Ingresar correo
+          <label htmlFor="email" className="block mb-2 text-sm font-medium gap-4 text-[#fafafa]">
+            Ingresar correo *
           </label>
           <input
             type="email"
@@ -40,7 +40,7 @@ function MyForm() {
 
         <div>
           <label htmlFor="phone" className="block mb-2 text-sm font-medium gap-4 text-[#fafafa]">
-            Número de teléfono
+            Número de teléfono *
           </label>
           <input
             type="tel"
@@ -57,7 +57,7 @@ function MyForm() {
 
         <div>
           <label htmlFor="message" className="block mb-2 text-sm font-medium text-[#fafafa]">
-            Ingresar tu mensaje
+            Ingresar tu mensaje *
           </label>
           <textarea
             id="message"
