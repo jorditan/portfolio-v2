@@ -1,7 +1,7 @@
 function MyDesigns() {
   return (
     <article className="flex flex-wrap justify-center gap-10">
-      <div className="max-w-sm bg-[#28282830] border border-gray-700 rounded-lg shadow dark:bg-gray-800">
+      <div className="max-w-sm  dark:bg-[#28282830] transparent border border-gray-700 rounded-lg shadow dark:bg-gray-800">
         <div className="h-[185px]">
           <img
             className="rounded-t-lg h-full w-full object-cover object-top"
@@ -10,14 +10,14 @@ function MyDesigns() {
           />
         </div>
         <div className="p-5 flex flex-col gap-3">
-          <h5 className="text-xl font-bold tracking-tight text-[#fafafa]">
+          <h5 className="text-xl font-bold tracking-tight text-[#141a28] dark:text-[#fafafa]">
             Letterboxd redesign
           </h5>
-          <p className="font-normal text-gray-300">
+          <p className="font-normal dark:text-gray-300 text-gray-800">
             Proyecto realizado en el curso de diseño UX/UI avanzado de Coderhouse en donde se aplican diversos métodos de research, discovery y prototipado.
           </p>
           <div className="flex flex-wrap">
-            <span className="bg-[#28282834] badge gap-1 text-[#fafafa] text-[10px] h-[2em] font-medium inline-flex items-center px-1.5 rounded me-2 dark:bg-gray-700 dark:text-gray-400 border border-gray-500 transition-all">
+            <span className="dark:bg-[#28282834] bg-gray-100 badge gap-1 py-1 dark:text-[#fafafa] text-gray-800 text-[10px] font-medium inline-flex items-center px-1.5 rounded me-2 dark:bg-gray-700 border border-gray-500 transition-all">
               <svg width="12" height="12" viewBox="0 0 54 80" fill="none" xmlns="http://www.w3.org/2000/svg">
                 <g clipPath="url(#clip0_912_3)">
                   <path d="M13.3333 80.0002C20.6933 80.0002 26.6667 74.0268 26.6667 66.6668V53.3335H13.3333C5.97333 53.3335 0 59.3068 0 66.6668C0 74.0268 5.97333 80.0002 13.3333 80.0002Z" fill="#0ACF83" />
@@ -78,7 +78,7 @@ function MyDesigns() {
         </div>
       </div>
 
-      <div className="max-w-sm bg-[#28282830] animate-pulse border border-gray-700 rounded-lg shadow dark:bg-gray-800">
+      <div className="max-w-sm dark:bg-[#28282830] transparent animate-pulse border border-gray-700 rounded-lg shadow dark:bg-gray-800">
         <div className="h-[185px]">
           <img
             className="rounded-t-lg h-full w-full object-cover object-top"
@@ -87,14 +87,14 @@ function MyDesigns() {
           />
         </div>
         <div className="p-5 flex flex-col gap-3">
-          <h5 className="text-xl font-bold tracking-tight text-[#fafafa]">
+          <h5 className="text-xl font-bold tracking-tight text-[#141a28] dark:text-[#fafafa]">
             Cuenta DNI redesign
           </h5>
-          <p className="font-normal text-gray-300">
+          <p className="font-normal dark:text-gray-300 text-gray-800">
             Nuevo proyecto en progreso de ser realizado. Se utiliza la metodología de OOUX - Diseño de experiencia de usuario orientado a objetos. 
           </p>
           <div className="flex flex-wrap">
-            <span className="bg-[#28282834] badge gap-1 text-[#fafafa] text-[10px] h-[2em] font-medium inline-flex items-center px-1.5 rounded me-2 dark:bg-gray-700 dark:text-gray-400 border border-gray-500 transition-all">
+            <span className="dark:bg-[#28282834] bg-gray-100 badge gap-1 py-1 dark:text-[#fafafa] text-gray-800 text-[10px] font-medium inline-flex items-center px-1.5 rounded me-2 dark:bg-gray-700 border border-gray-500 transition-all">
               <svg width="12" height="12" viewBox="0 0 54 80" fill="none" xmlns="http://www.w3.org/2000/svg">
                 <g clipPath="url(#clip0_912_3)">
                   <path d="M13.3333 80.0002C20.6933 80.0002 26.6667 74.0268 26.6667 66.6668V53.3335H13.3333C5.97333 53.3335 0 59.3068 0 66.6668C0 74.0268 5.97333 80.0002 13.3333 80.0002Z" fill="#0ACF83" />

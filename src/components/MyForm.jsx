@@ -23,7 +23,7 @@ function MyForm() {
         data-netlify="true"
       >
         <div>
-          <label htmlFor="email" className="block mb-2 text-sm font-medium gap-4 text-[#fafafa]">
+          <label htmlFor="email" className="block mb-2 text-sm font-medium gap-4 dark:text-[#fafafa] text-gray-600">
             Ingresar correo *
           </label>
           <input
@@ -33,13 +33,13 @@ function MyForm() {
             value={formData.email}
             onChange={handleChange}
             aria-describedby="helper-text-explanation"
-            className="email border border-gray-700 bg-gray-800 text-sm rounded-lg focus:ring-[#3fb6ea] block w-full p-2.5 placeholder-gray-400 text-[#fafafa] focus:border-[#3fb6ea]"
+            className="email border border-gray-700 dark:bg-gray-800 bg-gray-800 text-sm rounded-lg focus:ring-[#3fb6ea] block w-full p-2.5 placeholder-gray-400 :text-[#fafafa] dark:focus:border-[#3fb6ea] focus:border-sky-500"
             placeholder="tucorreo@gmail.com"
           />
         </div>
 
         <div>
-          <label htmlFor="phone" className="block mb-2 text-sm font-medium gap-4 text-[#fafafa]">
+          <label htmlFor="phone" className="block mb-2 text-sm font-medium gap-4 dark:text-[#fafafa] text-gray-600">
             Número de teléfono *
           </label>
           <input
@@ -49,14 +49,14 @@ function MyForm() {
             value={formData.phone}
             onChange={handleChange}
             pattern="[0-9]{2}-[0-9]{4}[0-9]{4}"
-            className="phone block p-2.5 w-full border rounded-lg border-gray-700 bg-gray-800 text-sm focus:ring-[#3fb6ea] placeholder-gray-400 text-[#fafafa] focus:border-[#3fb6ea]"
+            className="phone block p-2.5 w-full border rounded-lg border-gray-700 dark:bg-gray-800 bg-gray-800 text-sm focus:ring-[#3fb6ea] placeholder-gray-400 text-[#fafafa] dark:focus:border-[#3fb6ea] focus:border-sky-500"
             placeholder="11-12345678"
             required
           />
         </div>
 
         <div>
-          <label htmlFor="message" className="block mb-2 text-sm font-medium text-[#fafafa]">
+          <label htmlFor="message" className="block mb-2 text-sm font-medium dark:text-[#fafafa] text-gray-600">
             Ingresar tu mensaje *
           </label>
           <textarea
@@ -65,7 +65,7 @@ function MyForm() {
             value={formData.message}
             onChange={handleChange}
             rows="4"
-            className={`message block p-2.5 w-full border-gray-700 bg-gray-800 text-sm rounded-lg focus:ring-[#3fb6ea] placeholder-gray-400 text-[#fafafa] focus:border-[#3fb6ea]`}
+            className={`message block p-2.5 w-full border-gray-700 dark:bg-gray-800 bg-gray-800 text-sm rounded-lg focus:ring-[#3fb6ea] placeholder-gray-400 text-[#fafafa]  dark:focus:border-[#3fb6ea] focus:border-sky-500`}
             placeholder="Me gustaría ponerme en contacto para..."
           />
         </div>

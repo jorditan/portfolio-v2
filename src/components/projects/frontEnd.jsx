@@ -2,7 +2,7 @@
 function MyFront() {
   return (
     <article className="flex flex-wrap justify-center w-full gap-10">
-      <div className="max-w-sm bg-[#28282830] border border-gray-700 rounded-lg shadow dark:bg-gray-800">
+      <div className="max-w-sm dark:bg-[#28282830] transparent border border-gray-700 rounded-lg shadow dark:bg-gray-800">
         <div className="h-[185px]">
           <img
             className="rounded-t-lg h-full w-full object-cover"
@@ -11,17 +11,17 @@ function MyFront() {
           />
         </div>
         <div className="p-5 flex flex-col gap-3">
-          <h5 className="text-xl font-bold tracking-tight text-[#fafafa]">
+          <h5 className="text-xl font-bold tracking-tight text-[#141a28] dark:text-[#fafafa]">
             Translate App
           </h5>
-          <p className="font-normal text-gray-300">
+          <p className="font-normal dark:text-gray-300 text-gray-800">
             Proyecto personal de una aplicación de traducción de idiomas. Se
             utiliza Zustand para el control de estados y la API de Google
             Translate.
           </p>
           <div className="flex flex-wrap">
             <span
-              className="bg-[#28282834] badge gap-1 text-[#fafafa] text-[10px] font-medium inline-flex items-center px-1.5 rounded me-2 dark:bg-gray-700 dark:text-gray-400 border border-gray-500 transition-all"
+              className="dark:bg-[#28282834] bg-gray-100 badge gap-1 dark:text-[#fafafa] text-gray-800 text-[10px] font-medium inline-flex items-center px-1.5 rounded me-2 dark:bg-gray-700 border border-gray-500 transition-all"
             >
               <svg
                 viewBox="0 0 256 228"
@@ -36,7 +36,7 @@ function MyFront() {
               React
             </span>
             <span
-              className="bg-[#28282834] badge gap-1 text-[#fafafa] text-[10px] font-medium inline-flex items-center px-1.5 rounded me-2 dark:bg-gray-700 dark:text-gray-400 border border-gray-500 transition-all"
+              className="dark:bg-[#28282834] bg-gray-100 badge gap-1 dark:text-[#fafafa] text-gray-800 text-[10px] font-medium inline-flex items-center px-1.5 rounded me-2 dark:bg-gray-700 border border-gray-500 transition-all"
             >
               <svg
                 viewBox="0 0 256 154"
@@ -112,7 +112,7 @@ function MyFront() {
       </div>
 
       <div
-        className="max-w-sm w-full bg-[#28282830] border border-gray-700 rounded-lg shadow dark:bg-gray-800"
+        className="max-w-sm w-full dark:bg-[#28282830] transparent border border-gray-700 rounded-lg shadow dark:bg-gray-800"
       >
         <div className="h-[185px]">
           <img
@@ -122,15 +122,15 @@ function MyFront() {
           />
         </div>
         <div className="p-5 flex flex-col gap-3">
-          <h5 className="text-xl font-bold tracking-tight text-[#fafafa]">
+          <h5 className="text-xl font-bold tracking-tight text-[#141a28] dark:text-[#fafafa]">
             PokeGame
           </h5>
-          <p className="font-normal text-gray-300">
+          <p className="font-normal dark:text-gray-300 text-gray-800">
             Proyecto realizado gracias al curso de Fernando Herrera. Se toman las bases iniciales y se aplican mejoras en la UI, UX y jugabilidad.
           </p>
           <div className="flex flex-wrap">
             <span
-              className="bg-[#28282834] badge gap-1 text-[#fafafa] text-[10px] font-medium inline-flex items-center px-1.5 rounded me-2 dark:bg-gray-700 dark:text-gray-400 border border-gray-500 transition-all"
+              className="dark:bg-[#28282834] bg-gray-100 badge gap-1 dark:text-[#fafafa] text-gray-800 text-[10px] font-medium inline-flex items-center px-1.5 rounded me-2 dark:bg-gray-700 border border-gray-500 transition-all"
             >
               <svg
                 viewBox="0 0 256 221"
@@ -149,7 +149,7 @@ function MyFront() {
               Vue
             </span>
             <span
-              className="bg-[#28282834] badge gap-1 text-[#fafafa] text-[10px] font-medium inline-flex items-center px-1.5 rounded me-2 dark:bg-gray-700 dark:text-gray-400 border border-gray-500 transition-all"
+              className="dark:bg-[#28282834] bg-gray-100 badge gap-1 dark:text-[#fafafa] text-gray-800 text-[10px] font-medium inline-flex items-center px-1.5 rounded me-2 dark:bg-gray-700 border border-gray-500 transition-all"
             >
               <svg
                 viewBox="0 0 256 154"
@@ -178,7 +178,7 @@ function MyFront() {
               TailwindCSS
             </span>
             <span
-              className="bg-[#28282834] badge gap-1 text-[#fafafa] text-[10px] font-medium inline-flex items-center px-1.5 rounded me-2 dark:bg-gray-700 dark:text-gray-400 border border-gray-500 transition-all"
+              className="dark:bg-[#28282834] bg-gray-100 badge gap-1 dark:text-[#fafafa] text-gray-800 text-[10px] font-medium inline-flex items-center px-1.5 rounded me-2 dark:bg-gray-700  border border-gray-500 transition-all"
             >
               <svg
                 viewBox="0 0 256 331"
@@ -313,7 +313,7 @@ function MyFront() {
       </div>
 
       <div
-        className="max-w-sm bg-[#28282830] border border-gray-700 rounded-lg shadow dark:bg-gray-800"
+        className="max-w-sm dark:bg-[#28282830] transparent border border-gray-700 rounded-lg shadow dark:bg-gray-800"
       >
         <div className="h-[185px]">
           <img
@@ -323,15 +323,15 @@ function MyFront() {
           />
         </div>
         <div className="p-5 flex flex-col gap-3">
-          <h5 className="text-xl font-bold tracking-tight text-[#fafafa]">
+          <h5 className="text-xl font-bold tracking-tight text-[#141a28] dark:text-[#fafafa]">
             Portfolio Damián Jordán
           </h5>
-          <p className="font-normal text-gray-300">
+          <p className="font-normal dark:text-gray-300 text-gray-800">
             Proyecto freelancer para Damián, mi hermano. Diseño y desarrollo de una landing page para la promoción de su música y servicios.
           </p>
           <div className="flex flex-wrap">
             <span
-              className="bg-[#28282834] badge gap-1 text-[#fafafa] text-[10px] font-medium inline-flex items-center px-1.5 rounded me-2 dark:bg-gray-700 dark:text-gray-400 border border-gray-500 transition-all"
+              className="dark:bg-[#28282834] bg-gray-100 badge gap-1 dark:text-[#fafafa] text-gray-800 text-[10px] font-medium inline-flex items-center px-1.5 rounded me-2 dark:bg-gray-700 border border-gray-500 transition-all"
             >
               <svg
                 viewBox="0 0 256 228"
@@ -346,7 +346,7 @@ function MyFront() {
               React
             </span>
             <span
-              className="bg-[#28282834] badge gap-1 text-[#fafafa] text-[10px] font-medium inline-flex items-center px-1.5 rounded me-2 dark:bg-gray-700 dark:text-gray-400 border border-gray-500 transition-all"
+              className="dark:bg-[#28282834] bg-gray-100 badge gap-1 dark:text-[#fafafa] text-gray-800 text-[10px] font-medium inline-flex items-center px-1.5 rounded me-2 dark:bg-gray-700 border border-gray-500 transition-all"
             >
               <svg viewBox="0 0 512 384" xmlns="http://www.w3.org/2000/svg" width="20" height="20"><path fill="#CF649A" d="M441 221c-18 0-34 4-47 10-5-9-9-17-10-24s-2-11-1-20 6-21 6-22c0 0-1-5-11-5-11 0-20 2-21 5l-4 15c-2 9-20 43-31 60-4-7-7-13-7-17-1-8-2-12-1-21s6-20 6-21-1-6-11-6c-11 0-20 2-21 5l-4 15-34 76-8 18c-2 4 0 0 0 1l-3 5-4 5s-1-7 1-16c3-19 12-49 12-51 0 0 2-5-6-8-7-3-9 2-10 2l-1 1s8-34-16-34c-14 0-35 17-45 31l-34 19-17 9-1-1c-29-31-82-52-79-93 0-15 6-54 101-102 79-39 141-28 152-4 16 34-33 97-115 106-31 3-47-9-51-13-4-5-5-5-7-4s-1 5 0 8c3 6 13 17 30 23 15 5 51 8 95-9 49-19 88-72 77-117-12-45-87-60-157-35-43 15-88 39-121 70-39 36-45 68-43 81 10 47 74 78 100 100l-3 2c-13 7-63 33-75 60-14 31 2 53 13 56 33 10 68-7 86-34 18-28 16-64 8-80l-1-1 11-6 18-10c-3 9-5 19-6 34-2 17 6 40 15 49 4 4 9 4 12 4 11 0 16-9 22-20l13-28s-8 41 13 41c7 0 15-9 18-14l1-1 1-2 20-37 25-57 5 20c2 8 7 16 10 24l-4 7-8 10c-10 12-23 26-24 30-2 5-2 8 2 11 3 2 8 2 13 2l18-4 17-9c10-7 16-18 15-32 0-7-3-15-6-22l3-4c16-23 28-49 28-49l5 21 9 20a89 89 0 0 0-27 36c-6 17-2 24 7 26 4 1 10-1 14-3 5-1 11-4 17-8 10-8 20-18 19-32 0-6-2-13-4-19 12-5 29-8 49-5 45 5 54 33 52 44-2 12-11 18-14 20l-4 4c1 2 2 2 5 2 3-1 23-10 24-31 1-28-25-58-71-57zM97 336c-14 16-35 23-44 17-9-5-6-29 13-46 11-10 25-20 34-26l9-5 1-1 3-1c6 24 0 45-16 62zm108-73c-5 13-16 45-22 43-6-1-9-26-2-50 4-12 13-26 18-32 8-9 17-12 19-8 3 5-10 39-13 47zm89 43-5 1v-2l16-17 9-11v1c0 14-14 24-20 28zm68-16c-2-1-1-5 4-16 2-5 7-13 15-20l2 9c0 18-13 24-21 27z" /></svg>
               Sass
@@ -399,7 +399,7 @@ function MyFront() {
       </div>
 
       <div
-        className="max-w-sm bg-[#28282830] border border-gray-700 rounded-lg shadow dark:bg-gray-800"
+        className="max-w-sm dark:bg-[#28282830] transparent border border-gray-700 rounded-lg shadow dark:bg-gray-800"
       >
         <div className="h-[185px]">
           <img
@@ -409,20 +409,20 @@ function MyFront() {
           />
         </div>
         <div className="p-5 flex flex-col gap-3">
-          <h5 className="text-xl font-bold tracking-tight text-[#fafafa]">
+          <h5 className="text-xl font-bold tracking-tight text-[#141a28] dark:text-[#fafafa]">
             Wollolok
           </h5>
-          <p className="font-normal text-gray-300">
+          <p className="font-normal dark:text-gray-300 text-gray-800">
             Proyecto integrador de la materia Programacion Orientada a Objetos I de la UNAHUR. Basado en el Age of Empires II con funcionaliadades de estrategias.
           </p>
           <div className="flex flex-wrap">
             <span
-              className="bg-[#28282834] badge gap-1 text-[#fafafa] text-[10px] font-medium inline-flex items-center px-1.5 rounded me-2 dark:bg-gray-700 dark:text-gray-400 border border-gray-500 transition-all"
+              className="dark:bg-[#28282834] bg-gray-100 badge gap-1 dark:text-[#fafafa] text-gray-800 text-[10px] font-medium inline-flex items-center px-1.5 rounded me-2 dark:bg-gray-700 border border-gray-500 transition-all"
             >
               UNAHUR
             </span>
             <span
-              className="bg-[#28282834] badge gap-1 text-[#fafafa] text-[10px] font-medium inline-flex items-center px-1.5 rounded me-2 dark:bg-gray-700 dark:text-gray-400 border border-gray-500 transition-all"
+              className="dark:bg-[#28282834] bg-gray-100 badge gap-1 dark:text-[#fafafa] text-gray-800 text-[10px] font-medium inline-flex items-center px-1.5 rounded me-2 dark:bg-gray-700 border border-gray-500 transition-all"
             >
               Wollok
             </span>
@@ -450,7 +450,7 @@ function MyFront() {
             <div
               id="tooltip-disabled"
               role="tooltip"
-              className="absolute z-10 invisible inline-block px-3 py-2 text-sm font-medium text-gray-900 bg-white border border-gray-200 rounded-lg shadow-sm opacity-0 tooltip w-[220px]"
+              className="absolute z-10 invisible inline-block px-3 py-2 text-sm font-medium text-[#fafafa] dark:text-gray-900 bg-[#0f172a]  dark:bg-white border dark:border-gray-200 rounded-lg shadow-sm opacity-0 tooltip"
             >
               El proyecto solo se puede deployear desde Visual Studio Code
               <div className="tooltip-arrow" data-popper-arrow></div>

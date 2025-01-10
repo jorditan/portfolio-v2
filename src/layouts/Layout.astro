@@ -1,44 +1,17 @@
 ---
 import Footer from "@/components/Footer.astro";
 import Navbar from "@/components/Navbar.astro";
-import { ClientRouter } from 'astro:transitions';
-
-
+import Head from "./Head.astro";
 ---
 
 <!doctype html>
 <html lang="en" class="scroll-smooth focus:scroll-auto">
-  <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width" />
-    <link rel="icon" type="image/svg+xml" href="/palette.svg" />
-    <meta name="generator" content={Astro.generator} />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Matías Owen Jordán</title>
-    <script>
-      (function () {
-        const root = document.documentElement;
-        const savedTheme = localStorage.getItem('theme');
-        const prefersDark = window.matchMedia('(prefers-color-scheme: dark)').matches;
-        
-        if (savedTheme) {
-          root.classList.add(savedTheme);
-        } else if (prefersDark) {
-          root.classList.add('dark');
-          localStorage.setItem('theme', 'dark');
-        } else {
-          root.classList.add('light');
-          localStorage.setItem('theme', 'light');
-        }
-      })();
-    </script>
-    <ClientRouter />
-  </head>
-  <Navbar/>
+  <Head/>
+  <Navbar />
   <body>
     <slot />
   </body>
-  <Footer/>
+  <Footer />
 </html>
 
 <style is:global>
@@ -59,17 +32,31 @@ import { ClientRouter } from 'astro:transitions';
 
   .dark body {
     background-image: linear-gradient(
-        to right bottom,
-        #071e40,
-        #16243c,
-        #0e2758,
-        #16243c,
-        #102053
+      to right bottom,
+      #071e40,
+      #16243c,
+      #0e2758,
+      #16243c,
+      #102053
     );
   }
 
   .light body {
-    background-image: linear-gradient(to right bottom, #fafafa, #f3f4fc, #e9f0fe, #dcecff, #cbe9ff, #c2e8ff, #b8e6ff, #aee5fe, #ade5fe, #ace4fd, #aae4fd, #a9e3fc);
+    background-image: linear-gradient(
+      to right bottom,
+      #fafafa,
+      #f3f4fc,
+      #e9f0fe,
+      #dcecff,
+      #cbe9ff,
+      #c2e8ff,
+      #b8e6ff,
+      #aee5fe,
+      #ade5fe,
+      #ace4fd,
+      #aae4fd,
+      #a9e3fc
+    );
   }
   ::-webkit-scrollbar {
     width: 5px;

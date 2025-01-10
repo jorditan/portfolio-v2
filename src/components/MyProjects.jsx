@@ -18,8 +18,8 @@ function MyProjects() {
           <ul className="flex flex-wrap -mb-px">
             <li className="me-2" onClick={() => handleView("front")}>
               <span data-view="front"
-                className={`front cursor-pointer transition-all inline-block p-4 border-b-1 rounded-t-lg ${
-                  actualView === "front" ? "text-[#71d1fa] border-b-2 border-[#71d1fa]" : ""
+                className={`front cursor-pointer transition-all inline-block dark:text-gray-400 text-gray-700 p-4 border-b-1 rounded-t-lg ${
+                  actualView === "front" ? "dark:text-[#71d1fa] text-sky-600 border-b-2 dark:border-[#71d1fa] border-sky-500" : ""
                 }`}
               >
                 Front-End
@@ -27,8 +27,8 @@ function MyProjects() {
             </li>
             <li className="me-2">
               <span data-view="design" onClick={() => handleView("design")}
-                className={`front cursor-pointer transition-all inline-block p-4 border-b-1 rounded-t-lg ${
-                  actualView === "design" ? "text-[#71d1fa] border-b-2 border-[#71d1fa]" : ""
+                className={`front cursor-pointer transition-all inline-block dark:text-gray-400 text-gray-700 p-4 border-b-1 rounded-t-lg ${
+                  actualView === "design" ? "dark:text-[#71d1fa] text-sky-600 border-b-2 dark:border-[#71d1fa] border-sky-500" : ""
                 }`}
               >
                 Diseño UX/UI
