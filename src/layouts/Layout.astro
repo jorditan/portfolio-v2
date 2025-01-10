@@ -5,7 +5,7 @@ import { ClientRouter } from 'astro:transitions';
 ---
 
 <!doctype html>
-<html lang="en" class="scroll-smooth focus:scroll-auto">
+<html lang="en" class="scroll-smooth focus:scroll-auto dark">
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width" />
@@ -33,12 +33,12 @@ import { ClientRouter } from 'astro:transitions';
   main {
     margin: 0;
     background-image: linear-gradient(
-      to right bottom,
-      #071e40,
-      #16243c,
-      #0e2758,
-      #16243c,
-      #102053
+        to right bottom,
+        #071e40,
+        #16243c,
+        #0e2758,
+        #16243c,
+        #102053
     );
   }
   :root {
@@ -46,6 +46,9 @@ import { ClientRouter } from 'astro:transitions';
     --text-color: #fafafa;
   }
 
+  .light main {
+    background-image: linear-gradient(to right, #fafafa, #f3f4fc, #e9f0fe, #dcecff, #cbe9ff, #c2e8ff, #b8e6ff, #aee5fe, #ade5fe, #ace4fd, #aae4fd, #a9e3fc);
+  }
   ::-webkit-scrollbar {
     width: 5px;
   }
