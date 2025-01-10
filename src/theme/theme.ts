@@ -1,8 +1,17 @@
+export function getCurrentTheme():string | null {
+  const root = document.documentElement;
+  const store:string | null = localStorage.getItem("theme")
+  console.log(store)
+  if (store != null) {
+    return localStorage.getItem('theme')
+  } else {
+    return 'dark';
+  }
+}
 
-export function toggleTheme() {
+export function toggleTheme():void {
   const root = document.documentElement;
   const isDark = root.classList.contains('dark');
-  console.log(root)
   if (isDark) {
     root.classList.remove('dark');
     root.classList.add('light');
@@ -14,13 +23,3 @@ export function toggleTheme() {
   }
 }
 
-export function setInitialTheme() {
-  const savedTheme = localStorage.getItem('theme');
-  const prefersDark = window.matchMedia('(prefers-color-scheme: dark)').matches;
-
-  if (savedTheme) {
-    document.documentElement.classList.add(savedTheme);
-  } else {
-    document.documentElement.classList.add(prefersDark ? 'dark' : 'light');
-  }
-}

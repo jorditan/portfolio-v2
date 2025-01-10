@@ -53,8 +53,8 @@ function MyFront() {
                   y2="67.556%"
                   id="gradient"
                 >
-                    <stop stop-color="#2298BD" offset="0%"></stop>
-                    <stop stop-color="#0ED7B5" offset="100%"></stop>
+                    <stop stopColor="#2298BD" offset="0%"></stop>
+                    <stop stopColor="#0ED7B5" offset="100%"></stop>
                   </linearGradient></defs
                 >
                 <path
@@ -97,9 +97,9 @@ function MyFront() {
                 viewBox="0 0 24 24"
                 fill="none"
                 stroke="currentColor"
-                stroke-width="2"
-                stroke-linecap="round"
-                stroke-linejoin="round"
+                strokeWidth="2"
+                strokeLinecap="round"
+                strokeLinejoin="round"
                 className="icon icon-tabler icons-tabler-outline icon-tabler-code"
               ><path stroke="none" d="M0 0h24v24H0z" fill="none"></path><path
                 d="M7 8l-4 4l4 4"></path><path d="M17 8l4 4l-4 4"></path><path
@@ -166,8 +166,8 @@ function MyFront() {
                   y2="67.556%"
                   id="gradient"
                 >
-                    <stop stop-color="#2298BD" offset="0%"></stop>
-                    <stop stop-color="#0ED7B5" offset="100%"></stop>
+                    <stop stopColor="#2298BD" offset="0%"></stop>
+                    <stop stopColor="#0ED7B5" offset="100%"></stop>
                   </linearGradient></defs
                 >
                 <path
@@ -193,31 +193,31 @@ function MyFront() {
                 x2="42.817%"
                 y1="0%"
                 y2="42.863%"
-              ><stop offset="0%" stop-color="#52CE63"></stop><stop
+              ><stop offset="0%" stopColor="#52CE63"></stop><stop
                 offset="100%"
-                stop-color="#51A256"></stop></linearGradient
+                stopColor="#51A256"></stop></linearGradient
                   ><linearGradient
                     id="b"
                     x1="55.349%"
                     x2="42.808%"
                     y1="0%"
                     y2="42.863%"
-                  ><stop offset="0%" stop-color="#52CE63"></stop><stop
+                  ><stop offset="0%" stopColor="#52CE63"></stop><stop
                     offset="100%"
-                    stop-color="#51A256"></stop></linearGradient
+                    stopColor="#51A256"></stop></linearGradient
                   ><linearGradient id="c" x1="50%" x2="50%" y1="0%" y2="58.811%"
-                  ><stop offset="0%" stop-color="#8AE99C"></stop><stop
+                  ><stop offset="0%" stopColor="#8AE99C"></stop><stop
                     offset="100%"
-                    stop-color="#52CE63"></stop></linearGradient
+                    stopColor="#52CE63"></stop></linearGradient
                   ><linearGradient
                     id="d"
                     x1="51.378%"
                     x2="44.585%"
                     y1="17.473%"
                     y2="100%"
-                  ><stop offset="0%" stop-color="#FFE56C"></stop><stop
+                  ><stop offset="0%" stopColor="#FFE56C"></stop><stop
                     offset="100%"
-                    stop-color="#FFC63A"></stop></linearGradient
+                    stopColor="#FFC63A"></stop></linearGradient
                   ></defs
                 ><path
                   fill="url(#a)"
@@ -298,9 +298,9 @@ function MyFront() {
                 viewBox="0 0 24 24"
                 fill="none"
                 stroke="currentColor"
-                stroke-width="2"
-                stroke-linecap="round"
-                stroke-linejoin="round"
+                strokeWidth="2"
+                strokeLinecap="round"
+                strokeLinejoin="round"
                 className="icon icon-tabler icons-tabler-outline icon-tabler-code"
               ><path stroke="none" d="M0 0h24v24H0z" fill="none"></path><path
                 d="M7 8l-4 4l4 4"></path><path d="M17 8l4 4l-4 4"></path><path
@@ -384,9 +384,9 @@ function MyFront() {
                 viewBox="0 0 24 24"
                 fill="none"
                 stroke="currentColor"
-                stroke-width="2"
-                stroke-linecap="round"
-                stroke-linejoin="round"
+                strokeWidth="2"
+                strokeLinecap="round"
+                strokeLinejoin="round"
                 className="icon icon-tabler icons-tabler-outline icon-tabler-code"
               ><path stroke="none" d="M0 0h24v24H0z" fill="none"></path><path
                 d="M7 8l-4 4l4 4"></path><path d="M17 8l4 4l-4 4"></path><path
@@ -465,9 +465,9 @@ function MyFront() {
                 viewBox="0 0 24 24"
                 fill="none"
                 stroke="currentColor"
-                stroke-width="2"
-                stroke-linecap="round"
-                stroke-linejoin="round"
+                strokeWidth="2"
+                strokeLinecap="round"
+                strokeLinejoin="round"
                 className="icon icon-tabler icons-tabler-outline icon-tabler-code"
               ><path stroke="none" d="M0 0h24v24H0z" fill="none"></path><path
                 d="M7 8l-4 4l4 4"></path><path d="M17 8l4 4l-4 4"></path><path

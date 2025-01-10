@@ -2,6 +2,7 @@
 import { MoonIcon } from "lucide-react";
 import { SunIcon } from "lucide-react";
 import { Download } from "lucide-react";
+import ThemeSelector from "./ThemeSelector";
 ---
 
 <header class="flex justify-center py-5 fixed w-full z-10">
@@ -14,7 +15,7 @@ import { Download } from "lucide-react";
         <li>
           <a
             href="/#inicio"
-            class="pointer text-[#141a28] dark:text-[#fafafa] text-[12px] sm:text-[16px] decoration-none cursor-pointer hover:text-sky-500 dark:hover:text-[#3fb6ea] transition-all"
+            class="pointer text-[#141a28] dark:text-[#fafafa] text-[12px] sm:text-[16px] decoration-none cursor-pointer hover:text-sky-600 dark:hover:text-[#3fb6ea] transition-all"
           >
             Inicio
           </a>
@@ -22,7 +23,7 @@ import { Download } from "lucide-react";
         <li>
           <a
             href="/#proyectos"
-            class="pointer text-[#141a28] dark:text-[#fafafa] text-[12px] sm:text-[16px] decoration-none cursor-pointer hover:text-sky-500 dark:hover:text-[#3fb6ea] transition-all"
+            class="pointer text-[#141a28] dark:text-[#fafafa] text-[12px] sm:text-[16px] decoration-none cursor-pointer hover:text-sky-600 dark:hover:text-[#3fb6ea] transition-all"
           >
             Proyectos
           </a>
@@ -30,7 +31,7 @@ import { Download } from "lucide-react";
         <li>
           <a
             href="/#sobreMi"
-            class="pointer text-[#141a28] dark:text-[#fafafa] text-[12px] sm:text-[16px] decoration-none cursor-pointer hover:text-sky-500 dark:hover:text-[#3fb6ea] transition-all"
+            class="pointer text-[#141a28] dark:text-[#fafafa] text-[12px] sm:text-[16px] decoration-none cursor-pointer hover:text-sky-600 dark:hover:text-[#3fb6ea] transition-all"
           >
             Sobre mi
           </a>
@@ -38,7 +39,7 @@ import { Download } from "lucide-react";
         <li>
           <a
             href="/contacto"
-            class="pointer text-[#141a28] dark:text-[#fafafa] text-[12px] sm:text-[16px] decoration-none cursor-pointer hover:text-sky-500 dark:hover:text-[#3fb6ea]  transition-all"
+            class="pointer text-[#141a28] dark:text-[#fafafa] text-[12px] sm:text-[16px] decoration-none cursor-pointer hover:text-sky-600 dark:hover:text-[#3fb6ea]  transition-all"
           >
             Contacto
         </a>
@@ -46,30 +47,7 @@ import { Download } from "lucide-react";
       </ul>
 
       <div class="flex gap-2 sm:gap-4 items-center">
-        <div
-          id="tooltip-light"
-          role="tooltip"
-          class="absolute z-10 invisible inline-block px-3 py-2 text-sm font-medium text-[#fafafa] dark:text-gray-900 bg-[#0f172a]  dark:bg-white border dark:border-gray-200 rounded-lg shadow-sm opacity-0 tooltip"
-        >
-          Cambiar tema
-          <div class="tooltip-arrow" data-popper-arrow></div>
-        </div>
-        <div
-          id="tooltip-cv"
-          role="tooltip"
-          class="absolute z-10 invisible inline-block px-3 py-2 text-sm font-medium text-[#fafafa] dark:text-gray-900 bg-[#0f172a]  dark:bg-white border dark:border-gray-200 rounded-lg shadow-sm opacity-0 tooltip"
-        >
-          Descargar CV
-          <div class="tooltip-arrow" data-popper-arrow></div>
-        </div>
-        <button
-        name="ThemeButton"
-          data-tooltip-target="tooltip-light"
-          class="rounded-full"
-          id="themeButton"
-        >
-          <MoonIcon className="icon transition-all stroke-[#141a28] dark:stroke-[#fafafa] h-[16px] w-[16px] sm:h-[24px] sm:w-[24px]" />
-        </button>
+      <ThemeSelector client:load/>
         <button 
           name="DownloadButton"
           data-tooltip-target="tooltip-cv"
@@ -99,13 +77,3 @@ import { Download } from "lucide-react";
   }
 </style>
 
-<script>
-  import { toggleTheme } from "../theme/theme";
-  const buttonTheme = document.querySelector("#themeButton");
-  const root = document.documentElement;
-  buttonTheme?.addEventListener("click", () => {
-    toggleTheme();
-  });
-
-
-</script>
