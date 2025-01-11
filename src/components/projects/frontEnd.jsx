@@ -2,7 +2,7 @@
 function MyFront() {
   return (
     <article className="flex flex-wrap justify-center w-full gap-10">
-      <div className="max-w-sm dark:bg-[#28282830] transparent border border-gray-700 rounded-lg shadow dark:bg-gray-800">
+      <div className="max-w-sm dark:bg-[#28282830] dark:bg-opacity-50 transparent border border-gray-700 rounded-lg shadow dark:bg-gray-800">
         <div className="h-[185px]">
           <img
             className="rounded-t-lg h-full w-full object-cover"
@@ -86,6 +86,7 @@ function MyFront() {
               Ver repositorio
             </a>
             <a
+              aria-label="Ver proyecto"
               href="https://translate-app-sable.vercel.app/"
               target="_blank"
               className="w-full border gap-2 border-gray-700 bg-gray-800 inline-flex items-center px-3 py-2 text-sm font-medium text-center text-white rounded-lg hover:border-gray-500 hover:bg-gray-600"
@@ -112,7 +113,7 @@ function MyFront() {
       </div>
 
       <div
-        className="max-w-sm w-full dark:bg-[#28282830] transparent border border-gray-700 rounded-lg shadow dark:bg-gray-800"
+        className="max-w-sm w-full dark:bg-[#28282830] dark:bg-opacity-50 transparent border border-gray-700 rounded-lg shadow dark:bg-gray-800"
       >
         <div className="h-[185px]">
           <img
@@ -268,6 +269,7 @@ function MyFront() {
           </div>
           <div className="flex justify-between w-full gap-4">
             <a
+              aria-label="Ver repo"
               href="https://github.com/jorditan/translate-app"
               target="_blank"
               className="w-full border gap-2 border-gray-700 bg-gray-800 inline-flex items-center px-3 py-2 text-sm font-medium text-center text-white hover:border-gray-500 rounded-lg hover:bg-gray-600"
@@ -287,6 +289,7 @@ function MyFront() {
               Ver repositorio
             </a>
             <a
+              aria-label="Ver proyecto"
               href="https://pokemonfinder-vue.netlify.app/"
               target="_blank"
               className="w-full border gap-2 border-gray-700 bg-gray-800 inline-flex items-center px-3 py-2 text-sm font-medium text-center text-white rounded-lg hover:border-gray-500 hover:bg-gray-600"
@@ -313,7 +316,7 @@ function MyFront() {
       </div>
 
       <div
-        className="max-w-sm dark:bg-[#28282830] transparent border border-gray-700 rounded-lg shadow dark:bg-gray-800"
+        className="max-w-sm dark:bg-[#28282830] dark:bg-opacity-50 transparent border border-gray-700 rounded-lg shadow dark:bg-gray-800"
       >
         <div className="h-[185px]">
           <img
@@ -354,6 +357,7 @@ function MyFront() {
           </div>
           <div className="flex justify-between w-full gap-4">
             <a
+              aria-label="Ver repo"
               href="https://github.com/jorditan/portfolio-dami"
               target="_blank"
               className="w-full border gap-2 border-gray-700 bg-gray-800 inline-flex items-center px-3 py-2 text-sm font-medium text-center text-white hover:border-gray-500 rounded-lg hover:bg-gray-600"
@@ -373,6 +377,7 @@ function MyFront() {
               Ver repositorio
             </a>
             <a
+              aria-label="Ver proyecto"
               href="https://damianjmusica.com//"
               target="_blank"
               className="w-full border gap-2 border-gray-700 bg-gray-800 inline-flex items-center px-3 py-2 text-sm font-medium text-center text-white rounded-lg hover:border-gray-500 hover:bg-gray-600"
@@ -399,7 +404,7 @@ function MyFront() {
       </div>
 
       <div
-        className="max-w-sm dark:bg-[#28282830] transparent border border-gray-700 rounded-lg shadow dark:bg-gray-800"
+        className="max-w-sm dark:bg-[#28282830] dark:bg-opacity-50 transparent border border-gray-700 rounded-lg shadow dark:bg-gray-800"
       >
         <div className="h-[185px]">
           <img
@@ -417,7 +422,7 @@ function MyFront() {
           </p>
           <div className="flex flex-wrap">
             <span
-              className="dark:bg-[#28282834] bg-gray-100 badge gap-1 dark:text-[#fafafa] text-gray-800 text-[10px] font-medium inline-flex items-center px-1.5 rounded me-2 dark:bg-gray-700 border border-gray-500 transition-all"
+              className="dark:bg-[#28282834] bg-gray-100 p-1 badge gap-1 dark:text-[#fafafa] text-gray-800 text-[10px] font-medium inline-flex items-center px-1.5 rounded me-2 dark:bg-gray-700 border border-gray-500 transition-all"
             >
               UNAHUR
             </span>
@@ -428,7 +433,7 @@ function MyFront() {
             </span>
           </div>
           <div className="flex justify-between w-full gap-4">
-            <a
+            <a aria-label="Ver repo"
               href="https://github.com/obj1-unahur-2024s2/TPGameIntegrador-thecoders"
               target="_blank"
               className="w-full border gap-2 border-gray-700 bg-gray-800 inline-flex items-center px-3 py-2 text-sm font-medium text-center text-white hover:border-gray-500 rounded-lg hover:bg-gray-600"
@@ -455,7 +460,7 @@ function MyFront() {
               El proyecto solo se puede deployear desde Visual Studio Code
               <div className="tooltip-arrow" data-popper-arrow></div>
             </div>
-            <button disabled data-tooltip-target="tooltip-disabled"
+            <button aria-label="Button disabled" disabled data-tooltip-target="tooltip-disabled"
               className="w-full border cursor-not-allowed disabled gap-2 border-gray-700 bg-gray-600 inline-flex items-center px-3 py-2 text-sm font-medium text-center text-gray-500 rounded-lg hover:bg-gray-600"
             >
               <svg

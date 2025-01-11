@@ -8,21 +8,4 @@
   <link rel="icon" type="image/svg+xml" href="/palette.svg" />
   <title>Matías Owen Jordán</title>
 
-  <script>
-    (function () {
-      const root = document.documentElement;
-      const savedTheme = localStorage.getItem("theme");
-      const prefersDark = window.matchMedia("(prefers-color-scheme: dark)").matches;
-
-      if (savedTheme) {
-        root.classList.add(savedTheme);
-      } else if (prefersDark) {
-        root.classList.add("dark");
-        localStorage.setItem("theme", "dark");
-      } else {
-        root.classList.add("light");
-        localStorage.setItem("theme", "light");
-      }
-    })();
-  </script>
 </head>
