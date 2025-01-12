@@ -17,7 +17,7 @@ function MyForm() {
   return (
     <>
       <form
-        className="max-w-sm mx-auto flex gap-4 flex-col"
+        className="max-w-md mx-auto flex gap-4 flex-col"
         name="contact"
         method="POST" 
         data-netlify="true"

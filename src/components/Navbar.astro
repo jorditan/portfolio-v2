@@ -3,6 +3,7 @@ import { MoonIcon } from "lucide-react";
 import { SunIcon } from "lucide-react";
 import { Download } from "lucide-react";
 import ThemeSelector from "./ThemeSelector";
+// Removed invalid import
 ---
 
 <header class="flex justify-center py-5 fixed w-full z-10">
@@ -14,7 +15,7 @@ import ThemeSelector from "./ThemeSelector";
       <ul class="flex gap-4">
         <li>
           <a
-            href="/#inicio"
+            href="/#inicio"  
             class="pointer text-[#141a28] dark:text-[#fafafa] text-[12px] sm:text-[16px] decoration-none cursor-pointer hover:text-sky-600 dark:hover:text-[#3fb6ea] transition-all"
           >
             Inicio
@@ -22,7 +23,7 @@ import ThemeSelector from "./ThemeSelector";
         </li>
         <li>
           <a
-            href="/#proyectos"
+            href="/#proyectos" 
             class="pointer text-[#141a28] dark:text-[#fafafa] text-[12px] sm:text-[16px] decoration-none cursor-pointer hover:text-sky-600 dark:hover:text-[#3fb6ea] transition-all"
           >
             Proyectos
@@ -30,36 +31,45 @@ import ThemeSelector from "./ThemeSelector";
         </li>
         <li>
           <a
-            href="/#sobreMi"
+            href="/#sobreMi" 
             class="pointer text-[#141a28] dark:text-[#fafafa] text-[12px] sm:text-[16px] decoration-none cursor-pointer hover:text-sky-600 dark:hover:text-[#3fb6ea] transition-all"
           >
             Sobre mi
           </a>
         </li>
         <li>
-          <a
-            href="/contacto"
-            class="pointer text-[#141a28] dark:text-[#fafafa] text-[12px] sm:text-[16px] decoration-none cursor-pointer hover:text-sky-600 dark:hover:text-[#3fb6ea]  transition-all"
-          >
-            Contacto
+        <a
+          href="/#contacto" 
+          class="pointer text-[#141a28] dark:text-[#fafafa] text-[12px] sm:text-[16px] decoration-none cursor-pointer hover:text-sky-600 dark:hover:text-[#3fb6ea]  transition-all"
+        >
+          Contacto
         </a>
         </li>
       </ul>
 
       <div class="flex gap-2 sm:gap-4 items-center">
       <ThemeSelector client:load/>
+      <div
+        id="tooltip-cv"
+        role="tooltip"
+        class="absolute z-10 invisible inline-block px-3 py-2 text-sm font-medium text-[#fafafa] dark:text-gray-900 bg-[#0f172a]  dark:bg-white border dark:border-gray-200 rounded-lg shadow-sm opacity-0 tooltip"
+      >
+        Descargar CV
+        <div class="tooltip-arrow" data-popper-arrow></div>
+      </div>
         <button 
           aria-label="DownloadButton"
           data-tooltip-target="tooltip-cv"
           class="rounded-full"
           > 
           <a download href="/curriculum_vitae.pdf" class="w-fit h-fit" target="_blank" aria-label="Download button">
-            <Download className="icon transition-al stroke-[#141a28] dark:stroke-[#fafafa] h-[16px] w-[16px] sm:h-[24px] sm:w-[24px]" />
+            <Download className="icon transition-all hover:scale-110 stroke-[#141a28] dark:stroke-[#fafafa] h-[16px] w-[16px] sm:h-[24px] sm:w-[24px]" />
           </a>
           </button> 
       </div>
       </div>
     </div>
+    
   </nav>
 </header>
 
@@ -70,10 +80,6 @@ import ThemeSelector from "./ThemeSelector";
   }
   .icon {
     color: #fafafa;
-  }
-
-  .icon:hover {
-    scale: 1.1;
   }
 </style>
 

@@ -1,36 +1,42 @@
 ---
 import Footer from "@/components/Footer.astro";
 import Navbar from "@/components/Navbar.astro";
-import Head from "./Head.astro";
 import { ClientRouter } from "astro:transitions";
 ---
-
 <!doctype html>
 <html lang="en" class="scroll-smooth focus:scroll-auto">
-  <ClientRouter/>
-  <Head/>
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="generator" content={Astro.generator} />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="icon" type="image/svg+xml" href="/palette.svg" />
+    <title>Matías Owen Jordán</title>
+    <ClientRouter/>
+  </head>
+  
   <Navbar/>
+  <body>
+    <main>
+      <slot />
+    </main>
+    <script is:inline src="https://cdn.jsdelivr.net/npm/flowbite@2.5.2/dist/flowbite.min.js"></script>
+  </body>
+  <Footer />
   <script>
     (function () {
       const root = document.documentElement;
       const savedTheme = localStorage.getItem("theme");
-      const prefersDark = window.matchMedia("(prefers-color-scheme: dark)").matches;
 
       if (savedTheme) {
-        root.classList.add(savedTheme);
-      } else if (prefersDark) {
-        root.classList.add("dark");
-        localStorage.setItem("theme", "dark");
-      } else {
-        root.classList.add("light");
-        localStorage.setItem("theme", "light");
-      }
+        if (savedTheme == 'dark') {
+          root.classList.add('dark');
+        } else {
+          root.classList.add('')
+        }
+      } 
     })();
-  </script>
-  <body>
-    <slot />
-  </body>
-  <Footer />
+  </script> 
   
 </html>
 
@@ -46,7 +52,7 @@ import { ClientRouter } from "astro:transitions";
     margin: 0;
   }
   :root {
-    color-scheme: dark;
+    color-scheme: dark light;
     --text-color: #fafafa;
   }
 
@@ -61,7 +67,7 @@ import { ClientRouter } from "astro:transitions";
     );
   }
 
-  .light body {
+  body {
     background-image: linear-gradient(
       to right bottom,
       #fafafa,

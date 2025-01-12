@@ -1,11 +1,11 @@
 function MyDesigns() {
   return (
     <article className="flex flex-wrap justify-center gap-10">
-      <div className="max-w-sm  dark:bg-[#28282830] transparent border border-gray-700 rounded-lg shadow dark:bg-gray-800">
+      <div className="max-w-sm  dark:bg-[#28282830] dark:bg-opacity-50 transparent border border-gray-700 rounded-lg shadow dark:bg-gray-800">
         <div className="h-[185px]">
           <img
             className="rounded-t-lg h-full w-full object-cover object-top"
-            src="/public/film_information.webp"
+            src="/film_information.webp"
             alt="Letterboxd redesign"
           />
         </div>
@@ -78,11 +78,11 @@ function MyDesigns() {
         </div>
       </div>
 
-      <div className="max-w-sm dark:bg-[#28282830] transparent animate-pulse border border-gray-700 rounded-lg shadow dark:bg-gray-800">
+      <div className="max-w-sm dark:bg-[#28282830] dark:bg-opacity-50 transparent animate-pulse border border-gray-700 rounded-lg shadow dark:bg-gray-800">
         <div className="h-[185px]">
           <img
             className="rounded-t-lg h-full w-full object-cover object-top"
-            src="/public/cuenta_dni.webp"
+            src="/cuenta_dni.webp"
             alt="Cuenta DNI redesign"
           />
         </div>

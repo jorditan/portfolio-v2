@@ -12,10 +12,10 @@ function ThemeSelector() {
 
   const handleToggle = () => {
     toggleTheme()
-    if (theme == 'dark') {
-      setTheme('light');
+    if (theme != 'dark') {
+      setTheme('dark');
     } else {
-      setTheme('dark')
+      setTheme('light')
     }
   };
 
@@ -24,30 +24,20 @@ function ThemeSelector() {
   return (
     <>
       <div
-        id="tooltip-light"
+        id="themeButton"
         role="tooltip"
         className="absolute z-10 invisible inline-block px-3 py-2 text-sm font-medium text-[#fafafa] dark:text-gray-900 bg-[#0f172a]  dark:bg-white border dark:border-gray-200 rounded-lg shadow-sm opacity-0 tooltip"
       >
         Cambiar tema
         <div className="tooltip-arrow" data-popper-arrow></div>
       </div>
-      <div
-        id="tooltip-cv"
-        role="tooltip"
-        className="absolute z-10 invisible inline-block px-3 py-2 text-sm font-medium text-[#fafafa] dark:text-gray-900 bg-[#0f172a]  dark:bg-white border dark:border-gray-200 rounded-lg shadow-sm opacity-0 tooltip"
-      >
-        Descargar CV
-        <div className="tooltip-arrow" data-popper-arrow></div>
-      </div>
       <button
         onClick={handleToggle}
-        name="ThemeButton"
-        data-tooltip-target="tooltip-light"
+        data-tooltip-target="themeButton"
         className="rounded-full"
-        id="themeButton"
       >
         {
-          theme === 'dark' ?  <SunIcon className={classIcon}/> : <MoonIcon className={classIcon} />
+          theme === 'dark' ?  <SunIcon className={`transition-all hover:scale-110 ${classIcon}`}/> : <MoonIcon className={`transition-all hover:scale-110 ${classIcon}`} />
         }
       </button>
     </>

@@ -4,14 +4,14 @@ import Experiencia from "../Experiencia.astro";
 import MyProjects from "../MyProjects";
 import ProgressBar from "../ProgressBar.astro";
 import SobreMi from "../SobreMi.astro";
+import Contacto from "@/pages/contacto.astro";
 ---
-<main>
     <ProgressBar/>
     <Tittle/>
     <Experiencia/>
     <MyProjects client:load/>
     <SobreMi/>
-</main>
+    <Contacto/>
 
 <style scoped>
   @import url('https://fonts.googleapis.com/css2?family=Figtree:ital,wght@0,300..900;1,300..900&family=Lora:ital,wght@0,400..700;1,400..700&family=Parkinsans:wght@300..800&family=Righteous&display=swap');

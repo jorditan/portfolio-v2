@@ -69,7 +69,7 @@ function MyFront() {
             <a
               href="https://github.com/jorditan/translate-app"
               target="_blank"
-              className="w-full border gap-2 border-gray-700 bg-gray-800 inline-flex items-center px-3 py-2 text-sm font-medium text-center text-white hover:border-gray-500 rounded-lg hover:bg-gray-600"
+              className="w-full border gap-2 text-[12px] sm:text-sm border-gray-700 bg-gray-800 inline-flex items-center px-3 py-2 font-medium text-center text-white hover:border-gray-500 rounded-lg hover:bg-gray-600"
             >
               <svg
                 viewBox="0 0 256 250"
@@ -89,7 +89,7 @@ function MyFront() {
               aria-label="Ver proyecto"
               href="https://translate-app-sable.vercel.app/"
               target="_blank"
-              className="w-full border gap-2 border-gray-700 bg-gray-800 inline-flex items-center px-3 py-2 text-sm font-medium text-center text-white rounded-lg hover:border-gray-500 hover:bg-gray-600"
+              className="w-full border gap-2 text-[12px] sm:text-sm border-gray-700 bg-gray-800 inline-flex items-center px-3 py-2 font-medium text-center text-white rounded-lg hover:border-gray-500 hover:bg-gray-600"
             >
               <svg
                 xmlns="http://www.w3.org/2000/svg"
@@ -272,7 +272,7 @@ function MyFront() {
               aria-label="Ver repo"
               href="https://github.com/jorditan/translate-app"
               target="_blank"
-              className="w-full border gap-2 border-gray-700 bg-gray-800 inline-flex items-center px-3 py-2 text-sm font-medium text-center text-white hover:border-gray-500 rounded-lg hover:bg-gray-600"
+              className="w-full border gap-2 text-[12px] sm:text-sm border-gray-700 bg-gray-800 inline-flex items-center px-3 py-2 font-medium text-center text-white hover:border-gray-500 rounded-lg hover:bg-gray-600"
             >
               <svg
                 viewBox="0 0 256 250"
@@ -292,7 +292,7 @@ function MyFront() {
               aria-label="Ver proyecto"
               href="https://pokemonfinder-vue.netlify.app/"
               target="_blank"
-              className="w-full border gap-2 border-gray-700 bg-gray-800 inline-flex items-center px-3 py-2 text-sm font-medium text-center text-white rounded-lg hover:border-gray-500 hover:bg-gray-600"
+              className="w-full border gap-2 text-[12px] sm:text-sm border-gray-700 bg-gray-800 inline-flex items-center px-3 py-2 font-medium text-center text-white rounded-lg hover:border-gray-500 hover:bg-gray-600"
             >
               <svg
                 xmlns="http://www.w3.org/2000/svg"
@@ -360,7 +360,7 @@ function MyFront() {
               aria-label="Ver repo"
               href="https://github.com/jorditan/portfolio-dami"
               target="_blank"
-              className="w-full border gap-2 border-gray-700 bg-gray-800 inline-flex items-center px-3 py-2 text-sm font-medium text-center text-white hover:border-gray-500 rounded-lg hover:bg-gray-600"
+              className="w-full border gap-2 text-[12px] sm:text-sm border-gray-700 bg-gray-800 inline-flex items-center px-3 py-2 font-medium text-center text-white hover:border-gray-500 rounded-lg hover:bg-gray-600"
             >
               <svg
                 viewBox="0 0 256 250"
@@ -380,7 +380,7 @@ function MyFront() {
               aria-label="Ver proyecto"
               href="https://damianjmusica.com//"
               target="_blank"
-              className="w-full border gap-2 border-gray-700 bg-gray-800 inline-flex items-center px-3 py-2 text-sm font-medium text-center text-white rounded-lg hover:border-gray-500 hover:bg-gray-600"
+              className="w-full border gap-2 text-[12px] sm:text-sm border-gray-700 bg-gray-800 inline-flex items-center px-3 py-2 font-medium text-center text-white rounded-lg hover:border-gray-500 hover:bg-gray-600"
             >
               <svg
                 xmlns="http://www.w3.org/2000/svg"
@@ -436,7 +436,7 @@ function MyFront() {
             <a aria-label="Ver repo"
               href="https://github.com/obj1-unahur-2024s2/TPGameIntegrador-thecoders"
               target="_blank"
-              className="w-full border gap-2 border-gray-700 bg-gray-800 inline-flex items-center px-3 py-2 text-sm font-medium text-center text-white hover:border-gray-500 rounded-lg hover:bg-gray-600"
+              className="w-full border gap-2 text-[12px] sm:text-sm border-gray-700 bg-gray-800 inline-flex items-center px-3 py-2 font-medium text-center text-white hover:border-gray-500 rounded-lg hover:bg-gray-600"
             >
               <svg
                 viewBox="0 0 256 250"
