@@ -1,9 +1,6 @@
 ---
-import { MoonIcon } from "lucide-react";
-import { SunIcon } from "lucide-react";
 import { Download } from "lucide-react";
 import ThemeSelector from "./ThemeSelector";
-// Removed invalid import
 ---
 
 <header class="flex justify-center py-5 fixed w-full z-10">
@@ -39,7 +36,8 @@ import ThemeSelector from "./ThemeSelector";
         </li>
         <li>
         <a
-          href="/#contacto" 
+          data-astro-prefetch="hover"
+          href="#contacto"  
           class="pointer text-[#141a28] dark:text-[#fafafa] text-[12px] sm:text-[16px] decoration-none cursor-pointer hover:text-sky-600 dark:hover:text-[#3fb6ea]  transition-all"
         >
           Contacto
@@ -48,7 +46,7 @@ import ThemeSelector from "./ThemeSelector";
       </ul>
 
       <div class="flex gap-2 sm:gap-4 items-center">
-      <ThemeSelector client:load/>
+      <ThemeSelector client:load/> 
       <div
         id="tooltip-cv"
         role="tooltip"

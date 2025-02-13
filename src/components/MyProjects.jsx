@@ -12,7 +12,7 @@ function MyProjects() {
 
   return (
     <section className="sm:mx-auto py-6 mx-4 max-w-[32rem] md:max-w-[42rem] lg:max-w-4xl transition-all" id="proyectos" aria-label="Mis proyectos">
-      <h2 className="pb-4 title text-2xl md:text-[3xl] font-semibold w-fit text-[#0f172a] dark:text-[#fafafa]">Proyectos</h2>
+      <h2 className="pb-4 title text-2xl md:text-[3xl] font-semibold w-fit text-[#0f172a] dark:text-[#fafafa]">🏗️ Proyectos</h2>
       <div className="flex flex-col pb-4 gap-5 justify-center">
         <div className="text-sm flex font-medium text-center border-b border-gray-400 dark:border-gray-700">
           <ul className="flex flex-wrap -mb-px">

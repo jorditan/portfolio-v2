@@ -1,24 +1,22 @@
 ---
 import "../assets/styles/global.css";
 import MyForm from "@/components/MyForm";
-import Layout from "../layouts/Layout.astro";
 ---
-
-<section
-  id="contacto"
-  class="sm:mx-auto py-6 pb-12 mx-4 max-w-[32rem] md:max-w-[42rem] lg:max-w-4xl transition-all"
->
-  <div
-    class="flex justify-left sm:gap-2 sm:items-center flex-col sm:flex-row pb-4"
+  <section
+    id="contacto"
+    class="sm:mx-auto py-6 pb-12 mx-4 max-w-[32rem] md:max-w-[42rem] lg:max-w-4xl transition-all"
   >
-    <h2
-      class="title text-3xl font-semibold w-fit text-[#0f172a] dark:text-[#fafafa]"
+    <div
+      class="flex justify-left sm:gap-2 sm:items-center flex-col sm:flex-row pb-4"
     >
-      Pongámonos en contacto
-    </h2>
-    <small class="dark:text-[#cacaca] text-gray-600"
-      >* Campos obligatorios
-    </small>
-  </div>
-  <MyForm client:load />
-</section>
+      <h2
+        class="title text-3xl font-semibold w-fit text-[#0f172a] dark:text-[#fafafa]"
+      >
+      📧 Pongámonos en contacto
+      </h2>
+      <small class="dark:text-[#cacaca] text-gray-600"
+        >* Campos obligatorios
+      </small>
+    </div>
+    <MyForm client:load />
+  </section>

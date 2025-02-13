@@ -19,6 +19,8 @@ function ThemeSelector() {
     }
   };
 
+  
+
   const classIcon = "icon transition-all stroke-[#141a28] dark:stroke-[#fafafa] h-[16px] w-[16px] sm:h-[24px] sm:w-[24px]"
 
   return (
