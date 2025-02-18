@@ -1,5 +1,6 @@
 ---
 import { ChevronDown } from "lucide-react";
+import CardExperiencie from "./ui/cardExperiencie.astro";
 ---
 
 <section class="sm:mx-auto py-6 mx-4 max-w-[32rem] md:max-w-[42rem] lg:max-w-4xl">
@@ -8,73 +9,13 @@ import { ChevronDown } from "lucide-react";
       <h2 class="pb-4 title text-2xl md:text-[3xl] font-semibold w-fit text-[#141a28]  dark:text-[#fafafa]">💼Mi experiencia laboral </h2>
     </div>
 
-    <details class="overflow-hidden	w-full flex transition-all dark:hover:bg-[#2828284c]
-        hover:bg-gray-100 border-gray-500 hover:bg-opacity-50 dark:border-[#ffffff4d] flex-col gap-2 border-solid border-2 rounded-lg">
-        <summary class="flex justify-between items-start sm:items-center px-3 pt-3">
-          <div class="flex flex-col gap-2 sm:gap-0">
-            <div class="flex gap-2  sm:gap-3 flex-col sm:flex-row">
-              <span class="text-[12px] md:text-[18px] font-semibold text-[#141a28] dark:text-[#fafafa] "><span class="">Diseñador UX/UI Jr</span> - @Hackmetrix</span>
-            </div>
-            <small class="text-[#141a28] dark:text-[#fafafa] font-thin text-[12px]">Feb 2025 - Actualidad</small>
-          </div>
-          <ChevronDown className="icon text-[#141a28] dark:text-[#fafafa]"/>
-        </summary>
 
-        <div class="mb-3 mx-4">
-          <hr class="h-px my-2 bg-[#141a28] border-0 dark:bg-gray-500">
-          <p class="text-[#141a28] mx-2 dark:text-gray-200 text-[14px]">Tras un año adquiriendo experiencia y profundizando en el diseño de producto, me convertí en colaborador oficial. Actualmente, me enfoco en
-            <span class="underline font-bold decoration-2 decoration-sky-500">
-              diseñar módulos de ciberseguridad con el objetivo de transformarlos en productos independientes, además de desarrollar automatizaciones de alto valor</span>.
-            </p>
-        </div>
-      </details>
-    
-    <div class="flex flex-col gap-5 w-full">
-      <details class="overflow-hidden	w-full flex transition-all dark:hover:bg-[#2828284c]
-        hover:bg-gray-100 border-gray-500 hover:bg-opacity-50 dark:border-[#ffffff4d] flex-col gap-2 border-solid border-2 rounded-lg">
-        <summary class="flex justify-between items-start sm:items-center px-3 pt-3">
-          <div class="flex flex-col gap-2 sm:gap-0">
-            <div class="flex gap-2  sm:gap-3 flex-col sm:flex-row">
-              <span class="text-[12px] md:text-[18px] font-semibold text-[#141a28] dark:text-[#fafafa] ">Pasante diseño UX/UI - @Hackmetrix</span>
-              
-            </div>
-            <small class="text-[#141a28] dark:text-[#fafafa] font-thin text-[12px]">Feb 2024 - Feb 2025</small>
-          </div>
-          <ChevronDown className="icon text-[#141a28] dark:text-[#fafafa]"/>
-        </summary>
-        
-        <div class="mx-3 mb-3">
-          <hr class="h-px my-2 bg-[#141a28] border-0 dark:bg-gray-500">
-          <p class="m-2 text-[#141a28] dark:text-gray-200 text-[14px]"> Primer experiencia laboral, adentrándome en la metodología de continuos discovery.<span class="underline font-bold decoration-2 decoration-sky-500">
-            Enfocado en construir una plataforma gestionable para empresas medianas y autoexplicativa para que vean el valor otorgado</span>.
-            </p>
-        </div>
-      </details>
+    <CardExperiencie tittle="Diseñador UX/UI jr" empresa="@Hackmetrix" periodo="Feb 2025 - Actualidad" text="Tras un año adquiriendo experiencia y profundizando en el diseño de producto, me convertí en colaborador oficial. Actualmente, me enfoco en" destacado="diseñar módulos de ciberseguridad con el objetivo de transformarlos en productos independientes, además de desarrollar automatizaciones de alto valor"/>
 
-      <details class="overflow-hidden	w-full flex border-gray-500 transition-all dark:hover:bg-[#2828284c]
-        hover:bg-gray-100 dark:border-[#ffffff4d] hover:bg-opacity-50 flex-col gap-2 border-solid border-2 rounded-lg">
-        <summary class="flex justify-between items-start sm:items-center px-3 pt-3">
-          <div class="flex flex-col gap-2 sm:gap-0">
-            <div class="flex gap-2  sm:gap-3 flex-col sm:flex-row">
-              <span class="text-[12px] md:text-[18px] font-semibold text-[#141a28] dark:text-[#fafafa]">Edición - @Muiscaysimpleza</span>
-              
-            </div>
-            <div class="flex gap-3 items-center">
-              <small class="text-[#141a28] dark:text-[#fafafa] font-thin text-[12px]">Jul 2023 - Actualidad</small>
-            </div>
-          </div>
-          <ChevronDown className="icon text-[#141a28] dark:text-[#fafafa]"/>
-        </summary>
+    <CardExperiencie tittle="Pasante diseño UX/UI" empresa="@Hackmetrix" periodo="Feb 2024 - Feb 2025" text="Primer experiencia laboral, adentrándome en la metodología de continuos discovery." destacado=" Enfocado en construir una plataforma gestionable para empresas medianas y autoexplicativa para que vean el valor otorgado"/>
 
-        
-        <div class="mx-3 mb-3">
-          <hr class="h-px my-2 bg-[#141a28] border-0 dark:bg-gray-500">
-          <p class="m-2 text-[#141a28] dark:text-gray-200 text-[14px]">Administrador de redes sociales. 
-            <span class="underline font-bold decoration-2 decoration-sky-500">
-              Creación de publicaciones para Instagram, ideación de contenido y edición de videos para Youtube. Contacto constante con clientes</span>.
-            </p>
-        </div>
-      </details> 
+    <CardExperiencie tittle="Edición" empresa="@Musicaysimpleza" periodo="Jul 2023 - Actualidad" text="Administrador de redes sociales. " destacado="Creación de publicaciones para Instagram, ideación de contenido y edición de videos para Youtube. Contacto constante con clientes"/>
+
     </div>
     </p>
 
