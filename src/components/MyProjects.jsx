@@ -1,6 +1,6 @@
 import MyDesigns from './projects/desing';
 import MyFront from './projects/frontEnd';
-import { useEffect, useState } from 'react';
+import { useState } from 'react';
 
 
 function MyProjects() {
