@@ -1,5 +1,5 @@
 
-import GithubIcon from '../../../assets/icons/githubIcon.jsx';
+import GithubIcon from '../../../assets/icons/GithubIcon.jsx';
 import ProjectIcon from '../../../assets/icons/ProyectIcon.jsx';
 import MyModal from "./MyModal";
 
