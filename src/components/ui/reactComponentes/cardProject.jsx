@@ -1,6 +1,6 @@
 
-import GithubIcon from "@/assets/icons/githubIcon";
-import ProjectIcon from "@/assets/icons/ProyectIcon";
+import GithubIcon from '.@/assets/icons/GithubIcon';
+import ProjectIcon from "@/assets/icons/ProyectIcon.jsx";
 import MyModal from "./MyModal";
 
 function CardProject({ title, content, image, altImage, links, tags, showGif }) {
