@@ -1,13 +1,11 @@
 import CardProject from "../ui/reactComponentes/cardProject.jsx";
-import Modal from "../ui/astroComponentes/Modal.astro";
-import ReactIcon from "@/assets/icons/ReactIcon.jsx";
-import TailwindIcon from "@/assets/icons/TailwindIcon.jsx";
-import ZustandIcon from "@/assets/icons/ZustandIcon.jsx";
-import VueIcon from "@/assets/icons/VueIcon.jsx";
-import PiniaIcon from "@/assets/icons/PiniaIcon.jsx";
-import UnahurIcon from "@/assets/icons/UnahurIcon.jsx";
-import WollokIcon from "@/assets/icons/WollokIcon.jsx";
-import TypeScriptIcon from "@/assets/icons/TypeScriptIcon.jsx";
+import ReactIcon from "./../../assets/icons/ReactIcon.jsx";
+import TailwindIcon from "./../../assets/icons/TailwindIcon.jsx";
+import ZustandIcon from "./../../assets/icons/ZustandIcon.jsx";
+import VueIcon from "./../../assets/icons/VueIcon.jsx";
+import PiniaIcon from "./../../assets/icons/PiniaIcon.jsx";
+import UnahurIcon from "./../../assets/icons/UnahurIcon.jsx";
+import WollokIcon from "./../../assets/icons/WollokIcon.jsx";
 
 function MyFront() {
   return (
