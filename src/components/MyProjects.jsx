@@ -1,5 +1,5 @@
-import MyDesigns from './projects/desing';
-import MyFront from './projects/frontEnd';
+import MyDesigns from './views/desing';
+import MyFront from './views/frontEnd';
 import { useState } from 'react';
 
 
