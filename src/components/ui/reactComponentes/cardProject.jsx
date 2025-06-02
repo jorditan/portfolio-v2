@@ -61,12 +61,12 @@ function CardProject({ title, content, image, altImage, links, tags, showGif }) 
                 </>
               }
               video={
-                <img src="/gif-wollolok.gif" alt="GIF del juego Wollolok"></img>
+                <img src="/gif-wollolok.gif" alt="GIF del juego Wollolok" className='rounded-sm'></img>
               }
             />
           ) : (
             <a
-              aria-label="Ver proyecto"
+              ariaLabel="Ver proyecto"
               href={links[1].url}
               target="_blank"
               className="w-full border gap-2 text-[12px] sm:text-sm border-gray-700 bg-gray-800 inline-flex items-center px-3 py-2 font-medium text-center text-white rounded-lg hover:border-gray-500 hover:bg-gray-600"

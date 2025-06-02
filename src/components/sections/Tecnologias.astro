@@ -6,17 +6,20 @@ import JavascriptIcon from "@/assets/icons/JavascriptIcon.astro"
 import TypescriptIcon from "@/assets/icons/TypescriptIcon.astro"
 import PostgreSQL from "@/assets/icons/PostgreSQL.astro"
 import PythonIcon from "@/assets/icons/PythonIcon.astro"
+import CssIcon from "@/assets/icons/CssIcon.astro"
+import JavaIcon from "@/assets/icons/JavaIcon.astro"
 import TailwdindIcon from "@/assets/icons/TailwindIcon.astro"
 import SassIcon from "@/assets/icons/SassIcon.astro"
 import FigmaIcon from "@/assets/icons/FigmaIcon.astro"
 import IllustratorIcon from "@/assets/icons/IllustratorIcon.astro"
 import PhotoshopIcon from "@/assets/icons/PhotoshopIcon.astro"
+import AstroIcon from "@/assets/icons/AstroIcon.astro"
 
 ---
   <article class="mt-9">
     <div>
       <h5 class="pb-4 text-[#0f172a] dark:text-[#fafafa]">¿Qué tecnologías utilizo?</h5>
-      <div class="flex flex-wrap w-full gap-[10px] md:gap-4 justify-center">
+      <div class="flex flex-wrap w-full gap-[16px] md:gap-4 justify-center">
         
         <TecnologyCard tooltip="React">
           <ReactIcon slot="icon" />
@@ -24,6 +27,10 @@ import PhotoshopIcon from "@/assets/icons/PhotoshopIcon.astro"
 
         <TecnologyCard tooltip="Vue">
           <VueIcon slot="icon" />
+        </TecnologyCard>
+
+        <TecnologyCard tooltip="Astro">
+          <AstroIcon slot="icon" />
         </TecnologyCard>
 
         
@@ -40,12 +47,20 @@ import PhotoshopIcon from "@/assets/icons/PhotoshopIcon.astro"
           <PostgreSQL slot="icon" />
         </TecnologyCard>
 
+        <TecnologyCard tooltip="Java">
+          <JavaIcon slot="icon" />
+        </TecnologyCard>
+
         <TecnologyCard tooltip="Python">
           <PythonIcon slot="icon" />
         </TecnologyCard>
 
         <TecnologyCard tooltip="Tailwind">
           <TailwdindIcon slot="icon" />
+        </TecnologyCard>
+
+        <TecnologyCard tooltip="CSS">
+          <CssIcon slot="icon" />
         </TecnologyCard>
 
         <TecnologyCard tooltip="Sass">

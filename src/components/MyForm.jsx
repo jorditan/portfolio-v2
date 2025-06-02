@@ -35,7 +35,7 @@ function MyForm() {
             onChange={handleChange}
             aria-describedby="helper-text-explanation"
             className="email border border-gray-700 dark:bg-gray-800 bg-gray-800 text-sm rounded-lg focus:ring-[#3fb6ea] block w-full p-2.5 placeholder-gray-400 :text-[#fafafa] dark:focus:border-[#3fb6ea] focus:border-sky-500"
-            placeholder="tucorreo@gmail.com"
+            placeholder="Ejemplo: tucorreo@gmail.com"
           />
         </div>
 
@@ -51,7 +51,7 @@ function MyForm() {
             onChange={handleChange}
             pattern="[0-9]{2}-[0-9]{4}[0-9]{4}"
             className="phone block p-2.5 w-full border rounded-lg border-gray-700 dark:bg-gray-800 bg-gray-800 text-sm focus:ring-[#3fb6ea] placeholder-gray-400 text-[#fafafa] dark:focus:border-[#3fb6ea] focus:border-sky-500"
-            placeholder="11-12345678"
+            placeholder="Formato: 11-12345678"
             required
           />
         </div>
@@ -67,7 +67,7 @@ function MyForm() {
             onChange={handleChange}
             rows="4"
             className={`message block p-2.5 w-full border-gray-700 dark:bg-gray-800 bg-gray-800 text-sm rounded-lg focus:ring-[#3fb6ea] placeholder-gray-400 text-[#fafafa]  dark:focus:border-[#3fb6ea] focus:border-sky-500`}
-            placeholder="Me gustaría ponerme en contacto para..."
+            placeholder="Ejemplo: Me gustaría ponerme en contacto para..."
           />
         </div>
 

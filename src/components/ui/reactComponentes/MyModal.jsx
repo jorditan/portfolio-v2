@@ -10,12 +10,12 @@ function MyModal({buttonText, title, text, video}) {
       </button>
 
       {/* <!-- Main modal --> */}
-      <div id="default-modal" tabindex="-1" aria-hidden="true" class="hidden h-100vh overflow-y-auto overflow-x-hidden fixed top-0 right-0 left-0 z-50 justify-center bg-[#28282834] items-center w-full md:inset-0  max-h-full ">
+      <div id="default-modal" tabindex="-1" aria-hidden="true" class="shadow-md hidden h-100vh overflow-y-auto overflow-x-hidden fixed top-0 right-0 left-0 z-50 justify-center bg-[#d9d9d9b6] dark:bg-[#282828ac] items-center w-full md:inset-0  max-h-full ">
         <div class="relative p-4 w-full max-w-2xl max-h-full">
           {/* <!-- Modal content --> */}
-          <div class="relative rounded-lg shadow-sm dark:bg-[#28282830]  transparent border border-gray-700  dark:bg-gray-800">
+          <div class="relative rounded-lg shadow-sm bg-[#fafafa]  transparent border border-gray-700  dark:bg-gray-800">
             {/* <!-- Modal header --> */}
-            <div class="flex items-center justify-between p-4 md:p-5 border-b rounded-t dark:border-gray-600 border-gray-200">
+            <div class="flex items-center justify-between p-4 md:p-5 border-b rounded-t dark:border-gray-600 border-gray-900">
               <h3 class="text-xl font-semibold text-gray-900 dark:text-white">
                 {title}
               </h3>
@@ -34,7 +34,7 @@ function MyModal({buttonText, title, text, video}) {
               {video}
             </div>
             {/* <!-- Modal footer --> */}
-            <div class="flex items-center justify-end p-4 md:p-5 border-t border-gray-200 rounded-b dark:border-gray-600">
+            <div class="flex items-center justify-end p-4 md:p-5 border-t border-gray-900 rounded-b dark:border-gray-600">
               <button data-modal-hide="default-modal" type="button" class=" border gap-2 text-[12px] sm:text-sm border-gray-700 bg-gray-800 inline-flex items-center px-3 py-2 font-medium text-center text-white rounded-lg hover:border-gray-500 ">Cerrar</button>
             </div>
           </div>
