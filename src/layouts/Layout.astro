@@ -1,85 +1,128 @@
 ---
-import Footer from "@/components/Footer.astro";
-import Navbar from "@/components/Navbar.astro";
+import Footer from "@/common/components/astroComponentes/Footer.astro";
+import Navbar from "@/common/components/astroComponentes/Navbar.astro";
 import { ClientRouter } from "astro:transitions";
 import ThemeCabezaScript from "./theme-cabeza-script.astro";
 ---
+
 <!doctype html>
-<html lang="en" transition:persist="header" class="scroll-smooth focus:scroll-auto">
-  <head>
-    <ThemeCabezaScript/>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <meta name="generator" content={Astro.generator} />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <link rel="icon" type="image/svg+xml" href="/palette.svg" />
-    <title>Matías Owen Jordán</title>
-  </head>
-  <body>
-    <ClientRouter/>
-    <Navbar/>
-    <main>
-      <slot />
-    </main>
-    <Footer />
-    <script is:inline src="https://cdn.jsdelivr.net/npm/flowbite@2.5.2/dist/flowbite.min.js"></script>
-  </body>
-  
+<html
+	lang="en"
+	transition:persist="header"
+	class="scroll-smooth focus:scroll-auto"
+>
+	<head>
+		<ThemeCabezaScript />
+		<meta charset="UTF-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+		<meta name="generator" content={Astro.generator} />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+		<link rel="icon" type="image/svg+xml" href="/palette.svg" />
+		<title>Matías Owen Jordán</title>
+	</head>
+	<body>
+		<ClientRouter />
+		<Navbar />
+		<main>
+			<slot />
+		</main>
+		<Footer />
+		<script
+			is:inline
+			src="https://cdn.jsdelivr.net/npm/flowbite@2.5.2/dist/flowbite.min.js"
+		></script>
+	</body>
 </html>
 
 <style is:global>
-  @import url("https://fonts.googleapis.com/css2?family=Figtree:ital,wght@0,300..900;1,300..900&family=Lora:ital,wght@0,400..700;1,400..700&family=Parkinsans:wght@300..800&display=swap");
-  html,
-  body {
-    font-family: "Parkinsans", sans-serif;
-    font-optical-sizing: auto;
-    margin: 0;
-  }
-  main {
-    margin: 0;
-  }
-  :root {
-    color-scheme: dark light;
-    --text-color: #fafafa;
-  }
+	@import url("https://fonts.googleapis.com/css2?family=Figtree:ital,wght@0,300..900;1,300..900&family=Lora:ital,wght@0,400..700;1,400..700&family=Parkinsans:wght@300..800&display=swap");
+	html,
+	body {
+		font-family: "Parkinsans", sans-serif;
+		font-optical-sizing: auto;
+		margin: 0;
+	}
 
-  .dark body {
-    background-image: linear-gradient(
-      to right bottom,
-      #071e40,
-      #16243c,
-      #0e2758,
-      #16243c,
-      #102053
-    );
-  }
+	main {
+		margin: 0;
+	}
+	:root {
+		color-scheme: dark light;
+		--text-color: #fafafa;
+	}
 
-  body {
-    background-image: linear-gradient(
-      to right bottom,
-      #fafafa,
-      #f3f4fc,
-      #e9f0fe,
-      #dcecff,
-      #cbe9ff,
-      #c2e8ff,
-      #b8e6ff,
-      #aee5fe,
-      #ade5fe,
-      #ace4fd,
-      #aae4fd,
-      #a9e3fc
-    );
-  }
-  ::-webkit-scrollbar {
-    width: 5px;
-  }
-  ::-webkit-scrollbar-track {
-    background: #071e40;
-  }
+	.dark body {
+		background-image: linear-gradient(
+			to right bottom,
+			#071e40,
+			#16243c,
+			#0e2758,
+			#16243c,
+			#102053
+		);
+	}
 
-  ::-webkit-scrollbar-thumb {
-    background-color: #3fb6ea;
-    border-radius: 10px;
-  }
+	body {
+		background-image: linear-gradient(
+			to right bottom,
+			#fafafa,
+			#f3f4fc,
+			#e9f0fe,
+			#dcecff,
+			#cbe9ff,
+			#c2e8ff,
+			#b8e6ff,
+			#aee5fe,
+			#ade5fe,
+			#ace4fd,
+			#aae4fd,
+			#a9e3fc
+		);
+	}
+
+	body::before {
+		content: "";
+		position: fixed;
+		inset: 0;
+		z-index: 0;
+		pointer-events: none;
+		background-image: none; /* default sin grid */
+		background-color: transparent;
+	}
+
+	/* este es el modo claro, explícito */
+	body:not(.dark)::before {
+		background-image:
+			url("data:image/svg+xml,%3Csvg width='40' height='40' viewBox='0 0 40 40' fill='none' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M40 0H0V40' stroke='%23000000' stroke-opacity='0.03'/%3E%3C/svg%3E"),
+			radial-gradient(
+				circle at 50% 30%,
+				rgba(255, 255, 255, 0.1),
+				transparent 70%
+			);
+		background-blend-mode: overlay;
+	}
+
+	/* este es el modo dark */
+	body.dark::before {
+		background-image:
+			url("data:image/svg+xml,%3Csvg width='40' height='40' viewBox='0 0 40 40' fill='none' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M40 0H0V40' stroke='%23ffffff' stroke-opacity='0.05'/%3E%3C/svg%3E"),
+			radial-gradient(
+				circle at 50% 30%,
+				rgba(255, 255, 255, 0.05),
+				transparent 70%
+			);
+		background-blend-mode: lighten;
+	}
+
+	::-webkit-scrollbar {
+		width: 5px;
+	}
+	::-webkit-scrollbar-track {
+		background: #071e40;
+	}
+
+	::-webkit-scrollbar-thumb {
+		background-color: #3fb6ea;
+		border-radius: 10px;
+	}
 </style>

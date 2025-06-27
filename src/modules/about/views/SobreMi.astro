@@ -1,0 +1,95 @@
+---
+import MyCarousel from "../components/MyCarousel";
+import Tecnologias from "./Tecnologias.astro";
+---
+
+<section
+	class="sm:mx-auto py-12 mx-4 max-w-[32rem] md:max-w-[42rem] lg:max-w-4xl transition-all"
+	id="sobreMi"
+>
+	<article>
+		<div class="pb-4">
+			<h2
+				class="title md:text-3xl text-2xl font-semibold w-fit text-[#0f172a] dark:text-[#fafafa]"
+			>
+				🧑 Sobre mi
+			</h2>
+		</div>
+		<div class="flex items-center flex-col lg:flex-row gap-12 justify-between">
+			<div class="lg:w-3/4 w-full flex flex-col gap-8">
+				<p
+					class="text-[#141a28] dark:text-[#fafafa] text-md w-fit md:text-[18px] text-[13px] font-medium antialiased"
+				>
+					Actualmente tengo 20 años y vivo en Buenos Aires, Argentina. Desde muy
+					chico, tuve interes en todo lo relacionado con la informática, hasta
+					que en mi adolescencia <span
+						class="font-semibold underline text-[#141a28] dark:text-[#ffffff] decoration-sky-500"
+						>decidí incursionar en el mundo del diseño y la programación<span
+						></span>.
+					</span>
+				</p>
+
+				<p
+					class="text-[#141a28] dark:text-[#fafafa] font-medium text-md w-fit md:text-[18px] text-[13px] antialiased"
+				>
+					Desde el diseño hasta el código,encuentro valor en cada etapa del
+					proceso. <span
+						class="font-semibold underline text-[#141a28] dark:text-[#ffffff] decoration-sky-500"
+						>Gracias a mi experiencia en UX/UI y desarrollo front-end, puedo
+						traducir necesidades reales en soluciones visuales que funcionan.</span
+					> Creo productos digitales que se sienten tan bien como se ven.
+				</p>
+			</div>
+
+			<div class="flex flex-col gap-4 justify-center items-center">
+				<MyCarousel />
+				<div class="flex gap-4 w-full justify-center items-center">
+					<a
+						href="https://open.spotify.com/user/d5n1per0q568urpceis2urmzz?si=569a49a882864ed6"
+						target="_blank"
+						class="border gap-2 border-gray-700 bg-gray-800 inline-flex items-center px-3 py-2 text-sm font-medium text-center text-white hover:border-gray-500 rounded-lg hover:bg-gray-600"
+					>
+						<svg
+							viewBox="0 0 256 256"
+							width="20"
+							height="20"
+							xmlns="http://www.w3.org/2000/svg"
+							preserveAspectRatio="xMidYMid"
+							><path
+								d="M128 0C57.308 0 0 57.309 0 128c0 70.696 57.309 128 128 128 70.697 0 128-57.304 128-128C256 57.314 198.697.007 127.998.007l.001-.006Zm58.699 184.614c-2.293 3.76-7.215 4.952-10.975 2.644-30.053-18.357-67.885-22.515-112.44-12.335a7.981 7.981 0 0 1-9.552-6.007 7.968 7.968 0 0 1 6-9.553c48.76-11.14 90.583-6.344 124.323 14.276 3.76 2.308 4.952 7.215 2.644 10.975Zm15.667-34.853c-2.89 4.695-9.034 6.178-13.726 3.289-34.406-21.148-86.853-27.273-127.548-14.92-5.278 1.594-10.852-1.38-12.454-6.649-1.59-5.278 1.386-10.842 6.655-12.446 46.485-14.106 104.275-7.273 143.787 17.007 4.692 2.89 6.175 9.034 3.286 13.72v-.001Zm1.345-36.293C162.457 88.964 94.394 86.71 55.007 98.666c-6.325 1.918-13.014-1.653-14.93-7.978-1.917-6.328 1.65-13.012 7.98-14.935C93.27 62.027 168.434 64.68 215.929 92.876c5.702 3.376 7.566 10.724 4.188 16.405-3.362 5.69-10.73 7.565-16.4 4.187h-.006Z"
+								fill="#fafafa"></path></svg
+						>
+						Conoce mi lado humano
+					</a>
+				</div>
+			</div>
+		</div>
+	</article>
+
+	<Tecnologias />
+</section>
+
+<style>
+	@keyframes show {
+		from {
+			opacity: 0;
+			scale: 25%;
+		}
+
+		to {
+			opacity: 1;
+			scale: 100%;
+		}
+	}
+
+	section {
+		view-timeline-name: --section;
+		view-timeline-axis: block;
+
+		animation-timeline: --section;
+		animation-name: show;
+
+		animation-range: entry 25% cover 30%;
+		animation-fill-mode: both;
+	}
+</style>

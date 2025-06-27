@@ -1,14 +1,21 @@
 ---
-import Layout from '../layouts/Layout.astro';
-import Content from '../components/container/Content.astro';
-import '../assets/styles/global.css'
+import Layout from "../layouts/Layout.astro";
+import "../assets/styles/global.css";
+import Tittle from "@/modules/init/views/Tittle.astro";
+import Experiencia from "@/modules/experiencia/views/Experiencia.astro";
+import MyProjects from "@/modules/projects/views/MyProjects";
+import ProgressBar from "@/common/components/astroComponentes/ProgressBar.astro";
+import SobreMi from "@/modules/about/views/SobreMi.astro";
+import Contacto from "@/modules/contacto/views/Contacto.astro";
+import { Toaster } from "react-hot-toast";
 ---
 
 <Layout>
-	<Content/>
+	<Toaster position="bottom-center" client:only="react" />
+	<ProgressBar />
+	<Tittle />
+	<Experiencia />
+	<MyProjects client:only="react" />
+	<SobreMi />
+	<Contacto />
 </Layout>
-
-
-
-
-
