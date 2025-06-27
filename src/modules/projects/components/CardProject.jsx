@@ -12,7 +12,7 @@ function CardProject({
   showGif,
 }) {
   return (
-    <div className="max-w-sm dark:bg-[#28282830] dark:bg-opacity-50 transparent border border-gray-700 rounded-lg shadow dark:bg-gray-800">
+    <div className="max-w-sm dark:border bg-gray-100 border-2 border-gray-700 rounded-lg shadow dark:bg-gray-800">
       <div className="h-[185px]">
         <img
           className="rounded-t-lg h-full w-full object-cover"
@@ -32,7 +32,7 @@ function CardProject({
           {tags.map((tag, i) => (
             <div
               key={i}
-              className="dark:bg-[#28282834] bg-gray-100 badge gap-1 dark:text-[#fafafa] text-gray-800 text-[10px] font-medium inline-flex items-center px-1.5 rounded me-2 py-1 dark:bg-gray-700 border border-gray-500 transition-all"
+              className="dark:bg-[#28282834] bg-gray-200 badge gap-1 dark:text-[#fafafa] text-gray-800 text-[10px] font-medium inline-flex items-center px-1.5 rounded me-2 py-1 dark:bg-gray-700 border border-gray-500 transition-all"
             >
               <span className="mr-1">{tag.icon}</span>
               <span className="text-[12px]">{tag.text}</span>
@@ -44,7 +44,7 @@ function CardProject({
           <a
             href={links[0].url}
             target="_blank"
-            className="w-full border gap-2 text-[12px] sm:text-sm border-gray-700 bg-gray-800 inline-flex items-center px-3 py-2 font-medium text-center text-white hover:border-gray-500 rounded-lg hover:bg-gray-600"
+            className="w-full border gap-2 text-[12px] sm:text-sm border-gray-700 bg-gray-800 dark:bg-gray-900 inline-flex items-center px-3 py-2 font-medium text-center text-white hover:border-gray-500 rounded-lg hover:bg-gray-600"
           >
             <GithubIcon />
             {links[0].label}
@@ -89,7 +89,7 @@ function CardProject({
               aria-label="Ver proyecto"
               href={links[1].url}
               target="_blank"
-              className="w-full border gap-2 text-[12px] sm:text-sm border-gray-700 bg-gray-800 inline-flex items-center px-3 py-2 font-medium text-center text-white rounded-lg hover:border-gray-500 hover:bg-gray-600"
+              className="w-full border gap-2 text-[12px] sm:text-sm border-gray-700 bg-gray-800 dark:bg-gray-900 inline-flex items-center px-3 py-2 font-medium text-center text-white rounded-lg hover:border-gray-500 hover:bg-gray-600"
             >
               <ProjectIcon />
               {links[1].label}

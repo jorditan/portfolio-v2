@@ -19,12 +19,12 @@ function MyProjects() {
         🏗️ Proyectos
       </h2>
       <div className="flex flex-col pb-4 gap-5 justify-center">
-        <div className="text-sm flex font-medium text-center border-b border-gray-400 dark:border-gray-700">
+        <div className="text-sm flex font-medium text-center border-b border-gray-800 dark:border-gray-500">
           <ul className="flex flex-wrap -mb-px">
             <li className="me-2" onClick={() => handleView("front")}>
               <span
                 data-view="front"
-                className={`front cursor-pointer transition-all inline-block  dark:text-gray-400 text-gray-700 p-4 border-b-1 rounded-t-lg ${
+                className={`front cursor-pointer transition-all inline-block  dark:text-gray-400 text-gray-400 p-4 border-b-1 rounded-t-lg ${
                   actualView === "front"
                     ? "dark:text-sky-300  text-sky-600 border-b-2 dark:border-[#71d1fa] border-sky-500"
                     : ""
@@ -37,7 +37,7 @@ function MyProjects() {
               <span
                 data-view="design"
                 onClick={() => handleView("design")}
-                className={`front cursor-pointer transition-all inline-block dark:text-gray-400 text-gray-700 p-4 border-b-1 rounded-t-lg ${
+                className={`front cursor-pointer transition-all inline-block dark:text-gray-400 text-gray-400 p-4 border-b-1 rounded-t-lg ${
                   actualView === "design"
                     ? "dark:text-sky-300  text-sky-600 border-b-2 dark:border-[#71d1fa] border-sky-500"
                     : ""

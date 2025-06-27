@@ -19,7 +19,7 @@ function Modal({ buttonText, title, text, video }) {
     <>
       <button
         onClick={() => setIsOpen(true)}
-        className="w-full border gap-2 text-[12px] sm:text-sm border-gray-700 bg-gray-800 inline-flex items-center px-3 py-2 font-medium text-center text-white rounded-lg hover:border-gray-500 hover:bg-gray-600"
+        className="w-full border gap-2 text-[12px] sm:text-sm border-gray-700 dark:bg-gray-900 bg-gray-800 inline-flex items-center px-3 py-2 font-medium text-center text-white rounded-lg hover:border-gray-500 hover:bg-gray-600"
         type="button"
       >
         <GifIcon />
@@ -37,7 +37,7 @@ function Modal({ buttonText, title, text, video }) {
                 <button
                   type="button"
                   onClick={() => setIsOpen(false)}
-                  className="text-gray-400 bg-transparent hover:bg-gray-200 hover:text-gray-900 rounded-lg text-sm w-8 h-8 ms-auto inline-flex justify-center items-center dark:hover:bg-gray-600 dark:hover:text-white"
+                  className="text-gray-400 bg-transparent hover:bg-gray-200 hover:text-gray-900 rounded-lg text-sm w-8 h-8 ms-auto inline-flex justify-center items-center dark:bg-gray-900 dark:hover:bg-gray-600 dark:hover:text-white"
                 >
                   ✕
                 </button>

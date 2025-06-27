@@ -82,39 +82,25 @@ import ThemeCabezaScript from "./theme-cabeza-script.astro";
 	}
 
 	body::before {
-		content: "";
-		position: fixed;
-		inset: 0;
-		z-index: 0;
-		pointer-events: none;
-		background-image: none; /* default sin grid */
-		background-color: transparent;
-	}
+  content: "";
+  position: fixed;
+  inset: 0;
+  z-index: -1;
+  pointer-events: none;
+  background-image:
+    url("data:image/svg+xml,%3Csvg width='40' height='40' viewBox='0 0 40 40' fill='none' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M40 0H0V40' stroke='%23000000' stroke-opacity='0.04'/%3E%3C/svg%3E"),
+    radial-gradient(circle at 50% 30%, rgba(255, 255, 255, 0.08), transparent 70%);
+  background-repeat: repeat, no-repeat;
+  background-size: 40px 40px, cover;
+  background-blend-mode: overlay;
+}
 
-	/* este es el modo claro, explícito */
-	body:not(.dark)::before {
-		background-image:
-			url("data:image/svg+xml,%3Csvg width='40' height='40' viewBox='0 0 40 40' fill='none' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M40 0H0V40' stroke='%23000000' stroke-opacity='0.03'/%3E%3C/svg%3E"),
-			radial-gradient(
-				circle at 50% 30%,
-				rgba(255, 255, 255, 0.1),
-				transparent 70%
-			);
-		background-blend-mode: overlay;
-	}
-
-	/* este es el modo dark */
-	body.dark::before {
-		background-image:
-			url("data:image/svg+xml,%3Csvg width='40' height='40' viewBox='0 0 40 40' fill='none' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M40 0H0V40' stroke='%23ffffff' stroke-opacity='0.05'/%3E%3C/svg%3E"),
-			radial-gradient(
-				circle at 50% 30%,
-				rgba(255, 255, 255, 0.05),
-				transparent 70%
-			);
-		background-blend-mode: lighten;
-	}
-
+	html.dark body::before {
+  background-image:
+    url("data:image/svg+xml,%3Csvg width='40' height='40' viewBox='0 0 40 40' fill='none' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M40 0H0V40' stroke='%23ffffff' stroke-opacity='0.04'/%3E%3C/svg%3E"),
+    radial-gradient(circle at 50% 30%, rgba(255, 255, 255, 0.08), transparent 70%);
+  background-blend-mode: lighten;
+}
 	::-webkit-scrollbar {
 		width: 5px;
 	}
