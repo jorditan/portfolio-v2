@@ -44,7 +44,7 @@ function CardProject({
           <a
             href={links[0].url}
             target="_blank"
-            className="w-full border gap-2 text-[12px] sm:text-sm border-gray-700 bg-gray-800 dark:bg-gray-900 inline-flex items-center px-3 py-2 font-medium text-center text-white hover:border-gray-500 rounded-lg hover:bg-gray-600"
+            className="w-full border gap-2 text-[12px] sm:text-sm border-gray-700 bg-gray-700 dark:bg-gray-900 inline-flex items-center px-3 py-2 font-medium text-center text-white hover:border-gray-500 rounded-lg hover:bg-gray-800 dark:hover:bg-gray-950"
           >
             <GithubIcon />
             {links[0].label}
@@ -89,7 +89,7 @@ function CardProject({
               aria-label="Ver proyecto"
               href={links[1].url}
               target="_blank"
-              className="w-full border gap-2 text-[12px] sm:text-sm border-gray-700 bg-gray-800 dark:bg-gray-900 inline-flex items-center px-3 py-2 font-medium text-center text-white rounded-lg hover:border-gray-500 hover:bg-gray-600"
+              className="w-full border gap-2 text-[12px] sm:text-sm border-gray-700 bg-gray-700 dark:bg-gray-900 inline-flex items-center px-3 py-2 font-medium text-center text-white rounded-lg hover:border-gray-500 hover:bg-gray-800 dark:hover:bg-gray-950"
             >
               <ProjectIcon />
               {links[1].label}

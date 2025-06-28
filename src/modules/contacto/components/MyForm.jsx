@@ -44,7 +44,7 @@ function MyForm() {
             value={formData.email}
             onChange={handleChange}
             aria-describedby="helper-text-explanation"
-            className="email border border-gray-700 dark:bg-gray-800 bg-gray-700 text-sm rounded-lg focus:ring-[#3fb6ea] block w-full p-2.5 placeholder-gray-400 :text-[#fafafa] dark:focus:border-[#3fb6ea] focus:border-sky-500"
+            className="email border dark:border-gray-700 border-gray-900 border-2 dark:border-1 dark:bg-gray-900 dark:hover:bg-gray-950 hover:bg-gray-800 bg-gray-700 text-sm rounded-lg focus:ring-[#3fb6ea] block w-full p-2.5 placeholder-gray-400 :text-[#fafafa] dark:focus:border-[#3fb6ea] focus:border-sky-500"
             placeholder="Ejemplo: tucorreo@gmail.com"
           />
         </div>
@@ -63,7 +63,7 @@ function MyForm() {
             value={formData.phone}
             onChange={handleChange}
             pattern="[0-9]{2}-[0-9]{4}[0-9]{4}"
-            className="phone block p-2.5 w-full border rounded-lg border-gray-700 dark:bg-gray-800 bg-gray-700 text-sm focus:ring-[#3fb6ea] placeholder-gray-400 text-[#fafafa] dark:focus:border-[#3fb6ea] focus:border-sky-500"
+            className="phone block p-2.5 w-full border rounded-lg dark:border-gray-700 border-gray-900 border-2 dark:border-1 dark:bg-gray-900 dark:hover:bg-gray-950 hover:bg-gray-800 bg-gray-700 text-sm focus:ring-[#3fb6ea] placeholder-gray-400 text-[#fafafa] dark:focus:border-[#3fb6ea] focus:border-sky-500"
             placeholder="Formato: 11-12345678"
             required
           />
@@ -82,7 +82,7 @@ function MyForm() {
             value={formData.message}
             onChange={handleChange}
             rows="4"
-            className={`message block p-2.5 w-full border-gray-700 dark:bg-gray-800 bg-gray-700 text-sm rounded-lg focus:ring-[#3fb6ea] placeholder-gray-400 text-[#fafafa]  dark:focus:border-[#3fb6ea] focus:border-sky-500`}
+            className={`message block p-2.5 w-full dark:border-gray-700 border-gray-900 border-2 dark:border-1 dark:bg-gray-900 dark:hover:bg-gray-950 hover:bg-gray-800 bg-gray-700 text-sm rounded-lg focus:ring-[#3fb6ea] placeholder-gray-400 text-[#fafafa]  dark:focus:border-[#3fb6ea] focus:border-sky-500`}
             placeholder="Ejemplo: Me gustaría ponerme en contacto para..."
           />
         </div>

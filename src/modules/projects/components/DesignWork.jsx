@@ -1,7 +1,7 @@
 function DesignWork() {
   return (
     <article className="flex flex-wrap justify-center gap-10">
-      <div className="max-w-sm  dark:bg-[#28282830] dark:bg-opacity-50 transparent border border-gray-700 rounded-lg shadow dark:bg-gray-800">
+      <div className="max-w-sm dark:border bg-gray-100 border-2 border-gray-700 rounded-lg shadow dark:bg-gray-800">
         <div className="h-[185px]">
           <img
             className="rounded-t-lg h-full w-full object-cover object-top"
@@ -94,7 +94,7 @@ function DesignWork() {
         </div>
       </div>
 
-      <div className="max-w-sm dark:bg-[#28282830] dark:bg-opacity-50 transparent border border-gray-700 rounded-lg shadow dark:bg-gray-800">
+      <div className="max-w-sm dark:border bg-gray-100 border-2 border-gray-700 rounded-lg shadow dark:bg-gray-800">
         <div className="h-[185px]">
           <img
             className="rounded-t-lg h-full w-full object-cover object-top"
