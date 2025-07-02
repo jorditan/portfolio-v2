@@ -25,20 +25,20 @@ function ThemeSelector() {
   return (
     <>
       <div
-					id="themeButton"
-					role="tooltip"
-					className="absolute z-10 invisible inline-block px-3 py-2 text-sm font-medium text-[#fafafa] dark:text-gray-900 bg-[#0f172a] dark:bg-white border dark:border-gray-200 rounded-lg shadow-sm opacity-0 tooltip"
-				>
-					Cambiar tema
-					<div className="tooltip-arrow" data-popper-arrow></div>
-				</div>
+        id="themeButton"
+        role="tooltip"
+        className="absolute z-10 invisible inline-block px-3 py-2 text-sm font-medium text-[#fafafa] dark:text-gray-900 bg-[#0f172a] dark:bg-white border dark:border-gray-200 rounded-lg shadow-sm opacity-0 tooltip"
+      >
+        Cambiar tema
+        <div className="tooltip-arrow" data-popper-arrow></div>
+      </div>
       <button
         onClick={handleToggle}
         data-tooltip-target="themeButton"
         className="rounded-full"
       >
         {theme === "dark" ? (
-          <SunIcon  className={`transition-all hover:scale-110 ${classIcon}`} />
+          <SunIcon className={`transition-all hover:scale-110 ${classIcon}`} />
         ) : (
           <MoonIcon className={`transition-all hover:scale-110 ${classIcon}`} />
         )}
