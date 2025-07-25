@@ -63,7 +63,7 @@ function DesignWork() {
             <a
               href="https://www.behance.net/gallery/208245225/Letterboxd-redesign-Case-of-study-UXUI"
               target="_blank"
-              className="w-full border gap-2 border-gray-700 bg-gray-800 inline-flex items-center px-3 py-2 text-sm font-medium text-center text-white rounded-lg hover:border-gray-500 hover:bg-gray-600"
+              className="w-full border gap-2 text-[12px] sm:text-sm border-gray-700 bg-gray-700 dark:bg-gray-900 inline-flex items-center px-3 py-2 font-medium text-center text-white hover:border-gray-500 rounded-lg hover:bg-gray-800 dark:hover:bg-gray-950"
             >
               <svg
                 height="22px"
@@ -162,7 +162,7 @@ function DesignWork() {
             <a
               href="https://test-phishing.hackmetrix.com/"
               target="_blank"
-              className="border gap-2 border-gray-700 w-full bg-gray-800 inline-flex items-center px-3 py-2 text-sm font-medium text-center text-white rounded-lg hover:border-gray-500 hover:bg-gray-600"
+              className="w-full border gap-2 text-[12px] sm:text-sm border-gray-700 bg-gray-700 dark:bg-gray-900 inline-flex items-center px-3 py-2 font-medium text-center text-white hover:border-gray-500 rounded-lg hover:bg-gray-800 dark:hover:bg-gray-950"
             >
               <svg
                 height="22px"
