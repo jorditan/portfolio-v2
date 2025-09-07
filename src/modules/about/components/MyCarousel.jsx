@@ -32,6 +32,13 @@ function MyCarousel() {
                 alt="Foto merendando"
               />
             </div>
+            <div class="hidden duration-700 ease-in-out " data-carousel-item>
+              <img
+                class="rounded-lg  object-center"
+                src="/foto_playa.webp"
+                alt="Foto en la playa de Entre Rios"
+              />
+            </div>
           </div>
 
           <button

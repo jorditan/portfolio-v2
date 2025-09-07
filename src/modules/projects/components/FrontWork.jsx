@@ -17,7 +17,7 @@ function FrontWork() {
         altImage="I Love Pomodoro"
         links={[
           {
-            label: "Ver en GitHub",
+            label: "Ver repositorio",
             url: "https://github.com/jorditan/MyPomodoroClock",
           },
           { label: "Deployear", url: "https://retro-pomodoro.netlify.app/" },
@@ -33,8 +33,8 @@ function FrontWork() {
         altImage="Wollolok"
         links={[
           {
-            label: "Ver en GitHub",
-            url: "https://github.com/jorditan/MyPomodoroClock",
+            label: "Ver repositorio",
+            url: "https://github.com/obj1-unahur-2024s2/TPGameIntegrador-thecoders",
           },
           { label: "Deployear", url: "https://retro-pomodoro.netlify.app/" },
         ]}
@@ -54,7 +54,7 @@ function FrontWork() {
         altImage="Projecto de traducción"
         links={[
           {
-            label: "Ver en GitHub",
+            label: "Ver repositorio",
             url: "https://github.com/jorditan/translate-app",
           },
           {
@@ -77,7 +77,7 @@ function FrontWork() {
         altImage="Pokegame | Pokefinder"
         links={[
           {
-            label: "Ver en GitHub",
+            label: "Ver repositorio",
             url: "https://github.com/jorditan/PokemonGame",
           },
           { label: "Deployear", url: "https://pokemonfinder-vue.netlify.app/" },
