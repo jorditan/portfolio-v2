@@ -17,7 +17,7 @@ function DesignWork() {
           <p className="font-normal dark:text-gray-300 text-gray-800">
             Proyecto realizado en el curso de diseño UX/UI avanzado de
             Coderhouse en donde se aplican diversos métodos de research,
-            discovery y prototipado.
+            diseño de wireframes y prototipado.
           </p>
           <div className="flex flex-wrap">
             <span className="dark:bg-[#28282834] bg-gray-100 badge gap-1 py-1 dark:text-[#fafafa] text-gray-800 text-[10px] font-medium inline-flex items-center px-1.5 rounded me-2 dark:bg-gray-700 border border-gray-500 transition-all">
@@ -193,7 +193,7 @@ function DesignWork() {
         </div>
       </div>
 
-        <div className="max-w-sm dark:border bg-gray-100 border-2 border-gray-700 rounded-lg shadow dark:bg-gray-800">
+      <div className="max-w-sm dark:border bg-gray-100 border-2 border-gray-700 rounded-lg shadow dark:bg-gray-800">
         <div className="h-[185px]">
           <img
             className="rounded-t-lg h-full w-full object-cover"
@@ -214,8 +214,7 @@ function DesignWork() {
             >
               Hackmetrix
             </a>
-            . Su objetivo fue sustituir procesos manuales en Excel para gestionar
-            requisitos legales, reduciendo tiempo y costos.
+            . Realización de entrevistas contextuales con sus respectivos reportes. Aprendizajes a nivel de diseño de producto.
           </p>
           <div className="flex flex-wrap">
             <span className="dark:bg-[#28282834] bg-gray-100 badge gap-1 py-1 dark:text-[#fafafa] text-gray-800 text-[10px] font-medium inline-flex items-center px-1.5 rounded me-2 dark:bg-gray-700 border border-gray-500 transition-all">

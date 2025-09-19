@@ -28,7 +28,7 @@ function FrontWork() {
 
       <CardProject
         title="Wollolok"
-        content="Proyecto integrador de la materia Programacion Orientada a Objetos I de la UNAHUR. Basado en el Age of Empires II con funcionaliadades de estrategias."
+        content="Proyecto integrador de la materia Programacion Orientada a Objetos I de la UNAHUR. Aplicación de polimorfismo, herencia y testing automático"
         image="/wollolok.webp"
         altImage="Wollolok"
         links={[

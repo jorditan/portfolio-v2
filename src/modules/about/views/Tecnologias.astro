@@ -14,12 +14,31 @@ import FigmaIcon from "@/assets/icons/FigmaIcon.astro";
 import IllustratorIcon from "@/assets/icons/IllustratorIcon.astro";
 import PhotoshopIcon from "@/assets/icons/PhotoshopIcon.astro";
 import AstroIcon from "@/assets/icons/AstroIcon.astro";
+import MiroIcon from "@/assets/icons/MiroIcon.astro";
 ---
 
 <article class="mt-9">
 	<div>
-		<h4 class="pb-4 text-[#0f172a] dark:text-[#fafafa]">Mi stack</h4>
+		<h4 class="pb-4 text-[#0f172a] dark:text-[#fafafa]">
+			Herramientas que utilizo:
+		</h4>
 		<div class="flex flex-wrap w-full gap-[16px] md:gap-4 justify-center">
+			<TecnologyCard tooltip="Figma">
+				<FigmaIcon slot="icon" />
+			</TecnologyCard>
+
+			<TecnologyCard tooltip="Miro">
+				<MiroIcon slot="icon" />
+			</TecnologyCard>
+
+			<TecnologyCard tooltip="Photoshop">
+				<PhotoshopIcon slot="icon" />
+			</TecnologyCard>
+
+			<TecnologyCard tooltip="Illustrator">
+				<IllustratorIcon slot="icon" />
+			</TecnologyCard>
+
 			<TecnologyCard tooltip="React">
 				<ReactIcon slot="icon" />
 			</TecnologyCard>
@@ -62,18 +81,6 @@ import AstroIcon from "@/assets/icons/AstroIcon.astro";
 
 			<TecnologyCard tooltip="Sass">
 				<SassIcon slot="icon" />
-			</TecnologyCard>
-
-			<TecnologyCard tooltip="Figma">
-				<FigmaIcon slot="icon" />
-			</TecnologyCard>
-
-			<TecnologyCard tooltip="Photoshop">
-				<PhotoshopIcon slot="icon" />
-			</TecnologyCard>
-
-			<TecnologyCard tooltip="Illustrator">
-				<IllustratorIcon slot="icon" />
 			</TecnologyCard>
 		</div>
 	</div>
