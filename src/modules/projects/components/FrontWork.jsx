@@ -11,18 +11,18 @@ function FrontWork() {
   return (
     <article className="flex flex-wrap justify-center w-full gap-10">
       <CardProject
-        title="I Love Pomodoro"
-        content="Proyecto personal realizado para practicar y utilizar la comunicación entre componentes de Vue. Se usa la API nativa de Javascript para reproducir música."
-        image="/i_love_pomodoro.webp"
-        altImage="I Love Pomodoro"
+        title="Gifs search app"
+        content="Desarrollé una aplicación web en React para buscar y visualizar GIFs, integrando API, aplicando testing y gestionando el estado global con un store."
+        image="/gifs-search-app.webp"
+        altImage="Gifs Search app"
         links={[
           {
             label: "Ver repositorio",
-            url: "https://github.com/jorditan/MyPomodoroClock",
+            url: "https://github.com/jorditan/gifs-app-react",
           },
-          { label: "Deployear", url: "https://retro-pomodoro.netlify.app/" },
+          { label: "Deployear", url: "https://gifs-search-app-react-five.vercel.app/" },
         ]}
-        tags={[{ text: "Vue", icon: <VueIcon /> }]}
+        tags={[{ text: "React", icon: <ReactIcon /> }, { text: "Zustand", icon: <ZustandIcon /> }]}
         showGif={false}
       ></CardProject>
 
@@ -47,9 +47,7 @@ function FrontWork() {
 
       <CardProject
         title="Translate App"
-        content=" Proyecto personal de una aplicación de traducción de idiomas. Se
-        utiliza Zustand para el control de estados y la API de Google
-        Translate."
+        content="Aplicación de traducción de idiomas que utiliza Zustand para el control de estados y la API de Google Translate, ofreciendo traducciones rápidas y precisas"
         image="/translate.webp"
         altImage="Projecto de traducción"
         links={[
@@ -72,7 +70,7 @@ function FrontWork() {
 
       <CardProject
         title="PokeGame | Pokefinder"
-        content="Proyecto realizado gracias al curso de Fernando Herrera. Se toman las bases iniciales y se aplican mejoras en la UI, UX y jugabilidad."
+        content="Mejora de un juego existente aplicando principios de UX/UI para optimizar la experiencia del usuario y aumentar la jugabilidad."
         image="/pokegame.webp"
         altImage="Pokegame | Pokefinder"
         links={[
