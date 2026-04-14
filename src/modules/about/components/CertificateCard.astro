@@ -1,0 +1,44 @@
+---
+import { Code, PenTool } from "lucide-react";
+
+const { title, image, url, type } = Astro.props;
+---
+
+<article
+	class="group flex h-full flex-col overflow-hidden rounded-md m-2 border border-slate-50 bg-white/80 shadow-sm shadow-slate-900/5 backdrop-blur-sm transition-all duration-300 hover:-translate-y-1 dark:hover:border-slate-50 hover:border-sky-400/70 dark:border-white/10 dark:bg-gray-800"
+>
+  <a href={url} target="_blank">
+    <div
+      class="aspect-[16/9] overflow-hidden border-b border-slate-200/80 bg-slate-100 dark:border-white/10 dark:bg-slate-900/70"
+    >
+      <img
+        src={image}
+        class="h-full w-full object-cover object-center transition-transform duration-500 group-hover:scale-[1.03]"
+        alt={title}
+        loading="lazy"
+      />
+    </div>
+  
+    <div class="flex flex-1 flex-col gap-2 p-3">
+      <div class="flex flex-col gap-2 h-unset">
+        <h6
+          class="font-semibold leading-snug truncate  text-slate-900 dark:text-slate-100 md:text-md text-sm"
+        >
+          {title}
+        </h6>
+
+        {type === "design" ? (
+            <span class="text-xs flex items-center border border-sky-500 gap-1  bg-sky-100 dark:bg-sky-800 dark:text-sky-200 p-1 w-fit rounded-md  text-sky-500 font-medium">
+              <PenTool className="h-3 w-3" />
+              Diseño</span>
+          ) : (
+            <span class="text-xs flex items-center border border-green-500 gap-1 bg-green-100 dark:bg-green-800 dark:text-green-300 p-1 w-fit rounded-md  text-green-500 font-medium">
+              <Code className="h-3 w-3" />
+              Desarrollo</span>
+          ) 
+        }
+  
+      </div>
+    </div>
+  </a>
+</article>

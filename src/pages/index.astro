@@ -7,6 +7,7 @@ import MyProjects from "@/modules/projects/views/MyProjects";
 import ProgressBar from "@/common/components/astroComponentes/ProgressBar.astro";
 import SobreMi from "@/modules/about/views/SobreMi.astro";
 import Contacto from "@/modules/contacto/views/Contacto.astro";
+import SectionDivider from "@/modules/about/components/SectionDivider.astro";
 import { Toaster } from "react-hot-toast";
 ---
 
@@ -14,8 +15,12 @@ import { Toaster } from "react-hot-toast";
 	<Toaster position="bottom-center" client:only="react" />
 	<ProgressBar />
 	<Tittle />
+	<SectionDivider className="mx-4 sm:mx-auto max-w-[32rem] md:max-w-[42rem] lg:max-w-4xl" />
 	<Experiencia />
+	<SectionDivider className="mx-4 sm:mx-auto max-w-[32rem] md:max-w-[42rem] lg:max-w-4xl" />
 	<MyProjects client:only="react" />
+	<SectionDivider className="mx-4 sm:mx-auto max-w-[32rem] md:max-w-[42rem] lg:max-w-4xl" />
 	<SobreMi />
+	<SectionDivider className="mx-4 sm:mx-auto max-w-[32rem] md:max-w-[42rem] lg:max-w-4xl" />
 	<Contacto />
 </Layout>

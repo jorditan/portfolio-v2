@@ -1,0 +1,31 @@
+---
+import { Award } from "lucide-react";
+const {certificados} = Astro.props;
+import CertificateCard from "../components/CertificateCard.astro";
+import SectionHeader from "@/common/components/astroComponentes/SectionHeader.astro";
+---
+
+<section
+  id="certificados"
+  aria-label="Mis certificados"
+  class="flex flex-col gap-6 pt-12"
+  >
+  <div class="flex flex-col gap-5">
+    <SectionHeader title="Certificados" size="sm">
+      <Award slot="icon" className="text-sky-500 dark:text-sky-300 h-6 w-6" />
+    </SectionHeader>
+    <div class="grid grid-cols-1 gap-2 sm:grid-cols-2 xl:grid-cols-3">
+      {
+        certificados.map((certificado: any) => (
+          <CertificateCard
+            title={certificado.title}
+            image={certificado.image}
+            url={certificado.url}
+            type={certificado.type}
+          />
+        ))
+      }
+    </div>
+  </div>
+
+</section>

@@ -1,4 +1,5 @@
 ---
+import { SquareMousePointer } from "lucide-react";
 import TecnologyCard from "../components/TecnologyCard.astro";
 import ReactIcon from "@/assets/icons/ReactIcon.astro";
 import VueIcon from "@/assets/icons/VueIcon.astro";
@@ -18,13 +19,14 @@ import MiroIcon from "@/assets/icons/MiroIcon.astro";
 import ClaudeIcon from "@/assets/icons/claudeIcon.astro";
 import BoltIcon from "@/assets/icons/BoltIcon.astro";
 import V0Icon from "@/assets/icons/v0Icon.astro";
+import SectionHeader from "@/common/components/astroComponentes/SectionHeader.astro";
 ---
 
 <article class="mt-9">
 	<div>
-		<h4 class="pb-4 text-[#0f172a] dark:text-[#fafafa]">
-			Herramientas que utilizo:
-		</h4>
+		<SectionHeader title="Herramientas que manejo" size="sm">
+			<SquareMousePointer slot="icon" className="text-sky-500 dark:text-sky-300 h-6 w-6" />
+		</SectionHeader>
 		<div class="flex flex-wrap w-full gap-[16px] md:gap-4 justify-center">
 			<TecnologyCard tooltip="Figma">
 				<FigmaIcon slot="icon" />
@@ -100,10 +102,3 @@ import V0Icon from "@/assets/icons/v0Icon.astro";
 		</div>
 	</div>
 </article>
-
-<style>
-	svg {
-		height: 40px;
-		width: 40px;
-	}
-</style>

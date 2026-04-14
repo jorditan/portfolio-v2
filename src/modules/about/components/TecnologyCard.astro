@@ -1,12 +1,16 @@
 ---
 const { tooltip } = Astro.props;
+
+const seed = [...tooltip].reduce((acc, char) => acc + char.charCodeAt(0), 0);
+const duration = 3 + (seed % 5) * 0.4;
+const delay = (seed % 7) * 0.45;
 ---
 
 <div
 	id={tooltip}
 	data-tooltip-placement="top"
 	role="tooltip"
-	class="absolute z-10 invisible inline-block px-3 py-2 text-sm font-medium text-[#fafafa] dark:text-gray-900 bg-[#0f172a] dark:bg-white border dark:border-gray-200 rounded-lg shadow-sm opacity-0 tooltip"
+	class="absolute z-10 invisible inline-block px-3 py-2 text-sm font-medium text-slate-50 dark:text-gray-900 bg-slate-900 dark:bg-white border dark:border-gray-200 rounded-lg shadow-sm opacity-0 tooltip"
 >
 	{tooltip}
 	<div class="tooltip-arrow" data-popper-arrow></div>
@@ -14,7 +18,35 @@ const { tooltip } = Astro.props;
 
 <div
 	data-tooltip-target={tooltip}
-	class="w-[4rem] flex-col hover:animate-pulse hover:scale-110 transition-all flex justify-center items-center h-[4rem] dark:bg-[#28282830] border border-gray-700 rounded-lg shadow dark:bg-gray-900 bg-gray-800"
+		class="tech-card w-[4rem] animate animate-pulse flex-col transition-transform duration-500 ease-[cubic-bezier(0.22,1,0.36,1)] hover:scale-[1.18] flex justify-center items-center h-[4rem] dark:bg-black/12 border border-gray-700 rounded-lg shadow dark:bg-gray-900 bg-gray-800 will-change-transform"
+	style={`--tech-card-duration:${duration}s; --tech-card-delay:-${delay}s;`}
 >
 	<slot name="icon" />
 </div>
+
+<style>
+	.tech-card {
+		animation: tech-card-breathe var(--tech-card-duration) cubic-bezier(0.45, 0.05, 0.55, 0.95) var(--tech-card-delay) infinite;
+	}
+
+	.tech-card:hover {
+		animation-play-state: paused;
+	}
+
+	@keyframes tech-card-breathe {
+		0%,
+		100% {
+			transform: scale(1);
+		}
+
+		50% {
+			transform: scale(1.18);
+		}
+	}
+
+	@media (prefers-reduced-motion: reduce) {
+		.tech-card {
+			animation: none;
+		}
+	}
+</style>

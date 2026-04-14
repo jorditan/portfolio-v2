@@ -1,0 +1,17 @@
+---
+const { className = "" } = Astro.props;
+---
+
+<div
+  aria-hidden="true"
+  class:list={[
+    "flex items-center justify-center py-8 sm:py-10",
+    className,
+  ]}
+>
+  <div class="h-px flex-1 bg-gradient-to-r from-transparent via-slate-300 to-slate-300/10 dark:via-white/20 dark:to-transparent"></div>
+  <div class="mx-4 flex items-center justify-center">
+    <span class="h-2.5 w-2.5 rounded-full border border-sky-400/70 bg-sky-300/80 shadow-[0_0_0_4px_rgba(125,211,252,0.10)] dark:border-sky-300/80 dark:bg-sky-200/90 dark:shadow-[0_0_0_4px_rgba(125,211,252,0.08)]"></span>
+  </div>
+  <div class="h-px flex-1 bg-gradient-to-l from-transparent via-slate-300 to-slate-300/10 dark:via-white/20 dark:to-transparent"></div>
+</div>
