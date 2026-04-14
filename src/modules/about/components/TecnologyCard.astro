@@ -10,7 +10,7 @@ const delay = (seed % 7) * 0.45;
 	id={tooltip}
 	data-tooltip-placement="top"
 	role="tooltip"
-	class="absolute z-10 invisible inline-block px-3 py-2 text-sm font-medium text-[#fafafa] dark:text-gray-900 bg-[#0f172a] dark:bg-white border dark:border-gray-200 rounded-lg shadow-sm opacity-0 tooltip"
+	class="absolute z-10 invisible inline-block px-3 py-2 text-sm font-medium text-slate-50 dark:text-gray-900 bg-slate-900 dark:bg-white border dark:border-gray-200 rounded-lg shadow-sm opacity-0 tooltip"
 >
 	{tooltip}
 	<div class="tooltip-arrow" data-popper-arrow></div>
@@ -18,7 +18,7 @@ const delay = (seed % 7) * 0.45;
 
 <div
 	data-tooltip-target={tooltip}
-		class="tech-card w-[4rem] animate animate-pulse flex-col transition-transform duration-500 ease-[cubic-bezier(0.22,1,0.36,1)] hover:scale-[1.18] flex justify-center items-center h-[4rem] dark:bg-[#28282830] border border-gray-700 rounded-lg shadow dark:bg-gray-900 bg-gray-800 will-change-transform"
+		class="tech-card w-[4rem] animate animate-pulse flex-col transition-transform duration-500 ease-[cubic-bezier(0.22,1,0.36,1)] hover:scale-[1.18] flex justify-center items-center h-[4rem] dark:bg-black/12 border border-gray-700 rounded-lg shadow dark:bg-gray-900 bg-gray-800 will-change-transform"
 	style={`--tech-card-duration:${duration}s; --tech-card-delay:-${delay}s;`}
 >
 	<slot name="icon" />

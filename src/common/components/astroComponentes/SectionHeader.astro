@@ -1,0 +1,26 @@
+---
+/**
+ * SectionHeader — reusable heading with an icon slot.
+ *
+ * Props:
+ *   title  — heading text
+ *   size   — "lg" (h2, default) | "sm" (h4, for sub-sections)
+ */
+const { title, size = "lg" } = Astro.props;
+
+const textClass =
+  size === "sm"
+    ? "text-md md:text-lg"
+    : "text-2xl md:text-3xl";
+
+const Tag = size === "sm" ? "h4" : "h2";
+---
+
+<div class="pb-4 flex gap-2 items-center">
+  <slot name="icon" />
+  <Tag
+    class={`title font-semibold w-fit text-slate-900 dark:text-slate-50 ${textClass}`}
+  >
+    {title}
+  </Tag>
+</div>
