@@ -1,0 +1,41 @@
+---
+const { title, date, description, isActual, img } = Astro.props;
+---
+
+<li class="mb-4 ms-4">
+		<div
+			class="absolute w-3 h-3 bg-sky-600 rounded-full mt-1.5 -start-1.5 border border-white dark:border-gray-900 dark:bg-sky-500"
+		>
+		</div>
+
+			<div class="flex items-center gap-4 pb-1">
+				<img src={img} class="object-cover p-1 border border-[#fafafa73] rounded-xl h-10 w-10" alt={title + " Logo"}>
+				<div class="flex gap-1 flex-col">
+						<time
+							class="mb-1 text-sm font-normal leading-none text-[#282828] dark:text-gray-300"
+							>{date}</time
+						>
+						<div class="flex gap-3 items-center pb-1">
+							<h3
+								class="md:text-lg text-[15px] truncate font-semibold text-gray-900 dark:text-gray-100"
+							>
+								{title}
+							</h3>
+              {
+                isActual && (
+                  <span
+                    class="md:px-1.5 md:py-1 px-1 py-0.5 text-xs dark:bg-blue-200 bg-blue-100 font-medium border-2 border-sky-800 rounded-sm dark:border-sky-500 text-sky-800"
+                    >Actual</span>
+              )}
+						</div>
+				</div>
+			</div>
+					
+			<div class="pb-4">
+						<ol class="pl-4 flex flex-col gap-2">
+							{description.map((item:string) => (
+                <li class="text-sm text-gray-800 dark:text-gray-300 list-disc">{item}</li>
+              ))}
+						</ol>
+			</div>
+	</li>

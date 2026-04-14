@@ -1,0 +1,53 @@
+---
+import { MessageCircleMore } from "lucide-react";
+import ReviewsCarousel from "../components/ReviewsCarousel";
+
+const reviews = [
+  {
+    name: "Ana Agustina Flores",
+    role: "Full Stack Developer",
+    job: "Hackmetrix",
+    date: "13 de abril de 2026",
+    avatar: "polly-foto.jpg",
+    message: `Trabajé con Matías en Hackmtrix, él como diseñador UX/UI y yo como developer. Tenía contacto con él diariamente y puedo decir que es una persona comprometida 100% con su trabajo.
+
+Sus diseños lograban llevar a tierra necesidades complejas, adelantaba propuestas en tiempo récord, escuchaba el feedback y aplicaba cambios reduciendo la fricción entre áreas.
+
+Tiene una gran habilidad de comunicación, algo que pude comprobar en múltiples reuniones. También presencié cómo interactuaba e investigaba con los usuarios de la plataforma para entender sus dolores, problemas e ideas.
+
+Más allá de sus habilidades en diseño y producto, es un compañero genial, siempre demostrando productividad, buena onda y un gran compromiso con la empresa.`,
+    url: "https://www.linkedin.com/in/ana-agustina-flores/?lipi=urn%3Ali%3Apage%3Ad_flagship3_profile_view_base_recommendations_details%3B3q0hxh71SbOu2I7KBN7adg%3D%3D",
+  },
+  {
+    name: "Juan Pablo Sgobba",
+    role: "Software Engineer",
+    job: "Hackmetrix",
+    date: "10 de abril de 2026",
+    avatar: "juanpi-foto.jpg",
+    message: `Tuve el privilegio de trabajar con Mati y puedo decir que es uno de esos compañeros que marcan la diferencia en un equipo.
+
+Lo que más me impresiona de él es su capacidad para generar ideas y convertirlas en soluciones. Ante cualquier problema, Mati no solo encuentra una salida, sino que lo hace con una creatividad y velocidad increíbles.
+
+Más allá de lo profesional, es una persona genuina, con quien la relación fue creciendo hasta convertirse en una amistad real. Eso dice mucho de quién es.
+
+Si estás buscando a alguien que aporte valor y confianza desde el primer día, con talento, iniciativa, ideas, opiniones y buena energía, Mati es esa persona. Lo recomiendo sin dudarlo: es la persona correcta y, a nivel humano, también es muy bueno.`,
+    url: "https://www.linkedin.com/in/jpsgobba/?lipi=urn%3Ali%3Apage%3Ad_flagship3_profile_view_base_recommendations_details%3B3q0hxh71SbOu2I7KBN7adg%3D%3D",
+  },
+];
+---
+
+<section id="reviews" aria-label="Reseñas de compañeros" class="flex flex-col gap-6 pt-12">
+  <div class="flex flex-col gap-5">
+    <div class="flex items-center justify-between gap-3">
+      <div class="flex items-center gap-2">
+        <MessageCircleMore className="h-6 w-6 text-sky-500 dark:text-[#71d1fa]" />
+        <h4 class="title w-fit text-md font-semibold text-[#0f172a] dark:text-[#fafafa] md:text-lg">
+          Recomendaciones
+        </h4>
+      </div>
+    </div>
+
+
+    <ReviewsCarousel client:load reviews={reviews} />
+  </div>
+</section>

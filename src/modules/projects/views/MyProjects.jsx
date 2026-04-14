@@ -1,3 +1,4 @@
+import { Brain } from "lucide-react";
 import DesignWork from "../components/DesignWork";
 import FrontWork from "../components/FrontWork";
 import { useState } from "react";
@@ -15,9 +16,12 @@ function MyProjects() {
       id="proyectos"
       aria-label="Mis proyectos"
     >
-      <h2 className="pb-4 title md:text-2xl text-1xl md:text-[3xl] font-semibold w-fit text-[#0f172a] dark:text-[#fafafa]">
-        🏗️ Proyectos
-      </h2>
+      <div className="flex gap-2 justify-start items-center mb-4">
+        <Brain className="text-sky-500  dark:text-[#71d1fa] w-8 h-8" />
+        <h2 className="title md:text-2xl text-1xl md:text-[3xl] font-semibold w-fit text-[#0f172a] dark:text-[#fafafa]">
+          Proyectos
+        </h2>
+      </div>
       <div className="flex flex-col pb-4 gap-5 justify-center">
         <div className="text-sm flex font-medium text-center border-b border-gray-800 dark:border-gray-500">
           <ul className="flex flex-wrap -mb-px">

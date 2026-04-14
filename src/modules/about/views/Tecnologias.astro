@@ -18,13 +18,17 @@ import MiroIcon from "@/assets/icons/MiroIcon.astro";
 import ClaudeIcon from "@/assets/icons/claudeIcon.astro";
 import BoltIcon from "@/assets/icons/BoltIcon.astro";
 import V0Icon from "@/assets/icons/v0Icon.astro";
+import { SquareMousePointer } from "lucide-react";
 ---
 
 <article class="mt-9">
 	<div>
-		<h4 class="pb-4 text-[#0f172a] dark:text-[#fafafa]">
-			Herramientas que utilizo:
-		</h4>
+		<div class="flex gap-1 items-center justify-left pb-4">
+      <SquareMousePointer className="text-sky-500 dark:text-[#71d1fa] h-6 w-6" />
+      <h4 class="title md:text-lg text-md font-semibold w-fit text-[#0f172a] dark:text-[#fafafa]">
+        Herramietas que manejo
+      </h4>
+    </div>
 		<div class="flex flex-wrap w-full gap-[16px] md:gap-4 justify-center">
 			<TecnologyCard tooltip="Figma">
 				<FigmaIcon slot="icon" />
@@ -101,9 +105,4 @@ import V0Icon from "@/assets/icons/v0Icon.astro";
 	</div>
 </article>
 
-<style>
-	svg {
-		height: 40px;
-		width: 40px;
-	}
-</style>
+
