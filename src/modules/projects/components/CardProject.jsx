@@ -23,7 +23,7 @@ function CardProject({
             alt={altImage}
           />
         </div>
-        <div className="p-5 flex flex-col gap-3">
+        <div className="p-5 flex flex-col gap-4">
           <h5 className="text-xl font-bold tracking-tight text-slate-900 dark:text-slate-50">
             {title}
           </h5>

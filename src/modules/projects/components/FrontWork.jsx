@@ -9,7 +9,7 @@ import WollokIcon from "../../../assets/icons/WollokIcon.jsx";
 
 function FrontWork() {
   return (
-    <article className="flex flex-wrap justify-center w-full gap-10">
+    <article className="flex flex-wrap justify-center w-full gap-8">
       <CardProject
         title="Gifs search app"
         content="Desarrollé una aplicación web en React para buscar y visualizar GIFs, integrando API, aplicando testing y gestionando el estado global con un store."

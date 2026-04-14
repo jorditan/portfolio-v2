@@ -28,11 +28,11 @@ const { title, image, url, type } = Astro.props;
         </h6>
 
         {type === "design" ? (
-            <span class="text-xs flex items-center border border-sky-500 gap-1  bg-sky-100 dark:bg-sky-800 dark:text-sky-200 p-1 w-fit rounded-md  text-sky-500 font-medium">
+            <span class="text-xs flex items-center border border-sky-500 gap-2  bg-sky-100 dark:bg-sky-800 dark:text-sky-200 p-1 w-fit rounded-md  text-sky-500 font-medium">
               <PenTool className="h-3 w-3" />
               Diseño</span>
           ) : (
-            <span class="text-xs flex items-center border border-green-500 gap-1 bg-green-100 dark:bg-green-800 dark:text-green-300 p-1 w-fit rounded-md  text-green-500 font-medium">
+            <span class="text-xs flex items-center border border-green-500 gap-2 bg-green-100 dark:bg-green-800 dark:text-green-300 p-1 w-fit rounded-md  text-green-500 font-medium">
               <Code className="h-3 w-3" />
               Desarrollo</span>
           ) 
