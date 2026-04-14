@@ -9,10 +9,10 @@ const { title, date, description, isActual, img } = Astro.props;
 		</div>
 
 			<div class="flex items-center gap-4 pb-1">
-				<img src={img} class="object-cover p-1 border border-[#fafafa73] rounded-xl h-10 w-10" alt={title + " Logo"}>
+				<img src={img} class="object-cover p-1 border border-slate-50/45 rounded-xl h-10 w-10" alt={title + " Logo"}>
 				<div class="flex gap-1 flex-col">
 						<time
-							class="mb-1 text-sm font-normal leading-none text-[#282828] dark:text-gray-300"
+							class="mb-1 text-sm font-normal leading-none text-gray-800 dark:text-gray-300"
 							>{date}</time
 						>
 						<div class="flex gap-3 items-center pb-1">

@@ -17,8 +17,8 @@ function MyProjects() {
       aria-label="Mis proyectos"
     >
       <div className="flex gap-2 justify-start items-center mb-4">
-        <Brain className="text-sky-500  dark:text-[#71d1fa] w-8 h-8" />
-        <h2 className="title md:text-2xl text-1xl md:text-[3xl] font-semibold w-fit text-[#0f172a] dark:text-[#fafafa]">
+        <Brain className="text-sky-500 dark:text-sky-300 w-8 h-8" />
+        <h2 className="title md:text-2xl text-1xl md:text-[3xl] font-semibold w-fit text-slate-900 dark:text-slate-50">
           Proyectos
         </h2>
       </div>
@@ -28,9 +28,9 @@ function MyProjects() {
             <li className="me-2" onClick={() => handleView("front")}>
               <span
                 data-view="front"
-                className={`front cursor-pointer transition-all inline-block  dark:text-gray-400 text-gray-400 p-4 border-b-1 rounded-t-lg ${
+                className={`front cursor-pointer transition-all inline-block dark:text-gray-400 text-gray-400 p-4 border-b-1 rounded-t-lg ${
                   actualView === "front"
-                    ? "dark:text-sky-300  text-sky-600 border-b-2 dark:border-[#71d1fa] border-sky-500"
+                    ? "dark:text-sky-300 text-sky-600 border-b-2 dark:border-sky-300 border-sky-500"
                     : ""
                 }`}
               >
@@ -43,7 +43,7 @@ function MyProjects() {
                 onClick={() => handleView("design")}
                 className={`front cursor-pointer transition-all inline-block dark:text-gray-400 text-gray-400 p-4 border-b-1 rounded-t-lg ${
                   actualView === "design"
-                    ? "dark:text-sky-300  text-sky-600 border-b-2 dark:border-[#71d1fa] border-sky-500"
+                    ? "dark:text-sky-300 text-sky-600 border-b-2 dark:border-sky-300 border-sky-500"
                     : ""
                 }`}
               >
