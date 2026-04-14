@@ -1,6 +1,7 @@
 ---
 import { BriefcaseIcon } from "lucide-react";
 import Timeline from "../components/Timeline.astro";
+import SectionHeader from "@/common/components/astroComponentes/SectionHeader.astro";
 ---
 
 <section
@@ -11,14 +12,9 @@ import Timeline from "../components/Timeline.astro";
 		class="flex flex-col gap-5 justify-center"
 		aria-label="Mi experiencia laboral"
 	>
-		<div class="flex gap-2 pb-4 items-center">
-			<BriefcaseIcon className="text-sky-500 dark:text-[#71d1fa] h-8 w-8"/>
-			<h2
-				class="title text-2xl md:text-[3xl] font-semibold w-fit text-[#141a28] dark:text-[#fafafa]"
-			>
-				Mi experiencia laboral
-			</h2>
-		</div>
+		<SectionHeader title="Mi experiencia laboral">
+			<BriefcaseIcon slot="icon" className="text-sky-500 dark:text-sky-300 h-8 w-8" />
+		</SectionHeader>
 
 		<div class="md:w-3/4 w-full">
 			<Timeline />
