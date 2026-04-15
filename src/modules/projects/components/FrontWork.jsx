@@ -11,6 +11,7 @@ function FrontWork() {
   return (
     <article className="flex flex-wrap justify-center w-full gap-8">
       <CardProject
+        motionOrder={0}
         title="Gifs search app"
         content="Desarrollé una aplicación web en React para buscar y visualizar GIFs, integrando API, aplicando testing y gestionando el estado global con un store."
         image="/gifs-search-app.webp"
@@ -27,6 +28,7 @@ function FrontWork() {
       ></CardProject>
 
       <CardProject
+        motionOrder={1}
         title="Wollolok"
         content="Proyecto integrador de la materia Programacion Orientada a Objetos I de la UNAHUR. Aplicación de polimorfismo, herencia y testing automático"
         image="/wollolok.webp"
@@ -46,6 +48,7 @@ function FrontWork() {
       ></CardProject>
 
       <CardProject
+        motionOrder={2}
         title="Translate App"
         content="Aplicación de traducción de idiomas que utiliza Zustand para el control de estados y la API de Google Translate, ofreciendo traducciones rápidas y precisas"
         image="/translate.webp"
@@ -69,6 +72,7 @@ function FrontWork() {
       ></CardProject>
 
       <CardProject
+        motionOrder={3}
         title="PokeGame | Pokefinder"
         content="Mejora de un juego existente aplicando principios de UX/UI para optimizar la experiencia del usuario y aumentar la jugabilidad."
         image="/pokegame.webp"

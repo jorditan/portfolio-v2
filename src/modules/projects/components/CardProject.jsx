@@ -12,9 +12,19 @@ function CardProject({
   links,
   tags,
   showGif,
+  motionOrder = 0,
 }) {
   return (
-    <div className="p-3 border-solid bg-gray-200 shadow-sm bg-transparent backdrop-blur-md hover:rotate-2 transition-all rounded-lg border-2 isolate aspect-video dark:bg-white/10 ring-1 ring-black/ dark:border-gray-500 hover:dark:border-gray-300 border-gray-500 hover:border-gray-900 hover:backdrop-blur-lg">
+    <div
+      className="p-3 border-solid bg-gray-200 shadow-sm bg-transparent backdrop-blur-md hover:rotate-2 transition-all rounded-lg border-2 isolate aspect-video dark:bg-white/10 ring-1 ring-black/ dark:border-gray-500 hover:dark:border-gray-300 border-gray-500 hover:border-gray-900 hover:backdrop-blur-lg"
+      data-reveal-item
+      style={{
+        "--motion-delay": `${140 + motionOrder * 80}ms`,
+        "--motion-duration": "var(--motion-duration-base)",
+        "--motion-distance": "18px",
+        "--motion-blur": "4px",
+      }}
+    >
       <div className="max-w-sm dark:border bg-gray-200 border-2 border-gray-700 rounded-md shadow-md dark:bg-gray-800">
         <div className="h-[185px]">
           <img

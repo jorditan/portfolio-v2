@@ -12,9 +12,14 @@ import SectionHeader from "@/common/components/astroComponentes/SectionHeader.as
 		class="flex flex-col gap-6 justify-center"
 		aria-label="Mi experiencia laboral"
 	>
-		<SectionHeader title="Mi experiencia laboral">
-			<BriefcaseIcon slot="icon" className="text-sky-500 dark:text-sky-300 h-8 w-8" />
-		</SectionHeader>
+		<div
+			data-reveal-item
+			style="--motion-delay: 0ms; --motion-duration: var(--motion-duration-fast); --motion-distance: 12px;"
+		>
+			<SectionHeader title="Mi experiencia laboral">
+				<BriefcaseIcon slot="icon" className="text-sky-500 dark:text-sky-300 h-8 w-8" />
+			</SectionHeader>
+		</div>
 
 		<div class="md:w-3/4 w-full">
 			<Timeline />

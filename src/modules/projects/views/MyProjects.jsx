@@ -16,13 +16,21 @@ function MyProjects() {
       id="proyectos"
       aria-label="Mis proyectos"
     >
-      <div className="flex gap-2 justify-start items-center mb-4">
+      <div
+        className="flex gap-2 justify-start items-center mb-4"
+        data-reveal-item
+        style={{ "--motion-delay": "0ms", "--motion-duration": "var(--motion-duration-fast)", "--motion-distance": "12px" }}
+      >
         <Brain className="text-sky-500 dark:text-sky-300 w-8 h-8" />
         <h2 className="title md:text-2xl text-1xl md:text-[3xl] font-semibold w-fit text-slate-900 dark:text-slate-50">
           Proyectos
         </h2>
       </div>
-      <div className="flex flex-col pb-4 gap-4 justify-center">
+      <div
+        className="flex flex-col pb-4 gap-4 justify-center"
+        data-reveal-item
+        style={{ "--motion-delay": "70ms", "--motion-duration": "var(--motion-duration-fast)", "--motion-distance": "12px" }}
+      >
         <div className="text-sm flex font-medium text-center border-b border-gray-800 dark:border-gray-500">
           <ul className="flex flex-wrap -mb-px">
             <li className="me-2" onClick={() => handleView("front")}>

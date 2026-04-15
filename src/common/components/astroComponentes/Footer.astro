@@ -1,43 +1,73 @@
 ---
-
+const currentYear = new Date().getFullYear();
 ---
 
 <footer
-	class="bg-gray-800 py-4 shadow dark:bg-gray-800"
+	class="mt-10 w-full bg-gray-800 py-6 shadow dark:bg-gray-800"
+	data-reveal-item
+	style="--motion-delay: 30ms; --motion-duration: var(--motion-duration-base); --motion-distance: 18px; --motion-blur: 4px;"
 >
 	<div
-		class="mx-auto flex w-full max-w-5xl flex-col items-center justify-center gap-4 px-4 text-center sm:flex-row sm:flex-wrap sm:justify-between sm:text-left"
+		class="mx-auto flex w-full max-w-5xl flex-col gap-6 px-4 sm:px-6"
 	>
-		<span class="text-xs leading-relaxed text-gray-300 dark:text-gray-400 sm:text-sm"
-			>© 2025 <a
-				href="https://www.linkedin.com/in/matias-jordan/"
-				target="_blank"
-				class="hover:underline text-gray-300">Matías Owen Jordán</a
-			>.
-		</span>
-		<ul
-			class="flex flex-wrap items-center justify-center gap-x-4 gap-y-2 text-xs font-medium text-gray-500 dark:text-gray-400 sm:justify-end sm:gap-x-6 sm:text-sm"
-		>
-			<li>
-				<a
-					href="https://github.com/jorditan"
-					target="_blank"
-					class="text-gray-300 hover:underline">Github</a
-				>
-			</li>
-			<li>
-				<a
-					href="https://www.behance.net/matiasowenjordan"
-					class="text-gray-300 hover:underline"
-					target="_blank">Behance</a
-				>
-			</li>
-			<li>
-				<a
-					href="mailto:matiasowjordan@gmail.com"
-					class="text-gray-300 hover:underline">Contacto</a
-				>
-			</li>
-		</ul>
+		<div class="flex flex-col gap-4 border-b border-white/10 pb-5">
+
+			<div class="grid gap-3 sm:grid-cols-2">
+					<span class="footer-label">Email</span>
+					<span class="footer-value">matiasowjordan@gmail.com</span>
+
+
+					<span class="footer-label">Teléfono</span>
+					<span class="footer-value">+54 11 73675158</span>
+
+			</div>
+		</div>
+
+		<div class="flex flex-col gap-2 text-xs leading-relaxed text-gray-300 sm:flex-row sm:items-center sm:justify-between sm:text-sm">
+			<p>© {currentYear} Matías Jordán</p>
+			<p>Desarrollado en Astro</p>
+		</div>
 	</div>
 </footer>
+
+<style scoped>
+	.footer-link-card {
+		display: flex;
+		flex-direction: column;
+		gap: 0.35rem;
+		border-radius: 0.85rem;
+		border: 1px solid rgb(255 255 255 / 0.1);
+		background: rgb(255 255 255 / 0.04);
+		padding: 0.9rem 1rem;
+		transition:
+			border-color 180ms ease,
+			background-color 180ms ease,
+			transform 180ms ease,
+			color 180ms ease;
+	}
+
+	.footer-link-card:hover {
+		transform: translateY(-1px);
+		border-color: rgb(125 211 252 / 0.42);
+		background: rgb(255 255 255 / 0.08);
+	}
+
+
+	.footer-value {
+		font-size: 0.92rem;
+		font-weight: 500;
+		line-height: 1.45;
+		color: rgb(248 250 252);
+		word-break: break-word;
+	}
+
+	@media (prefers-reduced-motion: reduce) {
+		.footer-link-card {
+			transition: none;
+		}
+
+		.footer-link-card:hover {
+			transform: none;
+		}
+	}
+</style>

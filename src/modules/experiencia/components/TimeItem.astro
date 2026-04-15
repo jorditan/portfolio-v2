@@ -1,10 +1,14 @@
 ---
-const { title, date, description, url, img } = Astro.props;
+const { title, date, description, url, img, order = 0 } = Astro.props;
 ---
 
-<li class="mb-4 ms-4">
+<li
+	class="relative mb-4 ms-4"
+	data-reveal-item
+	style={`--motion-delay: ${120 + order * 90}ms; --motion-duration: var(--motion-duration-base); --motion-distance: 16px; --motion-blur: 4px;`}
+>
 	<div
-		class="absolute w-3 h-3 bg-sky-600 rounded-full mt-1.5 -start-1.5 border border-white dark:border-gray-900 dark:bg-sky-500"
+		class="absolute top-1.5 w-3 h-3 bg-sky-600 rounded-full -start-1.5 border border-white dark:border-gray-900 dark:bg-sky-500"
 	>
 	</div>
 

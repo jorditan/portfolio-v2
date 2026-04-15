@@ -69,39 +69,89 @@
   }
 }
 
-@keyframes show {
-  from {
-    opacity: 0;
-    scale: 25%;
+:root {
+  --motion-ease-premium: cubic-bezier(0.22, 1, 0.36, 1);
+  --motion-duration-fast: 520ms;
+  --motion-duration-base: 680ms;
+  --motion-duration-slow: 820ms;
+  --motion-distance-sm: 14px;
+  --motion-distance-md: 20px;
+  --motion-blur-sm: 6px;
+  --motion-blur-md: 10px;
+}
+
+html.js.motion-enabled [data-motion="hero-item"],
+html.js.motion-enabled [data-reveal-item] {
+  opacity: 0;
+  transform: translate3d(0, var(--motion-distance, var(--motion-distance-sm)), 0);
+  filter: blur(var(--motion-blur, 0px));
+  transition:
+    opacity var(--motion-duration, var(--motion-duration-base)) var(--motion-ease-premium),
+    transform var(--motion-duration, var(--motion-duration-base)) var(--motion-ease-premium),
+    filter var(--motion-duration, var(--motion-duration-base)) var(--motion-ease-premium);
+  transition-delay: var(--motion-delay, 0ms);
+  will-change: opacity, transform, filter;
+}
+
+html.js.motion-enabled [data-motion="hero-static-word"] {
+  transform: translate3d(0, 12px, 0);
+  transition: transform var(--motion-duration-slow) var(--motion-ease-premium);
+  transition-delay: var(--motion-delay, 0ms);
+  will-change: transform;
+}
+
+html.js.motion-enabled [data-motion="hero-item"].is-visible,
+html.js.motion-enabled [data-reveal-item].is-visible {
+  opacity: 1;
+  transform: translate3d(0, 0, 0);
+  filter: blur(0);
+}
+
+[data-motion="hero-static-word"].is-visible {
+  transform: translate3d(0, 0, 0);
+}
+
+[data-cursor-glow] {
+  --cursor-x: 50%;
+  --cursor-y: 24%;
+  --cursor-opacity: 0;
+}
+
+html.js.motion-enabled [data-cursor-glow]::after {
+  content: "";
+  position: fixed;
+  inset: 0;
+  pointer-events: none;
+  z-index: 0;
+  opacity: var(--cursor-opacity);
+  background:
+    radial-gradient(circle at var(--cursor-x) var(--cursor-y), rgba(56, 189, 248, 0.07), transparent 16%),
+    radial-gradient(circle at calc(var(--cursor-x) + 6%) calc(var(--cursor-y) + 5%), rgba(255, 255, 255, 0.05), transparent 24%);
+  filter: blur(42px);
+  transition: opacity 220ms ease-out;
+}
+
+@media (hover: none), (pointer: coarse), (max-width: 767px) {
+  html.js.motion-enabled [data-cursor-glow]::after {
+    display: none;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  html {
+    scroll-behavior: auto;
   }
 
-  to {
-    opacity: 0.5;
-    scale: 50%;
-  }
-
-  to {
+  html.js.motion-enabled [data-motion="hero-item"],
+  html.js.motion-enabled [data-reveal-item],
+  html.js.motion-enabled [data-motion="hero-static-word"] {
     opacity: 1;
-    scale: 100%;
+    transform: none;
+    filter: none;
+    transition: none;
   }
-}
 
-.itemDelay {
-  view-timeline-name: --section;
-  view-timeline-axis: block;
-  animation-timeline: --section;
-  animation-name: show;
-  animation-range: entry 25% cover 30%;
-  animation-fill-mode: both;
-}
-
-#sobreMi {
-  view-timeline-name: --section;
-  view-timeline-axis: block;
-
-  animation-timeline: --section;
-  animation-name: show;
-
-  animation-range: entry 25% cover 30%;
-  animation-fill-mode: both;
+  html.js.motion-enabled [data-cursor-glow]::after {
+    display: none;
+  }
 }

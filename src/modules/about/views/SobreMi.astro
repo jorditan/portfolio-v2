@@ -12,10 +12,19 @@ import SectionHeader from "@/common/components/astroComponentes/SectionHeader.as
 	id="sobreMi"
 >
 	<article>
-		<SectionHeader title="Sobre mi">
-			<HandHeart slot="icon" className="text-sky-500 dark:text-sky-300 h-8 w-8" />
-		</SectionHeader>
-		<div class="w-full flex flex-wrap gap-2">
+		<div
+			data-reveal-item
+			style="--motion-delay: 0ms; --motion-duration: var(--motion-duration-fast); --motion-distance: 12px;"
+		>
+			<SectionHeader title="Sobre mi">
+				<HandHeart slot="icon" className="text-sky-500 dark:text-sky-300 h-8 w-8" />
+			</SectionHeader>
+		</div>
+		<div
+			class="w-full flex flex-wrap gap-2"
+			data-reveal-item
+			style="--motion-delay: 70ms; --motion-duration: var(--motion-duration-fast); --motion-distance: 12px;"
+		>
 			<div
 				class="flex gap-2 p-1 bg-gray-700 border border-white/10 dark:border-white/20 dark:bg-gray-700 rounded-md"
 			>
@@ -41,7 +50,11 @@ import SectionHeader from "@/common/components/astroComponentes/SectionHeader.as
 		<div
 			class="flex items-center flex-col lg:flex-row gap-8 pt-4 justify-between"
 		>
-			<div class="lg:w-3/4 w-full flex flex-col gap-6">
+			<div
+				class="lg:w-3/4 w-full flex flex-col gap-6"
+				data-reveal-item
+				style="--motion-delay: 140ms; --motion-duration: var(--motion-duration-base); --motion-distance: 18px; --motion-blur: 4px;"
+			>
 				<p
 					class="text-gray-600 dark:text-gray-300 text-md w-fit md:text-[16px] text-[14px] font-medium antialiased"
 				>
@@ -90,7 +103,11 @@ import SectionHeader from "@/common/components/astroComponentes/SectionHeader.as
 				</p>
 			</div>
 
-			<div class="flex flex-col gap-4 justify-center items-center">
+			<div
+				class="flex flex-col gap-4 justify-center items-center"
+				data-reveal-item
+				style="--motion-delay: 220ms; --motion-duration: var(--motion-duration-base); --motion-distance: 18px; --motion-blur: 4px;"
+			>
 				<MyCarousel />
 				<div class="flex gap-4 w-full justify-center items-center">
 					<a

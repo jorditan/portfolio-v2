@@ -7,88 +7,58 @@ import { Linkedin, Send } from "lucide-react";
 	id="contacto"
 	class="sm:mx-auto mx-4 max-w-[32rem] py-8 sm:py-10 transition-all md:max-w-[42rem] lg:max-w-4xl"
 >
-	<div class="">
-		<div></div>
+	<div
+		class="relative flex flex-col gap-6"
+		data-reveal-item
+		style="--motion-delay: 40ms; --motion-duration: var(--motion-duration-base); --motion-distance: 18px; --motion-blur: 4px;"
+	>
+		<div class="space-y-4">
+			<SectionHeader title="Trabajemos juntos">
+				<Send slot="icon" className="text-sky-500 dark:text-sky-300 h-8 w-8" />
+			</SectionHeader>
 
-		<div class="relative flex gap-8 lg:gap-8 items-start flex-col lg:flex-row">
-			<div class="flex flex-col gap-6">
-				<div class="space-y-4">
-					<SectionHeader title="Trabajemos juntos">
-						<Send slot="icon" className="text-sky-500 dark:text-sky-300 h-8 w-8" />
-					</SectionHeader>
+			<p
+				class="max-w-2xl text-sm leading-6 text-slate-600 dark:text-slate-300 md:text-base"
+			>
+				Abierto a nuevas oportunidades, colaboraciones freelance o simplemente
+				para charlar sobre diseño, desarrollo y procesos creativos. Si tenés un
+				proyecto en mente o querés conectar, este es un buen momento para
+				hacerlo.
+			</p>
+		</div>
 
-					<p
-						class="max-w-xl text-sm leading-4 text-slate-600 dark:text-slate-300 md:text-base"
-					>
-						Abierto a nuevas oportunidades, colaboraciones freelance o
-						simplemente para charlar sobre diseño, desarrollo y procesos
-						creativos. Si tenés un proyecto en mente o querés conectar, no dudes
-						en contactarme.
-					</p>
-				</div>
-
-				<div class="flex gap-2 items-center w-max">
-					<a
-						href="mailto:matiasowjordan@gmail.com"
-						target="_blank"
-						class="border gap-2 text-[12px] sm:text-sm border-gray-700 bg-gray-700 dark:bg-gray-900 inline-flex items-center px-3 py-2 font-medium text-center text-white hover:border-gray-500 rounded-lg hover:bg-gray-800 dark:hover:bg-gray-950"
-					>
-						Enviar correo
-					</a>
-										<a
-						href="https://www.linkedin.com/in/matiasowenjordan/"
-						target="_blank"
-						rel="noopener noreferrer"
-						class="border gap-2 text-[12px] sm:text-sm border-gray-600 bg-gray-500 dark:bg-gray-700 inline-flex items-center px-3 py-2 font-medium text-center text-white hover:border-gray-500 rounded-lg hover:bg-gray-800 dark:hover:bg-gray-800"
-					>
-						<Linkedin className="h-4 w-4 fill-current" />
-						LinkedIn
-					</a>
-					<a
-						href="https://www.behance.net/matiasowenjordan"
-						target="_blank"
-						rel="noopener noreferrer"
-						class="border gap-2 text-[12px] sm:text-sm border-gray-600 bg-gray-500 dark:bg-gray-700 inline-flex items-center px-3 py-2 font-medium text-center text-white hover:border-gray-500 rounded-lg hover:bg-gray-800 dark:hover:bg-gray-800"
-					>
-						<svg
-							viewBox="0 0 24 24"
-							class="h-5 w-5 fill-current"
-							aria-hidden="true"
-						>
-							<path d="M3 6.75A2.75 2.75 0 0 1 5.75 4h4.72c2.75 0 4.28 1.4 4.28 3.62 0 1.57-.82 2.58-2.1 3.02 1.8.35 2.88 1.72 2.88 3.65 0 2.77-2.02 4.46-5.02 4.46H5.75A2.75 2.75 0 0 1 3 16zm3 1v3.12h4.13c1.1 0 1.77-.58 1.77-1.55 0-.98-.67-1.57-1.77-1.57zm0 5.62v3.38h4.4c1.3 0 2.06-.62 2.06-1.72 0-1.09-.76-1.66-2.06-1.66zM16.5 7h4.75v1.75H16.5zm7 8.05c-.5 2.39-2.36 3.95-4.98 3.95-3.25 0-5.27-2.24-5.27-5.8 0-3.5 2.08-5.92 5.16-5.92 3.1 0 5.02 2.14 5.02 5.52v.93h-7.19c.11 1.77 1.02 2.78 2.45 2.78 1.02 0 1.8-.43 2.08-1.46z"></path>
-						</svg>
-						Behance
-					</a>
-
-				</div>
-			</div>
-
-			<div class="self-start rounded-md border w-full border-slate-200/80 bg-white/80 p-5 shadow-sm dark:border-white/10 dark:bg-gray-800">
-				<p class="text-[12px] font-semibold text-slate-500 dark:text-slate-400">
-					Contacto directo
-				</p>
-				<div class="mt-4 space-y-4">
-					<div class="rounded-lg border border-slate-200/80 bg-slate-50/80 px-4 py-3 dark:border-white/10 dark:bg-white/5">
-						<p class="text-[12px] font-semibold text-slate-500 dark:text-slate-400">
-							Correo
-						</p>
-						<a
-							href="mailto:matiasowjordan@gmail.com"
-							class="mt-2 block text-sm font-medium text-slate-900 transition hover:text-sky-600 dark:text-white dark:hover:text-sky-300"
-						>
-							matiasowjordan@gmail.com
-						</a>
-					</div>
-					<div class="rounded-lg border border-slate-200/80 bg-slate-50/80 px-4 py-3 dark:border-white/10 dark:bg-white/5">
-						<p class="text-[12px] font-semibold text-slate-500 dark:text-slate-400">
-							Teléfono
-						</p>
-						<p class="mt-2 text-sm font-medium text-slate-900 dark:text-white">
-							+54 11 73675158
-						</p>
-					</div>
-				</div>
-			</div>
+		<div class="flex flex-wrap gap-2 items-center">
+			<a
+				href="mailto:matiasowjordan@gmail.com"
+				target="_blank"
+				class="border gap-2 text-[12px] sm:text-sm border-gray-700 bg-gray-700 dark:bg-gray-900 inline-flex items-center px-3 py-2 font-medium text-center text-white hover:border-gray-500 rounded-lg hover:bg-gray-800 dark:hover:bg-gray-950"
+			>
+				Enviar correo
+			</a>
+			<a
+				href="https://www.linkedin.com/in/matiasowenjordan/"
+				target="_blank"
+				rel="noopener noreferrer"
+				class="border gap-2 text-[12px] sm:text-sm border-gray-600 bg-gray-500 dark:bg-gray-700 inline-flex items-center px-3 py-2 font-medium text-center text-white hover:border-gray-500 rounded-lg hover:bg-gray-800 dark:hover:bg-gray-800"
+			>
+				<Linkedin className="h-4 w-4 fill-current" />
+				LinkedIn
+			</a>
+			<a
+				href="https://www.behance.net/matiasowenjordan"
+				target="_blank"
+				rel="noopener noreferrer"
+				class="border gap-2 text-[12px] sm:text-sm border-gray-600 bg-gray-500 dark:bg-gray-700 inline-flex items-center px-3 py-2 font-medium text-center text-white hover:border-gray-500 rounded-lg hover:bg-gray-800 dark:hover:bg-gray-800"
+			>
+				<svg
+					viewBox="0 0 24 24"
+					class="h-5 w-5 fill-current"
+					aria-hidden="true"
+				>
+					<path d="M3 6.75A2.75 2.75 0 0 1 5.75 4h4.72c2.75 0 4.28 1.4 4.28 3.62 0 1.57-.82 2.58-2.1 3.02 1.8.35 2.88 1.72 2.88 3.65 0 2.77-2.02 4.46-5.02 4.46H5.75A2.75 2.75 0 0 1 3 16zm3 1v3.12h4.13c1.1 0 1.77-.58 1.77-1.55 0-.98-.67-1.57-1.77-1.57zm0 5.62v3.38h4.4c1.3 0 2.06-.62 2.06-1.72 0-1.09-.76-1.66-2.06-1.66zM16.5 7h4.75v1.75H16.5zm7 8.05c-.5 2.39-2.36 3.95-4.98 3.95-3.25 0-5.27-2.24-5.27-5.8 0-3.5 2.08-5.92 5.16-5.92 3.1 0 5.02 2.14 5.02 5.52v.93h-7.19c.11 1.77 1.02 2.78 2.45 2.78 1.02 0 1.8-.43 2.08-1.46z"></path>
+				</svg>
+				Behance
+			</a>
 		</div>
 	</div>
 </section>

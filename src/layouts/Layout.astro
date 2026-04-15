@@ -13,6 +13,9 @@ import SpeedInsights from "@vercel/speed-insights/astro";
 	class="scroll-smooth focus:scroll-auto"
 >
 	<head>
+		<script is:inline>
+			document.documentElement.classList.add("js");
+		</script>
 		<ThemeCabezaScript />
 		<SpeedInsights />
 		<meta charset="UTF-8" />
@@ -58,7 +61,7 @@ import SpeedInsights from "@vercel/speed-insights/astro";
 		<link rel="icon" type="image/svg+xml" href="/palette.svg" />
 		<title>Matías Owen Jordán</title>
 	</head>
-	<body>
+	<body data-cursor-glow>
 		<ClientRouter />
 		<Navbar />
 		<main>
@@ -69,6 +72,161 @@ import SpeedInsights from "@vercel/speed-insights/astro";
 			is:inline
 			src="https://cdn.jsdelivr.net/npm/flowbite@2.5.2/dist/flowbite.min.js"
 		></script>
+		<script is:inline>
+			(() => {
+				const config = {
+					heroVisibleDelay: 50,
+					observerThreshold: 0.18,
+					observerRootMargin: "0px 0px -10% 0px",
+					cursorFade: 0.16,
+				};
+
+				const state = {
+					observer: null,
+					mutationObserver: null,
+					cursorCleanup: [],
+				};
+
+				const selectors = '[data-motion="hero-item"], [data-reveal-item]';
+
+				const revealElement = (element) => {
+					if (!element || element.classList.contains("is-visible")) return;
+					element.classList.add("is-visible");
+				};
+
+				const revealAll = (root = document) => {
+					root.querySelectorAll(selectors).forEach(revealElement);
+				};
+
+				const setupHero = () => {
+					const hero = document.querySelector("[data-motion-hero]");
+					if (!hero || hero.dataset.motionBound === "true") return;
+
+					hero.dataset.motionBound = "true";
+
+					window.setTimeout(() => {
+						hero.querySelectorAll('[data-motion="hero-item"]').forEach(revealElement);
+					}, config.heroVisibleDelay);
+				};
+
+				const setupObserver = () => {
+					if (!("IntersectionObserver" in window)) {
+						revealAll();
+						return;
+					}
+
+					if (!state.observer) {
+						state.observer = new IntersectionObserver(
+							(entries) => {
+								entries.forEach((entry) => {
+									if (!entry.isIntersecting) return;
+									revealElement(entry.target);
+									state.observer?.unobserve(entry.target);
+								});
+							},
+							{
+								threshold: config.observerThreshold,
+								rootMargin: config.observerRootMargin,
+							},
+						);
+					}
+
+					document.querySelectorAll("[data-reveal-item]").forEach((element) => {
+						if (element.dataset.revealBound === "true" || element.classList.contains("is-visible")) return;
+						element.dataset.revealBound = "true";
+						state.observer?.observe(element);
+					});
+				};
+
+				const setupCursorGlow = () => {
+					state.cursorCleanup.forEach((cleanup) => cleanup());
+					state.cursorCleanup = [];
+
+					if (window.matchMedia("(hover: none), (pointer: coarse), (max-width: 767px)").matches) {
+						return;
+					}
+
+					document.querySelectorAll("[data-cursor-glow]").forEach((element) => {
+						if (element.dataset.cursorBound === "true") return;
+						element.dataset.cursorBound = "true";
+
+						const updatePosition = (event) => {
+							const rect = element.getBoundingClientRect();
+							const x = ((event.clientX - rect.left) / rect.width) * 100;
+							const y = ((event.clientY - rect.top) / rect.height) * 100;
+
+							element.style.setProperty("--cursor-x", `${Math.max(0, Math.min(100, x))}%`);
+							element.style.setProperty("--cursor-y", `${Math.max(0, Math.min(100, y))}%`);
+							element.style.setProperty("--cursor-opacity", `${config.cursorFade}`);
+						};
+
+						const resetPosition = () => {
+							element.style.setProperty("--cursor-opacity", "0");
+						};
+
+						element.addEventListener("pointermove", updatePosition, { passive: true });
+						element.addEventListener("pointerleave", resetPosition, { passive: true });
+
+						state.cursorCleanup.push(() => {
+							element.removeEventListener("pointermove", updatePosition);
+							element.removeEventListener("pointerleave", resetPosition);
+							element.dataset.cursorBound = "false";
+						});
+					});
+				};
+
+				const initMotion = () => {
+					const reduceMotion = window.matchMedia("(prefers-reduced-motion: reduce)").matches;
+					document.documentElement.classList.toggle("motion-enabled", !reduceMotion);
+
+					if (reduceMotion) {
+						if (state.observer) state.observer.disconnect();
+						revealAll();
+						return;
+					}
+
+					setupHero();
+					setupObserver();
+					setupCursorGlow();
+				};
+
+				const observeDom = () => {
+					if (state.mutationObserver) state.mutationObserver.disconnect();
+
+					state.mutationObserver = new MutationObserver(() => {
+						window.requestAnimationFrame(() => {
+							setupHero();
+							setupObserver();
+							setupCursorGlow();
+						});
+					});
+
+					state.mutationObserver.observe(document.body, {
+						childList: true,
+						subtree: true,
+					});
+				};
+
+				document.addEventListener("astro:page-load", () => {
+					initMotion();
+					observeDom();
+				});
+
+				if (document.readyState !== "loading") {
+					initMotion();
+					observeDom();
+				} else {
+					document.addEventListener(
+						"DOMContentLoaded",
+						() => {
+							initMotion();
+							observeDom();
+						},
+						{ once: true },
+					);
+				}
+			})();
+		</script>
 
 		<script type="application/ld+json">
 			{

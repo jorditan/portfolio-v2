@@ -22,7 +22,11 @@ import V0Icon from "@/assets/icons/v0Icon.astro";
 import SectionHeader from "@/common/components/astroComponentes/SectionHeader.astro";
 ---
 
-<article class="mt-8">
+<article
+	class="mt-8"
+	data-reveal-item
+	style="--motion-delay: 40ms; --motion-duration: var(--motion-duration-fast); --motion-distance: 14px;"
+>
 	<div>
 		<SectionHeader title="Herramientas que manejo" size="sm">
 			<SquareMousePointer slot="icon" className="text-sky-500 dark:text-sky-300 h-6 w-6" />
