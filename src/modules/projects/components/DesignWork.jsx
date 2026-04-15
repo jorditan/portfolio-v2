@@ -88,7 +88,7 @@ const designProjects = [
 
 function DesignWork() {
   return (
-    <article className="flex flex-wrap justify-center gap-10">
+    <article className="flex flex-wrap justify-center gap-8">
       {designProjects.map((project, idx) => (
         <div
           key={idx}
@@ -102,7 +102,7 @@ function DesignWork() {
                 alt={project.alt}
               />
             </div>
-            <div className="p-5 flex flex-col gap-3">
+            <div className="p-5 flex flex-col gap-4">
               <h5 className="text-xl font-bold tracking-tight text-slate-900 dark:text-slate-50">
                 {project.title}
               </h5>

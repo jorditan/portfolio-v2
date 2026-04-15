@@ -12,7 +12,7 @@ function MyProjects() {
 
   return (
     <section
-      className="sm:mx-auto py-6 mx-4 max-w-[32rem] md:max-w-[42rem] lg:max-w-4xl transition-all"
+      className="sm:mx-auto py-8 mx-4 max-w-[32rem] md:max-w-[42rem] lg:max-w-4xl transition-all"
       id="proyectos"
       aria-label="Mis proyectos"
     >
@@ -22,7 +22,7 @@ function MyProjects() {
           Proyectos
         </h2>
       </div>
-      <div className="flex flex-col pb-4 gap-5 justify-center">
+      <div className="flex flex-col pb-4 gap-4 justify-center">
         <div className="text-sm flex font-medium text-center border-b border-gray-800 dark:border-gray-500">
           <ul className="flex flex-wrap -mb-px">
             <li className="me-2" onClick={() => handleView("front")}>

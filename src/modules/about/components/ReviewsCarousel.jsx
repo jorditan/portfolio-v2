@@ -2,7 +2,7 @@ import {
   ChevronLeft,
   ChevronRight,
 } from "lucide-react";
-import { startTransition, useEffect, useState } from "react";
+import { startTransition, useState } from "react";
 
 function ReviewsCarousel({ reviews = [] }) {
   const [activeIndex, setActiveIndex] = useState(0);
@@ -41,10 +41,10 @@ function ReviewsCarousel({ reviews = [] }) {
                 : "pointer-events-none absolute inset-0 translate-x-6 opacity-0"
                 }`}
             >
-              <div className="relative overflow-hidden p-2 sm:p-4Pued">
+              <div className="relative overflow-hidden p-2 sm:p-4">
                 <div className="pointer-events-none absolute inset-0 " />
 
-                <div className="relative z-10 flex flex-col gap-5">
+                <div className="relative z-10 flex flex-col gap-4">
                   <div className="flex items-start justify-between gap-4">
                       <div className="flex items-center gap-4">
                         <div className="flex h-13 w-13 items-center justify-center overflow-hidden rounded-full border border-gray-300/80 bg-gray-800 p-1.5 text-sm font-semibold text-white">
@@ -65,11 +65,11 @@ function ReviewsCarousel({ reviews = [] }) {
 
                       <div className="flex flex-col">
                         <div className="flex ">
-                          <a href={review.url} target="_blank" rel="noopener noreferrer" className="text-sm font-semibold text-slate-900 dark:text-slate-100 sm:text-base hover:underline focus-visible:text-sky-600 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-sky-600 focus-visible:ring-offset-2 dark:focus-visible:ring-sky-300 hover:scale-105 transition-transform duration-200 flex gap-2 items-center">
-                            <span>
+                          <a href={review.url} target="_blank" rel="noopener noreferrer" className="text-sm font-semibold text-slate-900 dark:text-slate-100 sm:text-base hover:underline focus-visible:text-sky-600 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-sky-600 focus-visible:ring-offset-2 dark:focus-visible:ring-sky-300 hover:scale-105 transition-transform duration-200 gap-0.5 sm:gap-2 items-center flex flex-col sm:flex-row justify-start mb-1">
+                            <span className="w-fit">
                               {review.name}
                             </span>
-                            <span className="text-xs font-medium text-sky-600 dark:text-sky-300">
+                            <span className="text-xs font-medium text-sky-600 dark:text-sky-300 w-full sm:w-fit">
                               {review.role}
                             </span>
 
@@ -97,7 +97,7 @@ function ReviewsCarousel({ reviews = [] }) {
         })}
       </div>
 
-      <div className="flex items-center justify-between gap-3">
+      <div className="flex items-center justify-between gap-4">
         <div className="flex items-center gap-2">
           {reviews.map((review, index) => (
             <button

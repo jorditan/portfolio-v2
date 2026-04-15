@@ -1,16 +1,16 @@
 ---
 import SectionHeader from "@/common/components/astroComponentes/SectionHeader.astro";
-import { Linkedin, Mail, Send } from "lucide-react";
+import { Linkedin, Send } from "lucide-react";
 ---
 
 <section
 	id="contacto"
-	class="sm:mx-auto mx-4 max-w-[32rem] py-10 pb-14 transition-all md:max-w-[42rem] lg:max-w-4xl"
+	class="sm:mx-auto mx-4 max-w-[32rem] py-8 sm:py-10 transition-all md:max-w-[42rem] lg:max-w-4xl"
 >
 	<div class="">
 		<div></div>
 
-		<div class="relative flex gap-4 lg:gap-8">
+		<div class="relative flex gap-8 lg:gap-8 items-start flex-col lg:flex-row">
 			<div class="flex flex-col gap-6">
 				<div class="space-y-4">
 					<SectionHeader title="Trabajemos juntos">
@@ -27,13 +27,12 @@ import { Linkedin, Mail, Send } from "lucide-react";
 					</p>
 				</div>
 
-				<div class="flex gap-2 items-center">
+				<div class="flex gap-2 items-center w-max">
 					<a
 						href="mailto:matiasowjordan@gmail.com"
 						target="_blank"
 						class="border gap-2 text-[12px] sm:text-sm border-gray-700 bg-gray-700 dark:bg-gray-900 inline-flex items-center px-3 py-2 font-medium text-center text-white hover:border-gray-500 rounded-lg hover:bg-gray-800 dark:hover:bg-gray-950"
 					>
-						<Mail className="h-4 w-4" />
 						Enviar correo
 					</a>
 										<a
@@ -60,25 +59,11 @@ import { Linkedin, Mail, Send } from "lucide-react";
 						</svg>
 						Behance
 					</a>
-					<a
-						href="https://github.com/jorditan"
-						target="_blank"
-						rel="noopener noreferrer"
-						class="border gap-2 text-[12px] sm:text-sm border-gray-600 bg-gray-500 dark:bg-gray-700 inline-flex items-center px-3 py-2 font-medium text-center text-white hover:border-gray-500 rounded-lg hover:bg-gray-800 dark:hover:bg-gray-800"
-					>
-						<svg
-							viewBox="0 0 24 24"
-							class="h-5 w-5 fill-current"
-							aria-hidden="true"
-						>
-							<path d="M12 .5C5.65.5.5 5.65.5 12A11.5 11.5 0 0 0 8.36 22.94c.58.1.79-.25.79-.56 0-.27-.01-1.16-.02-2.11-3.2.7-3.88-1.36-3.88-1.36-.52-1.33-1.28-1.68-1.28-1.68-1.05-.72.08-.7.08-.7 1.16.08 1.78 1.2 1.78 1.2 1.03 1.77 2.69 1.26 3.35.97.1-.74.4-1.26.72-1.55-2.55-.29-5.23-1.28-5.23-5.68 0-1.25.45-2.27 1.19-3.07-.12-.29-.52-1.46.11-3.05 0 0 .97-.31 3.19 1.17a10.9 10.9 0 0 1 5.8 0c2.22-1.48 3.19-1.17 3.19-1.17.63 1.59.23 2.76.11 3.05.74.8 1.19 1.82 1.19 3.07 0 4.41-2.69 5.39-5.25 5.67.41.35.78 1.04.78 2.1 0 1.51-.01 2.72-.01 3.09 0 .31.21.67.8.56A11.5 11.5 0 0 0 23.5 12C23.5 5.65 18.35.5 12 .5Z"></path>
-						</svg>
-						Github
-					</a>
+
 				</div>
 			</div>
 
-			<div class="self-start rounded-md border border-slate-200/80 bg-white/80 p-5 shadow-sm dark:border-white/10 dark:bg-gray-800">
+			<div class="self-start rounded-md border w-full border-slate-200/80 bg-white/80 p-5 shadow-sm dark:border-white/10 dark:bg-gray-800">
 				<p class="text-[12px] font-semibold text-slate-500 dark:text-slate-400">
 					Contacto directo
 				</p>

@@ -3,16 +3,20 @@ import { Download } from "lucide-react";
 import ThemeSelector from "../reactComponentes/ThemeSelector";
 ---
 
-<header class="flex justify-center py-5 fixed w-full z-10">
+<header class="fixed inset-x-0 top-0 z-20 flex justify-center px-3 py-3 sm:py-5">
 	<nav
-		class="py-1 sm:py-2 px-4 dark:bg-black/10 bg-sky-200/44 flex glass justify-center rounded-lg transition-all gap-12 items-center border-2 dark:border-white/20 dark:hover:border-white/30 border-slate-500"
+		class="glass w-fit rounded-2xl border-2 border-slate-500 bg-sky-200/44 px-3 py-1 transition-all dark:border-white/20 dark:bg-black/10 dark:hover:border-white/30 sm:mx-auto sm:inline-flex sm:w-auto sm:px-4"
 	>
-		<div class="flex gap-4 sm:gap-8 items-center justify-center">
-			<ul class="flex gap-4">
+		<div
+			class="flex w-fit items-center justify-center gap-4 sm:w-auto sm:flex-row sm:gap-x-6 lg:justify-center lg:gap-x-8"
+		>
+			<ul
+				class="flex w-fit flex-wrap items-center justify-center gap-x-4 gap-y-2 text-center sm:w-auto sm:flex-nowrap sm:gap-x-4 md:gap-x-6"
+			>
 				<li>
 					<a
 						href="/#inicio"
-						class="pointer text-slate-900 dark:text-slate-50 text-[12px] sm:text-[16px] decoration-none cursor-pointer hover:text-sky-600 dark:hover:text-sky-400 transition-all"
+						class="pointer cursor-pointer text-xs text-slate-900 transition-all hover:text-sky-600 dark:text-slate-50 dark:hover:text-sky-400 sm:text-sm md:text-base"
 					>
 						Inicio
 					</a>
@@ -20,7 +24,7 @@ import ThemeSelector from "../reactComponentes/ThemeSelector";
 				<li>
 					<a
 						href="/#proyectos"
-						class="pointer text-slate-900 dark:text-slate-50 text-[12px] sm:text-[16px] decoration-none cursor-pointer hover:text-sky-600 dark:hover:text-sky-400 transition-all"
+						class="pointer cursor-pointer text-xs text-slate-900 transition-all hover:text-sky-600 dark:text-slate-50 dark:hover:text-sky-400 sm:text-sm md:text-base"
 					>
 						Proyectos
 					</a>
@@ -28,7 +32,7 @@ import ThemeSelector from "../reactComponentes/ThemeSelector";
 				<li>
 					<a
 						href="/#sobreMi"
-						class="pointer text-slate-900 dark:text-slate-50 text-[12px] sm:text-[16px] decoration-none cursor-pointer hover:text-sky-600 dark:hover:text-sky-400 transition-all"
+						class="pointer cursor-pointer text-xs text-slate-900 transition-all hover:text-sky-600 dark:text-slate-50 dark:hover:text-sky-400 sm:text-sm md:text-base"
 					>
 						Sobre mi
 					</a>
@@ -37,14 +41,14 @@ import ThemeSelector from "../reactComponentes/ThemeSelector";
 					<a
 						data-astro-prefetch="hover"
 						href="#contacto"
-						class="pointer text-slate-900 dark:text-slate-50 text-[12px] sm:text-[16px] decoration-none cursor-pointer hover:text-sky-600 dark:hover:text-sky-400 transition-all"
+						class="pointer cursor-pointer text-xs text-slate-900 transition-all hover:text-sky-600 dark:text-slate-50 dark:hover:text-sky-400 sm:text-sm md:text-base"
 					>
 						Contacto
 					</a>
 				</li>
 			</ul>
 
-			<div class="flex gap-2 sm:gap-4 items-center">
+			<div class="order-1 flex items-center justify-center gap-2 self-center sm:order-2 sm:gap-4">
 				<ThemeSelector client:only="react" />
 				<div
 					id="tooltip-cv"
@@ -65,12 +69,12 @@ import ThemeSelector from "../reactComponentes/ThemeSelector";
 					<a
 						download
 						href="/curriculum_vitae.pdf"
-						class="w-fit h-fit"
+						class="flex h-9 w-9 items-center justify-center rounded-full border border-slate-500/70 text-slate-900 transition-all hover:scale-105 hover:text-sky-600 dark:border-white/20 dark:text-slate-50 dark:hover:text-sky-400 sm:h-10 sm:w-10"
 						target="_blank"
 						aria-label="Download button"
 					>
 						<Download
-							className="icon transition-all hover:scale-110 stroke-slate-900 dark:stroke-slate-50 h-[16px] w-[16px] sm:h-[24px] sm:w-[24px]"
+							className="icon h-[16px] w-[16px] stroke-slate-900 transition-all dark:stroke-slate-50 sm:h-[18px] sm:w-[18px]"
 						/>
 					</a>
 				</button>

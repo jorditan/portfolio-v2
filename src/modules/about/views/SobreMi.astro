@@ -8,38 +8,38 @@ import SectionHeader from "@/common/components/astroComponentes/SectionHeader.as
 ---
 
 <section
-	class="sm:mx-auto py-12 mx-4 max-w-[32rem] md:max-w-[42rem] lg:max-w-4xl transition-all"
+	class="sm:mx-auto py-8 sm:py-10 mx-4 max-w-[32rem] md:max-w-[42rem] lg:max-w-4xl transition-all"
 	id="sobreMi"
 >
 	<article>
 		<SectionHeader title="Sobre mi">
 			<HandHeart slot="icon" className="text-sky-500 dark:text-sky-300 h-8 w-8" />
 		</SectionHeader>
-		<div class="w-full flex gap-2">
+		<div class="w-full flex flex-wrap gap-2">
 			<div
-				class="flex gap-1 p-1 bg-gray-700 border border-white/10 dark:border-white/20 dark:bg-gray-700 rounded-md"
+				class="flex gap-2 p-1 bg-gray-700 border border-white/10 dark:border-white/20 dark:bg-gray-700 rounded-md"
 			>
 				<Map className="h-4 w-4" />
-				<small> Haedo. Buenos Aires, Argentina. </small>
+				<small class="text-[10px] md:text-sm"> Haedo. Buenos Aires, Argentina. </small>
 			</div>
 
 			<div
-				class="flex gap-1 p-1 bg-gray-700 border border-white/10 dark:border-white/20 dark:bg-gray-700 rounded-md"
+				class="flex gap-2 p-1 bg-gray-700 border border-white/10 dark:border-white/20 dark:bg-gray-700 rounded-md"
 			>
 				<Cake className="h-4 w-4" />
-				<small>20 años</small>
+				<small class="text-[10px] md:text-sm">20 años</small>
 			</div>
 
 			<div
-				class="flex gap-1 p-1 bg-gray-700 border border-white/10 dark:border-yellow-200/20 text-yellow-300 dark:bg-blue-900 rounded-md"
+				class="flex gap-2 p-1 bg-gray-700 border border-white/10 dark:border-yellow-200/20 text-yellow-300 dark:bg-blue-900 rounded-md"
 			>
 				<Heart fill="currentColor" className="h-4 w-4" />
-				<small>Hincha de Boca Juniors</small>
+				<small class="text-[10px] md:text-sm">Hincha de Boca Juniors</small>
 			</div>
 		</div>
 
 		<div
-			class="flex items-center flex-col lg:flex-row gap-12 pt-6 justify-between"
+			class="flex items-center flex-col lg:flex-row gap-8 pt-4 justify-between"
 		>
 			<div class="lg:w-3/4 w-full flex flex-col gap-6">
 				<p
@@ -84,12 +84,9 @@ import SectionHeader from "@/common/components/astroComponentes/SectionHeader.as
 				<p
 					class="text-gray-600 dark:text-gray-300 font-medium text-md w-fit md:text-[16px] text-[14px] antialiased"
 				>
-					Desde el diseño hasta el código, encuentro valor en cada etapa del
-					proceso. <span
-						class="font-semibold underline text-gray-800 dark:text-[#ffffff] decoration-sky-500"
-						>Gracias a mi experiencia en UX/UI y desarrollo front-end, puedo
-						traducir necesidades reales en soluciones visuales que funcionan.</span
-					> Creo productos digitales que se sienten tan bien como se ven.
+					Más allá del mundo IT, mis pasiones también pasan por las artes visuales y la cultura. <span
+						class="font-semibold text-gray-800 dark:text-[#ffffff]"
+						>El cine, los libros, la música, el fútbol, los vinilos y los recitales</span> son parte fundamental de mi vida para desconectar cuando es necesario. 
 				</p>
 			</div>
 
