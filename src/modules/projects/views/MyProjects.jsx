@@ -1,6 +1,7 @@
 import { Palette } from "lucide-react";
 import FeaturedCard from "../components/FeaturedCard.jsx";
 import ProjectCard from "../components/ProjectCard.jsx";
+import ProjectCarousel from "../components/ProjectCarousel.jsx";
 import { getDesignProjects, getFrontendProjects } from "../../../lib/projects.js";
 
 const designProjects = getDesignProjects();
@@ -63,18 +64,21 @@ function MyProjects() {
           <FeaturedCard project={designFeatured} motionDelay={120} />
         )}
 
-        {/* Secundarios en fila */}
+        {/* Secundarios — carrusel en mobile, grid en desktop */}
         {designSecondary.length > 0 && (
-          <div className="grid grid-cols-1 sm:grid-cols-3 gap-4 mt-4">
-            {designSecondary.map((project, idx) => (
-              <ProjectCard
-                key={project.slug}
-                project={project}
-                compact={false}
-                motionDelay={200 + idx * 80}
-              />
-            ))}
-          </div>
+          <>
+            <ProjectCarousel projects={designSecondary} compact={false} baseMotionDelay={200} />
+            <div className="hidden sm:grid sm:grid-cols-3 gap-4 mt-4">
+              {designSecondary.map((project, idx) => (
+                <ProjectCard
+                  key={project.slug}
+                  project={project}
+                  compact={false}
+                  motionDelay={200 + idx * 80}
+                />
+              ))}
+            </div>
+          </>
         )}
       </div>
 
@@ -96,18 +100,21 @@ function MyProjects() {
           </div>
         )}
 
-        {/* Resto de proyectos frontend — grilla compacta */}
+        {/* Secundarios — carrusel en mobile, grid en desktop */}
         {frontendSecondary.length > 0 && (
-          <div className="grid grid-cols-1 sm:grid-cols-3 gap-4">
-            {frontendSecondary.map((project, idx) => (
-              <ProjectCard
-                key={project.slug}
-                project={project}
-                compact
-                motionDelay={220 + idx * 70}
-              />
-            ))}
-          </div>
+          <>
+            <ProjectCarousel projects={frontendSecondary} compact baseMotionDelay={220} />
+            <div className="hidden sm:grid sm:grid-cols-3 gap-4">
+              {frontendSecondary.map((project, idx) => (
+                <ProjectCard
+                  key={project.slug}
+                  project={project}
+                  compact
+                  motionDelay={220 + idx * 70}
+                />
+              ))}
+            </div>
+          </>
         )}
       </div>
     </section>
