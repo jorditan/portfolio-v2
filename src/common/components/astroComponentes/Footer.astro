@@ -7,67 +7,46 @@ const currentYear = new Date().getFullYear();
 	data-reveal-item
 	style="--motion-delay: 30ms; --motion-duration: var(--motion-duration-base); --motion-distance: 18px; --motion-blur: 4px;"
 >
-	<div
-		class="mx-auto flex w-full max-w-5xl flex-col gap-6 px-4 sm:px-6"
-	>
+	<div class="mx-auto flex w-full max-w-5xl flex-col gap-6 px-4 sm:px-6">
 		<div class="flex flex-col gap-4 border-b border-white/10 pb-5">
+			<div class="grid gap-4 sm:grid-cols-2 justify-between">
+				<span class="w-full text-md text-gray-300 ">Contacto</span>
 
-			<div class="grid gap-3 sm:grid-cols-2">
-					<span class="footer-label">Email</span>
-					<span class="footer-value">matiasowjordan@gmail.com</span>
-
-
-					<span class="footer-label">Teléfono</span>
-					<span class="footer-value">+54 11 73675158</span>
-
+				<div class="flex gap-6 flex-col w-fit">
+						<a class="text-sm dark:text-gray-500 text-gray-300 dark:hover:text-gray-300" href="mailto:correo@gmail.com">Correo</a>
+		
+						<a
+							href="https://www.linkedin.com/in/matias-jordan/"
+							target="_blank"
+							class="text-sm dark:text-gray-500 text-gray-300 dark:hover:text-gray-300">LinkedIn</a
+						>
+		
+						<a
+							href="https://www.behance.net/matiasowenjordan"
+							target="_blank"
+							class="text-sm dark:text-gray-500 text-gray-300 dark:hover:text-gray-300">Behance</a
+						>
+		
+						<a
+							href="https://www.github.com/jorditan"
+							target="_blank"
+							class="text-sm dark:text-gray-500 text-gray-300 dark:hover:text-gray-300">Github</a
+						>
+		
+						<a
+							href="https://www.instagram.com/mmatijordan/"
+							target="_blank"
+							class="text-sm dark:text-gray-500 text-gray-300 dark:hover:text-gray-300">Instagram</a
+						>
+				</div>
 			</div>
 		</div>
 
-		<div class="flex flex-col gap-2 text-xs leading-relaxed text-gray-300 sm:flex-row sm:items-center sm:justify-between sm:text-sm">
+		<div
+			class="flex flex-col gap-2 text-xs leading-relaxed text-gray-300 sm:flex-row sm:items-center sm:justify-between sm:text-sm"
+		>
 			<p>© {currentYear} Matías Jordán</p>
 			<p>Desarrollado en Astro</p>
 		</div>
 	</div>
 </footer>
-
-<style scoped>
-	.footer-link-card {
-		display: flex;
-		flex-direction: column;
-		gap: 0.35rem;
-		border-radius: 0.85rem;
-		border: 1px solid rgb(255 255 255 / 0.1);
-		background: rgb(255 255 255 / 0.04);
-		padding: 0.9rem 1rem;
-		transition:
-			border-color 180ms ease,
-			background-color 180ms ease,
-			transform 180ms ease,
-			color 180ms ease;
-	}
-
-	.footer-link-card:hover {
-		transform: translateY(-1px);
-		border-color: rgb(125 211 252 / 0.42);
-		background: rgb(255 255 255 / 0.08);
-	}
-
-
-	.footer-value {
-		font-size: 0.92rem;
-		font-weight: 500;
-		line-height: 1.45;
-		color: rgb(248 250 252);
-		word-break: break-word;
-	}
-
-	@media (prefers-reduced-motion: reduce) {
-		.footer-link-card {
-			transition: none;
-		}
-
-		.footer-link-card:hover {
-			transform: none;
-		}
-	}
-</style>

@@ -1,0 +1,10 @@
+---
+import { getAllProjects } from "../../lib/projects.js";
+
+export function getStaticPaths() {
+  return getAllProjects().map((p) => ({ params: { slug: p.slug } }));
+}
+---
+
+<meta http-equiv="refresh" content="0; url=/#proyectos" />
+<script>window.location.replace("/#proyectos");</script>
