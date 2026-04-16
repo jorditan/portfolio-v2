@@ -14,28 +14,28 @@ function MyCarousel() {
             >
               <img
                 class=" rounded-lg object-cover object-top "
-                src="/foto-campo.webp"
+                src="/images/profile/foto-campo.webp"
                 alt="Foto con una cámara de fotos en Entre Rios"
               />
             </div>
             <div class="hidden duration-700 ease-in-out " data-carousel-item>
               <img
                 class="rounded-lg object-cover object-top"
-                src="/foto-slack.webp"
+                src="/images/profile/foto-slack.webp"
                 alt="Primera foto en mucho tiempo"
               />
             </div>
             <div class="hidden duration-700 ease-in-out " data-carousel-item>
               <img
                 class="rounded-lg  object-center"
-                src="/foto-merendando.webp"
+                src="/images/profile/foto-merendando.webp"
                 alt="Foto merendando"
               />
             </div>
             <div class="hidden duration-700 ease-in-out " data-carousel-item>
               <img
                 class="rounded-lg  object-center"
-                src="/foto_playa.webp"
+                src="/images/profile/foto_playa.webp"
                 alt="Foto en la playa de Entre Rios"
               />
             </div>

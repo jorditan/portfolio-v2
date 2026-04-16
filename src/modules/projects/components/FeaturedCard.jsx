@@ -1,13 +1,13 @@
 import { ArrowUpRight } from "lucide-react";
 import TechBadge from "../../../common/components/reactComponentes/TechBadge.jsx";
-import ReactIcon from "../../../assets/icons/ReactIcon.jsx";
-import VueIcon from "../../../assets/icons/VueIcon.jsx";
-import TailwindIcon from "../../../assets/icons/TailwindIcon.jsx";
-import ZustandIcon from "../../../assets/icons/ZustandIcon.jsx";
-import PiniaIcon from "../../../assets/icons/PiniaIcon.jsx";
-import UnahurIcon from "../../../assets/icons/UnahurIcon.jsx";
-import WollokIcon from "../../../assets/icons/WollokIcon.jsx";
-import TypeScriptIcon from "../../../assets/icons/TypeScriptIcon.jsx";
+import ReactIcon from "../../../assets/icons/react/ReactIcon.jsx";
+import VueIcon from "../../../assets/icons/react/VueIcon.jsx";
+import TailwindIcon from "../../../assets/icons/react/TailwindIcon.jsx";
+import ZustandIcon from "../../../assets/icons/react/ZustandIcon.jsx";
+import PiniaIcon from "../../../assets/icons/react/PiniaIcon.jsx";
+import UnahurIcon from "../../../assets/icons/react/UnahurIcon.jsx";
+import WollokIcon from "../../../assets/icons/react/WollokIcon.jsx";
+import TypeScriptIcon from "../../../assets/icons/react/TypeScriptIcon.jsx";
 
 const FigmaIcon = () => (
   <svg width="10" height="14" viewBox="0 0 54 80" fill="none">

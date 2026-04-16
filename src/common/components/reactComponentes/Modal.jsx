@@ -1,5 +1,5 @@
 import { useState, useEffect } from "react";
-import GifIcon from "@/assets/icons/GifIcon";
+import GifIcon from "@/assets/icons/react/GifIcon";
 
 function Modal({ buttonText, title, text, video }) {
   const [isOpen, setIsOpen] = useState(false);

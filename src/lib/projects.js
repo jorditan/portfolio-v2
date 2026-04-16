@@ -10,7 +10,7 @@ export const projects = [
     year: "2024",
     shortDescription:
       "Caso de estudio completo aplicando research con usuarios, arquitectura de la información, wireframes y prototipado en Figma.",
-    heroImage: "/film_information.webp",
+    heroImage: "/images/projects/film_information.webp",
     tags: [
       { iconType: "figma", text: "Figma" },
       { text: "Pruebas de usuario" },
@@ -45,7 +45,7 @@ export const projects = [
     year: "2024",
     shortDescription:
       "Herramienta para Hackmetrix que pone a prueba a los usuarios frente al phishing y los capacita con un flujo educativo.",
-    heroImage: "/test_phishing.webp",
+    heroImage: "/images/projects/test_phishing.webp",
     tags: [
       { iconType: "figma", text: "Figma" },
       { text: "Prototipado" },
@@ -77,7 +77,7 @@ export const projects = [
     year: "2024",
     shortDescription:
       "Rediseño del módulo de documentación legal de Hackmetrix a partir de entrevistas contextuales con usuarios reales del producto.",
-    heroImage: "/redesign_legales.webp",
+    heroImage: "/images/projects/redesign_legales.webp",
     tags: [
       { iconType: "figma", text: "Figma" },
       { text: "Pruebas de usuario" },
@@ -111,7 +111,7 @@ export const projects = [
     year: "2025",
     shortDescription:
       "Herramienta de diagnóstico de madurez en ciberseguridad para Hackmetrix, con un flujo guiado que genera un reporte personalizado según el perfil de cada empresa.",
-    heroImage: "/diagnostico-ciberseguridad.png",
+    heroImage: "/images/projects/diagnostico-ciberseguridad.png",
     tags: [
       { iconType: "figma", text: "Figma" },
       { text: "Producto" },
@@ -146,7 +146,7 @@ export const projects = [
     year: "2024",
     shortDescription:
       "TODO: completar descripción corta del proyecto La 12 Digital.", // TODO
-    heroImage: "/la-12-digital.png", 
+    heroImage: "/images/projects/la-12-digital.png", 
     tags: [
       // TODO: completar con las tecnologías del proyecto
     ],
@@ -174,7 +174,7 @@ export const projects = [
     year: "2024",
     shortDescription:
       "Aplicación para buscar y visualizar GIFs integrando la API de GIPHY, con estado global en Zustand y testing.",
-    heroImage: "/gifs-search-app.webp",
+    heroImage: "/images/projects/gifs-search-app.webp",
     tags: [
       { iconType: "react", text: "React" },
       { iconType: "zustand", text: "Zustand" },
@@ -206,7 +206,7 @@ export const projects = [
     year: "2024",
     shortDescription:
       "Mejora de un juego existente con Vue 3 y Pinia, aplicando criterio UX para optimizar la experiencia y la jugabilidad.",
-    heroImage: "/pokegame.webp",
+    heroImage: "/images/projects/pokegame.webp",
     tags: [
       { iconType: "vue", text: "Vue" },
       { iconType: "pinia", text: "Pinia" },
@@ -239,13 +239,13 @@ export const projects = [
     year: "2024",
     shortDescription:
       "Proyecto integrador de Programación Orientada a Objetos I en la UNAHUR. Juego en Wollok con herencia, polimorfismo y testing automático.",
-    heroImage: "/wollolok.webp",
+    heroImage: "/images/projects/wollolok.webp",
     tags: [
       { iconType: "unahur", text: "UNAHUR" },
       { iconType: "wollok", text: "Wollok" },
     ],
     hasGif: true,
-    gifImage: "/gif-wollolok.gif",
+    gifImage: "/images/projects/gif-wollolok.gif",
     detail: {
       problem:
         "Proyecto integrador de la materia Programación Orientada a Objetos I en la UNAHUR. El desafío era diseñar un juego aplicando polimorfismo, herencia y testing automático desde cero.",
