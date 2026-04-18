@@ -1,6 +1,7 @@
 import { Palette } from "lucide-react";
 import FeaturedCard from "../components/FeaturedCard.jsx";
 import ProjectCard from "../components/ProjectCard.jsx";
+import ProjectCarousel from "../components/ProjectCarousel.jsx";
 import { getDesignProjects, getFrontendProjects } from "../../../lib/projects.js";
 
 const designProjects = getDesignProjects();
@@ -58,14 +59,21 @@ function MyProjects() {
       >
         <SectionLabel>Diseño UX/UI</SectionLabel>
 
-        {/* Featured a ancho completo */}
-        {designFeatured && (
-          <FeaturedCard project={designFeatured} motionDelay={120} />
-        )}
+        {/* Mobile: carrusel con TODOS los proyectos de diseño */}
+        <ProjectCarousel
+          projects={[...(designFeatured ? [designFeatured] : []), ...designSecondary]}
+          compact={false}
+          baseMotionDelay={120}
+        />
 
-        {/* Secundarios en fila */}
+        {/* Desktop: featured a ancho completo + grid secundarios */}
+        {designFeatured && (
+          <div className="hidden sm:block">
+            <FeaturedCard project={designFeatured} motionDelay={120} />
+          </div>
+        )}
         {designSecondary.length > 0 && (
-          <div className="grid grid-cols-1 sm:grid-cols-3 gap-4 mt-4">
+          <div className="hidden sm:grid sm:grid-cols-3 gap-4 mt-4">
             {designSecondary.map((project, idx) => (
               <ProjectCard
                 key={project.slug}
@@ -89,16 +97,21 @@ function MyProjects() {
       >
         <SectionLabel>Desarrollo Front-End</SectionLabel>
 
-        {/* La 12 Digital — proyecto featured a ancho completo */}
+        {/* Mobile: carrusel con TODOS los proyectos de frontend */}
+        <ProjectCarousel
+          projects={[...(frontendFeatured ? [frontendFeatured] : []), ...frontendSecondary]}
+          compact
+          baseMotionDelay={160}
+        />
+
+        {/* Desktop: featured a ancho completo + grid secundarios */}
         {frontendFeatured && (
-          <div className="mb-4">
+          <div className="hidden sm:block mb-4">
             <FeaturedCard project={frontendFeatured} motionDelay={160} />
           </div>
         )}
-
-        {/* Resto de proyectos frontend — grilla compacta */}
         {frontendSecondary.length > 0 && (
-          <div className="grid grid-cols-1 sm:grid-cols-3 gap-4">
+          <div className="hidden sm:grid sm:grid-cols-3 gap-4">
             {frontendSecondary.map((project, idx) => (
               <ProjectCard
                 key={project.slug}

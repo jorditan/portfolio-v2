@@ -12,6 +12,7 @@
     "@astrojs/react": "^4.1.0",
     "@astrojs/tailwind": "^5.1.3",
     "@astrojs/vercel": "^9.0.5",
+    "@fontsource-variable/geist": "^5.2.8",
     "@lucide/astro": "^1.8.0",
     "@radix-ui/react-avatar": "^1.1.2",
     "@radix-ui/react-dropdown-menu": "^2.1.3",
@@ -28,13 +29,16 @@
     "flowbite": "^2.5.2",
     "lucide-react": "^0.468.0",
     "prettier-plugin-tailwindcss": "^0.6.9",
+    "radix-ui": "^1.4.3",
     "react": "^19.0.0",
     "react-dom": "^19.0.0",
     "react-hot-toast": "^2.5.2",
+    "shadcn": "^4.3.0",
     "svelte": "^5.16.0",
-    "tailwind-merge": "^2.5.5",
+    "tailwind-merge": "^2.6.1",
     "tailwindcss": "^3.4.16",
-    "tailwindcss-animate": "^1.0.7"
+    "tailwindcss-animate": "^1.0.7",
+    "tw-animate-css": "^1.4.0"
   },
   "devDependencies": {
     "prettier": "^3.6.1",
