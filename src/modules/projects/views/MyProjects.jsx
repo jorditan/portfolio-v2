@@ -59,26 +59,30 @@ function MyProjects() {
       >
         <SectionLabel>Diseño UX/UI</SectionLabel>
 
-        {/* Featured a ancho completo */}
-        {designFeatured && (
-          <FeaturedCard project={designFeatured} motionDelay={120} />
-        )}
+        {/* Mobile: carrusel con TODOS los proyectos de diseño */}
+        <ProjectCarousel
+          projects={[...(designFeatured ? [designFeatured] : []), ...designSecondary]}
+          compact={false}
+          baseMotionDelay={120}
+        />
 
-        {/* Secundarios — carrusel en mobile, grid en desktop */}
+        {/* Desktop: featured a ancho completo + grid secundarios */}
+        {designFeatured && (
+          <div className="hidden sm:block">
+            <FeaturedCard project={designFeatured} motionDelay={120} />
+          </div>
+        )}
         {designSecondary.length > 0 && (
-          <>
-            <ProjectCarousel projects={designSecondary} compact={false} baseMotionDelay={200} />
-            <div className="hidden sm:grid sm:grid-cols-3 gap-4 mt-4">
-              {designSecondary.map((project, idx) => (
-                <ProjectCard
-                  key={project.slug}
-                  project={project}
-                  compact={false}
-                  motionDelay={200 + idx * 80}
-                />
-              ))}
-            </div>
-          </>
+          <div className="hidden sm:grid sm:grid-cols-3 gap-4 mt-4">
+            {designSecondary.map((project, idx) => (
+              <ProjectCard
+                key={project.slug}
+                project={project}
+                compact={false}
+                motionDelay={200 + idx * 80}
+              />
+            ))}
+          </div>
         )}
       </div>
 
@@ -93,28 +97,30 @@ function MyProjects() {
       >
         <SectionLabel>Desarrollo Front-End</SectionLabel>
 
-        {/* La 12 Digital — proyecto featured a ancho completo */}
+        {/* Mobile: carrusel con TODOS los proyectos de frontend */}
+        <ProjectCarousel
+          projects={[...(frontendFeatured ? [frontendFeatured] : []), ...frontendSecondary]}
+          compact
+          baseMotionDelay={160}
+        />
+
+        {/* Desktop: featured a ancho completo + grid secundarios */}
         {frontendFeatured && (
-          <div className="mb-4">
+          <div className="hidden sm:block mb-4">
             <FeaturedCard project={frontendFeatured} motionDelay={160} />
           </div>
         )}
-
-        {/* Secundarios — carrusel en mobile, grid en desktop */}
         {frontendSecondary.length > 0 && (
-          <>
-            <ProjectCarousel projects={frontendSecondary} compact baseMotionDelay={220} />
-            <div className="hidden sm:grid sm:grid-cols-3 gap-4">
-              {frontendSecondary.map((project, idx) => (
-                <ProjectCard
-                  key={project.slug}
-                  project={project}
-                  compact
-                  motionDelay={220 + idx * 70}
-                />
-              ))}
-            </div>
-          </>
+          <div className="hidden sm:grid sm:grid-cols-3 gap-4">
+            {frontendSecondary.map((project, idx) => (
+              <ProjectCard
+                key={project.slug}
+                project={project}
+                compact
+                motionDelay={220 + idx * 70}
+              />
+            ))}
+          </div>
         )}
       </div>
     </section>

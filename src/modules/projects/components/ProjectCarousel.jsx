@@ -37,49 +37,45 @@ function ProjectCarousel({ projects, compact = false, baseMotionDelay = 200 }) {
         ))}
       </div>
 
-      {/* Controles: flecha izq · dots · flecha der */}
-      <div className="flex items-center justify-center gap-4 mt-3">
-        {/* Botón anterior — estilo Flowbite */}
-        <button
-          onClick={prev}
-          aria-label="Proyecto anterior"
-          className="inline-flex items-center justify-center w-8 h-8 rounded-full
-                     bg-gray-200 dark:bg-gray-700
-                     hover:bg-gray-300 dark:hover:bg-gray-600
-                     focus:outline-none focus:ring-2 focus:ring-sky-500
-                     transition-colors duration-200"
-        >
-          <ChevronLeft className="w-4 h-4 text-gray-700 dark:text-gray-200" />
-        </button>
-
-        {/* Indicadores — estilo Flowbite */}
+      {/* Controles: dots izq · flechas der */}
+      <div className="flex items-center justify-between gap-4 mt-3">
+        {/* Indicadores */}
         <div className="flex items-center gap-2">
           {projects.map((_, idx) => (
             <button
               key={idx}
+              type="button"
               onClick={() => setCurrent(idx)}
               aria-label={`Ir al proyecto ${idx + 1}`}
-              className={`h-2 rounded-full transition-all duration-300 focus:outline-none
-                ${idx === current
-                  ? "w-4 bg-sky-500 dark:bg-sky-300"
-                  : "w-2 bg-gray-300 dark:bg-gray-600 hover:bg-gray-400 dark:hover:bg-gray-500"
-                }`}
+              aria-current={idx === current}
+              className={`h-2.5 rounded-full transition-all duration-300 ${
+                idx === current
+                  ? "w-8 bg-sky-500 dark:bg-sky-300"
+                  : "w-2.5 bg-slate-300 hover:bg-slate-400 dark:bg-slate-700 dark:hover:bg-slate-500"
+              }`}
             />
           ))}
         </div>
 
-        {/* Botón siguiente — estilo Flowbite */}
-        <button
-          onClick={next}
-          aria-label="Proyecto siguiente"
-          className="inline-flex items-center justify-center w-8 h-8 rounded-full
-                     bg-gray-200 dark:bg-gray-700
-                     hover:bg-gray-300 dark:hover:bg-gray-600
-                     focus:outline-none focus:ring-2 focus:ring-sky-500
-                     transition-colors duration-200"
-        >
-          <ChevronRight className="w-4 h-4 text-gray-700 dark:text-gray-200" />
-        </button>
+        {/* Flechas */}
+        <div className="flex items-center gap-2">
+          <button
+            type="button"
+            onClick={prev}
+            aria-label="Proyecto anterior"
+            className="inline-flex h-10 w-10 items-center justify-center rounded-md border border-slate-200 bg-white text-slate-700 transition hover:border-sky-400 hover:text-sky-600 dark:border-white/10 dark:bg-slate-900/60 dark:text-slate-200 dark:hover:border-slate-50 dark:hover:text-slate-50"
+          >
+            <ChevronLeft className="h-4 w-4" />
+          </button>
+          <button
+            type="button"
+            onClick={next}
+            aria-label="Proyecto siguiente"
+            className="inline-flex h-10 w-10 items-center justify-center rounded-md border border-slate-200 bg-white text-slate-700 transition hover:border-sky-400 hover:text-sky-600 dark:border-white/10 dark:bg-slate-900/60 dark:text-slate-200 dark:hover:border-slate-50 dark:hover:text-slate-50"
+          >
+            <ChevronRight className="h-4 w-4" />
+          </button>
+        </div>
       </div>
     </div>
   );

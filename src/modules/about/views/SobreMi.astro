@@ -11,124 +11,194 @@ import SectionHeader from "@/common/components/astroComponentes/SectionHeader.as
 	class="sm:mx-auto py-8 sm:py-10 mx-4 max-w-[32rem] md:max-w-[42rem] lg:max-w-4xl transition-all"
 	id="sobreMi"
 >
-	<article>
-		<div
-			data-reveal-item
-			style="--motion-delay: 0ms; --motion-duration: var(--motion-duration-fast); --motion-distance: 12px;"
-		>
-			<SectionHeader title="Sobre mi">
-				<HandHeart slot="icon" className="text-sky-500 dark:text-sky-300 h-8 w-8" />
-			</SectionHeader>
-		</div>
-		<div
-			class="w-full flex flex-wrap gap-2"
-			data-reveal-item
-			style="--motion-delay: 70ms; --motion-duration: var(--motion-duration-fast); --motion-distance: 12px;"
-		>
+	<article class="w-full flex flex-col items-left gap-12 mb-8">
+		<div class="flex flex-col gap-2 w-full items-start">
 			<div
-				class="flex gap-2 p-1 bg-gray-700 border border-white/10 dark:border-white/20 dark:bg-gray-700 rounded-md"
-			>
-				<Map className="h-4 w-4" />
-				<small class="text-[10px] md:text-sm"> Haedo. Buenos Aires, Argentina. </small>
-			</div>
-
-			<div
-				class="flex gap-2 p-1 bg-gray-700 border border-white/10 dark:border-white/20 dark:bg-gray-700 rounded-md"
-			>
-				<Cake className="h-4 w-4" />
-				<small class="text-[10px] md:text-sm">20 años</small>
-			</div>
-
-			<div
-				class="flex gap-2 p-1 bg-gray-700 border border-white/10 dark:border-yellow-200/20 text-yellow-300 dark:bg-blue-900 rounded-md"
-			>
-				<Heart fill="currentColor" className="h-4 w-4" />
-				<small class="text-[10px] md:text-sm">Hincha de Boca Juniors</small>
-			</div>
-		</div>
-
-		<div
-			class="flex items-center flex-col lg:flex-row gap-8 pt-4 justify-between"
-		>
-			<div
-				class="lg:w-3/4 w-full flex flex-col gap-6"
 				data-reveal-item
-				style="--motion-delay: 140ms; --motion-duration: var(--motion-duration-base); --motion-distance: 18px; --motion-blur: 4px;"
+				style="--motion-delay: 0ms; --motion-duration: var(--motion-duration-fast); --motion-distance: 12px;"
 			>
-				<p
-					class="text-gray-600 dark:text-gray-300 text-md w-fit md:text-[16px] text-[14px] font-medium antialiased"
-				>
-					A mis 14 años comencé a interesarme en todo lo relacionado con la
-					informática, hasta que en mi adolescencia
-					<span class="font-semibold text-gray-800 dark:text-[#ffffff]"
-						>decidí incursionar en el mundo del diseño y la programación</span
-					>
-				</p>
-
-				<p
-					class="text-gray-600 dark:text-gray-300 text-md w-fit md:text-[16px] text-[14px] font-medium antialiased"
-				>
-					La decisión de estudiar en la
-					<a
-						href="https://unahur.edu.ar/"
-						target="_blank"
-						class="font-semibold underline text-sky-800 dark:text-sky-300 decoration-sky-500"
-					>
-						UNAHUR (Universidad Nacional de Hurlingham)</a
-					>
-					fue un paso importante para mí, ya que me permitió profundizar mis conocimientos
-					y habilidades en el campo de la programación.
-				</p>
-
-				<p
-					class="text-gray-600 dark:text-gray-300 font-medium text-md w-fit md:text-[16px] text-[14px] antialiased"
-				>
-					Así fue como, <span
-						class="font-semibold text-gray-800 dark:text-[#ffffff]"
-						>con más de 2 años de experiencia</span
-					>, logré aprovechar mis conocimientos para traducir
-					necesidades a soluciones reales trabajando codo a codo con equipos
-					de tecnología. De esta manera
-					<span class="font-semibold text-gray-800 dark:text-[#ffffff]"
-						>logré reducir tiempos de entrega de quick wins en un 30%</span
-					>
-				</p>
-
-				<p
-					class="text-gray-600 dark:text-gray-300 font-medium text-md w-fit md:text-[16px] text-[14px] antialiased"
-				>
-					Más allá del mundo IT, mis pasiones también pasan por las artes visuales y la cultura. <span
-						class="font-semibold text-gray-800 dark:text-[#ffffff]"
-						>El cine, los libros, la música, el fútbol, los vinilos y los recitales</span> son parte fundamental de mi vida para desconectar cuando es necesario. 
-				</p>
+				<SectionHeader title="Quién soy">
+					<HandHeart
+						slot="icon"
+						className="text-sky-500 dark:text-sky-300 h-8 w-8"
+					/>
+				</SectionHeader>
 			</div>
-
 			<div
-				class="flex flex-col gap-4 justify-center items-center"
+				class="w-full flex flex-wrap fle gap-2"
+				data-reveal-item
+				style="--motion-delay: 70ms; --motion-duration: var(--motion-duration-fast); --motion-distance: 12px;"
+			>
+				<div
+					class="flex gap-2 p-1 bg-gray-700 border border-white/10 dark:border-white/20 dark:bg-gray-700 rounded-md"
+				>
+					<Map className="h-4 w-4" />
+					<small class="text-[10px] md:text-sm">
+						Haedo. Buenos Aires, Argentina.
+					</small>
+				</div>
+				<div
+					class="flex gap-2 p-1 bg-gray-700 border border-white/10 dark:border-white/20 dark:bg-gray-700 rounded-md"
+				>
+					<Cake className="h-4 w-4" />
+					<small class="text-[10px] md:text-sm">20 años</small>
+				</div>
+
+				<div
+					class="flex gap-2 p-1 bg-gray-700 border border-white/10 dark:border-yellow-200/20 text-yellow-300 dark:bg-blue-900 rounded-md"
+				>
+					<Heart fill="currentColor" className="h-4 w-4" />
+					<small class="text-[10px] md:text-sm">Hincha de Boca Juniors</small>
+				</div>
+			</div>
+		</div>
+
+		<div>
+			<div class="flex items-center flex-col lg:flex-row gap-8 justify-between">
+				<div
+					class="lg:w-3/4 w-full flex flex-col gap-6"
+					data-reveal-item
+					style="--motion-delay: 140ms; --motion-duration: var(--motion-duration-base); --motion-distance: 18px; --motion-blur: 4px;"
+				>
+					<p
+						class="text-gray-600 dark:text-gray-300 text-md w-fit md:text-[16px] text-[14px] font-medium antialiased"
+					>
+						Desde chico soy una persona inquieta y curiosa.
+						<span class="font-semibold text-gray-800 dark:text-[#ffffff]"
+							>Crecí en una familia que siempre me motivó a aprender cosas
+							nuevas</span
+						>.
+					</p>
+
+					<p
+						class="text-gray-600 dark:text-gray-300 text-md w-fit md:text-[16px] text-[14px] font-medium antialiased"
+					>
+						Mi mamá es profesora de matemática y mi hermano de música , mientras
+						que mi papá fue un apasionado de la historia. <span
+							class="font-semibold text-gray-800 dark:text-[#ffffff]"
+							>Gracias a ellos, tuve acceso a charlas que alimentaron mi
+							creatividad</span
+						>.
+					</p>
+
+					<p
+						class="text-gray-600 dark:text-gray-300 font-medium text-md w-fit md:text-[16px] text-[14px] antialiased"
+					>
+						Fuí criado con la idea de <span
+							class="font-semibold text-gray-800 dark:text-[#ffffff]"
+							>compartir conocimientos y ayudar a los demás</span
+						>, lo que me llevó a desarrollar una <span
+							class="font-semibold text-gray-800 dark:text-[#ffffff]"
+							>gran empatía y una mirada colaborativa
+						</span> que con el tiempo se convirtieron en pilares fundamentales de
+						mi vida y de mi carrera
+					</p>
+				</div>
+
+				<div
+					class="flex flex-col gap-4 justify-center items-center"
+					data-reveal-item
+					style="--motion-delay: 220ms; --motion-duration: var(--motion-duration-base); --motion-distance: 18px; --motion-blur: 4px;"
+				>
+					<MyCarousel
+						id="carousel-familia"
+						photos={[
+							{
+								src: "/cumple-chico.jpg",
+								alt: "Cumpleaños de chico con la familia",
+							},
+							{ src: "/mama-yo.jpg", alt: "Con mamá" },
+							{ src: "/mama-dami.jpg", alt: "Con mamá y mi hermano Damián" },
+							{ src: "/papa-yo.jpg", alt: "Con papá" },
+							{ src: "/dami-papa.jpg", alt: "Damián y papá" },
+						]}
+						client:load
+					/>
+					<div class="flex gap-4 w-full justify-center items-center"></div>
+				</div>
+			</div>
+		</div>
+
+		<h6 class="font-semibold text-gray-800 dark:text-[#ffffff] text-xl">
+			Y bien, ¿cómo me convertí en diseñador?
+		</h6>
+
+		<div class="flex items-center flex-col gap-8 justify-between">
+			<div
+				class="flex flex-col md:flex-row gap-4 justify-center items-center"
 				data-reveal-item
 				style="--motion-delay: 220ms; --motion-duration: var(--motion-duration-base); --motion-distance: 18px; --motion-blur: 4px;"
 			>
-				<MyCarousel />
-				<div class="flex gap-4 w-full justify-center items-center">
-					<a
-						href="https://open.spotify.com/user/d5n1per0q568urpceis2urmzz?si=569a49a882864ed6"
-						target="_blank"
-						class="border gap-2 text-[16px] sm:text-sm border-gray-700 bg-gray-700 dark:bg-gray-900 inline-flex items-center px-3 py-2 font-medium text-center text-white hover:border-gray-500 rounded-lg hover:bg-gray-800 dark:hover:bg-gray-950"
+				<div class="order-2 md:order-1">
+					<MyCarousel
+						id="carousel-personal"
+						photos={[
+							{
+								src: "/foto-campo.webp",
+								alt: "Foto con una cámara de fotos en Entre Ríos",
+							},
+							{ src: "/foto-slack.webp", alt: "Primera foto en mucho tiempo" },
+							{ src: "/foto-merendando.webp", alt: "Foto merendando" },
+							{
+								src: "/foto_playa.webp",
+								alt: "Foto en la playa de Entre Ríos",
+							},
+						]}
+						client:load
+					/>
+				</div>
+				<div
+					class="lg:w-3/4 w-full flex flex-col gap-6 order-1 md:order-2"
+					data-reveal-item
+					style="--motion-delay: 140ms; --motion-duration: var(--motion-duration-base); --motion-distance: 18px; --motion-blur: 4px;"
+				>
+					<p
+						class="text-gray-600 dark:text-gray-300 text-md w-fit md:text-[16px] text-[14px] font-medium antialiased"
 					>
-						<svg
-							viewBox="0 0 256 256"
-							width="20"
-							height="20"
-							xmlns="http://www.w3.org/2000/svg"
-							preserveAspectRatio="xMidYMid"
-							><path
-								d="M128 0C57.308 0 0 57.309 0 128c0 70.696 57.309 128 128 128 70.697 0 128-57.304 128-128C256 57.314 198.697.007 127.998.007l.001-.006Zm58.699 184.614c-2.293 3.76-7.215 4.952-10.975 2.644-30.053-18.357-67.885-22.515-112.44-12.335a7.981 7.981 0 0 1-9.552-6.007 7.968 7.968 0 0 1 6-9.553c48.76-11.14 90.583-6.344 124.323 14.276 3.76 2.308 4.952 7.215 2.644 10.975Zm15.667-34.853c-2.89 4.695-9.034 6.178-13.726 3.289-34.406-21.148-86.853-27.273-127.548-14.92-5.278 1.594-10.852-1.38-12.454-6.649-1.59-5.278 1.386-10.842 6.655-12.446 46.485-14.106 104.275-7.273 143.787 17.007 4.692 2.89 6.175 9.034 3.286 13.72v-.001Zm1.345-36.293C162.457 88.964 94.394 86.71 55.007 98.666c-6.325 1.918-13.014-1.653-14.93-7.978-1.917-6.328 1.65-13.012 7.98-14.935C93.27 62.027 168.434 64.68 215.929 92.876c5.702 3.376 7.566 10.724 4.188 16.405-3.362 5.69-10.73 7.565-16.4 4.187h-.006Z"
-								fill="currentColor"></path></svg
+						A mis 15 años <span
+							class="font-semibold text-gray-800 dark:text-[#ffffff]"
+							>comencé a interesarme el diseño web gracias a la pandemia y a la
+							viralización de la profesión</span
+						>. Entonces, con tiempo de sobra, aproveché y realicé mis primeras
+						páginas con HTML y CSS.
+					</p>
+
+					<p
+						class="text-gray-600 dark:text-gray-300 text-md w-fit md:text-[16px] text-[14px] font-medium antialiased"
+					>
+						Pasé el 2020-2021 haciendo cursos y tutoriales por mi cuenta, hasta
+						que terminada la secundaria decidí dar un paso más: <span
+							class="font-semibold text-gray-800 dark:text-[#ffffff]"
+							>anotarme a la tecnicatura en programación en la</span
 						>
-						¿También te gusta la música?
-					</a>
+						<a
+							href="https://unahur.edu.ar/"
+							target="_blank"
+							class="underline text-sky-800 dark:text-sky-300 decoration-sky-500"
+						>
+							UNAHUR</a
+						>.
+					</p>
+
+					<p
+						class="text-gray-600 dark:text-gray-300 font-medium text-md w-fit md:text-[16px] text-[14px] antialiased"
+					>
+						Al mismo tiempo, profundicé mis estudios de diseño UX/UI y<span
+							class="font-semibold text-gray-800 dark:text-[#ffffff]"
+							> descubrí que una
+							solución no basta con ser linda visual y técnicamente, si no que
+							también debe resolver problemas del usuario
+						</span>.
+					</p>
 				</div>
 			</div>
+			<p
+				class="text-gray-600 text-left dark:text-gray-300 font-medium text-md md:text-[16px] text-[14px] antialiased"
+			>
+				Desde entonces no dejo de trabajar bsuscando la combinación perfecta
+				entre funcionalidad, estética y usabilidad. 
+			</p>
+
 		</div>
 	</article>
 

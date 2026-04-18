@@ -44,7 +44,7 @@ export const projects = [
     role: "UX/UI Designer",
     year: "2024",
     shortDescription:
-      "Herramienta para Hackmetrix que pone a prueba a los usuarios frente al phishing y los capacita con un flujo educativo.",
+      "Herramienta que pone a prueba a los usuarios frente al phishing y los capacita con un flujo educativo.",
     heroImage: "/test_phishing.webp",
     tags: [
       { iconType: "figma", text: "Figma" },
@@ -76,7 +76,7 @@ export const projects = [
     role: "UX/UI Designer",
     year: "2024",
     shortDescription:
-      "Rediseño del módulo de documentación legal de Hackmetrix a partir de entrevistas contextuales con usuarios reales del producto.",
+      "Rediseño del módulo de legales de Hackmetrix a partir de entrevistas contextuales con usuarios reales del producto.",
     heroImage: "/redesign_legales.webp",
     tags: [
       { iconType: "figma", text: "Figma" },
@@ -110,7 +110,7 @@ export const projects = [
     role: "UX/UI Designer",
     year: "2025",
     shortDescription:
-      "Herramienta de diagnóstico de madurez en ciberseguridad para Hackmetrix, con un flujo guiado que genera un reporte personalizado según el perfil de cada empresa.",
+      "Herramienta de diagnóstico de madurez en ciberseguridad, con un flujo gamificado que genera un reporte personalizado según el resultado de cada empresa.",
     heroImage: "/diagnostico-ciberseguridad.png",
     tags: [
       { iconType: "figma", text: "Figma" },
