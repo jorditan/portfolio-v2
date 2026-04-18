@@ -1,4 +1,4 @@
-import { useState } from "react";
+import { useState, useRef } from "react";
 import { ChevronLeft, ChevronRight } from "lucide-react";
 import ProjectCard from "./ProjectCard.jsx";
 
@@ -15,6 +15,9 @@ import ProjectCard from "./ProjectCard.jsx";
 function ProjectCarousel({ projects, compact = false, baseMotionDelay = 200 }) {
   const [current, setCurrent] = useState(0);
   const total = projects.length;
+  const reducedMotion = useRef(
+    typeof window !== "undefined" && window.matchMedia("(prefers-reduced-motion: reduce)").matches
+  );
 
   const prev = () => setCurrent((i) => (i === 0 ? total - 1 : i - 1));
   const next = () => setCurrent((i) => (i === total - 1 ? 0 : i + 1));
@@ -26,7 +29,7 @@ function ProjectCarousel({ projects, compact = false, baseMotionDelay = 200 }) {
         {projects.map((project, idx) => (
           <div
             key={project.slug}
-            className={`duration-700 ease-in-out ${idx === current ? "block" : "hidden"}`}
+            className={`${reducedMotion.current ? "" : "duration-700 ease-in-out"} ${idx === current ? "block" : "hidden"}`}
           >
             <ProjectCard
               project={project}
@@ -47,12 +50,11 @@ function ProjectCarousel({ projects, compact = false, baseMotionDelay = 200 }) {
               type="button"
               onClick={() => setCurrent(idx)}
               aria-label={`Ir al proyecto ${idx + 1}`}
-              aria-current={idx === current}
-              className={`h-2.5 rounded-full transition-all duration-300 ${
-                idx === current
+              aria-pressed={idx === current}
+              className={`h-2.5 rounded-full transition-all duration-300 ${idx === current
                   ? "w-8 bg-sky-500 dark:bg-sky-300"
                   : "w-2.5 bg-slate-300 hover:bg-slate-400 dark:bg-slate-700 dark:hover:bg-slate-500"
-              }`}
+                }`}
             />
           ))}
         </div>
@@ -63,7 +65,7 @@ function ProjectCarousel({ projects, compact = false, baseMotionDelay = 200 }) {
             type="button"
             onClick={prev}
             aria-label="Proyecto anterior"
-            className="inline-flex h-10 w-10 items-center justify-center rounded-md border border-slate-200 bg-white text-slate-700 transition hover:border-sky-400 hover:text-sky-600 dark:border-white/10 dark:bg-slate-900/60 dark:text-slate-200 dark:hover:border-slate-50 dark:hover:text-slate-50"
+            className="inline-flex h-10 w-10 items-center justify-center rounded-md border border-slate-200 bg-gray-100 text-slate-700 transition hover:border-sky-400 hover:text-sky-600 dark:border-white/10 dark:bg-slate-900/60 dark:text-slate-200 dark:hover:border-slate-50 dark:hover:text-slate-50"
           >
             <ChevronLeft className="h-4 w-4" />
           </button>
@@ -71,7 +73,7 @@ function ProjectCarousel({ projects, compact = false, baseMotionDelay = 200 }) {
             type="button"
             onClick={next}
             aria-label="Proyecto siguiente"
-            className="inline-flex h-10 w-10 items-center justify-center rounded-md border border-slate-200 bg-white text-slate-700 transition hover:border-sky-400 hover:text-sky-600 dark:border-white/10 dark:bg-slate-900/60 dark:text-slate-200 dark:hover:border-slate-50 dark:hover:text-slate-50"
+            className="inline-flex h-10 w-10 items-center justify-center rounded-md border border-slate-200 bg-gray-100 text-slate-700 transition hover:border-sky-400 hover:text-sky-600 dark:border-white/10 dark:bg-slate-900/60 dark:text-slate-200 dark:hover:border-slate-50 dark:hover:text-slate-50"
           >
             <ChevronRight className="h-4 w-4" />
           </button>

@@ -11,10 +11,10 @@ const { title, size = "lg", center } = Astro.props;
 
 const textClass =
   size === "sm"
-    ? "text-md md:text-lg"
-    : "text-2xl md:text-3xl";
+    ? "ui-text-section-h-sm"
+    : "ui-text-section-h";
 
-const Tag = size === "sm" ? "h4" : "h2";
+const Tag = size === "sm" ? "h3" : "h2";
 ---
 
 <div class={`pb-4 flex gap-2 items-center ${center ? 'justify-center items-center' : ''}`}>

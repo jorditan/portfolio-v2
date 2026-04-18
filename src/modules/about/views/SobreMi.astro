@@ -5,13 +5,14 @@ import Tecnologias from "./Tecnologias.astro";
 import Certificados from "./Certificados.astro";
 import Reviews from "./Reviews.astro";
 import SectionHeader from "@/common/components/astroComponentes/SectionHeader.astro";
+import InfoPill from "@/common/components/astroComponentes/InfoPill.astro";
 ---
 
 <section
 	class="sm:mx-auto py-8 sm:py-10 mx-4 max-w-[32rem] md:max-w-[42rem] lg:max-w-4xl transition-all"
 	id="sobreMi"
 >
-	<article class="w-full flex flex-col items-left gap-12 mb-8">
+	<article class="w-full flex flex-col items-left gap-6 mb-6">
 		<div class="flex flex-col gap-2 w-full items-start">
 			<div
 				data-reveal-item
@@ -25,43 +26,33 @@ import SectionHeader from "@/common/components/astroComponentes/SectionHeader.as
 				</SectionHeader>
 			</div>
 			<div
-				class="w-full flex flex-wrap fle gap-2"
+				class="w-full flex flex-wrap flex gap-2"
 				data-reveal-item
 				style="--motion-delay: 70ms; --motion-duration: var(--motion-duration-fast); --motion-distance: 12px;"
 			>
-				<div
-					class="flex gap-2 p-1 bg-gray-700 border border-white/10 dark:border-white/20 dark:bg-gray-700 rounded-md"
-				>
-					<Map className="h-4 w-4" />
-					<small class="text-[10px] md:text-sm">
-						Haedo. Buenos Aires, Argentina.
-					</small>
-				</div>
-				<div
-					class="flex gap-2 p-1 bg-gray-700 border border-white/10 dark:border-white/20 dark:bg-gray-700 rounded-md"
-				>
-					<Cake className="h-4 w-4" />
-					<small class="text-[10px] md:text-sm">20 años</small>
-				</div>
-
-				<div
-					class="flex gap-2 p-1 bg-gray-700 border border-white/10 dark:border-yellow-200/20 text-yellow-300 dark:bg-blue-900 rounded-md"
-				>
-					<Heart fill="currentColor" className="h-4 w-4" />
-					<small class="text-[10px] md:text-sm">Hincha de Boca Juniors</small>
-				</div>
+				<InfoPill text="Haedo. Buenos Aires, Argentina">
+					<Map slot="icon" className="h-4 w-4" />
+				</InfoPill>
+				<InfoPill text="20 años">
+					<Cake slot="icon" className="h-4 w-4" />
+				</InfoPill>
+				<InfoPill text="Hincha de Boca Juniors" variant="boca">
+					<Heart slot="icon" fill="currentColor" className="h-4 w-4" />
+				</InfoPill>
 			</div>
 		</div>
 
 		<div>
-			<div class="flex items-center flex-col lg:flex-row gap-8 justify-between">
+			<div
+				class="flex items-center flex-col lg:flex-row gap-4 lg:gap-8 justify-between"
+			>
 				<div
 					class="lg:w-3/4 w-full flex flex-col gap-6"
 					data-reveal-item
 					style="--motion-delay: 140ms; --motion-duration: var(--motion-duration-base); --motion-distance: 18px; --motion-blur: 4px;"
 				>
 					<p
-						class="text-gray-600 dark:text-gray-300 text-md w-fit md:text-[16px] text-[14px] font-medium antialiased"
+						class="ui-text-body text-gray-600 dark:text-gray-300 w-fit font-medium antialiased"
 					>
 						Desde chico soy una persona inquieta y curiosa.
 						<span class="font-semibold text-gray-800 dark:text-[#ffffff]"
@@ -71,7 +62,7 @@ import SectionHeader from "@/common/components/astroComponentes/SectionHeader.as
 					</p>
 
 					<p
-						class="text-gray-600 dark:text-gray-300 text-md w-fit md:text-[16px] text-[14px] font-medium antialiased"
+						class="ui-text-body text-gray-600 dark:text-gray-300 w-fit font-medium antialiased"
 					>
 						Mi mamá es profesora de matemática y mi hermano de música , mientras
 						que mi papá fue un apasionado de la historia. <span
@@ -82,7 +73,7 @@ import SectionHeader from "@/common/components/astroComponentes/SectionHeader.as
 					</p>
 
 					<p
-						class="text-gray-600 dark:text-gray-300 font-medium text-md w-fit md:text-[16px] text-[14px] antialiased"
+						class="ui-text-body text-gray-600 dark:text-gray-300 w-fit font-medium antialiased"
 					>
 						Fuí criado con la idea de <span
 							class="font-semibold text-gray-800 dark:text-[#ffffff]"
@@ -108,7 +99,10 @@ import SectionHeader from "@/common/components/astroComponentes/SectionHeader.as
 								alt: "Cumpleaños de chico con la familia",
 							},
 							{ src: "/images/about/mama-yo.jpg", alt: "Con mamá" },
-							{ src: "/images/about/mama-dami.jpg", alt: "Con mamá y mi hermano Damián" },
+							{
+								src: "/images/about/mama-dami.jpg",
+								alt: "Con mamá y mi hermano Damián",
+							},
 							{ src: "/images/about/papa-yo.jpg", alt: "Con papá" },
 							{ src: "/images/about/dami-papa.jpg", alt: "Damián y papá" },
 						]}
@@ -119,86 +113,86 @@ import SectionHeader from "@/common/components/astroComponentes/SectionHeader.as
 			</div>
 		</div>
 
-		<h6 class="font-semibold text-gray-800 dark:text-[#ffffff] text-xl">
+		<h3
+			class="ui-text-section-subtitle text-gray-800 dark:text-[#ffffff]"
+		>
 			Y bien, ¿cómo me convertí en diseñador?
-		</h6>
+		</h3>
 
-		<div class="flex items-center flex-col gap-8 justify-between">
+		<div class="grid grid-cols-1 md:grid-cols-[auto_1fr] gap-4 items-start">
 			<div
-				class="flex flex-col md:flex-row gap-4 justify-center items-center"
+				class="md:col-start-2 md:row-start-1 w-full flex flex-col gap-6"
+				data-reveal-item
+				style="--motion-delay: 140ms; --motion-duration: var(--motion-duration-base); --motion-distance: 18px; --motion-blur: 4px;"
+			>
+				<p
+					class="ui-text-body text-gray-600 dark:text-gray-300 w-fit font-medium antialiased"
+				>
+					A mis 15 años <span
+						class="font-semibold text-gray-800 dark:text-[#ffffff]"
+						>comenzó a interesame el diseño web gracias a la pandemia y a la
+						viralización de la profesión</span
+					>. Entonces, con tiempo de sobra, aproveché y realicé mis primeras
+					páginas con HTML y CSS.
+				</p>
+
+				<p
+					class="ui-text-body text-gray-600 dark:text-gray-300 w-fit font-medium antialiased"
+				>
+					Pasé el 2020-2021 haciendo cursos y tutoriales por mi cuenta, hasta
+					que terminada la secundaria decidí dar un paso más: <span
+						class="font-semibold text-gray-800 dark:text-[#ffffff]"
+						>anotarme a la tecnicatura en programación en la</span
+					>
+					<a
+						href="https://unahur.edu.ar/"
+						target="_blank"
+						class="underline text-sky-800 dark:text-sky-300 decoration-sky-500"
+					>
+						UNAHUR</a
+					>.
+				</p>
+
+				<p
+					class="ui-text-body text-gray-600 dark:text-gray-300 w-fit font-medium antialiased"
+				>
+					Al mismo tiempo, profundicé mis estudios de diseño UX/UI y<span
+						class="font-semibold text-gray-800 dark:text-[#ffffff]"
+					>
+						descubrí que una solución no basta con ser linda visual y
+						técnicamente, si no que también debe resolver problemas del usuario
+					</span>.
+				</p>
+			</div>
+
+			<div
+				class="md:col-start-1 md:row-start-1 md:row-span-2 flex justify-center items-center"
 				data-reveal-item
 				style="--motion-delay: 220ms; --motion-duration: var(--motion-duration-base); --motion-distance: 18px; --motion-blur: 4px;"
 			>
-				<div class="order-2 md:order-1">
-					<MyCarousel
-						id="carousel-personal"
-						photos={[
-							{
-								src: "/images/about/foto-campo.webp",
-								alt: "Foto con una cámara de fotos en Entre Ríos",
-							},
-							{ src: "/images/about/foto-slack.webp", alt: "Primera foto en mucho tiempo" },
-							{ src: "/images/about/foto-merendando.webp", alt: "Foto merendando" },
-							{
-								src: "/images/about/foto_playa.webp",
-								alt: "Foto en la playa de Entre Ríos",
-							},
-						]}
-						client:load
-					/>
-				</div>
-				<div
-					class="lg:w-3/4 w-full flex flex-col gap-6 order-1 md:order-2"
-					data-reveal-item
-					style="--motion-delay: 140ms; --motion-duration: var(--motion-duration-base); --motion-distance: 18px; --motion-blur: 4px;"
-				>
-					<p
-						class="text-gray-600 dark:text-gray-300 text-md w-fit md:text-[16px] text-[14px] font-medium antialiased"
-					>
-						A mis 15 años <span
-							class="font-semibold text-gray-800 dark:text-[#ffffff]"
-							>comencé a interesarme el diseño web gracias a la pandemia y a la
-							viralización de la profesión</span
-						>. Entonces, con tiempo de sobra, aproveché y realicé mis primeras
-						páginas con HTML y CSS.
-					</p>
-
-					<p
-						class="text-gray-600 dark:text-gray-300 text-md w-fit md:text-[16px] text-[14px] font-medium antialiased"
-					>
-						Pasé el 2020-2021 haciendo cursos y tutoriales por mi cuenta, hasta
-						que terminada la secundaria decidí dar un paso más: <span
-							class="font-semibold text-gray-800 dark:text-[#ffffff]"
-							>anotarme a la tecnicatura en programación en la</span
-						>
-						<a
-							href="https://unahur.edu.ar/"
-							target="_blank"
-							class="underline text-sky-800 dark:text-sky-300 decoration-sky-500"
-						>
-							UNAHUR</a
-						>.
-					</p>
-
-					<p
-						class="text-gray-600 dark:text-gray-300 font-medium text-md w-fit md:text-[16px] text-[14px] antialiased"
-					>
-						Al mismo tiempo, profundicé mis estudios de diseño UX/UI y<span
-							class="font-semibold text-gray-800 dark:text-[#ffffff]"
-						>
-							descubrí que una solución no basta con ser linda visual y
-							técnicamente, si no que también debe resolver problemas del
-							usuario
-						</span>.
-					</p>
-				</div>
+				<MyCarousel
+					id="carousel-personal"
+					photos={[
+						{
+							src: "/images/about/foto-campo.webp",
+							alt: "Foto con una cámara de fotos en Entre Ríos",
+						},
+						{
+							src: "/images/about/foto-slack.webp",
+							alt: "Primera foto en mucho tiempo",
+						},
+						{
+							src: "/images/about/foto-merendando.webp",
+							alt: "Foto merendando",
+						},
+						{
+							src: "/images/about/foto_playa.webp",
+							alt: "Foto en la playa de Entre Ríos",
+						},
+					]}
+					client:load
+				/>
 			</div>
-			<p
-				class="text-gray-600 text-left dark:text-gray-300 font-medium text-md md:text-[16px] text-[14px] antialiased"
-			>
-				Desde entonces no dejo de trabajar bsuscando la combinación perfecta
-				entre funcionalidad, estética y usabilidad.
-			</p>
 		</div>
 	</article>
 

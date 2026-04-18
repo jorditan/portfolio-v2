@@ -27,13 +27,7 @@ export const projects = [
       images: [],
       impact: [],
     },
-    links: {
-      live: null,
-      repo: null,
-      figma: null,
-      behance:
-        "https://www.behance.net/gallery/208245225/Letterboxd-redesign-Case-of-study-UXUI",
-    },
+    link: "https://www.behance.net/gallery/208245225/Letterboxd-redesign-Case-of-study-UXUI",
   },
 
   {
@@ -45,7 +39,7 @@ export const projects = [
     year: "2024",
     shortDescription:
       "Herramienta que pone a prueba a los usuarios frente al phishing y los capacita con un flujo educativo.",
-    heroImage: "/images/projects/test_phishing.webp",
+    heroImage: "/images/projects/test_phishing.png",
     tags: [
       { iconType: "figma", text: "Figma" },
       { text: "Prototipado" },
@@ -60,12 +54,7 @@ export const projects = [
       images: [],
       impact: [],
     },
-    links: {
-      live: "https://test-phishing.hackmetrix.com/",
-      repo: null,
-      figma: null,
-      behance: null,
-    },
+    link: "https://test-phishing.hackmetrix.com/",
   },
 
   {
@@ -77,7 +66,7 @@ export const projects = [
     year: "2024",
     shortDescription:
       "Rediseño del módulo de legales de Hackmetrix a partir de entrevistas contextuales con usuarios reales del producto.",
-    heroImage: "/images/projects/redesign_legales.webp",
+    heroImage: "/images/projects/modulo_legales.png",
     tags: [
       { iconType: "figma", text: "Figma" },
       { text: "Pruebas de usuario" },
@@ -94,12 +83,7 @@ export const projects = [
       images: [],
       impact: [],
     },
-    links: {
-      live: null,
-      repo: null,
-      figma: null,
-      behance: null,
-    },
+    link: "https://www.behance.net/gallery/230272939/SaaS-Legal-Module-UX-Research-Product-Discovery"
   },
 
   {
@@ -111,7 +95,7 @@ export const projects = [
     year: "2025",
     shortDescription:
       "Herramienta de diagnóstico de madurez en ciberseguridad, con un flujo gamificado que genera un reporte personalizado según el resultado de cada empresa.",
-    heroImage: "/images/projects/diagnostico-ciberseguridad.png",
+    heroImage: "/images/projects/diagnostico_ciberseguridad.png",
     tags: [
       { iconType: "figma", text: "Figma" },
       { text: "Producto" },
@@ -127,12 +111,8 @@ export const projects = [
       images: [],
       impact: [],
     },
-    links: {
-      live: "https://diagnostico-de-seguridad.hackmetrix.com/?utm_campaign=21824416-Diagn%C3%B3stico&utm_source=banner&utm_content=sitioweb",
-      repo: null,
-      figma: null,
-      behance: null,
-    },
+    link:
+      "https://diagnostico-de-seguridad.hackmetrix.com/?utm_campaign=21824416-Diagn%C3%B3stico&utm_source=banner&utm_content=sitioweb",
   },
 
   // ── DESARROLLO FRONT-END ─────────────────────────────────────────────────────
@@ -142,13 +122,16 @@ export const projects = [
     title: "La 12 Digital",
     category: "frontend",
     featured: true,
-    role: "Frontend Developer", // TODO: ajustar rol si aplica
-    year: "2024",
+    role: "Product Designer + Desarrollador",
+    year: "2026",
     shortDescription:
-      "TODO: completar descripción corta del proyecto La 12 Digital.", // TODO
-    heroImage: "/images/projects/la-12-digital.png", 
+      "Seguir a Boca requiere abrir 5 apps distintas: la página del club para noticias, X para las reacciones en vivo, Promiedos para estadísticas posteriores, otra de clima antes de ir a la cancha, YouTube para los videos... La 12 Digital centraliza todo eso en un solo lugar.", // TODO
+    heroImage: "/images/projects/la-12-digital.png",
     tags: [
-      // TODO: completar con las tecnologías del proyecto
+      { iconType: "figma", text: "Figma" },
+      { iconType: "react", text: "React" },
+      { iconType: "typescript", text: "TypeScript" },
+      { iconType: "tailwind", text: "Tailwind" },
     ],
     detail: {
       problem: "TODO: completar con el contexto del proyecto.",
@@ -157,12 +140,8 @@ export const projects = [
       images: [],
       impact: [],
     },
-    links: {
-      live: "https://la-12-digital.matiasowjordan.workers.dev/", // TODO
-      repo: null, // TODO
-      figma: null,
-      behance: null,
-    },
+    link:
+      "https://la-12-digital.matiasowjordan.workers.dev/",
   },
 
   {
@@ -189,12 +168,7 @@ export const projects = [
       images: [],
       impact: [],
     },
-    links: {
-      live: "https://gifs-search-app-react-five.vercel.app/",
-      repo: "https://github.com/jorditan/gifs-app-react",
-      figma: null,
-      behance: null,
-    },
+    link: "https://gifs-search-app-react-five.vercel.app/",
   },
 
   {
@@ -222,12 +196,7 @@ export const projects = [
       images: [],
       impact: [],
     },
-    links: {
-      live: "https://pokemonfinder-vue.netlify.app/",
-      repo: "https://github.com/jorditan/PokemonGame",
-      figma: null,
-      behance: null,
-    },
+    link: "https://pokemonfinder-vue.netlify.app/",
   },
 
   {
@@ -256,12 +225,7 @@ export const projects = [
       images: [],
       impact: [],
     },
-    links: {
-      live: null,
-      repo: "https://github.com/obj1-unahur-2024s2/TPGameIntegrador-thecoders",
-      figma: null,
-      behance: null,
-    },
+    link: "https://github.com/obj1-unahur-2024s2/TPGameIntegrador-thecoders",
   },
 ];
 

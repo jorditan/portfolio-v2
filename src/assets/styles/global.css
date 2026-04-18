@@ -110,6 +110,126 @@
   --motion-distance-md: 20px;
   --motion-blur-sm: 6px;
   --motion-blur-md: 10px;
+
+  /* ── UI Tokens: Typography ──────────────────────────────────────── */
+  /* Font size scale */
+  --ui-fs-xs:   0.75rem;      /* 12px  – mínimo legible para badges */
+  --ui-fs-sm:   0.875rem;     /* 14px  – texto secundario / caption */
+  --ui-fs-base: 1rem;         /* 16px  – cuerpo estándar */
+  --ui-fs-lg:   1.125rem;     /* 18px  – cuerpo grande / lead */
+  --ui-fs-xl:   1.25rem;      /* 20px  – subtítulos de sección */
+  --ui-fs-2xl:  1.5rem;       /* 24px  – headings de sección */
+  --ui-fs-3xl:  1.875rem;     /* 30px  – headings grandes */
+
+  /* Line heights */
+  --ui-lh-tight:   1.25;
+  --ui-lh-snug:    1.375;
+  --ui-lh-normal:  1.5;
+  --ui-lh-relaxed: 1.625;
+}
+
+/* ── UI Text Utilities ──────────────────────────────────────────────
+   El breakpoint responsivo vive AQUÍ, no en el HTML.
+   Los componentes usan la clase semántica y el CSS se encarga del resto.
+   ─────────────────────────────────────────────────────────────────── */
+
+/* Badges y micro-etiquetas (reemplaza text-[10px] / text-[12px]) */
+.ui-text-badge {
+  font-size: var(--ui-fs-xs);   /* 12px siempre — mínimo legible */
+  line-height: 1;
+  font-weight: 500;
+}
+
+/* Pills de info y captions (reemplaza text-[10px] md:text-sm) */
+.ui-text-caption {
+  font-size: var(--ui-fs-xs);   /* 12px mobile */
+  line-height: var(--ui-lh-normal);
+}
+@media (min-width: 640px) {
+  .ui-text-caption {
+    font-size: var(--ui-fs-sm); /* 14px sm+ */
+  }
+}
+
+/* Texto de cuerpo principal (reemplaza text-[14px] md:text-[16px]) */
+.ui-text-body {
+  font-size: var(--ui-fs-sm);   /* 14px mobile */
+  line-height: var(--ui-lh-relaxed);
+}
+@media (min-width: 768px) {
+  .ui-text-body {
+    font-size: var(--ui-fs-base); /* 16px md+ */
+  }
+}
+
+/* Texto secundario pequeño (reemplaza text-sm, usado en footer y variantes) */
+.ui-text-body-sm {
+  font-size: var(--ui-fs-sm);   /* 14px mobile */
+  line-height: var(--ui-lh-relaxed);
+}
+@media (min-width: 768px) {
+  .ui-text-body-sm {
+    font-size: var(--ui-fs-base); /* 16px md+ */
+  }
+}
+
+/* Texto introductorio / lead (reemplaza text-[15px] md:text-[18px]) */
+.ui-text-lead {
+  font-size: var(--ui-fs-base); /* 16px mobile */
+  line-height: var(--ui-lh-relaxed);
+}
+@media (min-width: 768px) {
+  .ui-text-lead {
+    font-size: var(--ui-fs-lg); /* 18px md+ */
+  }
+}
+
+/* Títulos de cards (reemplaza text-sm md:text-base / text-[14px] md:text-lg) */
+.ui-text-card-title {
+  font-size: var(--ui-fs-sm);   /* 14px mobile */
+  line-height: var(--ui-lh-snug);
+  font-weight: 600;
+}
+@media (min-width: 768px) {
+  .ui-text-card-title {
+    font-size: var(--ui-fs-base); /* 16px md+ */
+  }
+}
+
+/* Subtítulos de sección / h3 (reemplaza text-md md:text-xl) */
+.ui-text-section-subtitle {
+  font-size: var(--ui-fs-lg);   /* 18px mobile */
+  line-height: var(--ui-lh-snug);
+  font-weight: 600;
+}
+@media (min-width: 768px) {
+  .ui-text-section-subtitle {
+    font-size: var(--ui-fs-xl); /* 20px md+ */
+  }
+}
+
+/* Headings de sección grandes — SectionHeader lg (reemplaza text-2xl md:text-3xl) */
+.ui-text-section-h {
+  font-size: var(--ui-fs-2xl);  /* 24px mobile */
+  line-height: var(--ui-lh-snug);
+  font-weight: 600;
+}
+@media (min-width: 768px) {
+  .ui-text-section-h {
+    font-size: var(--ui-fs-3xl); /* 30px md+ */
+  }
+}
+
+/* Headings de sección pequeños — SectionHeader sm (reemplaza text-md md:text-lg) */
+.ui-text-section-h-sm {
+  font-size: var(--ui-fs-base); /* 16px mobile – corrige text-md inválido */
+  line-height: var(--ui-lh-snug);
+  font-weight: 600;
+}
+@media (min-width: 768px) {
+  .ui-text-section-h-sm {
+    font-size: var(--ui-fs-lg); /* 18px md+ */
+  }
 }
 
 html.js.motion-enabled [data-motion="hero-item"],
@@ -125,11 +245,20 @@ html.js.motion-enabled [data-reveal-item] {
   will-change: opacity, transform, filter;
 }
 
+html.js.motion-enabled [data-motion="hero-item"].is-visible,
+html.js.motion-enabled [data-reveal-item].is-visible {
+  will-change: auto;
+}
+
 html.js.motion-enabled [data-motion="hero-static-word"] {
   transform: translate3d(0, 12px, 0);
   transition: transform var(--motion-duration-slow) var(--motion-ease-premium);
   transition-delay: var(--motion-delay, 0ms);
   will-change: transform;
+}
+
+[data-motion="hero-static-word"].is-visible {
+  will-change: auto;
 }
 
 html.js.motion-enabled [data-motion="hero-item"].is-visible,

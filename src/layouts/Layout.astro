@@ -8,7 +8,7 @@ import SpeedInsights from "@vercel/speed-insights/astro";
 
 <!doctype html>
 <html
-	lang="en"
+	lang="es"
 	transition:persist="header"
 	class="scroll-smooth focus:scroll-auto"
 >
@@ -18,7 +18,6 @@ import SpeedInsights from "@vercel/speed-insights/astro";
 		</script>
 		<ThemeCabezaScript />
 		<SpeedInsights />
-		<meta charset="UTF-8" />
 		<meta charset="UTF-8" />
 		<meta
 			name="description"
@@ -39,7 +38,7 @@ import SpeedInsights from "@vercel/speed-insights/astro";
 		/>
 		<meta
 			property="og:image"
-			content="https://https://matias-jordan-portfolio.netlify.app/foto-campo"
+			content="https://matias-jordan-portfolio.netlify.app/foto-campo"
 		/>
 		<meta
 			property="og:url"
@@ -55,16 +54,23 @@ import SpeedInsights from "@vercel/speed-insights/astro";
 		/>
 		<link
 			rel="canonical"
-			href={`https://https://matias-jordan-portfolio.netlify.app/${Astro.url.pathname}`}
+			href={new URL(Astro.url.pathname, "https://matias-jordan-portfolio.netlify.app").href}
 		/>
 		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+		<meta name="theme-color" content="#071e40" />
 		<link rel="icon" type="image/svg+xml" href="/brand/palette.svg" />
 		<title>Matías Owen Jordán</title>
 	</head>
 	<body data-cursor-glow>
 		<ClientRouter />
+		<a
+			href="#main-content"
+			class="sr-only focus:not-sr-only focus:absolute focus:z-50 focus:left-3 focus:top-3 focus:px-4 focus:py-2 focus:bg-sky-600 focus:text-white focus:rounded-lg focus:shadow-lg"
+		>
+			Ir al contenido principal
+		</a>
 		<Navbar />
-		<main>
+		<main id="main-content" tabindex="-1">
 			<slot />
 		</main>
 		<Footer />
@@ -231,9 +237,16 @@ import SpeedInsights from "@vercel/speed-insights/astro";
 		<script type="application/ld+json">
 			{
 				"@context": "http://schema.org",
-				"@type": "Dataset",
-				"name": "Portfolio de Matías Jordán",
-				"description": "Product Designer y desarrollador Front-End de 20 años. Apasionado en el desarrollo y diseño de soluciones innovadoras. Estudiante de la Licenciatura en Informática en la Universidad Nacional de Hurlingham (UNAHUR)."
+				"@type": "Person",
+				"name": "Matías Owen Jordán",
+				"jobTitle": "Diseñador UX/UI & Frontend Developer",
+				"url": "https://matias-jordan-portfolio.netlify.app",
+				"description": "Product Designer y desarrollador Front-End. Apasionado en el desarrollo y diseño de soluciones innovadoras.",
+				"sameAs": [
+					"https://www.linkedin.com/in/matias-jordan/",
+					"https://github.com/jorditan",
+					"https://www.behance.net/matiasowenjordan"
+				]
 			}
 		</script>
 	</body>
@@ -317,6 +330,10 @@ import SpeedInsights from "@vercel/speed-insights/astro";
 				transparent 70%
 			);
 		background-blend-mode: lighten;
+	}
+	* {
+		scrollbar-width: thin;
+		scrollbar-color: #38bdf8 #071e40;
 	}
 	::-webkit-scrollbar {
 		width: 5px;

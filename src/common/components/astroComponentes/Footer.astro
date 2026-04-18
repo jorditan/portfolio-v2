@@ -2,43 +2,62 @@
 const currentYear = new Date().getFullYear();
 ---
 
-<footer
-	class="mt-10 w-full bg-gray-800 py-6 shadow dark:bg-gray-800"
-	data-reveal-item
-	style="--motion-delay: 30ms; --motion-duration: var(--motion-duration-base); --motion-distance: 18px; --motion-blur: 4px;"
->
+<footer class="mt-10 w-full bg-gray-800 py-6 shadow dark:bg-gray-800">
 	<div class="mx-auto flex w-full max-w-5xl flex-col gap-6 px-4 sm:px-6">
 		<div class="flex flex-col gap-4 border-b border-white/10 pb-5">
 			<div class="grid gap-4 sm:grid-cols-2 justify-between">
-				<span class="w-full text-md text-gray-300 ">Contacto</span>
+				<span class="w-full text-md text-gray-300">Contacto</span>
 
-				<div class="flex gap-6 flex-col w-fit">
-						<a class="text-sm dark:text-gray-500 text-gray-300 dark:hover:text-gray-300" href="mailto:correo@gmail.com">Correo</a>
-		
-						<a
-							href="https://www.linkedin.com/in/matias-jordan/"
-							target="_blank"
-							class="text-sm dark:text-gray-500 text-gray-300 dark:hover:text-gray-300">LinkedIn</a
-						>
-		
-						<a
-							href="https://www.behance.net/matiasowenjordan"
-							target="_blank"
-							class="text-sm dark:text-gray-500 text-gray-300 dark:hover:text-gray-300">Behance</a
-						>
-		
-						<a
-							href="https://www.github.com/jorditan"
-							target="_blank"
-							class="text-sm dark:text-gray-500 text-gray-300 dark:hover:text-gray-300">Github</a
-						>
-		
-						<a
-							href="https://www.instagram.com/mmatijordan/"
-							target="_blank"
-							class="text-sm dark:text-gray-500 text-gray-300 dark:hover:text-gray-300">Instagram</a
-						>
-				</div>
+				<nav aria-label="Contacto">
+					<ul class="flex gap-6 flex-col w-fit list-none p-0 m-0">
+						<li>
+							<a
+								class="ui-text-body-sm text-gray-300 hover:text-white hover:underline transition-colors"
+								href="mailto:matiasowjordan@gmail.com">Correo</a
+							>
+						</li>
+						<li>
+							<a
+								href="https://www.linkedin.com/in/matias-jordan/"
+								target="_blank"
+								rel="noopener noreferrer"
+								aria-label="LinkedIn (se abre en nueva pestaña)"
+								class="ui-text-body-sm text-gray-300 hover:text-white hover:underline transition-colors"
+								>LinkedIn</a
+							>
+						</li>
+						<li>
+							<a
+								href="https://www.behance.net/matiasowenjordan"
+								target="_blank"
+								rel="noopener noreferrer"
+								aria-label="Behance (se abre en nueva pestaña)"
+								class="ui-text-body-sm text-gray-300 hover:text-white hover:underline transition-colors"
+								>Behance</a
+							>
+						</li>
+						<li>
+							<a
+								href="https://github.com/jorditan"
+								target="_blank"
+								rel="noopener noreferrer"
+								aria-label="Github (se abre en nueva pestaña)"
+								class="ui-text-body-sm text-gray-300 hover:text-white hover:underline transition-colors"
+								>Github</a
+							>
+						</li>
+						<li>
+							<a
+								href="https://www.instagram.com/mmatijordan/"
+								target="_blank"
+								rel="noopener noreferrer"
+								aria-label="Instagram (se abre en nueva pestaña)"
+								class="ui-text-body-sm text-gray-300 hover:text-white hover:underline transition-colors"
+								>Instagram</a
+							>
+						</li>
+					</ul>
+				</nav>
 			</div>
 		</div>
 

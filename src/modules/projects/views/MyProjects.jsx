@@ -66,7 +66,7 @@ function MyProjects() {
           baseMotionDelay={120}
         />
 
-        {/* Desktop: featured a ancho completo + grid secundarios */}
+        {/* Desktop:  ancho completo + grid secundarios */}
         {designFeatured && (
           <div className="hidden sm:block">
             <FeaturedCard project={designFeatured} motionDelay={120} />
@@ -76,6 +76,7 @@ function MyProjects() {
           <div className="hidden sm:grid sm:grid-cols-3 gap-4 mt-4">
             {designSecondary.map((project, idx) => (
               <ProjectCard
+                link={project.link}
                 key={project.slug}
                 project={project}
                 compact={false}
