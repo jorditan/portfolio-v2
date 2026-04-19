@@ -9,16 +9,17 @@ import SocialIconLink from "@/common/components/astroComponentes/SocialIconLink.
 	data-motion-hero
 >
 	<article
-		class="flex flex-col  gap-4 md:gap-8 justify-center w-fit"
+		class="flex flex-col gap-4 md:gap-8 justify-center w-fit"
 		aria-label="Bienvenida al portfolio"
 	>
-		<div class="flex flex-col gap-2 md:gap-4" data-motion="hero-item" style="--motion-delay: 60ms; --motion-duration: var(--motion-duration-fast); --motion-distance: 12px;">
+		<div
+			class="flex flex-col gap-2 md:gap-4"
+			data-motion="hero-item"
+			style="--motion-delay: 60ms; --motion-duration: var(--motion-duration-fast); --motion-distance: 12px;"
+		>
 			<div class="flex md:gap-4 md:flex-row items-left z-0 md:items-end">
 				<div class="flex gap-4 items-center">
-					<div
-						data-motion="hero-static-word"
-						style="--motion-delay: 120ms;"
-					>
+					<div data-motion="hero-static-word" style="--motion-delay: 120ms;">
 						<h1
 							class="title text-5xl md:text-5xl lg:text-7xl font-bold w-fit text-[#0f172a] dark:text-[#fafafa]"
 						>
@@ -45,12 +46,12 @@ import SocialIconLink from "@/common/components/astroComponentes/SocialIconLink.
 					<h2
 						class="text-xl md:text-3xl font-bold w-fit text-[#0f172a] dark:text-[#fafafa]"
 					>
-						Diseñador UX/UI 🎨
+						Product Designer 🎨
 					</h2>
 					<h2
 						class="text-xl md:text-3xl font-bold w-fit text-[#0f172a] dark:text-[#fafafa]"
 					>
-						Desarrollador frontend 👨‍💻
+						Frontend Developer 👨‍💻
 					</h2>
 				</div>
 			</div>
@@ -65,7 +66,8 @@ import SocialIconLink from "@/common/components/astroComponentes/SocialIconLink.
 			data-motion="hero-item"
 			style="--motion-delay: 280ms; --motion-duration: var(--motion-duration-base); --motion-distance: 18px; --motion-blur: var(--motion-blur-sm);"
 		>
-			<b class="dark:text-sky-300 text-sky-500">+2 años de experiencia</b> diseñando y desarrollando productos digitales.
+			<b class="dark:text-sky-300 text-sky-500">+2 años de experiencia</b> diseñando
+			y desarrollando productos digitales.
 		</p>
 
 		<div
@@ -73,9 +75,21 @@ import SocialIconLink from "@/common/components/astroComponentes/SocialIconLink.
 			data-motion="hero-item"
 			style="--motion-delay: 360ms; --motion-duration: var(--motion-duration-base); --motion-distance: 16px;"
 		>
-			<SocialIconLink href="https://www.linkedin.com/in/matias-jordan/" label="LinkedIn" icon="linkedin" />
-			<SocialIconLink href="https://github.com/jorditan" label="GitHub" icon="github" />
-			<SocialIconLink href="https://www.behance.net/matiasowenjordan" label="Behance" icon="behance" />
+			<SocialIconLink
+				href="https://www.linkedin.com/in/matias-jordan/"
+				label="LinkedIn"
+				icon="linkedin"
+			/>
+			<SocialIconLink
+				href="https://github.com/jorditan"
+				label="GitHub"
+				icon="github"
+			/>
+			<SocialIconLink
+				href="https://www.behance.net/matiasowenjordan"
+				label="Behance"
+				icon="behance"
+			/>
 		</div>
 	</article>
 </section>

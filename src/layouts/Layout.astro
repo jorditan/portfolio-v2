@@ -54,12 +54,15 @@ import SpeedInsights from "@vercel/speed-insights/astro";
 		/>
 		<link
 			rel="canonical"
-			href={new URL(Astro.url.pathname, "https://matias-jordan-portfolio.netlify.app").href}
+			href={new URL(
+				Astro.url.pathname,
+				"https://matias-jordan-portfolio.netlify.app",
+			).href}
 		/>
 		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
 		<meta name="theme-color" content="#071e40" />
 		<link rel="icon" type="image/svg+xml" href="/brand/palette.svg" />
-		<title>Matías Owen Jordán</title>
+		<title>Matías Jordán | Product Designer</title>
 	</head>
 	<body data-cursor-glow>
 		<ClientRouter />
@@ -111,7 +114,9 @@ import SpeedInsights from "@vercel/speed-insights/astro";
 					hero.dataset.motionBound = "true";
 
 					window.setTimeout(() => {
-						hero.querySelectorAll('[data-motion="hero-item"]').forEach(revealElement);
+						hero
+							.querySelectorAll('[data-motion="hero-item"]')
+							.forEach(revealElement);
 					}, config.heroVisibleDelay);
 				};
 
@@ -138,7 +143,11 @@ import SpeedInsights from "@vercel/speed-insights/astro";
 					}
 
 					document.querySelectorAll("[data-reveal-item]").forEach((element) => {
-						if (element.dataset.revealBound === "true" || element.classList.contains("is-visible")) return;
+						if (
+							element.dataset.revealBound === "true" ||
+							element.classList.contains("is-visible")
+						)
+							return;
 						element.dataset.revealBound = "true";
 						state.observer?.observe(element);
 					});
@@ -148,7 +157,11 @@ import SpeedInsights from "@vercel/speed-insights/astro";
 					state.cursorCleanup.forEach((cleanup) => cleanup());
 					state.cursorCleanup = [];
 
-					if (window.matchMedia("(hover: none), (pointer: coarse), (max-width: 767px)").matches) {
+					if (
+						window.matchMedia(
+							"(hover: none), (pointer: coarse), (max-width: 767px)",
+						).matches
+					) {
 						return;
 					}
 
@@ -161,17 +174,30 @@ import SpeedInsights from "@vercel/speed-insights/astro";
 							const x = ((event.clientX - rect.left) / rect.width) * 100;
 							const y = ((event.clientY - rect.top) / rect.height) * 100;
 
-							element.style.setProperty("--cursor-x", `${Math.max(0, Math.min(100, x))}%`);
-							element.style.setProperty("--cursor-y", `${Math.max(0, Math.min(100, y))}%`);
-							element.style.setProperty("--cursor-opacity", `${config.cursorFade}`);
+							element.style.setProperty(
+								"--cursor-x",
+								`${Math.max(0, Math.min(100, x))}%`,
+							);
+							element.style.setProperty(
+								"--cursor-y",
+								`${Math.max(0, Math.min(100, y))}%`,
+							);
+							element.style.setProperty(
+								"--cursor-opacity",
+								`${config.cursorFade}`,
+							);
 						};
 
 						const resetPosition = () => {
 							element.style.setProperty("--cursor-opacity", "0");
 						};
 
-						element.addEventListener("pointermove", updatePosition, { passive: true });
-						element.addEventListener("pointerleave", resetPosition, { passive: true });
+						element.addEventListener("pointermove", updatePosition, {
+							passive: true,
+						});
+						element.addEventListener("pointerleave", resetPosition, {
+							passive: true,
+						});
 
 						state.cursorCleanup.push(() => {
 							element.removeEventListener("pointermove", updatePosition);
@@ -182,8 +208,13 @@ import SpeedInsights from "@vercel/speed-insights/astro";
 				};
 
 				const initMotion = () => {
-					const reduceMotion = window.matchMedia("(prefers-reduced-motion: reduce)").matches;
-					document.documentElement.classList.toggle("motion-enabled", !reduceMotion);
+					const reduceMotion = window.matchMedia(
+						"(prefers-reduced-motion: reduce)",
+					).matches;
+					document.documentElement.classList.toggle(
+						"motion-enabled",
+						!reduceMotion,
+					);
 
 					if (reduceMotion) {
 						if (state.observer) state.observer.disconnect();
@@ -239,7 +270,7 @@ import SpeedInsights from "@vercel/speed-insights/astro";
 				"@context": "http://schema.org",
 				"@type": "Person",
 				"name": "Matías Owen Jordán",
-				"jobTitle": "Diseñador UX/UI & Frontend Developer",
+				"jobTitle": "Product Designer & Frontend Developer",
 				"url": "https://matias-jordan-portfolio.netlify.app",
 				"description": "Product Designer y desarrollador Front-End. Apasionado en el desarrollo y diseño de soluciones innovadoras.",
 				"sameAs": [

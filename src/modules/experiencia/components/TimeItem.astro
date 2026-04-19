@@ -1,5 +1,15 @@
 ---
-const { title, date, description, place, url, img, order = 0, datetime } = Astro.props;
+const {
+	title,
+	date,
+	description,
+	place,
+	url,
+	img,
+	imgDark,
+	order = 0,
+	datetime,
+} = Astro.props;
 ---
 
 <li
@@ -15,15 +25,23 @@ const { title, date, description, place, url, img, order = 0, datetime } = Astro
 	<div class="flex items-center gap-4 pb-1">
 		<img
 			src={img}
-			class="object-cover p-1 border border-slate-50/45 rounded-xl h-10 w-10"
+			class={`object-cover p-1 border bg-gray-100 border-slate-50/45 rounded-xl h-10 w-10 shadow-md shadow-black/10 dark:bg-gray-800 dark:border-gray-700 dark:shadow-black/40${imgDark ? " dark:hidden" : ""}`}
 			alt={`${title} Logo`}
 		/>
+		{
+			imgDark && (
+				<img
+					src={imgDark}
+					class="hidden object-contain dark:block p-1 border bg-gray-800 border-gray-700 rounded-xl h-10 w-10 shadow-md shadow-black/40"
+					alt={`${title} Logo`}
+				/>
+			)
+		}
 		<div class="flex gap-1 flex-col w-full">
 			<div class="flex items-center">
 				<time
 					class="text-sm font-normal leading-none text-gray-800 dark:text-gray-300"
-					datetime={datetime ?? date}
-					>{date}</time
+					datetime={datetime ?? date}>{date}</time
 				>
 			</div>
 			<div class="flex gap-2 items-center pb-1">
