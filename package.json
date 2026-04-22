@@ -6,7 +6,11 @@
     "dev": "astro dev",
     "start": "astro dev",
     "build": "astro build",
-    "preview": "astro preview"
+    "preview": "astro preview",
+    "img:webp": "node scripts/convert-to-webp.mjs",
+    "img:webp:force": "node scripts/convert-to-webp.mjs --force",
+    "img:cleanup": "node scripts/cleanup-unused-images.mjs",
+    "img:cleanup:dry": "node scripts/cleanup-unused-images.mjs --dry-run"
   },
   "dependencies": {
     "@astrojs/react": "^4.1.0",

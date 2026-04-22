@@ -39,7 +39,7 @@ export const projects = [
     year: "2024",
     shortDescription:
       "Herramienta que pone a prueba a los usuarios frente al phishing y los capacita con un flujo educativo.",
-    heroImage: "/images/projects/test_phishing.png",
+    heroImage: "/images/projects/test_phishing.webp",
     tags: [
       { iconType: "figma", text: "Figma" },
       { text: "Prototipado" },
@@ -66,7 +66,7 @@ export const projects = [
     year: "2024",
     shortDescription:
       "Rediseño del módulo de legales de Hackmetrix a partir de entrevistas contextuales con usuarios reales del producto.",
-    heroImage: "/images/projects/modulo_legales.png",
+    heroImage: "/images/projects/modulo_legales.webp",
     tags: [
       { iconType: "figma", text: "Figma" },
       { text: "Pruebas de usuario" },
@@ -95,7 +95,7 @@ export const projects = [
     year: "2025",
     shortDescription:
       "Herramienta de diagnóstico de madurez en ciberseguridad, con un flujo gamificado que genera un reporte personalizado según el resultado de cada empresa.",
-    heroImage: "/images/projects/diagnostico_ciberseguridad.png",
+    heroImage: "/images/projects/diagnostico_ciberseguridad.webp",
     tags: [
       { iconType: "figma", text: "Figma" },
       { text: "Producto" },
@@ -126,7 +126,7 @@ export const projects = [
     year: "2026",
     shortDescription:
       "Seguir a Boca requiere abrir 5 apps distintas: la página del club para noticias, X para las reacciones en vivo, Promiedos para estadísticas posteriores, otra de clima antes de ir a la cancha, YouTube para los videos... La 12 Digital centraliza todo eso en un solo lugar.", // TODO
-    heroImage: "/images/projects/la-12-digital.png",
+    heroImage: "/images/projects/la-12-digital.webp",
     tags: [
       { iconType: "figma", text: "Figma" },
       { iconType: "react", text: "React" },
