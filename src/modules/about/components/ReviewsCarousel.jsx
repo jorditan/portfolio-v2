@@ -40,7 +40,7 @@ function ReviewsCarousel({ reviews = [] }) {
                 : "pointer-events-none absolute inset-0 translate-x-6 opacity-0"
                 }`}
             >
-              <div className="relative overflow-hidden p-2 sm:p-4">
+              <div className="relative overflow-hidden p-2 group flex h-full flex-col rounded-md m-2 border  dark:border-white/10 bg-gray-100 dark:bg-gray-800 shadow-md shadow-slate-300/60 dark:shadow-black/30 backdrop-blur-sm transition-all duration-300  hover:shadow-lg hover:shadow-slate-300/70 dark:hover:shadow-black/4 sm:p-4 border-slate-200/80">
                 <div className="pointer-events-none absolute inset-0 " />
 
                 <div className="relative z-10 flex flex-col gap-4">
@@ -75,7 +75,7 @@ function ReviewsCarousel({ reviews = [] }) {
                   </div>
 
                   <div className="flex gap-4 flex-col">
-                    <p className="whitespace-pre-line text-sm italic leading-2 text-slate-700 dark:text-slate-300 sm:text-[15px]">
+                    <p className="whitespace-pre-line text-sm leading-2 text-slate-700 dark:text-slate-300 sm:text-[15px]">
                       "{review.message}"
                     </p>
 
