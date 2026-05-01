@@ -1,3 +1,4 @@
+import { Calendar } from "lucide-react";
 import { startTransition, useState, useEffect, useRef } from "react";
 
 function ReviewsCarousel({ reviews = [] }) {
@@ -59,7 +60,7 @@ function ReviewsCarousel({ reviews = [] }) {
                       <div className="flex flex-col">
                         <div className="flex ">
                           <a href={review.url} target="_blank" rel="noopener noreferrer" className="text-sm font-semibold text-slate-900 dark:hover:text-sky-300 hover:text-sky-600 dark:text-slate-100 sm:text-base hover:underline focus-visible:text-sky-600 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-sky-600 focus-visible:ring-offset-2 dark:focus-visible:ring-sky-300 transition-transform duration-200 gap-0.5 sm:gap-2 items-center flex flex-col sm:flex-row justify-start mb-1">
-                            <span className="w-fit">
+                            <span className="w-fit text-lg">
                               {review.name}
                             </span>
                             <span className="text-xs font-medium text-sky-600 dark:text-sky-300 w-full sm:w-fit">
@@ -79,9 +80,12 @@ function ReviewsCarousel({ reviews = [] }) {
                       "{review.message}"
                     </p>
 
-                    <small className="text-sm text-slate-500 dark:text-slate-400">
-                      {review.date}
-                    </small>
+                    <div className="flex flex-row gap-2 items-center">
+                      <Calendar className="inline-block h-4 w-4 text-slate-500 dark:text-slate-400" />
+                      <small className="text-sm text-slate-500 dark:text-slate-400">
+                        {review.date}
+                      </small>
+                    </div>
                   </div>
                 </div>
               </div>
