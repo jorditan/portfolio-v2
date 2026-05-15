@@ -141,7 +141,7 @@ export const projects = [
       impact: [],
     },
     link:
-      "https://la-12-digital.matiasowjordan.workers.dev/",
+      "https://la12digital.dev/",
   },
 
   {
