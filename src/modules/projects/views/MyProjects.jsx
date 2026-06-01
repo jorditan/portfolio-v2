@@ -73,7 +73,7 @@ function MyProjects() {
           </div>
         )}
         {designSecondary.length > 0 && (
-          <div className="hidden sm:grid sm:grid-cols-3 gap-4 mt-4">
+          <div className="hidden w-full sm:flex flex-row  gap-4 mt-4">
             {designSecondary.map((project, idx) => (
               <ProjectCard
                 link={project.link}
@@ -112,7 +112,7 @@ function MyProjects() {
           </div>
         )}
         {frontendSecondary.length > 0 && (
-          <div className="hidden sm:grid sm:grid-cols-3 gap-4">
+          <div className="hidden w-full sm:flex flex-row gap-4 mt-4">
             {frontendSecondary.map((project, idx) => (
               <ProjectCard
                 key={project.slug}

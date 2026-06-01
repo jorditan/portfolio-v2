@@ -5,7 +5,7 @@ function ProjectCard({ project, compact = false, motionDelay = 220 }) {
     <a
       href={project.link}
       aria-label={`Ver proyecto: ${project.title}`}
-      className="group flex flex-col border-2 border-gray-200 dark:border-gray-600
+      className="group flex flex-col w-full border-2 border-gray-200 dark:border-gray-600
                  rounded-xl overflow-hidden bg-gray-100 dark:bg-gray-800
                  shadow-md shadow-slate-300/60 dark:shadow-black/30
                  hover:border-sky-300 dark:hover:border-gray-300
