@@ -81,10 +81,10 @@ function FeaturedCard({ project, motionDelay = 140 }) {
                        transition-colors mt-1"
           />
         </div>
-
+        {/* 
         <p className="text-sm text-gray-700 dark:text-gray-300 leading-relaxed">
           {project.shortDescription}
-        </p>
+        </p> */}
 
         {project.tags.length > 0 && (
           <div className="flex flex-wrap mt-auto pt-2 gap-2">

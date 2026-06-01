@@ -98,11 +98,11 @@ function ProjectCard({ project, compact = false, motionDelay = 220 }) {
           />
         </div>
 
-        {!compact && (
+        {/* {!compact && (
           <p className="text-xs text-gray-600 dark:text-gray-400 leading-relaxed line-clamp-2">
             {project.shortDescription}
           </p>
-        )}
+        )} */}
 
         {project.tags.length > 0 && (
           <div className="flex flex-wrap mt-auto pt-1 gap-2">

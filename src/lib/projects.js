@@ -39,7 +39,7 @@ export const projects = [
     year: "2024",
     shortDescription:
       "Herramienta que pone a prueba a los usuarios frente al phishing y los capacita con un flujo educativo.",
-    heroImage: "/images/projects/test_phishing.webp",
+    heroImage: "/images/projects/test_phishing.png",
     tags: [
       { iconType: "figma", text: "Figma" },
       { text: "Prototipado" },
@@ -88,7 +88,7 @@ export const projects = [
 
   {
     slug: "diagnostico-ciberseguridad-hackmetrix",
-    title: "Diagnóstico de ciberseguridad",
+    title: "Diagnóstico ciberseguridad",
     category: "design",
     featured: false,
     role: "UX/UI Designer",
@@ -173,18 +173,16 @@ export const projects = [
 
   {
     slug: "pokegame-pokefinder",
-    title: "PokeGame | Pokefinder",
+    title: "Marki landing page",
     category: "frontend",
     featured: false,
     role: "Frontend Developer",
-    year: "2024",
+    year: "2026",
     shortDescription:
-      "Mejora de un juego existente con Vue 3 y Pinia, aplicando criterio UX para optimizar la experiencia y la jugabilidad.",
-    heroImage: "/images/projects/pokegame.webp",
+      "Landing page para una marca de productos naturales, con diseño responsive y animaciones CSS.",
+    heroImage: "/images/projects/marki-landing-page.png",
     tags: [
-      { iconType: "vue", text: "Vue" },
-      { iconType: "pinia", text: "Pinia" },
-      { iconType: "tailwind", text: "Tailwind" },
+      { iconType: "astro", text: "Astro" },
     ],
     detail: {
       problem:
@@ -196,7 +194,7 @@ export const projects = [
       images: [],
       impact: [],
     },
-    link: "https://pokemonfinder-vue.netlify.app/",
+    link: "https://marki-landing-page.vercel.app/",
   },
 
   {
