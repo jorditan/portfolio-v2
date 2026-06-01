@@ -32,33 +32,22 @@ function FeaturedCard({ project, motionDelay = 140 }) {
 
       {/* Contenido */}
       <div className="p-5 flex flex-col gap-3 flex-1">
-        <div className="flex items-start justify-between gap-2">
+        <div className="flex items-center justify-between gap-2">
           <h3 className="text-xl md:text-2xl font-semibold text-slate-900 dark:text-slate-50
                          group-hover:text-sky-600 dark:group-hover:text-sky-300 transition-colors leading-tight">
             {project.title}
           </h3>
-          <ArrowUpRight
-            className="w-5 h-5 shrink-0 text-gray-400 dark:text-gray-500
-                       group-hover:text-sky-500 dark:group-hover:text-sky-300
-                       transition-colors mt-1"
-          />
+          <button className="text-gray-400 dark:text-gray-200
+                             group-hover:text-sky-500 dark:bg-gray-900 px-2 py-1 rounded-md border border-gray-700 dark:group-hover:text-sky-300
+                             transition-colors mt-1 flex items-center justify-center text-sm">
+            Abrir
+          </button>
         </div>
 
-        {/* <p className="text-sm text-gray-700 dark:text-gray-300 leading-relaxed">
+        <p className="text-sm text-gray-700 dark:text-gray-300 leading-relaxed">
           {project.shortDescription}
         </p>
 
-        {project.tags.length > 0 && (
-          <div className="flex flex-wrap mt-auto pt-2 gap-2">
-            {project.tags.map((tag) => (
-              <TechBadge
-                key={tag.text}
-                icon={tag.iconType ? iconMap[tag.iconType] ?? null : null}
-                text={tag.text}
-              />
-            ))}
-          </div>
-        )} */}
       </div>
     </a>
   );

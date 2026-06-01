@@ -35,40 +35,25 @@ function ProjectCard({ project, compact = false, motionDelay = 220 }) {
 
       {/* Contenido */}
       <div className={`flex flex-col gap-2 flex-1 ${compact ? "p-3" : "p-4"}`}>
-        <div className="flex items-start justify-between gap-1">
+        <div className="flex items-center justify-between gap-1">
           <h3
-            className={`font-semibold text-slate-900 dark:text-slate-50
+            className="font-semibold text-slate-900 dark:text-slate-50
                         group-hover:text-sky-600 dark:group-hover:text-sky-300
-                        transition-colors leading-tight
-                        ${compact ? "text-sm" : "text-base"}`}
+                        transition-colors leading-tight text-base"
           >
             {project.title}
           </h3>
-          <ArrowUpRight
-            className={`shrink-0 text-gray-400 dark:text-gray-500
-                        group-hover:text-sky-500 dark:group-hover:text-sky-300
-                        transition-colors mt-0.5
-                        ${compact ? "w-3.5 h-3.5" : "w-4 h-4"}`}
-          />
+          <button className="text-gray-400 dark:text-gray-200
+                             group-hover:text-sky-500 dark:bg-gray-900 px-2 py-1 rounded-md border border-gray-700 dark:group-hover:text-sky-300
+                             transition-colors mt-1 flex items-center justify-center text-sm">
+            Abrir
+          </button>
         </div>
 
-        {/* {!compact && (
-          <p className="text-xs text-gray-600 dark:text-gray-400 leading-relaxed line-clamp-2">
-            {project.shortDescription}
-          </p>
-        )} */}
+        <p className="text-xs text-gray-600 dark:text-gray-400 leading-relaxed line-clamp-2">
+          {project.shortDescription}
+        </p>
 
-        {/* {project.tags.length > 0 && (
-          <div className="flex flex-wrap mt-auto pt-1 gap-2">
-            {project.tags.map((tag) => (
-              <TechBadge
-                key={tag.text}
-                icon={tag.iconType ? iconMap[tag.iconType] ?? null : null}
-                text={tag.text}
-              />
-            ))}
-          </div>
-        )} */}
       </div>
     </a>
   );

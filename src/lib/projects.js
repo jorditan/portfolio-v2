@@ -38,7 +38,7 @@ export const projects = [
     role: "UX/UI Designer",
     year: "2024",
     shortDescription:
-      "Herramienta que pone a prueba a los usuarios frente al phishing y los capacita con un flujo educativo.",
+      "Herramienta que pone a prueba a los usuarios frente al phishing y los capacita.",
     heroImage: "/images/projects/test_phishing.png",
     tags: [
       { iconType: "figma", text: "Figma" },
@@ -65,7 +65,7 @@ export const projects = [
     role: "UX/UI Designer",
     year: "2024",
     shortDescription:
-      "Rediseño del módulo de legales de Hackmetrix a partir de entrevistas contextuales con usuarios reales del producto.",
+      "Research de módulo documentación legal para cumplir normas.",
     heroImage: "/images/projects/modulo_legales.webp",
     tags: [
       { iconType: "figma", text: "Figma" },
@@ -88,13 +88,13 @@ export const projects = [
 
   {
     slug: "diagnostico-ciberseguridad-hackmetrix",
-    title: "Diagnóstico ciberseguridad",
+    title: "Diagnóstico seguridad",
     category: "design",
     featured: false,
     role: "UX/UI Designer",
     year: "2025",
     shortDescription:
-      "Herramienta de diagnóstico de madurez en ciberseguridad, con un flujo gamificado que genera un reporte personalizado según el resultado de cada empresa.",
+      "Herramienta de diagnóstico de madurez en ciberseguridad.",
     heroImage: "/images/projects/diagnostico_ciberseguridad.webp",
     tags: [
       { iconType: "figma", text: "Figma" },
@@ -144,42 +144,41 @@ export const projects = [
       "https://la12digital.dev/",
   },
 
-  {
-    slug: "gifs-search-app",
-    title: "Gifs search app",
-    category: "frontend",
-    featured: false,
-    role: "Frontend Developer",
-    year: "2024",
-    shortDescription:
-      "Aplicación para buscar y visualizar GIFs integrando la API de GIPHY, con estado global en Zustand y testing.",
-    heroImage: "/images/projects/gifs-search-app.webp",
-    tags: [
-      { iconType: "react", text: "React" },
-      { iconType: "zustand", text: "Zustand" },
-    ],
-    detail: {
-      problem:
-        "Quería construir algo concreto con React que integrara una API externa y pusiera a prueba el manejo de estado global y las buenas prácticas de testing.",
-      process:
-        "Integré la API de GIPHY con Zustand para el estado global. Apliqué testing unitario y de integración para cubrir los flujos principales de búsqueda y visualización.",
-      outcome:
-        "Una app funcional desplegada en Vercel que sirve como referencia práctica de cómo estructurar un proyecto React desde cero.",
-      images: [],
-      impact: [],
-    },
-    link: "https://gifs-search-app-react-five.vercel.app/",
-  },
+  // {
+  //   slug: "gifs-search-app",
+  //   title: "Gifs search app",
+  //   category: "frontend",
+  //   featured: false,
+  //   role: "Frontend Developer",
+  //   year: "2024",
+  //   shortDescription:
+  //     "Aplicación para buscar y visualizar GIFs integrando la API de GIPHY, con estado global en Zustand y testing.",
+  //   heroImage: "/images/projects/gifs-search-app.webp",
+  //   tags: [
+  //     { iconType: "react", text: "React" },
+  //     { iconType: "zustand", text: "Zustand" },
+  //   ],
+  //   detail: {
+  //     problem:
+  //       "Quería construir algo concreto con React que integrara una API externa y pusiera a prueba el manejo de estado global y las buenas prácticas de testing.",
+  //     process:
+  //       "Integré la API de GIPHY con Zustand para el estado global. Apliqué testing unitario y de integración para cubrir los flujos principales de búsqueda y visualización.",
+  //     outcome:
+  //       "Una app funcional desplegada en Vercel que sirve como referencia práctica de cómo estructurar un proyecto React desde cero.",
+  //     images: [],
+  //     impact: [],
+  //   },
+  //   link: "https://gifs-search-app-react-five.vercel.app/",
+  // },
 
   {
-    slug: "pokegame-pokefinder",
+    slug: "marki-landing-page",
     title: "Marki landing page",
     category: "frontend",
     featured: false,
     role: "Frontend Developer",
     year: "2026",
-    shortDescription:
-      "Landing page para una marca de productos naturales, con diseño responsive y animaciones CSS.",
+    shortDescription: "Landing para Marki, tu amigo CM. Desarrollado en la HackITBA 2026.",
     heroImage: "/images/projects/marki-landing-page.png",
     tags: [
       { iconType: "astro", text: "Astro" },
@@ -205,7 +204,7 @@ export const projects = [
     role: "Desarrollador",
     year: "2024",
     shortDescription:
-      "Proyecto integrador de Programación Orientada a Objetos I en la UNAHUR. Juego en Wollok con herencia, polimorfismo y testing automático.",
+      "Proyecto integrador par la materia POO I en la UNAHUR.",
     heroImage: "/images/projects/wollolok.webp",
     tags: [
       { iconType: "unahur", text: "UNAHUR" },

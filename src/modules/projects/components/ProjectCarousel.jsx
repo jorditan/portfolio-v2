@@ -52,8 +52,8 @@ function ProjectCarousel({ projects, compact = false, baseMotionDelay = 200 }) {
               aria-label={`Ir al proyecto ${idx + 1}`}
               aria-pressed={idx === current}
               className={`h-2.5 rounded-full transition-all duration-300 ${idx === current
-                  ? "w-8 bg-sky-500 dark:bg-sky-300"
-                  : "w-2.5 bg-slate-300 hover:bg-slate-400 dark:bg-slate-700 dark:hover:bg-slate-500"
+                ? "w-8 bg-sky-500 dark:bg-sky-300"
+                : "w-2.5 bg-slate-300 hover:bg-slate-400 dark:bg-slate-700 dark:hover:bg-slate-500"
                 }`}
             />
           ))}
