@@ -2,7 +2,12 @@
 const { class: className = "", ...rest } = Astro.props;
 ---
 
-<small class:list={["ui-text-badge", className]} {...rest}>
+<span
+  class:list={["ui-text-badge inline-flex items-center gap-2", className]}
+  role="status"
+  aria-label="Estado actual: trabajando"
+  {...rest}
+>
   <svg
     xmlns="http://www.w3.org/2000/svg"
     width="16"
@@ -22,4 +27,4 @@ const { class: className = "", ...rest } = Astro.props;
     <path d="M8 7v-2a2 2 0 0 1 2 -2h4a2 2 0 0 1 2 2v2"></path>
   </svg>
   Actualmente trabajando
-</small>
+</span>

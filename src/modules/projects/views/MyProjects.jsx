@@ -16,7 +16,7 @@ const frontendSecondary = frontendProjects.filter((p) => !p.featured);
 function SectionLabel({ children }) {
   return (
     <div className="flex items-center gap-3 mb-4">
-      <span className="text-xs font-medium text-sky-500 dark:text-sky-300 shrink-0">
+      <span className="text-sm font-medium text-sky-500 dark:text-sky-300 shrink-0">
         {children}
       </span>
       <div className="flex-1 h-px bg-gray-300 dark:bg-gray-700" />

@@ -1,12 +1,12 @@
 @import "tw-animate-css";
 @import "shadcn/tailwind.css";
-@import "@fontsource-variable/geist";
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
 
 @layer base {
   :root {
+    --font-sans: "Geist", ui-sans-serif, system-ui, sans-serif;
     --background: oklch(1 0 0);
     --foreground: oklch(0.145 0 0);
     --card: oklch(1 0 0);
@@ -76,10 +76,6 @@
     --sidebar-border: oklch(1 0 0 / 10%);
     --sidebar-ring: oklch(0.556 0 0);
   }
-  .theme {
-    --font-heading: var(--font-sans);
-    --font-sans: 'Geist Variable', sans-serif;
-  }
   * {
     @apply border-border outline-ring/50;
   }
@@ -112,18 +108,20 @@
   --motion-blur-md: 10px;
 
   /* ── UI Tokens: Typography ──────────────────────────────────────── */
-  /* Font size scale */
-  --ui-fs-xs:   0.75rem;      /* 12px  – mínimo legible para badges */
-  --ui-fs-sm:   0.875rem;     /* 14px  – texto secundario / caption */
+  /* Font size scale (mínimo 14px para garantizar legibilidad WCAG 2.1) */
+  --ui-fs-sm:   0.875rem;     /* 14px  – mínimo legible (badges, captions, tags) */
   --ui-fs-base: 1rem;         /* 16px  – cuerpo estándar */
   --ui-fs-lg:   1.125rem;     /* 18px  – cuerpo grande / lead */
   --ui-fs-xl:   1.25rem;      /* 20px  – subtítulos de sección */
   --ui-fs-2xl:  1.5rem;       /* 24px  – headings de sección */
   --ui-fs-3xl:  1.875rem;     /* 30px  – headings grandes */
+  --ui-fs-4xl:  2.25rem;      /* 36px  – h1 mobile */
+  --ui-fs-5xl:  3rem;         /* 48px  – h1 desktop */
+  --ui-fs-6xl:  4.5rem;       /* 72px  – h1 lg */
 
   /* Line heights */
-  --ui-lh-tight:   1.25;
-  --ui-lh-snug:    1.375;
+  --ui-lh-tight:   1.2;
+  --ui-lh-snug:    1.3;
   --ui-lh-normal:  1.5;
   --ui-lh-relaxed: 1.625;
 }
@@ -131,27 +129,24 @@
 /* ── UI Text Utilities ──────────────────────────────────────────────
    El breakpoint responsivo vive AQUÍ, no en el HTML.
    Los componentes usan la clase semántica y el CSS se encarga del resto.
+   Todas las clases mantienen un mínimo de 14px para cumplir WCAG 2.1 AA.
    ─────────────────────────────────────────────────────────────────── */
 
-/* Badges y micro-etiquetas (reemplaza text-[10px] / text-[12px]) */
+/* Badges y micro-etiquetas (mínimo 14px garantizado) */
 .ui-text-badge {
-  font-size: var(--ui-fs-xs);   /* 12px siempre — mínimo legible */
-  line-height: 1;
+  font-size: var(--ui-fs-sm);   /* 14px */
+  line-height: var(--ui-lh-tight);
+  font-weight: 600;
+}
+
+/* Pills de info, captions y tags (mínimo 14px) */
+.ui-text-caption {
+  font-size: var(--ui-fs-sm);   /* 14px */
+  line-height: var(--ui-lh-normal);
   font-weight: 500;
 }
 
-/* Pills de info y captions (reemplaza text-[10px] md:text-sm) */
-.ui-text-caption {
-  font-size: var(--ui-fs-xs);   /* 12px mobile */
-  line-height: var(--ui-lh-normal);
-}
-@media (min-width: 640px) {
-  .ui-text-caption {
-    font-size: var(--ui-fs-sm); /* 14px sm+ */
-  }
-}
-
-/* Texto de cuerpo principal (reemplaza text-[14px] md:text-[16px]) */
+/* Texto de cuerpo principal (14px mobile → 16px desktop) */
 .ui-text-body {
   font-size: var(--ui-fs-sm);   /* 14px mobile */
   line-height: var(--ui-lh-relaxed);
@@ -162,7 +157,7 @@
   }
 }
 
-/* Texto secundario pequeño (reemplaza text-sm, usado en footer y variantes) */
+/* Texto secundario pequeño (14px mobile → 16px desktop) */
 .ui-text-body-sm {
   font-size: var(--ui-fs-sm);   /* 14px mobile */
   line-height: var(--ui-lh-relaxed);
@@ -173,7 +168,7 @@
   }
 }
 
-/* Texto introductorio / lead (reemplaza text-[15px] md:text-[18px]) */
+/* Texto introductorio / lead (16px mobile → 18px desktop) */
 .ui-text-lead {
   font-size: var(--ui-fs-base); /* 16px mobile */
   line-height: var(--ui-lh-relaxed);
@@ -184,19 +179,19 @@
   }
 }
 
-/* Títulos de cards (reemplaza text-sm md:text-base / text-[14px] md:text-lg) */
+/* Títulos de cards (16px mobile → 18px desktop) */
 .ui-text-card-title {
-  font-size: var(--ui-fs-sm);   /* 14px mobile */
+  font-size: var(--ui-fs-base); /* 16px mobile */
   line-height: var(--ui-lh-snug);
   font-weight: 600;
 }
 @media (min-width: 768px) {
   .ui-text-card-title {
-    font-size: var(--ui-fs-base); /* 16px md+ */
+    font-size: var(--ui-fs-lg);  /* 18px md+ */
   }
 }
 
-/* Subtítulos de sección / h3 (reemplaza text-md md:text-xl) */
+/* Subtítulos de sección / h3 (18px mobile → 20px desktop) */
 .ui-text-section-subtitle {
   font-size: var(--ui-fs-lg);   /* 18px mobile */
   line-height: var(--ui-lh-snug);
@@ -208,7 +203,7 @@
   }
 }
 
-/* Headings de sección grandes — SectionHeader lg (reemplaza text-2xl md:text-3xl) */
+/* Headings de sección grandes — SectionHeader lg (24px mobile → 30px desktop) */
 .ui-text-section-h {
   font-size: var(--ui-fs-2xl);  /* 24px mobile */
   line-height: var(--ui-lh-snug);
@@ -220,15 +215,33 @@
   }
 }
 
-/* Headings de sección pequeños — SectionHeader sm (reemplaza text-md md:text-lg) */
+/* Headings de sección pequeños — SectionHeader sm (16px mobile → 18px desktop) */
 .ui-text-section-h-sm {
-  font-size: var(--ui-fs-base); /* 16px mobile – corrige text-md inválido */
+  font-size: var(--ui-fs-base); /* 16px mobile */
   line-height: var(--ui-lh-snug);
   font-weight: 600;
 }
 @media (min-width: 768px) {
   .ui-text-section-h-sm {
     font-size: var(--ui-fs-lg); /* 18px md+ */
+  }
+}
+
+/* Hero / h1 principal (36px mobile → 48px desktop → 72px lg) */
+.ui-text-hero {
+  font-size: var(--ui-fs-4xl);
+  line-height: var(--ui-lh-tight);
+  font-weight: 700;
+  letter-spacing: -0.02em;
+}
+@media (min-width: 768px) {
+  .ui-text-hero {
+    font-size: var(--ui-fs-5xl);
+  }
+}
+@media (min-width: 1024px) {
+  .ui-text-hero {
+    font-size: var(--ui-fs-6xl);
   }
 }
 

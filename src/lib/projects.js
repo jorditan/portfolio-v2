@@ -39,7 +39,7 @@ export const projects = [
     year: "2024",
     shortDescription:
       "Herramienta que pone a prueba a los usuarios frente al phishing y los capacita.",
-    heroImage: "/images/projects/test_phishing.png",
+    heroImage: "/images/projects/test_phishing.webp",
     tags: [
       { iconType: "figma", text: "Figma" },
       { text: "Prototipado" },
@@ -66,7 +66,7 @@ export const projects = [
     year: "2024",
     shortDescription:
       "Research de módulo documentación legal para cumplir normas.",
-    heroImage: "/images/projects/modulo_legales.webp",
+    heroImage: "/images/projects/redesign_legales.webp",
     tags: [
       { iconType: "figma", text: "Figma" },
       { text: "Pruebas de usuario" },
@@ -95,7 +95,7 @@ export const projects = [
     year: "2025",
     shortDescription:
       "Herramienta de diagnóstico de madurez en ciberseguridad.",
-    heroImage: "/images/projects/diagnostico_ciberseguridad.webp",
+    heroImage: "/images/projects/diagnostico-ciberseguridad.webp",
     tags: [
       { iconType: "figma", text: "Figma" },
       { text: "Producto" },
@@ -126,7 +126,7 @@ export const projects = [
     year: "2026",
     shortDescription:
       "Seguir a Boca requiere abrir 5 apps distintas: la página del club para noticias, X para las reacciones en vivo, Promiedos para estadísticas posteriores, otra de clima antes de ir a la cancha, YouTube para los videos... La 12 Digital centraliza todo eso en un solo lugar.", // TODO
-    heroImage: "/images/projects/la-12-digital.webp",
+    heroImage: "/images/projects/la-12-digital.png",
     tags: [
       { iconType: "figma", text: "Figma" },
       { iconType: "react", text: "React" },
@@ -178,7 +178,7 @@ export const projects = [
     featured: false,
     role: "Frontend Developer",
     year: "2026",
-    shortDescription: "Landing para Marki, tu amigo CM. Desarrollado en la HackITBA 2026.",
+    shortDescription: "Landing para Marki, tu amigo CM.",
     heroImage: "/images/projects/marki-landing-page.png",
     tags: [
       { iconType: "astro", text: "Astro" },

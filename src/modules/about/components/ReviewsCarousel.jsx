@@ -63,7 +63,7 @@ function ReviewsCarousel({ reviews = [] }) {
                             <span className="w-fit text-lg">
                               {review.name}
                             </span>
-                            <span className="text-xs font-medium text-sky-600 dark:text-sky-300 w-full sm:w-fit">
+                            <span className="text-sm font-medium text-sky-600 dark:text-sky-300 w-full sm:w-fit">
                               {review.role}
                             </span>
 
@@ -76,7 +76,7 @@ function ReviewsCarousel({ reviews = [] }) {
                   </div>
 
                   <div className="flex gap-4 flex-col">
-                    <p className="whitespace-pre-line text-sm leading-2 text-slate-700 dark:text-slate-300 sm:text-[15px]">
+                    <p className="whitespace-pre-line text-sm leading-relaxed text-slate-700 dark:text-slate-300 sm:text-base">
                       "{review.message}"
                     </p>
 

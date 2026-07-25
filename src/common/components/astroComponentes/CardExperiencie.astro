@@ -13,11 +13,11 @@ const { tittle, text, periodo, empresa, destacado } = Astro.props;
 		<div class="flex flex-col gap-2 sm:gap-0">
 			<div class="flex gap-2 sm:gap-4 flex-col sm:flex-row">
 				<span
-					class="text-[12px] md:text-[18px] font-semibold text-slate-900 dark:text-slate-50"
+					class="ui-text-card-title text-slate-900 dark:text-slate-50"
 					><span class="">{tittle}</span> - {empresa}</span
 				>
 			</div>
-			<small class="text-slate-900 dark:text-slate-50 font-thin text-[12px]"
+			<small class="ui-text-caption text-slate-900 dark:text-slate-50"
 				>{periodo}</small
 			>
 		</div>
@@ -31,7 +31,7 @@ const { tittle, text, periodo, empresa, destacado } = Astro.props;
 
 	<div class="mb-3 mx-4">
 		<hr class="h-px my-2 bg-slate-900 border-0 dark:bg-gray-500" />
-		<p class="text-slate-900 mx-2 dark:text-gray-200 text-[14px]">
+		<p class="ui-text-body text-slate-900 mx-2 dark:text-gray-200">
 			{text}
 			<span class="underline font-bold decoration-2 decoration-sky-500">
 				{destacado}</span

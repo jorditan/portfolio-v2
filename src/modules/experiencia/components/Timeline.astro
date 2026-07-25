@@ -1,49 +1,51 @@
 ---
 import TimeItem from "./TimeItem.astro";
+
+const items = [
+	{
+		title: "Especialista UX",
+		place: "G&L Group",
+		date: "Abril 2026 - Actualidad",
+		description: [
+			"**Rediseñar BA Espacios en un proyecto B2G** para el Gobierno de la Ciudad de Buenos Aires.",
+		],
+		url: "https://www.gylgroup.com//",
+		img: "/images/misc/G&L-group-light.jpg",
+		imgDark: "/images/misc/G&L-group-dark.jpg",
+	},
+	{
+		title: "Product Designer",
+		place: "Hackmetrix",
+		date: "Febrero 2024 - Abril 2026",
+		description: [
+			"**Rediseñar la plataforma** hacia una nueva **experiencia agentica**.",
+			"Lidear +4 iniciativas de diseño para **disminuir el churn al 2%**.",
+			"Crear una **metodología de diseño in-house** llamada **AGE**.",
+			"Colaborar con dev's creando **+20 PR's a producción** con mejoras de **UX/UI**.",
+			"Diseñar el **test de phishing** posicionado **3º en Google** y realizado por **+3000 personas**.",
+			"Formar parte del equipo que creó un **test de ciberseguridad** para captar **+8 leads**.",
+		],
+		url: "https://www.hackmetrix.com",
+		img: "/brand/hackmetrix-logo.webp",
+		imgDark: "/brand/hackmetrix-logo.webp",
+	},
+];
 ---
 
-<ol class="relative border-s border-slate-900 dark:border-gray-300">
-	<TimeItem
-		title="Especialista UX - G&L Group"
-		place="G&L Group"
-		date="Abril 2026 - Actualidad"
-		description={[
-			"Participar en el diseño de proyectos del GBA (Gobierno de la Ciudad de Buenos Aires).",
-		]}
-		url="https://www.gylgroup.com//"
-		img="/images/misc/G&L-group-light.jpg"
-		imgDark="/images/misc/G&L-group-dark.jpg"
-		order={0}
-	/>
-
-	<TimeItem
-		title="Product Designer - Hackmetrix"
-		place="Hackmetrix"
-		date="Febrero 2024 - Abril 2026"
-		description={[
-			"Rediseñar la plataforma hacia una nueva experiencia agentica.",
-			"Lidear +4 iniciativas de diseño para disminuir el churn al 2%.",
-			"Crear una metodología de diseño in-house llamada AGE.",
-			"Colaborar con dev's creando +20 PR's a producción con mejoras de UX/UI.",
-			"Diseñar el test de phishing posicionado 3º en Google y realizado por +3000 personas.",
-			"Formar parte del equipo que creó un test de ciberseguridad para captar +8 leads.",
-		]}
-		url="https://www.hackmetrix.com"
-		img="/brand/hackmetrix-logo.webp"
-		order={1}
-	/>
-
-	<TimeItem
-		title="Editor - Musica y Simpleza"
-		place="Musica y Simpleza"
-		date="Enero 2025 - Actualidad"
-		description={[
-			"Editar +10 videos para Youtube.",
-			"Crear contenido gráfico para redes sociales.",
-			"Colaborar en la estrategia de contenido para redes sociales.",
-		]}
-		url="https://www.youtube.com/@Musicaysimpleza-777"
-		img="/images/misc/musica-y-simpleza.webp"
-		order={2}
-	/>
+<ol class="relative mt-4 md:mt-6" aria-label="Experiencia laboral">
+	{
+		items.map((item, index) => (
+			<TimeItem
+				title={item.title}
+				place={item.place}
+				date={item.date}
+				description={item.description}
+				url={item.url}
+				img={item.img}
+				imgDark={item.imgDark}
+				order={index}
+				isFirst={index === 0}
+			/>
+		))
+	}
 </ol>

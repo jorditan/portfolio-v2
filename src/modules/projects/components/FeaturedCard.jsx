@@ -38,13 +38,13 @@ function FeaturedCard({ project, motionDelay = 140 }) {
             {project.title}
           </h3>
           <button className="text-gray-400 dark:text-gray-200
-                             group-hover:text-sky-500 dark:bg-gray-900 px-2 py-1 rounded-md border border-gray-700 dark:group-hover:text-sky-300
+                             group-hover:text-sky-500 dark:bg-gray-900 px-1 py-1 rounded-md border border-gray-700 dark:group-hover:text-sky-300
                              transition-colors mt-1 flex items-center justify-center text-sm">
-            Abrir
+            <ArrowUpRight className="w-4 h-4" />
           </button>
         </div>
 
-        <p className="text-sm text-gray-700 dark:text-gray-300 leading-relaxed">
+        <p className="ui-text-body text-gray-700 dark:text-gray-300 leading-relaxed">
           {project.shortDescription}
         </p>
 
