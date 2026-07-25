@@ -1,0 +1,105 @@
+---
+---
+
+<div class="group relative flex items-center justify-center">
+	<button
+		type="button"
+		data-theme-toggle
+		aria-label="Cambiar tema"
+		class="rounded-full focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-sky-500"
+	>
+		<svg
+			data-theme-icon="sun"
+			xmlns="http://www.w3.org/2000/svg"
+			width="24"
+			height="24"
+			viewBox="0 0 24 24"
+			fill="none"
+			stroke="currentColor"
+			stroke-width="2"
+			stroke-linecap="round"
+			stroke-linejoin="round"
+			class="icon hidden h-4 w-4 stroke-slate-900 transition-all hover:scale-110 dark:stroke-slate-50 sm:h-6 sm:w-6"
+			aria-hidden="true"
+		>
+			<circle cx="12" cy="12" r="4"></circle>
+			<path d="M12 2v2"></path>
+			<path d="M12 20v2"></path>
+			<path d="m4.93 4.93 1.41 1.41"></path>
+			<path d="m17.66 17.66 1.41 1.41"></path>
+			<path d="M2 12h2"></path>
+			<path d="M20 12h2"></path>
+			<path d="m6.34 17.66-1.41 1.41"></path>
+			<path d="m19.07 4.93-1.41 1.41"></path>
+		</svg>
+		<svg
+			data-theme-icon="moon"
+			xmlns="http://www.w3.org/2000/svg"
+			width="24"
+			height="24"
+			viewBox="0 0 24 24"
+			fill="none"
+			stroke="currentColor"
+			stroke-width="2"
+			stroke-linecap="round"
+			stroke-linejoin="round"
+			class="icon h-4 w-4 stroke-slate-900 transition-all hover:scale-110 dark:stroke-slate-50 sm:h-6 sm:w-6"
+			aria-hidden="true"
+		>
+			<path d="M12 3a6 6 0 0 0 9 9 9 9 0 1 1-9-9Z"></path>
+		</svg>
+	</button>
+	<span
+		role="tooltip"
+		data-theme-tooltip
+		class="pointer-events-none absolute bottom-full left-1/2 z-20 mb-2 -translate-x-1/2 whitespace-nowrap rounded-md border bg-slate-900 px-2.5 py-1 text-xs font-medium text-slate-50 opacity-0 shadow-sm transition-opacity invisible group-hover:visible group-hover:opacity-100 dark:border-gray-200 dark:bg-gray-100 dark:text-gray-900"
+	>
+		Cambiar tema
+	</span>
+</div>
+
+<script>
+	function syncThemeToggles() {
+		const isDark = document.documentElement.classList.contains("dark");
+		document.querySelectorAll("[data-theme-toggle]").forEach((button) => {
+			const sun = button.querySelector('[data-theme-icon="sun"]');
+			const moon = button.querySelector('[data-theme-icon="moon"]');
+			const tooltip = button.parentElement?.querySelector(
+				"[data-theme-tooltip]",
+			);
+
+			sun?.classList.toggle("hidden", !isDark);
+			moon?.classList.toggle("hidden", isDark);
+			button.setAttribute(
+				"aria-label",
+				isDark ? "Cambiar a modo claro" : "Cambiar a modo oscuro",
+			);
+			if (tooltip) {
+				tooltip.textContent = isDark
+					? "Cambiar a modo claro"
+					: "Cambiar a modo oscuro";
+			}
+		});
+	}
+
+	function toggleTheme() {
+		const root = document.documentElement;
+		const nextDark = !root.classList.contains("dark");
+		root.classList.toggle("dark", nextDark);
+		localStorage.setItem("theme", nextDark ? "dark" : "light");
+		syncThemeToggles();
+	}
+
+	function bindThemeToggles() {
+		document.querySelectorAll("[data-theme-toggle]").forEach((button) => {
+			if (button instanceof HTMLElement && button.dataset.bound === "true")
+				return;
+			if (button instanceof HTMLElement) button.dataset.bound = "true";
+			button.addEventListener("click", toggleTheme);
+		});
+		syncThemeToggles();
+	}
+
+	bindThemeToggles();
+	document.addEventListener("astro:page-load", bindThemeToggles);
+</script>

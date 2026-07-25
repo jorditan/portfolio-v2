@@ -1,6 +1,6 @@
 export const siteConfig = {
   email: "matiasowjordan@gmail.com",
-  siteUrl: "https://matias-jordan-portfolio.netlify.app",
+  siteUrl: "https://matias-jordan-portfolio.vercel.app",
   social: {
     linkedin: "https://www.linkedin.com/in/matias-jordan/",
     github: "https://github.com/jorditan",

@@ -1,6 +1,5 @@
 ---
-import { ChevronDown } from "lucide-react";
-import { ChevronUp } from "lucide-react";
+import { ChevronDown, ChevronUp } from "@lucide/astro";
 const { tittle, text, periodo, empresa, destacado } = Astro.props;
 ---
 
@@ -22,10 +21,10 @@ const { tittle, text, periodo, empresa, destacado } = Astro.props;
 			>
 		</div>
 		<ChevronDown
-			className="icon text-slate-900 dark:text-slate-50 group-open:hidden"
+			class="icon text-slate-900 dark:text-slate-50 group-open:hidden"
 		/>
 		<ChevronUp
-			className="icon text-slate-900 dark:text-slate-50 hidden group-open:block"
+			class="icon text-slate-900 dark:text-slate-50 hidden group-open:block"
 		/>
 	</summary>
 

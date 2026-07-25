@@ -1,19 +1,47 @@
 ---
-import { Cake, HandHeart, Heart, Map } from "lucide-react";
+import { Cake, HandHeart, Heart, MapPin } from "@lucide/astro";
+import { getImage } from "astro:assets";
 import MyCarousel from "../components/MyCarousel";
 import Tecnologias from "./Tecnologias.astro";
 import Certificados from "./Certificados.astro";
 import Reviews from "./Reviews.astro";
 import SectionHeader from "@/common/components/astroComponentes/SectionHeader.astro";
 import InfoPill from "@/common/components/astroComponentes/InfoPill.astro";
+import { aboutPhotos, certificates } from "@/lib/images";
+
+const familiaPhotos = await Promise.all(
+	aboutPhotos.familia.map(async (photo) => {
+		const optimized = await getImage({
+			src: photo.src,
+			width: 512,
+			height: 512,
+			format: "webp",
+			quality: 70,
+		});
+		return { src: optimized.src, alt: photo.alt };
+	}),
+);
+
+const personalPhotos = await Promise.all(
+	aboutPhotos.personal.map(async (photo) => {
+		const optimized = await getImage({
+			src: photo.src,
+			width: 512,
+			height: 512,
+			format: "webp",
+			quality: 70,
+		});
+		return { src: optimized.src, alt: photo.alt };
+	}),
+);
 ---
 
 <section
-	class="sm:mx-auto py-8 sm:py-10 mx-4 max-w-[32rem] md:max-w-[42rem] lg:max-w-4xl transition-all"
+	class="mx-4 max-w-[32rem] py-8 transition-all sm:mx-auto sm:py-10 md:max-w-[42rem] lg:max-w-4xl"
 	id="sobreMi"
 >
-	<article class="w-full flex flex-col items-left gap-6 mb-6">
-		<div class="flex flex-col gap-2 w-full items-start">
+	<article class="mb-6 flex w-full flex-col items-left gap-6">
+		<div class="flex w-full flex-col items-start gap-2">
 			<div
 				data-reveal-item
 				style="--motion-delay: 0ms; --motion-duration: var(--motion-duration-fast); --motion-distance: 12px;"
@@ -21,38 +49,38 @@ import InfoPill from "@/common/components/astroComponentes/InfoPill.astro";
 				<SectionHeader title="Quién soy">
 					<HandHeart
 						slot="icon"
-						className="text-sky-500 dark:text-sky-300 h-8 w-8"
+						class="h-8 w-8 text-sky-500 dark:text-sky-300"
 					/>
 				</SectionHeader>
 			</div>
 			<div
-				class="w-full flex flex-wrap gap-2"
+				class="flex w-full flex-wrap gap-2"
 				data-reveal-item
 				style="--motion-delay: 70ms; --motion-duration: var(--motion-duration-fast); --motion-distance: 12px;"
 			>
 				<InfoPill text="Haedo. Buenos Aires, Argentina">
-					<Map slot="icon" className="h-4 w-4" />
+					<MapPin slot="icon" class="h-4 w-4" />
 				</InfoPill>
 				<InfoPill text="21 años">
-					<Cake slot="icon" className="h-4 w-4" />
+					<Cake slot="icon" class="h-4 w-4" />
 				</InfoPill>
 				<InfoPill text="Hincha de Boca Juniors" variant="boca">
-					<Heart slot="icon" fill="currentColor" className="h-4 w-4" />
+					<Heart slot="icon" fill="currentColor" class="h-4 w-4" />
 				</InfoPill>
 			</div>
 		</div>
 
 		<div>
 			<div
-				class="flex items-center flex-col lg:flex-row gap-4 lg:gap-8 justify-between"
+				class="flex flex-col items-center justify-between gap-4 lg:flex-row lg:gap-8"
 			>
 				<div
-					class="lg:w-3/4 w-full flex flex-col gap-6"
+					class="flex w-full flex-col gap-6 lg:w-3/4"
 					data-reveal-item
-					style="--motion-delay: 140ms; --motion-duration: var(--motion-duration-base); --motion-distance: 18px; --motion-blur: 4px;"
+					style="--motion-delay: 140ms; --motion-duration: var(--motion-duration-base); --motion-distance: 18px;"
 				>
 					<p
-						class="ui-text-body text-gray-600 dark:text-gray-300 w-fit font-medium antialiased"
+						class="ui-text-body w-fit font-medium text-gray-600 antialiased dark:text-gray-300"
 					>
 						Desde chico soy una persona inquieta y curiosa.
 						<span class="font-semibold text-gray-800 dark:text-[#ffffff]"
@@ -62,7 +90,7 @@ import InfoPill from "@/common/components/astroComponentes/InfoPill.astro";
 					</p>
 
 					<p
-						class="ui-text-body text-gray-600 dark:text-gray-300 w-fit font-medium antialiased"
+						class="ui-text-body w-fit font-medium text-gray-600 antialiased dark:text-gray-300"
 					>
 						Mi mamá es profesora de matemática y mi hermano de música , mientras
 						que mi papá fue un apasionado de la historia. <span
@@ -73,7 +101,7 @@ import InfoPill from "@/common/components/astroComponentes/InfoPill.astro";
 					</p>
 
 					<p
-						class="ui-text-body text-gray-600 dark:text-gray-300 w-fit font-medium antialiased"
+						class="ui-text-body w-fit font-medium text-gray-600 antialiased dark:text-gray-300"
 					>
 						Fuí criado con la idea de <span
 							class="font-semibold text-gray-800 dark:text-[#ffffff]"
@@ -87,28 +115,15 @@ import InfoPill from "@/common/components/astroComponentes/InfoPill.astro";
 				</div>
 
 				<div
-					class="flex flex-col gap-4 justify-center items-center"
+					class="flex flex-col items-center justify-center gap-4"
 					data-reveal-item
-					style="--motion-delay: 220ms; --motion-duration: var(--motion-duration-base); --motion-distance: 18px; --motion-blur: 4px;"
+					style="--motion-delay: 220ms; --motion-duration: var(--motion-duration-base); --motion-distance: 18px;"
 				>
 					<MyCarousel
 						id="carousel-familia"
-						photos={[
-							{
-								src: "/images/about/cumple-chico.webp",
-								alt: "Cumpleaños de chico con la familia",
-							},
-							{ src: "/images/about/mama-yo.webp", alt: "Con mamá" },
-							{
-								src: "/images/about/mama-dami.webp",
-								alt: "Con mamá y mi hermano Damián",
-							},
-							{ src: "/images/about/papa-yo.webp", alt: "Con papá" },
-							{ src: "/images/about/dami-papa.webp", alt: "Damián y papá" },
-						]}
+						photos={familiaPhotos}
 						client:visible
 					/>
-					<div class="flex gap-4 w-full justify-center items-center"></div>
 				</div>
 			</div>
 		</div>
@@ -117,14 +132,14 @@ import InfoPill from "@/common/components/astroComponentes/InfoPill.astro";
 			Y bien, ¿cómo me convertí en diseñador?
 		</h3>
 
-		<div class="grid grid-cols-1 md:grid-cols-[auto_1fr] gap-4 items-start">
+		<div class="grid grid-cols-1 items-start gap-4 md:grid-cols-[auto_1fr]">
 			<div
-				class="md:col-start-2 md:row-start-1 w-full flex flex-col gap-6"
+				class="flex w-full flex-col gap-6 md:col-start-2 md:row-start-1"
 				data-reveal-item
-				style="--motion-delay: 140ms; --motion-duration: var(--motion-duration-base); --motion-distance: 18px; --motion-blur: 4px;"
+				style="--motion-delay: 140ms; --motion-duration: var(--motion-duration-base); --motion-distance: 18px;"
 			>
 				<p
-					class="ui-text-body text-gray-600 dark:text-gray-300 w-fit font-medium antialiased"
+					class="ui-text-body w-fit font-medium text-gray-600 antialiased dark:text-gray-300"
 				>
 					A mis 15 años <span
 						class="font-semibold text-gray-800 dark:text-[#ffffff]"
@@ -135,7 +150,7 @@ import InfoPill from "@/common/components/astroComponentes/InfoPill.astro";
 				</p>
 
 				<p
-					class="ui-text-body text-gray-600 dark:text-gray-300 w-fit font-medium antialiased"
+					class="ui-text-body w-fit font-medium text-gray-600 antialiased dark:text-gray-300"
 				>
 					Pasé el 2020-2021 haciendo cursos y tutoriales por mi cuenta, hasta
 					que terminada la secundaria decidí dar un paso más: <span
@@ -145,14 +160,14 @@ import InfoPill from "@/common/components/astroComponentes/InfoPill.astro";
 					<a
 						href="https://unahur.edu.ar/"
 						target="_blank"
-						class="underline text-sky-800 dark:text-sky-300 decoration-sky-500"
+						class="text-sky-800 underline decoration-sky-500 dark:text-sky-300"
 					>
 						UNAHUR</a
 					>.
 				</p>
 
 				<p
-					class="ui-text-body text-gray-600 dark:text-gray-300 w-fit font-medium antialiased"
+					class="ui-text-body w-fit font-medium text-gray-600 antialiased dark:text-gray-300"
 				>
 					Al mismo tiempo, profundicé mis estudios de diseño UX/UI y<span
 						class="font-semibold text-gray-800 dark:text-[#ffffff]"
@@ -164,30 +179,13 @@ import InfoPill from "@/common/components/astroComponentes/InfoPill.astro";
 			</div>
 
 			<div
-				class="md:col-start-1 md:row-start-1 md:row-span-2 flex justify-center items-center"
+				class="flex items-center justify-center md:col-start-1 md:row-span-2 md:row-start-1"
 				data-reveal-item
-				style="--motion-delay: 220ms; --motion-duration: var(--motion-duration-base); --motion-distance: 18px; --motion-blur: 4px;"
+				style="--motion-delay: 220ms; --motion-duration: var(--motion-duration-base); --motion-distance: 18px;"
 			>
 				<MyCarousel
 					id="carousel-personal"
-					photos={[
-						{
-							src: "/images/about/foto-campo.webp",
-							alt: "Foto con una cámara de fotos en Entre Ríos",
-						},
-						{
-							src: "/images/about/foto-slack.webp",
-							alt: "Primera foto en mucho tiempo",
-						},
-						{
-							src: "/images/about/foto-merendando.webp",
-							alt: "Foto merendando",
-						},
-						{
-							src: "/images/about/foto_playa.webp",
-							alt: "Foto en la playa de Entre Ríos",
-						},
-					]}
+					photos={personalPhotos}
 					client:visible
 				/>
 			</div>
@@ -195,46 +193,6 @@ import InfoPill from "@/common/components/astroComponentes/InfoPill.astro";
 	</article>
 
 	<Tecnologias />
-	<Certificados
-		certificados={[
-			{
-				title: "User research methods and best practices",
-				image:
-					"/images/certificates/course-certificate-user-research-methods-and-best-practices.webp",
-				url: "https://ixdf.org/members/matias-owen-jordan/certificate/course/9bcc08bd-1d51-427d-836b-443483b92ac8?r=matias-owen-jordanL",
-				type: "design",
-			},
-			{
-				title: "AI for Designers",
-				image: "/images/certificates/course-certificate-ai-for-designers.webp",
-				url: "https://ixdf.org/members/matias-owen-jordan/certificate/course/7bc6c407-a552-4ade-80a5-6253aa3dbb0c",
-				type: "design",
-			},
-			{
-				title: "Object Oriented UX",
-				type: "design",
-				image: "/images/certificates/object-oriented-ux.webp",
-				url: "https://www.udemy.com/certificate/UC-15e3850a-9a38-4203-b98f-7c088a5f0710/",
-			},
-			{
-				title: "Diseño UX/UI Avanzado",
-				type: "design",
-				image: "/images/certificates/diseño-ux-ui-avanzado-coder.webp",
-				url: "https://pub.coderhouse.com/legacy-certificates/66ce53b20eaa20d842a2d82a?lang=es",
-			},
-			{
-				title: "Postgre SQL",
-				type: "development",
-				image: "/images/certificates/postgre-desde-cero.webp",
-				url: "https://cursos.devtalles.com/certificates/uzpjdaf8eq",
-			},
-			{
-				title: "Vue.js de cero a experto",
-				type: "development",
-				image: "/images/certificates/vue.js-de-cero-a-experto.webp",
-				url: "https://cursos.devtalles.com/certificates/kpsayxav36",
-			},
-		]}
-	/>
+	<Certificados certificados={certificates} />
 	<Reviews />
 </section>

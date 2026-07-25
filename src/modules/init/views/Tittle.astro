@@ -1,6 +1,8 @@
 ---
+import { Image } from "astro:assets";
 import StatusBadge from "@/common/components/astroComponentes/StatusBadge.astro";
 import SocialIconLink from "@/common/components/astroComponentes/SocialIconLink.astro";
+import { miscImages } from "@/lib/images";
 ---
 
 <section
@@ -14,7 +16,7 @@ import SocialIconLink from "@/common/components/astroComponentes/SocialIconLink.
 	>
 		<div class="flex flex-col gap-4 md:gap-8 flex-1 min-w-0">
 			<div
-				class="flex flex-col gap-2 md:gap-4"
+				class="flex flex-col gap-4 md:gap-4"
 				data-motion="hero-item"
 				style="--motion-delay: 60ms; --motion-duration: var(--motion-duration-fast); --motion-distance: 12px;"
 			>
@@ -28,20 +30,23 @@ import SocialIconLink from "@/common/components/astroComponentes/SocialIconLink.
 						>
 							<span
 								class="absolute inset-0 rounded-full ring-2 ring-sky-500 ring-offset-2 ring-offset-white/0 dark:ring-offset-slate-950/0"
-								aria-hidden="true"
-							></span>
+								aria-hidden="true"></span>
 							<span
 								class="absolute bottom-0 right-0 w-4 h-4 bg-sky-500 border-2 border-white dark:border-slate-950 rounded-full motion-safe:animate-pulse"
-								aria-hidden="true"
-							></span>
-							<img
-								src="/images/misc/foto-linkedin.webp"
+								aria-hidden="true"></span>
+							<Image
+								src={miscImages.fotoLinkedin}
 								alt="Matías Owen Jordán"
-								width="64"
-								height="64"
+								width={96}
+								height={96}
+								widths={[64, 96, 128]}
+								sizes="96px"
 								loading="eager"
+								fetchpriority="high"
 								decoding="async"
-								class="object-cover p-1 border bg-gray-100 border-slate-200/50 dark:border-slate-700/40 rounded-full shadow-md shadow-black/10 dark:bg-gray-800 dark:shadow-black/40 h-20 w-20 sm:h-24 sm:w-24"
+								format="webp"
+								quality={75}
+								class="h-20 w-20 rounded-full border border-slate-200/50 bg-gray-100 object-cover p-1 shadow-md shadow-black/10 sm:h-24 sm:w-24 dark:border-slate-700/40 dark:bg-gray-800 dark:shadow-black/40"
 							/>
 							<span
 								role="tooltip"

@@ -1,5 +1,13 @@
 ---
+import { getImage } from "astro:assets";
 import TimeItem from "./TimeItem.astro";
+import { miscImages } from "@/lib/images";
+
+const [glLight, glDark, hackmetrix] = await Promise.all([
+	getImage({ src: miscImages.glLight, width: 64, height: 64, format: "webp", quality: 80 }),
+	getImage({ src: miscImages.glDark, width: 64, height: 64, format: "webp", quality: 80 }),
+	getImage({ src: miscImages.hackmetrix, width: 64, height: 64, format: "webp", quality: 80 }),
+]);
 
 const items = [
 	{
@@ -10,8 +18,8 @@ const items = [
 			"**Rediseñar BA Espacios en un proyecto B2G** para el Gobierno de la Ciudad de Buenos Aires.",
 		],
 		url: "https://www.gylgroup.com//",
-		img: "/images/misc/G&L-group-light.webp",
-		imgDark: "/images/misc/G&L-group-dark.webp",
+		img: glLight.src,
+		imgDark: glDark.src,
 	},
 	{
 		title: "Product Designer",
@@ -26,8 +34,8 @@ const items = [
 			"Formar parte del equipo que creó un **test de ciberseguridad** para captar **+8 leads**.",
 		],
 		url: "https://www.hackmetrix.com",
-		img: "/brand/hackmetrix-logo.webp",
-		imgDark: "/brand/hackmetrix-logo.webp",
+		img: hackmetrix.src,
+		imgDark: hackmetrix.src,
 	},
 ];
 ---

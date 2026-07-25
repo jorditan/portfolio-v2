@@ -1,7 +1,15 @@
 ---
-import { MessageCircleMore } from "lucide-react";
+import { MessageCircleMore } from "@lucide/astro";
+import { getImage } from "astro:assets";
 import ReviewsCarousel from "../components/ReviewsCarousel";
 import SectionHeader from "@/common/components/astroComponentes/SectionHeader.astro";
+import { reviewAvatars } from "@/lib/images";
+
+const [polly, juanpi, santi] = await Promise.all([
+	getImage({ src: reviewAvatars.polly, width: 80, height: 80, format: "webp", quality: 70 }),
+	getImage({ src: reviewAvatars.juanpi, width: 80, height: 80, format: "webp", quality: 70 }),
+	getImage({ src: reviewAvatars.santi, width: 80, height: 80, format: "webp", quality: 70 }),
+]);
 
 const reviews = [
 	{
@@ -9,7 +17,7 @@ const reviews = [
 		role: "Full Stack Developer",
 		job: "Hackmetrix",
 		date: "13 de abril de 2026",
-		avatar: "/images/about/polly-foto.webp",
+		avatar: polly.src,
 		message: `Trabajé con Matías en Hackmtrix, él como diseñador UX/UI y yo como developer. Tenía contacto con él diariamente y puedo decir que es una persona comprometida 100% con su trabajo.
 
 Sus diseños lograban llevar a tierra necesidades complejas, adelantaba propuestas en tiempo récord, escuchaba el feedback y aplicaba cambios reduciendo la fricción entre áreas.
@@ -24,7 +32,7 @@ Más allá de sus habilidades en diseño y producto, es un compañero genial, si
 		role: "Software Engineer",
 		job: "Hackmetrix",
 		date: "10 de abril de 2026",
-		avatar: "/images/about/juanpi-foto.webp",
+		avatar: juanpi.src,
 		message: `Tuve el privilegio de trabajar con Mati y puedo decir que es uno de esos compañeros que marcan la diferencia en un equipo.
 
 Lo que más me impresiona de él es su capacidad para generar ideas y convertirlas en soluciones. Ante cualquier problema, Mati no solo encuentra una salida, sino que lo hace con una creatividad y velocidad increíbles.
@@ -39,7 +47,7 @@ Si estás buscando a alguien que aporte valor y confianza desde el primer día, 
 		role: "Tech Product Manager",
 		job: "Hackmetrix",
 		date: "25 de abril de 2026",
-		avatar: "/images/about/santi-ushher.webp",
+		avatar: santi.src,
 		message: `Tuve la suerte de compartir equipo con Mati y es, sin duda, de esos compañeros que mejoran a todos los que trabajan junto a el.
 
 Como profesional es impecable. Ordenado, proactivo y con una calidad humana que transmite seguridad y confianza, resultando en vinculos genuinos tanto con compañeros como con clientes. Logra convertir el feedback y las necesidades de los usuarios en experiencias claras y con fundamento.
@@ -62,7 +70,7 @@ Cualquier equipo que cuente con Mati va a salir beneficiado.`,
 			<SectionHeader title="Recomendaciones" size="sm">
 				<MessageCircleMore
 					slot="icon"
-					className="h-6 w-6 text-sky-500 dark:text-sky-300"
+					class="h-6 w-6 text-sky-500 dark:text-sky-300"
 				/>
 			</SectionHeader>
 		</div>

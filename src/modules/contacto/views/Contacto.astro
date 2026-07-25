@@ -1,6 +1,6 @@
 ---
 import SectionHeader from "@/common/components/astroComponentes/SectionHeader.astro";
-import { Linkedin, Mail, Send } from "lucide-react";
+import { Mail, Send } from "@lucide/astro";
 ---
 
 <section
@@ -21,7 +21,7 @@ import { Linkedin, Mail, Send } from "lucide-react";
 	>
 		<div class="space-y-4">
 			<SectionHeader title="Creemos algo juntos" center>
-				<Send slot="icon" className="text-slate-900 dark:text-sky-300 h-8 w-8" />
+				<Send slot="icon" class="h-8 w-8 text-slate-900 dark:text-sky-300" />
 			</SectionHeader>
 
 			<p
@@ -41,7 +41,7 @@ import { Linkedin, Mail, Send } from "lucide-react";
 				       shadow-md shadow-slate-900/25 dark:shadow-black/30
 				       focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-white dark:focus-visible:ring-sky-500"
 			>
-				<Mail className="h-4 w-4" />
+				<Mail class="h-4 w-4" />
 				Enviar correo
 			</a>
 		</div>

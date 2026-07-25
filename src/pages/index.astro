@@ -1,18 +1,15 @@
 ---
 import Layout from "../layouts/Layout.astro";
-import "../assets/styles/global.css";
 import Tittle from "@/modules/init/views/Tittle.astro";
 import Experiencia from "@/modules/experiencia/views/Experiencia.astro";
-import MyProjects from "@/modules/projects/views/MyProjects";
+import MyProjects from "@/modules/projects/views/MyProjects.astro";
 import ProgressBar from "@/common/components/astroComponentes/ProgressBar.astro";
 import SobreMi from "@/modules/about/views/SobreMi.astro";
 import Contacto from "@/modules/contacto/views/Contacto.astro";
 import SectionDivider from "@/modules/about/components/SectionDivider.astro";
-import { Toaster } from "react-hot-toast";
 ---
 
 <Layout>
-	<Toaster position="bottom-center" client:only="react" />
 	<ProgressBar />
 	<Tittle />
 	<SectionDivider
@@ -22,7 +19,7 @@ import { Toaster } from "react-hot-toast";
 	<SectionDivider
 		className="mx-4 sm:mx-auto max-w-[32rem] md:max-w-[42rem] lg:max-w-4xl"
 	/>
-	<MyProjects client:only="react" />
+	<MyProjects />
 	<SectionDivider
 		className="mx-4 sm:mx-auto max-w-[32rem] md:max-w-[42rem] lg:max-w-4xl"
 	/>

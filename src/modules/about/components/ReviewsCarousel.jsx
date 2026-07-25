@@ -1,5 +1,27 @@
-import { Calendar } from "lucide-react";
-import { startTransition, useState, useEffect, useRef } from "react";
+import { startTransition, useState, useRef } from "react";
+
+function Calendar({ className = "" }) {
+  return (
+    <svg
+      xmlns="http://www.w3.org/2000/svg"
+      width="16"
+      height="16"
+      viewBox="0 0 24 24"
+      fill="none"
+      stroke="currentColor"
+      strokeWidth="2"
+      strokeLinecap="round"
+      strokeLinejoin="round"
+      className={className}
+      aria-hidden="true"
+    >
+      <path d="M8 2v4" />
+      <path d="M16 2v4" />
+      <rect width="18" height="18" x="3" y="4" rx="2" />
+      <path d="M3 10h18" />
+    </svg>
+  );
+}
 
 function ReviewsCarousel({ reviews = [] }) {
   const [activeIndex, setActiveIndex] = useState(0);
@@ -49,10 +71,13 @@ function ReviewsCarousel({ reviews = [] }) {
                     <div className="flex items-center gap-4">
                       <div className="flex h-13 w-13 items-center justify-center overflow-hidden rounded-full border-2 border-gray-700 dark:border-gray-300/80 bg-transparent p-1 text-sm font-semibold text-white">
                         <img
-                          className="h-10 w-10 rounded-full  object-cover"
+                          className="h-10 w-10 rounded-full object-cover"
                           src={review.avatar}
                           alt={`Avatar de ${review.name}`}
+                          width={40}
+                          height={40}
                           loading="lazy"
+                          decoding="async"
                           referrerPolicy="no-referrer"
                         />
                       </div>

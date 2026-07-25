@@ -1,5 +1,3 @@
-@import "tw-animate-css";
-@import "shadcn/tailwind.css";
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
@@ -104,8 +102,8 @@
   --motion-duration-slow: 820ms;
   --motion-distance-sm: 14px;
   --motion-distance-md: 20px;
-  --motion-blur-sm: 6px;
-  --motion-blur-md: 10px;
+  --motion-blur-sm: 0px;
+  --motion-blur-md: 0px;
 
   /* ── UI Tokens: Typography ──────────────────────────────────────── */
   /* Font size scale (mínimo 14px para garantizar legibilidad WCAG 2.1) */
@@ -249,13 +247,11 @@ html.js.motion-enabled [data-motion="hero-item"],
 html.js.motion-enabled [data-reveal-item] {
   opacity: 0;
   transform: translate3d(0, var(--motion-distance, var(--motion-distance-sm)), 0);
-  filter: blur(var(--motion-blur, 0px));
   transition:
     opacity var(--motion-duration, var(--motion-duration-base)) var(--motion-ease-premium),
-    transform var(--motion-duration, var(--motion-duration-base)) var(--motion-ease-premium),
-    filter var(--motion-duration, var(--motion-duration-base)) var(--motion-ease-premium);
+    transform var(--motion-duration, var(--motion-duration-base)) var(--motion-ease-premium);
   transition-delay: var(--motion-delay, 0ms);
-  will-change: opacity, transform, filter;
+  will-change: opacity, transform;
 }
 
 html.js.motion-enabled [data-motion="hero-item"].is-visible,
@@ -278,7 +274,6 @@ html.js.motion-enabled [data-motion="hero-item"].is-visible,
 html.js.motion-enabled [data-reveal-item].is-visible {
   opacity: 1;
   transform: translate3d(0, 0, 0);
-  filter: blur(0);
 }
 
 [data-motion="hero-static-word"].is-visible {
@@ -301,7 +296,6 @@ html.js.motion-enabled [data-cursor-glow]::after {
   background:
     radial-gradient(circle at var(--cursor-x) var(--cursor-y), rgba(56, 189, 248, 0.07), transparent 16%),
     radial-gradient(circle at calc(var(--cursor-x) + 6%) calc(var(--cursor-y) + 5%), rgba(255, 255, 255, 0.05), transparent 24%);
-  filter: blur(42px);
   transition: opacity 220ms ease-out;
 }
 

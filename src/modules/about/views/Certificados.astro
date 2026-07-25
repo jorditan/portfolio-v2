@@ -1,6 +1,6 @@
 ---
-import { Award } from "lucide-react";
-const {certificados} = Astro.props;
+import { Award } from "@lucide/astro";
+const { certificados } = Astro.props;
 import CertificateCard from "../components/CertificateCard.astro";
 import SectionHeader from "@/common/components/astroComponentes/SectionHeader.astro";
 ---
@@ -12,7 +12,7 @@ import SectionHeader from "@/common/components/astroComponentes/SectionHeader.as
   >
   <div class="flex flex-col gap-4">
     <SectionHeader title="Certificados" size="sm">
-      <Award slot="icon" className="text-sky-500 dark:text-sky-300 h-6 w-6" />
+      <Award slot="icon" class="text-sky-500 dark:text-sky-300 h-6 w-6" />
     </SectionHeader>
     <div class="grid grid-cols-1 gap-2 sm:grid-cols-2 xl:grid-cols-3">
       {

@@ -30,7 +30,10 @@ function MyCarousel({ photos = /** @type {{ src: string; alt: string }[]} */ ([]
                 className="rounded-md object-cover object-top w-full h-full"
                 src={photo.src}
                 alt={photo.alt}
+                width={256}
+                height={256}
                 loading="lazy"
+                decoding="async"
               />
             </div>
           ))}

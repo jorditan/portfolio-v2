@@ -4,7 +4,7 @@ const { href, label, icon } = Astro.props;
 
 <a href={href} target="_blank" rel="noopener noreferrer" aria-label={label}>
 	<span
-		class="bg-slate-900 hover:bg-slate-800 hover:text-white transparent badge gap-2 text-slate-900 dark:text-slate-50 p-2 text-sm font-medium inline-flex items-center px-2.5 py-1.5 rounded me-2 border border-gray-500 transition-colors dark:hover:bg-gray-600 dark:border-white/30"
+		class="dark:bg-slate-900 dark:hover:bg-slate-800 hover:text-white bg-gray-100 badge gap-2 text-slate-900 dark:text-slate-50 p-2 text-sm font-medium inline-flex items-center px-2.5 py-1.5 rounded me-2 border border-gray-500 transition-colors dark:border-white/30"
 	>
 		{
 			icon === "linkedin" && (

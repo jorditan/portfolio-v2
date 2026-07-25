@@ -1,0 +1,173 @@
+---
+import { Palette } from "@lucide/astro";
+import { getImage } from "astro:assets";
+import FeaturedCard from "../components/FeaturedCard.astro";
+import ProjectCard from "../components/ProjectCard.astro";
+import ProjectCarousel from "../components/ProjectCarousel.jsx";
+import {
+	getDesignProjects,
+	getFrontendProjects,
+} from "../../../lib/projects.js";
+import { projectImages } from "@/lib/images";
+
+const designProjects = getDesignProjects();
+const frontendProjects = getFrontendProjects();
+
+async function withOptimizedImages(list: ReturnType<typeof getDesignProjects>) {
+	return Promise.all(
+		list.map(async (project) => {
+			const meta = projectImages[project.slug];
+			if (!meta) {
+				return { ...project, heroImage: project.heroImage };
+			}
+			const optimized = await getImage({
+				src: meta,
+				width: 800,
+				height: 450,
+				format: "webp",
+				quality: 75,
+			});
+			return { ...project, heroImage: optimized.src, imageMeta: meta };
+		}),
+	);
+}
+
+const designWithImages = await withOptimizedImages(designProjects);
+const frontendWithImages = await withOptimizedImages(frontendProjects);
+
+const designFeatured = designWithImages.find((p) => p.featured);
+const designSecondary = designWithImages.filter((p) => !p.featured);
+const frontendFeatured = frontendWithImages.find((p) => p.featured);
+const frontendSecondary = frontendWithImages.filter((p) => !p.featured);
+
+const designCarousel = [
+	...(designFeatured ? [designFeatured] : []),
+	...designSecondary,
+];
+const frontendCarousel = [
+	...(frontendFeatured ? [frontendFeatured] : []),
+	...frontendSecondary,
+];
+---
+
+<section
+	class="mx-4 max-w-[32rem] py-8 transition-all sm:mx-auto md:max-w-[42rem] lg:max-w-4xl"
+	id="proyectos"
+	aria-label="Mis proyectos"
+>
+	<div
+		class="mb-6 flex items-center justify-start gap-2"
+		data-reveal-item
+		style="--motion-delay: 0ms; --motion-duration: var(--motion-duration-fast); --motion-distance: 12px;"
+	>
+		<Palette class="h-8 w-8 text-sky-500 dark:text-sky-300" />
+		<h2
+			class="title w-fit text-xl font-semibold text-slate-900 md:text-2xl dark:text-slate-50"
+		>
+			Proyectos
+		</h2>
+	</div>
+
+	<div
+		class="mb-10"
+		data-reveal-item
+		style="--motion-delay: 60ms; --motion-duration: var(--motion-duration-fast); --motion-distance: 12px;"
+	>
+		<div class="mb-4 flex items-center gap-3">
+			<span class="shrink-0 text-sm font-medium text-sky-500 dark:text-sky-300"
+				>Diseño UX/UI</span
+			>
+			<div class="h-px flex-1 bg-gray-300 dark:bg-gray-700"></div>
+		</div>
+
+		<ProjectCarousel
+			client:visible
+			projects={designCarousel}
+			compact={false}
+			baseMotionDelay={120}
+		/>
+
+		{
+			designFeatured && designFeatured.imageMeta && (
+				<div class="hidden sm:block">
+					<FeaturedCard
+						title={designFeatured.title}
+						shortDescription={designFeatured.shortDescription}
+						link={designFeatured.link}
+						image={designFeatured.imageMeta}
+						motionDelay={120}
+					/>
+				</div>
+			)
+		}
+		{
+			designSecondary.length > 0 && (
+				<div class="mt-4 hidden w-full flex-row gap-4 sm:flex">
+					{designSecondary.map((project, idx) =>
+						project.imageMeta ? (
+							<ProjectCard
+								title={project.title}
+								shortDescription={project.shortDescription}
+								link={project.link}
+								image={project.imageMeta}
+								compact={false}
+								motionDelay={200 + idx * 80}
+							/>
+						) : null,
+					)}
+				</div>
+			)
+		}
+	</div>
+
+	<div
+		data-reveal-item
+		style="--motion-delay: 100ms; --motion-duration: var(--motion-duration-fast); --motion-distance: 12px;"
+	>
+		<div class="mb-4 flex items-center gap-3">
+			<span class="shrink-0 text-sm font-medium text-sky-500 dark:text-sky-300"
+				>Desarrollo Front-End</span
+			>
+			<div class="h-px flex-1 bg-gray-300 dark:bg-gray-700"></div>
+		</div>
+
+		<ProjectCarousel
+			client:visible
+			projects={frontendCarousel}
+			compact
+			baseMotionDelay={160}
+		/>
+
+		{
+			frontendFeatured && frontendFeatured.imageMeta && (
+				<div class="mb-4 hidden sm:block">
+					<FeaturedCard
+						title={frontendFeatured.title}
+						shortDescription={frontendFeatured.shortDescription}
+						link={frontendFeatured.link}
+						image={frontendFeatured.imageMeta}
+						motionDelay={160}
+					/>
+				</div>
+			)
+		}
+		{
+			frontendSecondary.length > 0 && (
+				<div class="mt-4 hidden w-full flex-row gap-4 sm:flex">
+					{frontendSecondary.map((project, idx) =>
+						project.imageMeta ? (
+							<ProjectCard
+								title={project.title}
+								shortDescription={project.shortDescription}
+								link={project.link}
+								image={project.imageMeta}
+								compact
+								motionDelay={220 + idx * 70}
+							/>
+						) : null,
+					)}
+				</div>
+			)
+		}
+	</div>
+</section>
