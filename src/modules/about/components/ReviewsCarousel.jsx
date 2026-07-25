@@ -59,7 +59,7 @@ function ReviewsCarousel({ reviews = [] }) {
 
                       <div className="flex flex-col">
                         <div className="flex ">
-                          <a href={review.url} target="_blank" rel="noopener noreferrer" className="text-sm font-semibold text-slate-900 dark:hover:text-sky-300 hover:text-sky-600 dark:text-slate-100 sm:text-base hover:underline focus-visible:text-sky-600 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-sky-600 focus-visible:ring-offset-2 dark:focus-visible:ring-sky-300 transition-transform duration-200 gap-0.5 sm:gap-2 items-center flex flex-col sm:flex-row justify-start mb-1">
+                          <a href={review.url} target="_blank" rel="noopener noreferrer" tabIndex={!isActive ? -1 : undefined} className="text-sm font-semibold text-slate-900 dark:hover:text-sky-300 hover:text-sky-600 dark:text-slate-100 sm:text-base hover:underline focus-visible:text-sky-600 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-sky-600 focus-visible:ring-offset-2 dark:focus-visible:ring-sky-300 transition-transform duration-200 gap-0.5 sm:gap-2 items-center flex flex-col sm:flex-row justify-start mb-1">
                             <span className="w-fit text-lg">
                               {review.name}
                             </span>

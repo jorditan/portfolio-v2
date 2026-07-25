@@ -126,7 +126,7 @@ export const projects = [
     year: "2026",
     shortDescription:
       "Seguir a Boca requiere abrir 5 apps distintas: la página del club para noticias, X para las reacciones en vivo, Promiedos para estadísticas posteriores, otra de clima antes de ir a la cancha, YouTube para los videos... La 12 Digital centraliza todo eso en un solo lugar.", // TODO
-    heroImage: "/images/projects/la-12-digital.png",
+    heroImage: "/images/projects/la-12-digital.webp",
     tags: [
       { iconType: "figma", text: "Figma" },
       { iconType: "react", text: "React" },
@@ -179,7 +179,7 @@ export const projects = [
     role: "Frontend Developer",
     year: "2026",
     shortDescription: "Landing para Marki, tu amigo CM.",
-    heroImage: "/images/projects/marki-landing-page.png",
+    heroImage: "/images/projects/marki-landing-page.webp",
     tags: [
       { iconType: "astro", text: "Astro" },
     ],

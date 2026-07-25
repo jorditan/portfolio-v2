@@ -9,7 +9,7 @@ function FeaturedCard({ project, motionDelay = 140 }) {
           rounded-xl overflow-hidden bg-gray-100 dark:bg-gray-800
           shadow-lg shadow-slate-300/70 dark:shadow-black/40
           hover:border-sky-300 dark:hover:border-gray-300 hover:scale-[1.02] hover:shadow-xl hover:shadow-slate-300/80 dark:hover:shadow-black/50
-          transition-all duration-300 cursor-pointer
+          transition-[transform,box-shadow,border-color] duration-300 cursor-pointer
           focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-sky-500 focus-visible:ring-offset-2"
       target="_blank"
       data-reveal-item
@@ -26,6 +26,9 @@ function FeaturedCard({ project, motionDelay = 140 }) {
           src={project.heroImage}
           alt={`${project.title} - ${project.shortDescription}`}
           loading="lazy"
+          decoding="async"
+          width="800"
+          height="450"
           className="w-full aspect-video object-cover object-top group-hover:scale-[1.03] transition-transform duration-500"
         />
       </div>
@@ -37,11 +40,11 @@ function FeaturedCard({ project, motionDelay = 140 }) {
                          group-hover:text-sky-600 dark:group-hover:text-sky-300 transition-colors leading-tight">
             {project.title}
           </h3>
-          <button className="text-gray-400 dark:text-gray-200
+          <span className="text-gray-400 dark:text-gray-200
                              group-hover:text-sky-500 dark:bg-gray-900 px-1 py-1 rounded-md border border-gray-700 dark:group-hover:text-sky-300
-                             transition-colors mt-1 flex items-center justify-center text-sm">
+                             transition-colors mt-1 flex items-center justify-center text-sm" aria-hidden="true">
             <ArrowUpRight className="w-4 h-4" />
-          </button>
+          </span>
         </div>
 
         <p className="ui-text-body text-gray-700 dark:text-gray-300 leading-relaxed">

@@ -19,7 +19,7 @@ function LinkButton({
   ...rest
 }) {
   const base =
-    "gap-2 text-sm inline-flex items-center px-3 py-2 font-medium text-center rounded-lg transition-all";
+    "gap-2 text-sm inline-flex items-center px-3 py-2 font-medium text-center rounded-lg transition-colors";
 
   const variants = {
     primary:

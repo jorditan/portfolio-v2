@@ -10,7 +10,7 @@ function ProjectCard({ project, compact = false, motionDelay = 220 }) {
                  shadow-md shadow-slate-300/60 dark:shadow-black/30
                  hover:border-sky-300 dark:hover:border-gray-300
                  hover:rotate-1 hover:scale-[1.02] hover:shadow-lg hover:shadow-slate-300/70 dark:hover:shadow-black/40
-                 transition-all duration-300 cursor-pointer h-full
+                  transition-[transform,box-shadow,border-color] duration-300 cursor-pointer h-full
                  focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-sky-500 focus-visible:ring-offset-2"
       target="_blank"
       data-reveal-item
@@ -27,6 +27,9 @@ function ProjectCard({ project, compact = false, motionDelay = 220 }) {
           src={project.heroImage}
           alt={`${project.title} - ${project.shortDescription}`}
           loading="lazy"
+          decoding="async"
+          width="600"
+          height="450"
           className={`w-full object-cover object-top
                       group-hover:scale-[1.03] transition-transform duration-500
                       ${compact ? "aspect-video" : "aspect-[4/3]"}`}
@@ -43,12 +46,11 @@ function ProjectCard({ project, compact = false, motionDelay = 220 }) {
           >
             {project.title}
           </h3>
-          <button className="text-gray-400 dark:text-gray-200
+          <span className="text-gray-400 dark:text-gray-200
                              group-hover:text-sky-500 dark:bg-gray-900 px-1 py-1 rounded-md border border-gray-700 dark:group-hover:text-sky-300
-                             transition-colors mt-1 flex items-center justify-center text-sm">
+                             transition-colors mt-1 flex items-center justify-center text-sm" aria-hidden="true">
             <ArrowUpRight className="w-4 h-4" />
-
-          </button>
+          </span>
         </div>
 
         <p className="text-base text-gray-600 dark:text-gray-400 leading-relaxed line-clamp-2">
