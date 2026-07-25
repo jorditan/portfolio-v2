@@ -59,7 +59,7 @@ function ReviewsCarousel({ reviews = [] }) {
 
                       <div className="flex flex-col">
                         <div className="flex ">
-                          <a href={review.url} target="_blank" rel="noopener noreferrer" tabIndex={!isActive ? -1 : undefined} className="text-sm font-semibold text-slate-900 dark:hover:text-sky-300 hover:text-sky-600 dark:text-slate-100 sm:text-base hover:underline focus-visible:text-sky-600 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-sky-600 focus-visible:ring-offset-2 dark:focus-visible:ring-sky-300 transition-transform duration-200 gap-0.5 sm:gap-2 items-center flex flex-col sm:flex-row justify-start mb-1">
+                          <a href={review.url} target="_blank" aria-hidden="false" rel="noopener noreferrer" tabIndex={!isActive ? -1 : undefined} className="text-sm font-semibold text-slate-900 dark:hover:text-sky-300 hover:text-sky-600 dark:text-slate-100 sm:text-base hover:underline focus-visible:text-sky-600 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-sky-600 focus-visible:ring-offset-2 dark:focus-visible:ring-sky-300 transition-transform duration-200 gap-0.5 sm:gap-2 items-center flex flex-col sm:flex-row justify-start mb-1">
                             <span className="w-fit text-lg">
                               {review.name}
                             </span>
@@ -97,15 +97,11 @@ function ReviewsCarousel({ reviews = [] }) {
       <div className="flex items-center justify-between gap-4">
         <div className="flex items-center gap-2">
           {reviews.map((review, index) => (
-            <button
+            <span
               key={`${review.name}-indicator`}
-              type="button"
-              onClick={() => goToReview(index)}
-              aria-label={`Ir a la reseña de ${review.name}`}
-              aria-pressed={index === activeIndex}
               className={`h-2.5 rounded-full transition-all duration-300 ${index === activeIndex
                 ? "w-8 bg-sky-500 dark:bg-sky-300"
-                : "w-2.5 bg-slate-300 hover:bg-slate-400 dark:bg-slate-700 dark:hover:bg-slate-500"
+                : "w-2.5 bg-slate-300  dark:bg-slate-700"
                 }`}
             />
           ))}

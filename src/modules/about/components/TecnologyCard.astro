@@ -6,26 +6,24 @@ const duration = 3 + (seed % 5) * 0.4;
 const delay = (seed % 7) * 0.45;
 ---
 
-<div
-	id={tooltip}
-	data-tooltip-placement="top"
-	role="tooltip"
-	class="absolute z-10 invisible inline-block px-3 py-2 text-sm font-medium text-slate-50 dark:text-gray-900 bg-slate-900 dark:bg-gray-100 border dark:border-gray-200 rounded-lg shadow-sm opacity-0 tooltip"
->
-	{tooltip}
-	<div class="tooltip-arrow" data-popper-arrow></div>
-</div>
-
-<div
-	data-tooltip-target={tooltip}
-	class="tech-card w-[4rem] animate animate-pulse flex-col transition-transform duration-500 ease-[cubic-bezier(0.22,1,0.36,1)] hover:scale-[1.18] flex justify-center items-center h-[4rem] rounded-lg hover:will-change-transform bg-gray-100/80
+<div class="group relative flex justify-center items-center">
+	<div
+		class="tech-card w-[4rem] animate animate-pulse flex-col transition-transform duration-500 ease-[cubic-bezier(0.22,1,0.36,1)] hover:scale-[1.18] flex justify-center items-center h-[4rem] rounded-lg hover:will-change-transform bg-gray-100/80
 	       dark:bg-white/5
 	       border border-slate-300/40 dark:border-white/15
 	       backdrop-blur-md
 	       shadow-sm shadow-black/5 dark:shadow-black/25"
-	style={`--tech-card-duration:${duration}s; --tech-card-delay:-${delay}s;`}
->
-	<slot name="icon" />
+		style={`--tech-card-duration:${duration}s; --tech-card-delay:-${delay}s;`}
+	>
+		<slot name="icon" />
+	</div>
+
+	<span
+		role="tooltip"
+		class="absolute bottom-full left-1/2 -translate-x-1/2 mb-2 z-20 px-2.5 py-1 text-xs font-medium text-slate-50 dark:text-gray-900 bg-slate-900 dark:bg-gray-100 border dark:border-gray-200 rounded-md shadow-sm opacity-0 invisible group-hover:visible group-hover:opacity-100 transition-opacity pointer-events-none whitespace-nowrap"
+	>
+		{tooltip}
+	</span>
 </div>
 
 <style>

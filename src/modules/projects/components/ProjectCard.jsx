@@ -46,11 +46,11 @@ function ProjectCard({ project, compact = false, motionDelay = 220 }) {
           >
             {project.title}
           </h3>
-          <span className="text-gray-400 dark:text-gray-200
+          <button name="ver-mas" label="Ver más" className="text-gray-400 dark:text-gray-200
                              group-hover:text-sky-500 dark:bg-gray-900 px-1 py-1 rounded-md border border-gray-700 dark:group-hover:text-sky-300
-                             transition-colors mt-1 flex items-center justify-center text-sm" aria-hidden="true">
+                             transition-colors mt-1 flex items-center justify-center text-sm" aria-hidden="false">
             <ArrowUpRight className="w-4 h-4" />
-          </span>
+          </button>
         </div>
 
         <p className="text-base text-gray-600 dark:text-gray-400 leading-relaxed line-clamp-2">

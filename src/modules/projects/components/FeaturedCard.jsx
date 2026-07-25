@@ -40,11 +40,11 @@ function FeaturedCard({ project, motionDelay = 140 }) {
                          group-hover:text-sky-600 dark:group-hover:text-sky-300 transition-colors leading-tight">
             {project.title}
           </h3>
-          <span className="text-gray-400 dark:text-gray-200
+          <button name="ver-mas" label="Ver más" className="text-gray-400 dark:text-gray-200
                              group-hover:text-sky-500 dark:bg-gray-900 px-1 py-1 rounded-md border border-gray-700 dark:group-hover:text-sky-300
                              transition-colors mt-1 flex items-center justify-center text-sm" aria-hidden="true">
             <ArrowUpRight className="w-4 h-4" />
-          </span>
+          </button>
         </div>
 
         <p className="ui-text-body text-gray-700 dark:text-gray-300 leading-relaxed">
