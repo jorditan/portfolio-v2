@@ -3,6 +3,13 @@ import { Image } from "astro:assets";
 import StatusBadge from "@/common/components/astroComponentes/StatusBadge.astro";
 import SocialIconLink from "@/common/components/astroComponentes/SocialIconLink.astro";
 import { miscImages } from "@/lib/images";
+import { siteConfig } from "@/lib/config";
+
+const socialLinks = [
+	{ label: "LinkedIn", href: siteConfig.social.linkedin, icon: "linkedin" },
+	{ label: "GitHub", href: siteConfig.social.github, icon: "github" },
+	{ label: "Behance", href: siteConfig.social.behance, icon: "behance" },
+];
 ---
 
 <section
@@ -26,7 +33,7 @@ import { miscImages } from "@/lib/images";
 							class="hero-avatar shrink-0 self-center sm:self-auto relative group"
 							data-motion="hero-item"
 							style="--motion-delay: 220ms; --motion-duration: var(--motion-duration-slow); --motion-distance: 20px; --motion-blur: var(--motion-blur-md);"
-							aria-label="Foto de perfil de Matías Jordán, actualmente trabajando en G&L Group"
+							aria-label="Foto de perfil de Matías Jordán, actualmente trabajando en Hackmetrix"
 						>
 							<span
 								class="absolute inset-0 rounded-full ring-2 ring-sky-500 ring-offset-2 ring-offset-white/0 dark:ring-offset-slate-950/0"
@@ -52,14 +59,14 @@ import { miscImages } from "@/lib/images";
 								role="tooltip"
 								class="absolute bottom-full left-1/2 -translate-x-1/2 mb-2 z-10 px-3 py-2 text-sm font-medium text-slate-50 dark:text-gray-900 bg-slate-900 dark:bg-gray-100 border dark:border-gray-200 rounded-lg shadow-sm whitespace-nowrap opacity-0 invisible group-hover:visible group-focus-within:visible group-hover:opacity-100 group-focus-within:opacity-100 transition-opacity pointer-events-none"
 							>
-								Actualmente trabajando en G&L Group
+								Actualmente trabajando en Hackmetrix
 							</span>
 						</figure>
 						<div data-motion="hero-static-word" style="--motion-delay: 120ms;">
 							<h1
-								class="title ui-text-hero flex flex-row gap-2 font-bold w-fit text-[#0f172a] dark:text-[#fafafa]"
+								class="title ui-text-hero flex flex-row flex-wrap gap-2 font-bold w-fit text-[#0f172a] dark:text-[#fafafa]"
 							>
-								Matías
+								Matías Owen
 								<span class="selected-word">
 									<span class="selected-bg"></span>
 									<span class="selected-text">Jordán</span>
@@ -73,24 +80,7 @@ import { miscImages } from "@/lib/images";
 						style="--motion-delay: 180ms; --motion-duration: var(--motion-duration-fast); --motion-distance: 12px;"
 					/> -->
 				</div>
-				<!-- <div
-					class="puestos"
-					data-motion="hero-item"
-					style="--motion-delay: 180ms; --motion-duration: var(--motion-duration-base); --motion-distance: 16px;"
-				>
-					<div class="roles">
-						<h2
-							class="text-xl md:text-3xl font-bold w-fit text-[#0f172a] dark:text-[#fafafa]"
-						>
-							Product Designer 🎨
-						</h2>
-						<h2
-							class="text-xl md:text-3xl font-bold w-fit text-[#0f172a] dark:text-[#fafafa]"
-						>
-							Frontend Developer 👨‍💻
-						</h2>
-					</div>
-				</div> -->
+
 				<StatusBadge
 					class="bg-green-200 dark:bg-[#46b1e238] flex md:hidden badge gap-2 motion-safe:animate-pulse text-green-800 dark:text-[#fafafa] h-fit items-center px-2.5 py-0.5 w-fit rounded-md border border-green-700 dark:border-gray-500 transition-all hover:bg-green-300 dark:hover:bg-green-900/30"
 					data-motion="hero-item"
@@ -110,25 +100,19 @@ import { miscImages } from "@/lib/images";
 			</p>
 
 			<div
-				class="flex"
+				class="flex flex-wrap gap-3"
 				data-motion="hero-item"
 				style="--motion-delay: 360ms; --motion-duration: var(--motion-duration-base); --motion-distance: 16px;"
 			>
-				<SocialIconLink
-					href="https://www.linkedin.com/in/matias-jordan/"
-					label="LinkedIn"
-					icon="linkedin"
-				/>
-				<SocialIconLink
-					href="https://github.com/jorditan"
-					label="GitHub"
-					icon="github"
-				/>
-				<SocialIconLink
-					href="https://www.behance.net/matiasowenjordan"
-					label="Behance"
-					icon="behance"
-				/>
+				{
+					socialLinks.map((link) => (
+						<SocialIconLink
+							href={link.href}
+							label={link.label}
+							icon={link.icon}
+						/>
+					))
+				}
 			</div>
 		</div>
 	</article>

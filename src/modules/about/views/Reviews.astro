@@ -64,6 +64,8 @@ Cualquier equipo que cuente con Mati va a salir beneficiado.`,
 	id="reviews"
 	aria-label="Reseñas de compañeros"
 	class="flex flex-col gap-6 pt-8"
+	data-reveal-item
+	style="--motion-delay: 100ms; --motion-duration: var(--motion-duration-base); --motion-distance: 18px;"
 >
 	<div class="flex flex-col gap-4">
 		<div class="flex items-center justify-between gap-4">
@@ -75,6 +77,6 @@ Cualquier equipo que cuente con Mati va a salir beneficiado.`,
 			</SectionHeader>
 		</div>
 
-		<ReviewsCarousel client:visible reviews={reviews} />
+		<ReviewsCarousel client:load reviews={reviews} />
 	</div>
 </section>

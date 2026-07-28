@@ -1,4 +1,4 @@
-import { useState, useRef } from "react";
+import React, { useState, useRef } from "react";
 import ProjectCard from "./ProjectCard.jsx";
 
 function ChevronLeft({ className = "" }) {
