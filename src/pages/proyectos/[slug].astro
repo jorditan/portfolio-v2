@@ -1,10 +1,23 @@
 ---
-import { getAllProjects } from "../../lib/projects.js";
+import Layout from "../../layouts/Layout.astro";
+import ProjectDetail from "../../modules/projects/views/ProjectDetail.astro";
+import { getAllProjects, getProjectsSorted } from "../../lib/projects.js";
 
 export function getStaticPaths() {
   return getAllProjects().map((p) => ({ params: { slug: p.slug } }));
 }
+
+const { slug } = Astro.params;
+const sorted = getProjectsSorted();
+const index = sorted.findIndex((p) => p.slug === slug);
+const project = sorted[index];
+const prev = index > 0 ? sorted[index - 1] : null;
+const next = index >= 0 && index < sorted.length - 1 ? sorted[index + 1] : null;
 ---
 
-<meta http-equiv="refresh" content="0; url=/#proyectos" />
-<script>window.location.replace("/#proyectos");</script>
+<Layout
+  title={`${project.title} — Matías Owen Jordán`}
+  description={project.shortDescription}
+>
+  <ProjectDetail project={project} prev={prev} next={next} />
+</Layout>

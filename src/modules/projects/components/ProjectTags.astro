@@ -1,0 +1,47 @@
+---
+import InfoPill from "@/common/components/astroComponentes/InfoPill.astro";
+import AstroIcon from "@/assets/icons/astro/AstroIcon.astro";
+import FigmaIcon from "@/assets/icons/astro/FigmaIcon.astro";
+import ReactIcon from "@/assets/icons/astro/ReactIcon.astro";
+import TailwindIcon from "@/assets/icons/astro/TailwindIcon.astro";
+import TypescriptIcon from "@/assets/icons/astro/TypescriptIcon.astro";
+
+interface Tag {
+	iconType?: string;
+	text: string;
+}
+
+interface Props {
+	tags: Tag[];
+}
+
+const { tags } = Astro.props;
+
+const iconMap: Record<string, any> = {
+	astro: AstroIcon,
+	figma: FigmaIcon,
+	react: ReactIcon,
+	tailwind: TailwindIcon,
+	typescript: TypescriptIcon,
+};
+---
+
+<div class="flex flex-wrap gap-2">
+	{
+		tags.map((tag) => {
+			const Icon = tag.iconType ? iconMap[tag.iconType] : undefined;
+			return (
+				<InfoPill text={tag.text}>
+					{Icon && (
+						<span
+							slot="icon"
+							class="flex h-4 w-4 shrink-0 items-center justify-center [&>svg]:h-full [&>svg]:w-full"
+						>
+							<Icon />
+						</span>
+					)}
+				</InfoPill>
+			);
+		})
+	}
+</div>

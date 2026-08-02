@@ -22,9 +22,12 @@ function ArrowUpRight({ className = "" }) {
 }
 
 function ProjectCard({ project, compact = false, motionDelay = 220 }) {
+  const metaText = project.categoryLabel;
+
   return (
     <a
-      href={project.link}
+      suppressHydrationWarning={true}
+      href={project.href}
       aria-label={`Ver proyecto: ${project.title}`}
       className="group flex flex-col w-full border-2 border-gray-200 dark:border-gray-600
                  rounded-xl overflow-hidden bg-gray-100 dark:bg-slate-900
@@ -33,8 +36,6 @@ function ProjectCard({ project, compact = false, motionDelay = 220 }) {
                  hover:rotate-1 hover:scale-[1.02] hover:shadow-lg hover:shadow-slate-300/70 dark:hover:shadow-black/40
                   transition-[transform,box-shadow,border-color] duration-300 cursor-pointer h-full
                  focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-sky-500 focus-visible:ring-offset-2"
-      target="_blank"
-      rel="noopener noreferrer"
       data-reveal-item
       style={{
         "--motion-delay": `${motionDelay}ms`,
@@ -78,6 +79,12 @@ function ProjectCard({ project, compact = false, motionDelay = 220 }) {
         <p className="text-base text-gray-600 dark:text-gray-400 leading-relaxed line-clamp-2">
           {project.shortDescription}
         </p>
+
+        {metaText && (
+          <p className="ui-text-caption mt-auto pt-1 text-slate-500 dark:text-slate-400">
+            {metaText}
+          </p>
+        )}
       </div>
     </a>
   );
