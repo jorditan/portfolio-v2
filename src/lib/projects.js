@@ -1,131 +1,47 @@
 export const projects = [
-  // ── DISEÑO UX/UI ────────────────────────────────────────────────────────────
-
   {
     slug: "letterboxd-redesign",
-    title: "Letterboxd redesign",
+    title: "Rediseño de Letterboxd",
     category: "design",
     featured: true,
     role: "UX/UI Designer",
-    year: "2024",
+    year: "Junio 2024 - Septiembre 2024",
     shortDescription:
-      "Caso de estudio completo aplicando research con usuarios, arquitectura de la información, wireframes y prototipado en Figma.",
+      "Caso de estudio completo de UX/UI aplicando investigación de usuarios, reestructuración de arquitectura de información, wireframing y prototipado interactivo en Figma.",
     heroImage: "/images/projects/film_information.webp",
     tags: [
       { iconType: "figma", text: "Figma" },
+      { text: "UX Research" },
       { text: "Pruebas de usuario" },
-      { text: "Research" },
       { text: "Prototipado" },
     ],
     detail: {
       problem:
-        "Letterboxd tiene una interfaz densa que puede resultar confusa para nuevos usuarios. El reto fue replantear los flujos más críticos sin perder la identidad visual de la plataforma.",
+        "Letterboxd posee una comunidad apasionada, pero su interfaz original presenta una alta densidad de información y flujos de navegación complejos que generan sobrecarga cognitiva y fricción en la incorporación de nuevos cinéfilos.",
       process:
-        "Empecé con un análisis heurístico y entrevistas a usuarios para identificar los puntos de fricción. Con esos aprendizajes diseñé wireframes de baja fidelidad, iteré en la arquitectura de la información y llegué a un prototipo navegable en Figma.",
+        "Realicé un análisis heurístico exhaustivo y entrevistas en profundidad con usuarios (frecuentes y esporádicos). Los hallazgos guiaron la reorganización de la arquitectura de la información, el diseño de wireframes de baja fidelidad y el desarrollo de un prototipo navegable de alta fidelidad con un sistema de componentes escalable en Figma.",
       outcome:
-        "El resultado es un caso de estudio completo con toda la metodología documentada, desde el research hasta el prototipo final. Fue el proyecto integrador del curso UX/UI avanzado de Coderhouse.",
+        "Un caso de estudio integral publicado en Behance con toda la metodología de producto documentada, desde el research inicial hasta las pruebas de usabilidad del prototipo. Proyecto integrador galardonado en el curso UX/UI Avanzado de Coderhouse.",
       images: [],
-      impact: [],
+      impact: [
+        "Proyecto integrador galardonado en el curso UX/UI Avanzado de Coderhouse.",
+        "Caso de estudio publicado en Behance con la metodología completa documentada: research, arquitectura de información, wireframes y testing de usabilidad.",
+        "Sistema de componentes escalable construido en Figma para facilitar futuras iteraciones del diseño.",
+      ],
     },
+    linkLabel: "Ver caso de estudio",
     link: "https://www.behance.net/gallery/208245225/Letterboxd-redesign-Case-of-study-UXUI",
   },
-
-  {
-    slug: "test-phishing-hackmetrix",
-    title: "Test de phishing",
-    category: "design",
-    featured: false,
-    role: "UX/UI Designer",
-    year: "2024",
-    shortDescription:
-      "Herramienta que pone a prueba a los usuarios frente al phishing y los capacita.",
-    heroImage: "/images/projects/test_phishing.webp",
-    tags: [
-      { iconType: "figma", text: "Figma" },
-      { text: "Prototipado" },
-    ],
-    detail: {
-      problem:
-        "Los usuarios de las empresas clientes de Hackmetrix eran vulnerables a ataques de phishing por falta de concientización. Se necesitaba una herramienta que los pusiera a prueba de forma práctica.",
-      process:
-        'Diseñé la interfaz en Figma priorizando claridad y un tono educativo, no punitivo. El flujo guía al usuario desde el "engaño" inicial hasta los consejos concretos de seguridad.',
-      outcome:
-        "La herramienta está en producción y es usada por empresas de distintos rubros para entrenar a sus equipos en ciberseguridad.",
-      images: [],
-      impact: [],
-    },
-    link: "https://test-phishing.hackmetrix.com/",
-  },
-
-  {
-    slug: "modulo-legales-hackmetrix",
-    title: "Módulo de legales",
-    category: "design",
-    featured: false,
-    role: "UX/UI Designer",
-    year: "2024",
-    shortDescription:
-      "Research de módulo documentación legal para cumplir normas.",
-    heroImage: "/images/projects/redesign_legales.webp",
-    tags: [
-      { iconType: "figma", text: "Figma" },
-      { text: "Pruebas de usuario" },
-      { text: "Research" },
-      { text: "Prototipado" },
-    ],
-    detail: {
-      problem:
-        "El módulo de documentación legal dentro del producto era difícil de navegar y tenía una tasa alta de abandono. Los usuarios no encontraban lo que buscaban sin pedir ayuda al equipo.",
-      process:
-        "Realicé entrevistas contextuales con usuarios reales para entender cómo buscaban y procesaban la información. Los hallazgos guiaron el rediseño de la organización del contenido y los patrones de interacción.",
-      outcome:
-        "Aprendizaje profundo sobre diseño de producto en un contexto B2B real. La metodología de entrevistas y los reportes generaron valor más allá del rediseño visual.",
-      images: [],
-      impact: [],
-    },
-    link: "https://www.behance.net/gallery/230272939/SaaS-Legal-Module-UX-Research-Product-Discovery"
-  },
-
-  {
-    slug: "diagnostico-ciberseguridad-hackmetrix",
-    title: "Diagnóstico seguridad",
-    category: "design",
-    featured: false,
-    role: "UX/UI Designer",
-    year: "2025",
-    shortDescription:
-      "Herramienta de diagnóstico de madurez en ciberseguridad.",
-    heroImage: "/images/projects/diagnostico-ciberseguridad.webp",
-    tags: [
-      { iconType: "figma", text: "Figma" },
-      { text: "Producto" },
-      { text: "Prototipado" },
-    ],
-    detail: {
-      problem:
-        "Las empresas necesitaban una forma rápida de entender en qué nivel de madurez de seguridad estaban sin tener que hablar con un asesor primero. El producto necesitaba un punto de entrada accesible y autónomo.",
-      process:
-        "Diseñé un flujo de diagnóstico guiado con lógica de branching según las respuestas del usuario. El resultado es un reporte personalizado con recomendaciones concretas adaptadas al perfil de cada empresa.",
-      outcome:
-        "La herramienta está en producción como parte del ecosistema de Hackmetrix y funciona como punto de entrada para leads calificados.",
-      images: [],
-      impact: [],
-    },
-    link:
-      "https://diagnostico-de-seguridad.hackmetrix.com/?utm_campaign=21824416-Diagn%C3%B3stico&utm_source=banner&utm_content=sitioweb",
-  },
-
-  // ── DESARROLLO FRONT-END ─────────────────────────────────────────────────────
 
   {
     slug: "la-12-digital",
     title: "La 12 Digital",
     category: "frontend",
     featured: true,
-    role: "Product Designer + Desarrollador",
-    year: "2026",
+    role: "Product Designer & Frontend Dev",
+    year: "Enero 2026 - Actualidad",
     shortDescription:
-      "Seguir a Boca requiere abrir 5 apps distintas: la página del club para noticias, X para las reacciones en vivo, Promiedos para estadísticas posteriores, otra de clima antes de ir a la cancha, YouTube para los videos... La 12 Digital centraliza todo eso en un solo lugar.", // TODO
+      "Hub digital y dashboard en tiempo real para hinchas de Boca Juniors que centraliza partidos, tabla de posiciones, noticias, clima en La Bombonera y minijuegos.",
     heroImage: "/images/projects/la-12-digital.webp",
     tags: [
       { iconType: "figma", text: "Figma" },
@@ -134,65 +50,153 @@ export const projects = [
       { iconType: "tailwind", text: "Tailwind" },
     ],
     detail: {
-      problem: "TODO: completar con el contexto del proyecto.",
-      process: "TODO: completar con el proceso de desarrollo.",
-      outcome: "TODO: completar con los resultados.",
+      problem:
+        "Seguir la actualidad de Boca Juniors requería abrir más de 5 aplicaciones distintas: prensa oficial para noticias, X para la conversación en vivo, Promiedos para estadísticas, apps de clima antes de ir al estadio y YouTube para los resúmenes. La información estaba fragmentada y requería demasiado tiempo de consulta.",
+      process:
+        "Definí los perfiles de usuario y sus Jobs-To-Be-Done, creando el producto bajo la premisa de 'información escaneable en menos de 30 segundos'. Diseñé la interfaz en Figma con un Design System propio en azul y oro cumpliendo accesibilidad WCAG AA. Desarrollé la aplicación en React con TypeScript y Tailwind CSS como un dashboard modular de widgets, integrando Supabase y consumiendo APIs externas protegidas mediante un Cloudflare Worker Proxy.",
+      outcome:
+        "Aplicación web en producción que reúne en una sola pantalla interactiva todo lo que un hincha necesita en tiempo real. Un proyecto de punta a punta que combina definición de producto, UI accesible, desarrollo frontend robusto y arquitectura de microservicios.",
       images: [],
-      impact: [],
+      impact: [
+        "Aplicación en producción que centraliza en una sola pantalla todo lo que un hincha necesita en tiempo real.",
+        "Design System propio en azul y oro con accesibilidad WCAG AA.",
+        "Arquitectura completa de punta a punta: React + TypeScript, Supabase y APIs externas protegidas mediante un Cloudflare Worker Proxy.",
+      ],
     },
-    link:
-      "https://la12digital.dev/",
+    linkLabel: "Visitar La 12 Digital",
+    link: "https://la12digital.dev/",
   },
 
-  // {
-  //   slug: "gifs-search-app",
-  //   title: "Gifs search app",
-  //   category: "frontend",
-  //   featured: false,
-  //   role: "Frontend Developer",
-  //   year: "2024",
-  //   shortDescription:
-  //     "Aplicación para buscar y visualizar GIFs integrando la API de GIPHY, con estado global en Zustand y testing.",
-  //   heroImage: "/images/projects/gifs-search-app.webp",
-  //   tags: [
-  //     { iconType: "react", text: "React" },
-  //     { iconType: "zustand", text: "Zustand" },
-  //   ],
-  //   detail: {
-  //     problem:
-  //       "Quería construir algo concreto con React que integrara una API externa y pusiera a prueba el manejo de estado global y las buenas prácticas de testing.",
-  //     process:
-  //       "Integré la API de GIPHY con Zustand para el estado global. Apliqué testing unitario y de integración para cubrir los flujos principales de búsqueda y visualización.",
-  //     outcome:
-  //       "Una app funcional desplegada en Vercel que sirve como referencia práctica de cómo estructurar un proyecto React desde cero.",
-  //     images: [],
-  //     impact: [],
-  //   },
-  //   link: "https://gifs-search-app-react-five.vercel.app/",
-  // },
-
   {
-    slug: "marki-landing-page",
-    title: "Marki landing page",
-    category: "frontend",
+    slug: "test-phishing-hackmetrix",
+    title: "Test de Phishing",
+    category: "design",
     featured: false,
-    role: "Frontend Developer",
-    year: "2026",
-    shortDescription: "Landing para Marki, tu amigo CM.",
-    heroImage: "/images/projects/marki-landing-page.webp",
+    role: "UX/UI Designer",
+    year: "Octubre 2024 - Diciembre 2024",
+    shortDescription:
+      "Herramienta interactiva de ciberseguridad que evalúa y capacita a colaboradores de empresas ante simulaciones de ingeniería social.",
+    heroImage: "/images/projects/test_phishing.webp",
     tags: [
-      { iconType: "astro", text: "Astro" },
+      { iconType: "figma", text: "Figma" },
+      { text: "Diseño B2B" },
+      { text: "Prototipado" },
     ],
     detail: {
       problem:
-        "El juego original tenía problemas de usabilidad que reducían la jugabilidad. Era una oportunidad para aplicar criterio UX en un proyecto de desarrollo real.",
+        "Las organizaciones clientes de Hackmetrix registraban una alta vulnerabilidad ante ataques de phishing por falta de concientización y entrenamiento práctico e instructivo para colaboradores no técnicos.",
       process:
-        "Analicé los puntos de fricción del juego existente y rediseñé los flujos con Vue 3 y Pinia. Usé Tailwind para iterar rápido en el diseño visual.",
+        "Diseñé la experiencia de evaluación en Figma priorizando un tono educativo e inclusivo en lugar de uno punitivo. El flujo guía progresivamente al usuario desde la simulación del 'correo trampa' hasta explicaciones visuales de las señales de peligro y buenas prácticas de seguridad.",
       outcome:
-        "Una versión mejorada del juego con una experiencia más fluida, deployada en Netlify.",
+        "Producto implementado en producción y utilizado activamente por empresas de múltiples industrias en Latinoamérica para medir y fortalecer su cultura organizacional de ciberseguridad.",
       images: [],
-      impact: [],
+      impact: [
+        "Producto en producción utilizado activamente por empresas de múltiples industrias en Latinoamérica.",
+        "Tono educativo (no punitivo) validado con usuarios, clave para la adopción en equipos no técnicos.",
+        "Pieza activa para medir y fortalecer la cultura de ciberseguridad de los clientes de Hackmetrix.",
+      ],
     },
+    linkLabel: "Probar la herramienta",
+    link: "https://test-phishing.hackmetrix.com/",
+  },
+
+  {
+    slug: "modulo-legales-hackmetrix",
+    title: "Módulo de Legales",
+    category: "design",
+    featured: false,
+    role: "UX Researcher & Product Designer",
+    year: "Abril 2024 - Mayo 2024",
+    shortDescription:
+      "Rediseño de arquitectura de información y UX Research para la gestión y auditoría de documentos legales y cumplimiento normativo B2B.",
+    heroImage: "/images/projects/redesign_legales.webp",
+    tags: [
+      { iconType: "figma", text: "Figma" },
+      { text: "UX Research" },
+      { text: "Pruebas de usuario" },
+      { text: "Diseño SaaS" },
+    ],
+    detail: {
+      problem:
+        "El módulo de documentación legal dentro de la plataforma SaaS de Hackmetrix presentaba una elevada tasa de abandono y fricción operativa. Los oficiales de cumplimiento y líderes técnicos requerían asistencia constante para subir y validar evidencias normativas.",
+      process:
+        "Conduje entrevistas contextuales y sesiones de pruebas de usabilidad con usuarios reales en empresas B2B. Los hallazgos permitieron reestructurar la jerarquía de navegación, simplificar los estados de aprobación documental y diseñar nuevos patrones de interacción claros en Figma.",
+      outcome:
+        "Caso de estudio publicado en Behance. El rediseño incrementó notablemente la autonomía de los usuarios durante los procesos de auditoría y sirvió como patrón estándar para la evolución del producto.",
+      images: [],
+      impact: [
+        "El rediseño incrementó notablemente la autonomía de los usuarios durante los procesos de auditoría.",
+        "Los nuevos patrones de interacción se adoptaron como estándar para la evolución del producto.",
+        "Caso de estudio publicado en Behance con la metodología de research documentada.",
+      ],
+    },
+    linkLabel: "Ver caso de estudio",
+    link: "https://www.behance.net/gallery/230272939/SaaS-Legal-Module-UX-Research-Product-Discovery",
+  },
+
+  {
+    slug: "diagnostico-ciberseguridad-hackmetrix",
+    title: "Diagnóstico de Seguridad",
+    category: "design",
+    featured: false,
+    role: "Product Designer",
+    year: "Junio 2025 - Septiembre 2025",
+    shortDescription:
+      "Plataforma autoguiada de evaluación de madurez en ciberseguridad que genera reportes de diagnóstico personalizados e instantáneos.",
+    heroImage: "/images/projects/diagnostico-ciberseguridad.webp",
+    tags: [
+      { iconType: "figma", text: "Figma" },
+      { text: "Diseño de Producto" },
+      { text: "Prototipado" },
+    ],
+    detail: {
+      problem:
+        "PyMEs y startups necesitaban conocer el estado de madurez de su seguridad informática de forma autónoma, sin depender de llamadas comerciales o asesorías extensas en una etapa inicial.",
+      process:
+        "Diseñé en Figma una experiencia de evaluación intuitiva con lógica de ramificación (branching) basada en las respuestas del usuario. El flujo desemboca en la generación automática de un reporte con diagnósticos visuales y recomendaciones accionables según el perfil de cada empresa.",
+      outcome:
+        "Herramienta desplegada en producción en el ecosistema de Hackmetrix, funcionando como uno de los canales principales de inbound marketing e integración de leads cualificados.",
+      images: [],
+      impact: [
+        "Herramienta desplegada en producción dentro del ecosistema de Hackmetrix.",
+        "Uno de los canales principales de inbound marketing y captación de leads cualificados.",
+        "Reportes personalizados instantáneos que eliminaron la fricción comercial en la etapa de descubrimiento.",
+      ],
+    },
+    linkLabel: "Hacer el diagnóstico",
+    link:
+      "https://diagnostico-de-seguridad.hackmetrix.com/?utm_campaign=21824416-Diagn%C3%B3stico&utm_source=banner&utm_content=sitioweb",
+  },
+
+  {
+    slug: "marki-landing-page",
+    title: "Marki Landing Page",
+    category: "frontend",
+    featured: false,
+    role: "Frontend Developer",
+    year: "Abril 2026 - Actualidad",
+    shortDescription:
+      "Landing page de alta conversión desarrollada en Astro para un SaaS que automatiza la creación de calendarios de contenido y marketing para emprendedores.",
+    heroImage: "/images/projects/marki-landing-page.webp",
+    tags: [
+      { iconType: "astro", text: "Astro" },
+      { iconType: "tailwind", text: "Tailwind" },
+    ],
+    detail: {
+      problem:
+        "Un nuevo SaaS enfocado en simplificar el marketing para emprendedores ('tu amigo CM') requería un sitio web institucional y de conversión rápido, accesible y con un copy claro que convirtiera visitas en solicitudes de demo agendadas.",
+      process:
+        "Desarrollé la plataforma con Astro 5 y Tailwind CSS aprovechando la generación estática para maximizar la velocidad y el SEO. Estructuré la experiencia en secciones estratégicas (propuesta de valor, comparativa antes/después, funcionamiento en 3 pasos, testimonios, simulador de planes y preguntas frecuentes), cuidando las animaciones y la responsividad.",
+      outcome:
+        "Landing page en producción desplegada en Vercel con rendimiento de 100/100 en Lighthouse y una experiencia de navegación fluida que refleja fielmente la personalidad cercana de la marca.",
+      images: [],
+      impact: [
+        "Puntaje 100/100 en Lighthouse gracias a la generación estática de Astro.",
+        "Landing en producción desplegada en Vercel con navegación fluida fiel a la personalidad de la marca.",
+        "Estructura orientada a conversión: simulador de planes, comparativa antes/después y CTAs a demo.",
+      ],
+    },
+    linkLabel: "Visitar la landing",
     link: "https://marki-landing-page.vercel.app/",
   },
 
@@ -202,9 +206,9 @@ export const projects = [
     category: "frontend",
     featured: false,
     role: "Desarrollador",
-    year: "2024",
+    year: "Agosto 2024 - Noviembre 2024",
     shortDescription:
-      "Proyecto integrador par la materia POO I en la UNAHUR.",
+      "Videojuego de estrategia en tiempo real desarrollado en Wollok aplicando arquitectura orientada a objetos, polimorfismo y testing automatizado.",
     heroImage: "/images/projects/wollolok.webp",
     tags: [
       { iconType: "unahur", text: "UNAHUR" },
@@ -214,19 +218,35 @@ export const projects = [
     gifImage: "/images/projects/gif-wollolok.gif",
     detail: {
       problem:
-        "Proyecto integrador de la materia Programación Orientada a Objetos I en la UNAHUR. El desafío era diseñar un juego aplicando polimorfismo, herencia y testing automático desde cero.",
+        "Proyecto integrador de la materia Programación Orientada a Objetos I en la Universidad Nacional de Hurlingham (UNAHUR). El reto consistía en modelar un juego complejo aplicando polimorfismo, herencia y testing automatizado sin motores gráficos prehechos.",
       process:
-        "Desarrollado en Wollok, un entorno pensado para enseñar POO. Estructuré el dominio del juego con clases, herencia y mensajes entre objetos siguiendo los principios de la materia.",
+        "Diseñamos en equipo la lógica de dominio completa con Wollok (entorno pedagógico de POO). Inspirado en Age of Empires II y Clash Royale, estructuramos una economía automatizada de oro, tres tipos de unidades militares con comportamientos propios (monjes que convierten enemigos, arqueros a distancia) y niveles de dificultad.",
       outcome:
-        "Proyecto aprobado con la práctica completa de los conceptos de POO. No puede ser deployado por limitaciones del entorno Wollok, pero puede verse en el GIF.",
+        "Juego funcional con repositorio completo en GitHub que cuenta con una suite de pruebas unitarias automatizadas que validan todas las reglas y comportamientos del dominio del software.",
       images: [],
-      impact: [],
+      impact: [
+        "Proyecto aprobado modelando un juego complejo con polimorfismo, herencia y delegación, sin motores gráficos prehechos.",
+        "Suite de pruebas unitarias automatizadas que validan todas las reglas y comportamientos del dominio.",
+        "Tres tipos de unidades con comportamientos propios, economía de oro automatizada y niveles de dificultad.",
+      ],
     },
+    linkLabel: "Ver repositorio en GitHub",
     link: "https://github.com/obj1-unahur-2024s2/TPGameIntegrador-thecoders",
   },
 ];
 
+export const categoryLabels = {
+  design: "Diseño UX/UI",
+  frontend: "Desarrollo Front-End",
+};
+
 export const getAllProjects = () => projects;
 export const getProjectBySlug = (slug) => projects.find((p) => p.slug === slug);
-export const getDesignProjects = () => projects.filter((p) => p.category === "design");
-export const getFrontendProjects = () => projects.filter((p) => p.category === "frontend");
+export const getCategoryLabel = (category) =>
+  categoryLabels[category] ?? category;
+
+// Orden de display: destacados primero, luego el resto
+export const getProjectsSorted = () => [
+  ...projects.filter((p) => p.featured),
+  ...projects.filter((p) => !p.featured),
+];

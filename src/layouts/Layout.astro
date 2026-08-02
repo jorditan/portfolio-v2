@@ -7,6 +7,22 @@ import { siteConfig } from "@/lib/config";
 import "@/assets/styles/global.css";
 import "@fontsource-variable/geist/wght.css";
 import geistLatin from "@fontsource-variable/geist/files/geist-latin-wght-normal.woff2?url";
+
+interface Props {
+	title?: string;
+	description?: string;
+}
+
+const { title, description } = Astro.props;
+
+const pageTitle = title ?? "Matías Owen Jordán";
+const metaDescription =
+	description ??
+	"Portfolio web de Matías Owen Jordán, product designer y desarrollador frontend";
+const socialTitle = title ?? "Matías – Diseñador de Producto y Programador";
+const socialDescription =
+	description ??
+	"Soy Matías, diseñador de producto y programador. Combino UX/UI con código para crear experiencias digitales funcionales.";
 ---
 
 <!doctype html>
@@ -18,19 +34,10 @@ import geistLatin from "@fontsource-variable/geist/files/geist-latin-wght-normal
 		<ThemeCabezaScript />
 		<SpeedInsights />
 		<meta charset="UTF-8" />
-		<meta
-			name="description"
-			content="Portfolio web de Matías Owen Jordán, product designer y desarrollador frontend"
-		/>
+		<meta name="description" content={metaDescription} />
 		<meta name="author" content="Matías Owen Jordán" />
-		<meta
-			property="og:title"
-			content="Matías – Diseñador de Producto y Programador"
-		/>
-		<meta
-			property="og:description"
-			content="Soy Matías, diseñador de producto y programador. Combino UX/UI con código para crear experiencias digitales funcionales."
-		/>
+		<meta property="og:title" content={socialTitle} />
+		<meta property="og:description" content={socialDescription} />
 		<meta
 			property="og:image"
 			content={`${siteConfig.siteUrl}/og/og-image.webp`}
@@ -38,14 +45,8 @@ import geistLatin from "@fontsource-variable/geist/files/geist-latin-wght-normal
 		<meta property="og:url" content={siteConfig.siteUrl} />
 		<meta property="og:type" content="website" />
 		<meta name="twitter:card" content="summary_large_image" />
-		<meta
-			name="twitter:title"
-			content="Matías – Diseñador de Producto y Programador"
-		/>
-		<meta
-			name="twitter:description"
-			content="Soy Matías, diseñador de producto y programador. Combino UX/UI con código para crear experiencias digitales funcionales."
-		/>
+		<meta name="twitter:title" content={socialTitle} />
+		<meta name="twitter:description" content={socialDescription} />
 		<meta
 			name="twitter:image"
 			content={`${siteConfig.siteUrl}/og/og-image.webp`}
@@ -58,8 +59,7 @@ import geistLatin from "@fontsource-variable/geist/files/geist-latin-wght-normal
 		/>
 		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
 		<meta name="theme-color" content="#071e40" />
-		<link rel="icon" type="image/svg+xml" href="/favicon.svg" />
-		<link rel="shortcut icon" href="/favicon.ico" />
+		<link rel="icon" type="image/x-icon" href="/pen-tool.ico" />
 		<link
 			rel="preload"
 			href={geistLatin}
@@ -67,7 +67,7 @@ import geistLatin from "@fontsource-variable/geist/files/geist-latin-wght-normal
 			type="font/woff2"
 			crossorigin
 		/>
-		<title>Matías Owen Jordán</title>
+		<title>{pageTitle}</title>
 	</head>
 	<body data-cursor-glow>
 		<a
@@ -236,20 +236,23 @@ import geistLatin from "@fontsource-variable/geist/files/geist-latin-wght-normal
 			})();
 		</script>
 
-		<script type="application/ld+json" set:html={JSON.stringify({
-			"@context": "https://schema.org",
-			"@type": "Person",
-			name: "Matías Owen Jordán",
-			jobTitle: "Product Designer & Frontend Developer",
-			url: siteConfig.siteUrl,
-			description:
-				"Product Designer y desarrollador Front-End. Apasionado en el desarrollo y diseño de soluciones innovadoras.",
-			sameAs: [
-				siteConfig.social.linkedin,
-				siteConfig.social.github,
-				siteConfig.social.behance,
-			],
-		})} />
+		<script
+			type="application/ld+json"
+			set:html={JSON.stringify({
+				"@context": "https://schema.org",
+				"@type": "Person",
+				name: "Matías Owen Jordán",
+				jobTitle: "Product Designer & Frontend Developer",
+				url: siteConfig.siteUrl,
+				description:
+					"Product Designer y desarrollador Front-End. Apasionado en el desarrollo y diseño de soluciones innovadoras.",
+				sameAs: [
+					siteConfig.social.linkedin,
+					siteConfig.social.github,
+					siteConfig.social.behance,
+				],
+			})}
+		/>
 	</body>
 </html>
 

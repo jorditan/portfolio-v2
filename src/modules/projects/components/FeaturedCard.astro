@@ -2,24 +2,45 @@
 import { Image } from "astro:assets";
 import { ArrowUpRight } from "@lucide/astro";
 import type { ImageMetadata } from "astro";
+import InfoPill from "@/common/components/astroComponentes/InfoPill.astro";
+import ProjectTags from "./ProjectTags.astro";
+
+interface Tag {
+	iconType?: string;
+	text: string;
+}
 
 interface Props {
 	title: string;
 	shortDescription: string;
-	link: string;
+	href: string;
 	image: ImageMetadata;
+	year?: string;
+	role?: string;
+	categoryLabel?: string;
+	tags?: Tag[];
 	motionDelay?: number;
 }
 
-const { title, shortDescription, link, image, motionDelay = 140 } = Astro.props;
+const {
+	title,
+	shortDescription,
+	href,
+	image,
+	year,
+	role,
+	categoryLabel,
+	tags = [],
+	motionDelay = 140,
+} = Astro.props;
+
+const metaText = role;
 ---
 
 <a
-	href={link}
+	href={href}
 	aria-label={`Ver proyecto: ${title}`}
 	class="group flex h-full cursor-pointer flex-col overflow-hidden rounded-xl border-2 border-gray-200 bg-gray-100 shadow-lg shadow-slate-300/70 transition-[transform,box-shadow,border-color] duration-300 hover:scale-[1.02] hover:border-sky-300 hover:shadow-xl hover:shadow-slate-300/80 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-sky-500 focus-visible:ring-offset-2 dark:border-gray-600 dark:bg-gray-800 dark:shadow-black/40 dark:hover:border-gray-300 dark:hover:shadow-black/50"
-	target="_blank"
-	rel="noopener noreferrer"
 	data-reveal-item
 	style={`--motion-delay: ${motionDelay}ms; --motion-duration: var(--motion-duration-base); --motion-distance: 18px;`}
 >
@@ -54,8 +75,29 @@ const { title, shortDescription, link, image, motionDelay = 140 } = Astro.props;
 			</span>
 		</div>
 
+		{
+			(categoryLabel || metaText) && (
+				<div class="flex flex-wrap items-center gap-2">
+					{categoryLabel && <InfoPill text={categoryLabel} />}
+					{metaText && (
+						<span class="ui-text-caption text-slate-500 dark:text-slate-400">
+							{metaText}
+						</span>
+					)}
+				</div>
+			)
+		}
+
 		<p class="ui-text-body leading-relaxed text-gray-700 dark:text-gray-300">
 			{shortDescription}
 		</p>
+
+		{
+			tags.length > 0 && (
+				<div class="mt-auto pt-1">
+					<ProjectTags tags={tags} />
+				</div>
+			)
+		}
 	</div>
 </a>

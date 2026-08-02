@@ -8,6 +8,22 @@ import la12 from "@/assets/images/projects/la-12-digital.webp";
 import marki from "@/assets/images/projects/marki-landing-page.webp";
 import wollolok from "@/assets/images/projects/wollolok.webp";
 
+// Gallery WebP imports
+import letterboxdMain from "@/assets/images/projects/letterboxd-main.webp";
+import letterboxdSearchResults from "@/assets/images/projects/letterboxd-search-results.webp";
+import letterboxdYourActivity from "@/assets/images/projects/letterboxd-your-activity.webp";
+
+import la12Main from "@/assets/images/projects/la-12-digital-main.webp";
+import la12Noticias from "@/assets/images/projects/la-12-digital-noticias.webp";
+import la12Eleven from "@/assets/images/projects/la-12-digital-11.webp";
+import la12Juego from "@/assets/images/projects/la-12-digita-juego.webp";
+
+import testPhishingQuestion from "@/assets/images/projects/test-phishing-question.webp";
+
+import diagnosticoInit from "@/assets/images/projects/diagnostico-ciberseguridad-init.webp";
+import diagnosticoQuestion from "@/assets/images/projects/diagnostico-ciberseguridad-question.webp";
+import diagnosticoMapaProgreso from "@/assets/images/projects/diagnostico-mapa-progreso.webp";
+
 import cumpleChico from "@/assets/images/about/cumple-chico.webp";
 import mamaYo from "@/assets/images/about/mama-yo.webp";
 import mamaDami from "@/assets/images/about/mama-dami.webp";
@@ -41,6 +57,28 @@ export const projectImages: Record<string, ImageMetadata> = {
   "la-12-digital": la12,
   "marki-landing-page": marki,
   wollolok,
+};
+
+export const projectGalleries: Record<string, ImageMetadata[]> = {
+  "letterboxd-redesign": [
+    letterboxdMain,
+    letterboxdSearchResults,
+    letterboxdYourActivity,
+  ],
+  "la-12-digital": [
+    la12Main,
+    la12Noticias,
+    la12Eleven,
+    la12Juego,
+  ],
+  "test-phishing-hackmetrix": [
+    testPhishingQuestion,
+  ],
+  "diagnostico-ciberseguridad-hackmetrix": [
+    diagnosticoInit,
+    diagnosticoQuestion,
+    diagnosticoMapaProgreso,
+  ],
 };
 
 export const aboutPhotos = {
