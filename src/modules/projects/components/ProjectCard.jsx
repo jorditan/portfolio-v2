@@ -80,11 +80,11 @@ function ProjectCard({ project, compact = false, motionDelay = 220 }) {
           {project.shortDescription}
         </p>
 
-        {metaText && (
+        {/* {metaText && (
           <p className="ui-text-caption mt-auto pt-1 text-slate-500 dark:text-slate-400">
             {metaText}
           </p>
-        )}
+        )} */}
       </div>
     </a>
   );

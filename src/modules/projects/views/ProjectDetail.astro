@@ -43,7 +43,7 @@ const motion = (delay: number) =>
 
 <article class="mx-auto max-w-6xl px-4 pb-20 pt-24 md:pt-32">
 	{/* Header con Breadcrumbs */}
-	<header class="mb-8">
+	<header class="md:mb-8 mb-4">
 		<nav
 			aria-label="Migas de pan"
 			class="mb-3 flex flex-wrap items-center gap-2 text-sm text-slate-500 dark:text-slate-400"
@@ -73,29 +73,30 @@ const motion = (delay: number) =>
 			</span>
 		</nav>
 
-		<div class="flex justify-between">
+		<div class="flex gap-2 md:gap-4 items-center">
+			<a
+				href="/#proyectos"
+				class="inline-flex h-10 w-10 items-center justify-center rounded-lg border border-slate-300/80 bg-gray-100 text-slate-700 transition hover:bg-slate-200 hover:text-sky-600 dark:border-white/15 dark:bg-slate-900 dark:text-slate-200 dark:hover:bg-slate-800 dark:hover:text-sky-400"
+			>
+				<ArrowLeft
+					class="text-slate-900 transition-colors dark:text-slate-50"
+					aria-hidden="true"
+				/>
+			</a>
 			<h1
-				class="text-3xl font-bold tracking-tight text-slate-900 sm:text-4xl md:text-5xl dark:text-slate-50"
+				class="text-2xl font-bold tracking-tight text-slate-900 sm:text-4xl md:text-5xl dark:text-slate-50"
 				data-reveal-item
 				style={motion(100)}
 			>
 				{project.title}
 			</h1>
-
-			<a href="/#proyectos" class="flex gap-2 items-center justify-center">
-				<ArrowLeft
-					class="h-5 w-5 text-slate-900 transition-colors dark:text-slate-50"
-					aria-hidden="true"
-				/>
-				<p class="ui-text-base text-gray-700 dark:text-gray-300">Volver</p>
-			</a>
 		</div>
 	</header>
 
 	{/* Carousel con las capturas de cada proyecto */}
 	{
 		slides.length > 0 && (
-			<section class="mb-12" data-reveal-item style={motion(160)}>
+			<section class="md:mb-12 mb-4" data-reveal-item style={motion(160)}>
 				<ProjectDetailCarousel
 					client:load
 					images={slides}

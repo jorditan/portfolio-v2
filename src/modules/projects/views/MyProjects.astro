@@ -56,6 +56,7 @@ const secondaryProjects = allProjects.filter((p) => !p.featured && p.imageMeta);
 		</h2>
 	</div>
 
+	{/* Carrusel en mobile */}
 	<ProjectCarousel
 		client:visible
 		projects={allProjects}
@@ -63,20 +64,16 @@ const secondaryProjects = allProjects.filter((p) => !p.featured && p.imageMeta);
 		baseMotionDelay={120}
 	/>
 
+	{/* Proyectos Destacados (2 columnas) */}
 	{
 		featuredProjects.length > 0 && (
-			<div
-				class:list={[
-					"mt-6 hidden gap-4 sm:grid",
-					featuredProjects.length > 1 ? "sm:grid-cols-2" : "",
-				]}
-			>
+			<div class="mt-6 hidden gap-4 sm:grid sm:grid-cols-2">
 				{featuredProjects.map((project, idx) => (
 					<FeaturedCard
 						title={project.title}
 						shortDescription={project.shortDescription}
 						href={project.href}
-						image={project.imageMeta}
+						image={project.imageMeta!}
 						role={project.role}
 						categoryLabel={project.categoryLabel}
 						tags={project.tags}
@@ -87,16 +84,18 @@ const secondaryProjects = allProjects.filter((p) => !p.featured && p.imageMeta);
 		)
 	}
 
+	{/* Otros Proyectos (2 columnas x 2 filas) */}
 	{
 		secondaryProjects.length > 0 && (
-			<div class="mt-4 hidden w-full gap-4 sm:grid sm:grid-cols-2 lg:grid-cols-3">
+			<div class="mt-4 hidden w-full gap-4 sm:grid sm:grid-cols-2">
 				{secondaryProjects.map((project, idx) => (
 					<ProjectCard
 						title={project.title}
 						shortDescription={project.shortDescription}
 						href={project.href}
-						image={project.imageMeta}
+						image={project.imageMeta!}
 						categoryLabel={project.categoryLabel}
+						tags={project.tags}
 						compact
 						motionDelay={200 + idx * 80}
 					/>
