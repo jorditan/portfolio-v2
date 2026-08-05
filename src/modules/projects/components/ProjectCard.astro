@@ -2,6 +2,12 @@
 import { Image } from "astro:assets";
 import { ArrowUpRight } from "@lucide/astro";
 import type { ImageMetadata } from "astro";
+import ProjectTags from "./ProjectTags.astro";
+
+interface Tag {
+	iconType?: string;
+	text: string;
+}
 
 interface Props {
 	title: string;
@@ -10,6 +16,7 @@ interface Props {
 	image: ImageMetadata;
 	year?: string;
 	categoryLabel?: string;
+	tags?: Tag[];
 	compact?: boolean;
 	motionDelay?: number;
 }
@@ -21,6 +28,7 @@ const {
 	image,
 	year,
 	categoryLabel,
+	tags = [],
 	compact = false,
 	motionDelay = 220,
 } = Astro.props;
@@ -77,10 +85,17 @@ const metaText = categoryLabel;
 
 		{
 			metaText && (
-				<p class="ui-text-caption mt-auto pt-1 text-slate-500 dark:text-slate-400">
+				<p class="ui-text-caption text-slate-500 dark:text-slate-400">
 					{metaText}
 				</p>
 			)
 		}
+		<!-- {
+			tags.length > 0 && (
+				<div class="mt-auto pt-1">
+					<ProjectTags tags={tags} />
+				</div>
+			)
+		} -->
 	</div>
 </a>

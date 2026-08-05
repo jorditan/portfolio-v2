@@ -6,7 +6,6 @@ import redesignLegales from "@/assets/images/projects/redesign_legales.webp";
 import diagnostico from "@/assets/images/projects/diagnostico-ciberseguridad.webp";
 import la12 from "@/assets/images/projects/la-12-digital.webp";
 import marki from "@/assets/images/projects/marki-landing-page.webp";
-import wollolok from "@/assets/images/projects/wollolok.webp";
 
 // Gallery WebP imports
 import letterboxdMain from "@/assets/images/projects/letterboxd-main.webp";
@@ -23,6 +22,10 @@ import testPhishingQuestion from "@/assets/images/projects/test-phishing-questio
 import diagnosticoInit from "@/assets/images/projects/diagnostico-ciberseguridad-init.webp";
 import diagnosticoQuestion from "@/assets/images/projects/diagnostico-ciberseguridad-question.webp";
 import diagnosticoMapaProgreso from "@/assets/images/projects/diagnostico-mapa-progreso.webp";
+
+import markiDashboard from "@/assets/images/projects/marki-dashboard.webp";
+import markiPlanContenido from "@/assets/images/projects/marki-plan-contenido.webp";
+import markiConfig from "@/assets/images/projects/marki-config.webp";
 
 import cumpleChico from "@/assets/images/about/cumple-chico.webp";
 import mamaYo from "@/assets/images/about/mama-yo.webp";
@@ -55,8 +58,8 @@ export const projectImages: Record<string, ImageMetadata> = {
   "modulo-legales-hackmetrix": redesignLegales,
   "diagnostico-ciberseguridad-hackmetrix": diagnostico,
   "la-12-digital": la12,
+  marki: marki,
   "marki-landing-page": marki,
-  wollolok,
 };
 
 export const projectGalleries: Record<string, ImageMetadata[]> = {
@@ -78,6 +81,16 @@ export const projectGalleries: Record<string, ImageMetadata[]> = {
     diagnosticoInit,
     diagnosticoQuestion,
     diagnosticoMapaProgreso,
+  ],
+  marki: [
+    markiDashboard,
+    markiPlanContenido,
+    markiConfig,
+  ],
+  "marki-landing-page": [
+    markiDashboard,
+    markiPlanContenido,
+    markiConfig,
   ],
 };
 

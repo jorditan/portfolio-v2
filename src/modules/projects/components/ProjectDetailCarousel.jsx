@@ -1,36 +1,30 @@
-import React, { useState, useRef } from "react";
+import React from "react";
+import ReactDOM from "react-dom";
+import { useProjectDetailCarousel } from "../hooks/useProjectDetailCarousel";
 
 export default function ProjectDetailCarousel({ images = [], title = "" }) {
-  const [activeIndex, setActiveIndex] = useState(0);
-  const touchStartX = useRef(null);
+  const total = images ? images.length : 0;
+  const {
+    activeIndex,
+    goToNext,
+    goToPrevious,
+    goToIndex,
+    handleTouchStart,
+    handleTouchEnd,
+    isLightboxOpen,
+    openLightbox,
+    closeLightbox,
+    mounted,
+  } = useProjectDetailCarousel(total);
 
-  if (!images || images.length === 0) return null;
+  if (!images || total === 0) return null;
 
-  const total = images.length;
-
-  const goToPrevious = () => {
-    setActiveIndex((prev) => (prev - 1 + total) % total);
-  };
-
-  const goToNext = () => {
-    setActiveIndex((prev) => (prev + 1) % total);
-  };
-
-  const handleTouchStart = (e) => {
-    touchStartX.current = e.touches[0].clientX;
-  };
-
-  const handleTouchEnd = (e) => {
-    if (touchStartX.current === null) return;
-    const touchEndX = e.changedTouches[0].clientX;
-    const diff = touchStartX.current - touchEndX;
-
-    if (Math.abs(diff) > 40) {
-      if (diff > 0) goToNext();
-      else goToPrevious();
-    }
-    touchStartX.current = null;
-  };
+  const activeImg = images[activeIndex];
+  const activeSrc = typeof activeImg === "string" ? activeImg : activeImg?.src;
+  const activeAlt =
+    typeof activeImg === "string"
+      ? `${title} - imagen ${activeIndex + 1}`
+      : activeImg?.alt || title;
 
   return (
     <div className="relative flex w-full flex-col gap-3">
@@ -56,26 +50,35 @@ export default function ProjectDetailCarousel({ images = [], title = "" }) {
                 : "pointer-events-none z-0 opacity-0"
                 }`}
             >
-              <img
-                src={src}
-                alt={alt}
-                loading={index === 0 ? "eager" : "lazy"}
-                decoding="async"
-                className="h-full rounded-md shadow-md w-full object-cover object-top"
-              />
+              <button
+                type="button"
+                onClick={openLightbox}
+                aria-label={`Ver ${alt} a pantalla completa`}
+                className="h-full w-full block overflow-hidden rounded-md text-left cursor-zoom-in group border-0 bg-transparent p-0"
+              >
+                <img
+                  src={src}
+                  alt={alt}
+                  loading={index === 0 ? "eager" : "lazy"}
+                  decoding="async"
+                  className="h-full w-full object-cover object-top rounded-md shadow-md transition-transform duration-300 group-hover:scale-[1.01]"
+                />
+              </button>
             </div>
           );
         })}
       </div>
 
-      {/* Bar de Controles Inferiores (idéntica a ReviewsCarousel) */}
+      {/* Bar de Controles Inferiores */}
       {total > 1 && (
         <div className="flex items-center justify-between gap-4 px-1">
           {/* Indicadores de Diapositiva (Pills) */}
           <div className="flex items-center gap-2">
             {images.map((_, index) => (
-              <div
+              <button
                 key={`indicator-${index}`}
+                type="button"
+                onClick={() => goToIndex(index)}
                 aria-label={`Ir a imagen ${index + 1}`}
                 className={`h-2.5 rounded-full transition-all duration-300 ${index === activeIndex
                   ? "w-8 bg-sky-500 dark:bg-sky-300"
@@ -85,8 +88,8 @@ export default function ProjectDetailCarousel({ images = [], title = "" }) {
             ))}
           </div>
 
-          {/* Botones de Navegación Previo / Siguiente */}
-          <div className="flex items-center gap-2">
+          {/* Botones de Navegación Previo / Siguiente al extremo derecho */}
+          <div className="flex items-center gap-2 ml-auto">
             <button
               type="button"
               onClick={goToPrevious}
@@ -133,6 +136,108 @@ export default function ProjectDetailCarousel({ images = [], title = "" }) {
           </div>
         </div>
       )}
+
+      {/* Modal / Lightbox Renderizado via React Portal a document.body */}
+      {isLightboxOpen &&
+        mounted &&
+        ReactDOM.createPortal(
+          <div
+            className="fixed inset-0 z-[9999] flex items-center justify-center bg-slate-950/90 backdrop-blur-md backdrop-saturate-150 p-4 sm:p-8 transition-all duration-300 select-none"
+            onClick={closeLightbox}
+            onTouchStart={handleTouchStart}
+            onTouchEnd={handleTouchEnd}
+          >
+            {/* Header del Modal (Contador de Diapositiva) */}
+            <div className="absolute top-4 left-4 z-[10000] text-sm font-medium text-slate-200 bg-slate-900/90 border border-white/15 px-3 py-1.5 rounded-lg shadow-md">
+              {activeIndex + 1} / {total}
+            </div>
+
+            {/* Botón de Cierre */}
+            <button
+              type="button"
+              onClick={closeLightbox}
+              className="absolute top-4 right-4 z-[10000] inline-flex h-10 w-10 items-center justify-center rounded-lg border border-white/15 bg-slate-900/90 text-slate-200 shadow-lg transition hover:bg-slate-800 hover:text-white"
+              aria-label="Cerrar vista a pantalla completa"
+            >
+              <svg
+                xmlns="http://www.w3.org/2000/svg"
+                width={20}
+                height={20}
+                viewBox="0 0 24 24"
+                fill="none"
+                stroke="currentColor"
+                strokeWidth={2}
+                strokeLinecap="round"
+                strokeLinejoin="round"
+              >
+                <path d="M18 6 6 18M6 6l12 12" />
+              </svg>
+            </button>
+
+            {/* Botón Navegación Anterior */}
+            {total > 1 && (
+              <button
+                type="button"
+                onClick={(e) => {
+                  e.stopPropagation();
+                  goToPrevious();
+                }}
+                className="absolute left-4 top-1/2 -translate-y-1/2 z-[10000] inline-flex h-12 w-12 items-center justify-center rounded-lg border border-white/15 bg-slate-900/90 text-slate-200 shadow-xl transition hover:bg-slate-800 hover:text-white"
+                aria-label="Imagen anterior"
+              >
+                <svg
+                  xmlns="http://www.w3.org/2000/svg"
+                  width={22}
+                  height={22}
+                  viewBox="0 0 24 24"
+                  fill="none"
+                  stroke="currentColor"
+                  strokeWidth={2}
+                  strokeLinecap="round"
+                  strokeLinejoin="round"
+                >
+                  <path d="m15 18-6-6 6-6" />
+                </svg>
+              </button>
+            )}
+
+            {/* Imagen Ampliada SIN bordes redondeados (rounded-none) */}
+            <img
+              src={activeSrc}
+              alt={activeAlt}
+              className="max-h-[88vh] max-w-[88vw] object-contain rounded-none shadow-2xl transition-all duration-300"
+              onClick={(e) => e.stopPropagation()}
+            />
+
+            {/* Botón Navegación Siguiente */}
+            {total > 1 && (
+              <button
+                type="button"
+                onClick={(e) => {
+                  e.stopPropagation();
+                  goToNext();
+                }}
+                className="absolute right-4 top-1/2 -translate-y-1/2 z-[10000] inline-flex h-12 w-12 items-center justify-center rounded-lg border border-white/15 bg-slate-900/90 text-slate-200 shadow-xl transition hover:bg-slate-800 hover:text-white"
+                aria-label="Siguiente imagen"
+              >
+                <svg
+                  xmlns="http://www.w3.org/2000/svg"
+                  width={22}
+                  height={22}
+                  viewBox="0 0 24 24"
+                  fill="none"
+                  stroke="currentColor"
+                  strokeWidth={2}
+                  strokeLinecap="round"
+                  strokeLinejoin="round"
+                >
+                  <path d="m9 18 6-6-6-6" />
+                </svg>
+              </button>
+            )}
+          </div>,
+          document.body
+        )}
     </div>
   );
 }
