@@ -49,7 +49,7 @@ function ReviewsCarousel({ reviews = [] }) {
               aria-hidden={!isActive}
               className={isActive ? "block w-full" : "hidden"}
             >
-              <div className="relative overflow-hidden p-4 sm:p-6 group flex flex-col rounded-xl border border-slate-200 bg-gray-100 hover:shadow-slate-300/70 dark:border-white/10 dark:bg-gray-800 dark:shadow-black/30 dark:hover:border-slate-50 dark:hover:shadow-black/40 shadow-md shadow-slate-300/40  backdrop-blur-sm transition-all duration-300">
+              <div className="relative overflow-hidden p-4 sm:p-6 group flex flex-col rounded-xl border border-slate-300/60 bg-gray-100 hover:shadow-slate-300/70 dark:border-white/10 dark:bg-gray-800 dark:shadow-black/30 dark:hover:border-white/40 dark:hover:shadow-black/40 shadow-md shadow-slate-300/40  backdrop-blur-sm transition-all duration-300">
                 <div className="flex flex-col gap-4">
                   <div className="flex items-center gap-4">
                     <div className="flex h-12 w-12 shrink-0 items-center justify-center overflow-hidden rounded-full border-2 border-slate-300 dark:border-slate-700 bg-gray-200 dark:bg-slate-800">
@@ -78,7 +78,10 @@ function ReviewsCarousel({ reviews = [] }) {
                         </span>
                       </a>
                       <small className="text-xs sm:text-sm font-medium text-slate-500 dark:text-slate-400">
-                        Trabajamos juntos en: <strong className="font-semibold text-slate-700 dark:text-slate-300">{review.job}</strong>
+                        Trabajamos juntos en:{" "}
+                        <strong className="font-semibold text-slate-700 dark:text-slate-300">
+                          {review.job}
+                        </strong>
                       </small>
                     </div>
                   </div>
@@ -108,10 +111,11 @@ function ReviewsCarousel({ reviews = [] }) {
               type="button"
               onClick={() => setActiveIndex(index)}
               aria-label={`Ir a reseña ${index + 1}`}
-              className={`h-2.5 rounded-full transition-all duration-300 ${index === activeIndex
-                ? "w-8 bg-sky-500 dark:bg-sky-300"
-                : "w-2.5 bg-slate-300 dark:bg-slate-700 hover:bg-slate-400 dark:hover:bg-slate-600"
-                }`}
+              className={`h-2.5 rounded-full transition-all duration-300 ${
+                index === activeIndex
+                  ? "w-8 bg-sky-500 dark:bg-sky-300"
+                  : "w-2.5 bg-slate-300 dark:bg-slate-700 hover:bg-slate-400 dark:hover:bg-slate-600"
+              }`}
             />
           ))}
         </div>
@@ -121,7 +125,7 @@ function ReviewsCarousel({ reviews = [] }) {
             type="button"
             onClick={goToPrevious}
             aria-label="Ver reseña anterior"
-            className="inline-flex h-10 w-10 items-center justify-center rounded-lg border border-slate-300/80 bg-gray-100 text-slate-700 transition hover:bg-slate-200 hover:text-sky-600 dark:border-white/15 dark:bg-slate-900 dark:text-slate-200 dark:hover:bg-slate-800 dark:hover:text-sky-400"
+            className="inline-flex h-10 w-10 items-center justify-center rounded-lg border border-slate-300/60 bg-gray-100 text-slate-700 transition hover:bg-slate-200 hover:text-sky-600 dark:border-white/15 dark:bg-slate-900 dark:text-slate-200 dark:hover:border-white/40 dark:hover:bg-slate-800 dark:hover:text-sky-400"
           >
             <svg
               xmlns="http://www.w3.org/2000/svg"
@@ -143,7 +147,7 @@ function ReviewsCarousel({ reviews = [] }) {
             type="button"
             onClick={goToNext}
             aria-label="Ver siguiente reseña"
-            className="inline-flex h-10 w-10 items-center justify-center rounded-lg border border-slate-300/80 bg-gray-100 text-slate-700 transition hover:bg-slate-200 hover:text-sky-600 dark:border-white/15 dark:bg-slate-900 dark:text-slate-200 dark:hover:bg-slate-800 dark:hover:text-sky-400"
+            className="inline-flex h-10 w-10 items-center justify-center rounded-lg border border-slate-300/60 bg-gray-100 text-slate-700 transition hover:bg-slate-200 hover:text-sky-600 dark:border-white/15 dark:bg-slate-900 dark:text-slate-200 dark:hover:border-white/40 dark:hover:bg-slate-800 dark:hover:text-sky-400"
           >
             <svg
               xmlns="http://www.w3.org/2000/svg"

@@ -29,11 +29,11 @@ function ProjectCard({ project, compact = false, motionDelay = 220 }) {
       suppressHydrationWarning={true}
       href={project.href}
       aria-label={`Ver proyecto: ${project.title}`}
-      className="group flex flex-col w-full border-2 border-gray-200 dark:border-gray-600
+      className="group flex flex-col w-full border border-slate-300/60 dark:border-white/15
                  rounded-xl overflow-hidden bg-gray-100 dark:bg-slate-900
                  shadow-md shadow-slate-300/60 dark:shadow-black/30
-                 hover:border-sky-300 dark:hover:border-gray-300
-                 hover:rotate-1 hover:scale-[1.02] hover:shadow-lg hover:shadow-slate-300/70 dark:hover:shadow-black/40
+                 hover:border-slate-400/90 dark:hover:border-white/40
+                 hover:-translate-y-1 hover:shadow-lg hover:shadow-slate-300/70 dark:hover:shadow-black/40
                   transition-[transform,box-shadow,border-color] duration-300 cursor-pointer h-full
                  focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-sky-500 focus-visible:ring-offset-2"
       data-reveal-item

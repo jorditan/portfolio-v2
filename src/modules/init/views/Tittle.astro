@@ -17,50 +17,43 @@ const socialLinks = [
 	id="inicio"
 	data-motion-hero
 >
-	<article
-		class="flex flex-col gap-6 items-center sm:flex-row sm:items-start sm:gap-4 md:gap-6"
-		aria-label="Bienvenida al portfolio"
-	>
-		<div class="flex flex-col gap-4 md:gap-8 flex-1 min-w-0">
+	<article class="flex flex-col gap-6" aria-label="Bienvenida al portfolio">
+		<div class="hero-layout flex min-w-0 flex-1 flex-col gap-4 md:gap-8">
 			<div
-				class="flex flex-col gap-4 md:gap-4"
+				class="hero-heading flex flex-col gap-4 md:gap-4"
 				data-motion="hero-item"
 				style="--motion-delay: 60ms; --motion-duration: var(--motion-duration-fast); --motion-distance: 12px;"
 			>
-				<div class="flex md:gap-4 md:flex-row items-left z-0 md:items-end">
-					<div class="flex gap-4 items-center">
+				<div
+					class="hero-heading-row z-0 flex items-left md:flex-row md:items-end md:gap-4"
+				>
+					<div class="hero-title-row flex items-center gap-4">
 						<figure
-							class="hero-avatar shrink-0 self-center sm:self-auto relative group"
+							class="hero-avatar group relative shrink-0 self-center sm:self-auto"
 							data-motion="hero-item"
 							style="--motion-delay: 220ms; --motion-duration: var(--motion-duration-slow); --motion-distance: 20px; --motion-blur: var(--motion-blur-md);"
 							aria-label="Foto de perfil de Matías Jordán, actualmente trabajando en Hackmetrix"
 						>
-							<span
-								class="absolute inset-0 rounded-full ring-1 md:ring-2 ring-sky-500 ring-offset-2 ring-offset-white/0 dark:ring-offset-slate-950/0"
-								aria-hidden="true"></span>
-							<span
-								class="absolute bottom-0 right-0 w-4 h-4 bg-sky-500 md:border-2 border-1 border-white dark:border-slate-950 rounded-full motion-safe:animate-pulse"
-								aria-hidden="true"></span>
 							<Image
 								src={miscImages.fotoLinkedin}
 								alt="Matías Owen Jordán"
-								width={96}
-								height={96}
-								widths={[64, 96, 128]}
-								sizes="96px"
+								width={160}
+								height={160}
+								widths={[64, 96, 160, 320]}
+								sizes="(min-width: 1024px) 160px, (min-width: 640px) 96px, 64px"
 								loading="eager"
 								fetchpriority="high"
 								decoding="async"
 								format="webp"
 								quality={75}
-								class="md:h-20 md:w-20 w-16 h-16 rounded-full border border-slate-200/50 bg-gray-100 object-cover p-1 shadow-md shadow-black/10 sm:h-24 sm:w-24 dark:border-slate-700/40 dark:bg-gray-800 dark:shadow-black/40"
+								class="h-16 w-16 rounded-md border border-slate-300/60 bg-gray-100 object-cover p-1 shadow-md shadow-black/10 transition-colors group-hover:border-slate-400/90 dark:border-white/15 dark:bg-gray-800 dark:shadow-black/40 dark:group-hover:border-white/40 sm:h-24 sm:w-24 lg:h-40 lg:w-40 lg:rounded-xl"
 							/>
 
 							<!-- <img
 								src="/foto-linkedin.jpg"
 								alt="Matías Owen Jordán"
-								width={96}
-								height={96}
+								width={160}
+								height={160}
 								class="h-20 w-20rounded-full border border-slate-200/50 bg-gray-100 object-cover p-1 shadow-md shadow-black/10 sm:h-24 sm:w-24 dark:border-slate-700/40 dark:bg-gray-800 dark:shadow-black/40"
 							/> -->
 							<span
@@ -70,7 +63,11 @@ const socialLinks = [
 								Actualmente trabajando en Hackmetrix
 							</span>
 						</figure>
-						<div data-motion="hero-static-word" style="--motion-delay: 120ms;">
+						<div
+							class="hero-title"
+							data-motion="hero-static-word"
+							style="--motion-delay: 120ms;"
+						>
 							<h1
 								class="title ui-text-hero flex flex-row flex-wrap gap-2 font-bold w-fit text-[#0f172a] dark:text-[#fafafa]"
 							>
@@ -96,7 +93,7 @@ const socialLinks = [
 				/>
 			</div>
 			<p
-				class="text-[20px] text-[#141a28] dark:text-gray-200 w-fit lg:max-w-xl"
+				class="hero-description w-fit text-[20px] text-[#141a28] dark:text-gray-200 lg:max-w-xl"
 				data-motion="hero-item"
 				style="--motion-delay: 280ms; --motion-duration: var(--motion-duration-base); --motion-distance: 18px; --motion-blur: var(--motion-blur-sm);"
 			>
@@ -108,7 +105,7 @@ const socialLinks = [
 			</p>
 
 			<div
-				class="flex flex-wrap gap-3"
+				class="hero-actions flex flex-wrap gap-3"
 				data-motion="hero-item"
 				style="--motion-delay: 360ms; --motion-duration: var(--motion-duration-base); --motion-distance: 16px;"
 			>
@@ -196,6 +193,45 @@ const socialLinks = [
 		z-index: 1;
 	}
 
+	@media (min-width: 1024px) {
+		.hero-layout {
+			display: grid;
+			grid-template-columns: 10rem minmax(0, 1fr);
+			column-gap: 2.5rem;
+			row-gap: 1.5rem;
+			align-items: center;
+		}
+
+		.hero-heading,
+		.hero-heading-row,
+		.hero-title-row {
+			display: contents;
+		}
+
+		.hero-avatar {
+			grid-column: 1;
+			grid-row: 1 / span 2;
+		}
+
+		.hero-title {
+			grid-column: 2;
+			grid-row: 1;
+			align-self: end;
+			min-width: 0;
+		}
+
+		.hero-description {
+			grid-column: 2;
+			grid-row: 2;
+			align-self: start;
+		}
+
+		.hero-actions {
+			grid-column: 1 / -1;
+			grid-row: 3;
+			justify-self: start;
+		}
+	}
 	@media (prefers-reduced-motion: reduce) {
 		.roles {
 			animation: none;

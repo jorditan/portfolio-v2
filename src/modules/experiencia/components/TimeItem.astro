@@ -48,67 +48,69 @@ const renderHighlight = (text: string) =>
 			]}></span>
 	</span>
 
-	<div
-		class="md:grid md:grid-cols-[220px_1fr] flex flex-col gap-4 md:grid-rows-[auto_1fr] md:gap-x-8"
-	>
-		<h3
-			class="md:row-start-1 md:col-start-1 text-xl sm:text-2xl font-bold text-sky-500 dark:text-sky-300 leading-tight whitespace-nowrap"
+	<div class="flex w-full flex-col gap-5">
+		<header
+			class="grid gap-3 md:grid-cols-[minmax(0,1fr)_auto] md:items-start md:gap-6"
 		>
-			{title}
-		</h3>
-
-		<div class="md:row-start-2 md:col-start-1 flex flex-col gap-2">
-			<div class="flex gap-2.5 justify-start items-center">
+			<div class="flex min-w-0 items-center gap-4">
 				<img
 					src={img}
-					width="36"
-					height="36"
+					width="44"
+					height="44"
 					loading="lazy"
 					decoding="async"
 					class:list={[
-						"object-cover p-1 border bg-gray-100 border-slate-50/45 rounded-xl h-9 w-9 shadow-md shadow-black/10 dark:bg-gray-800 dark:border-gray-700 dark:shadow-black/40 shrink-0",
+						"h-11 w-11 shrink-0 rounded-xl border border-slate-300/80 bg-white object-contain p-1.5 shadow-sm shadow-black/10 dark:border-white/15 dark:bg-gray-800 dark:shadow-black/40",
 						imgDark && "dark:hidden",
 					]}
-					alt={`${title} ${place} Logo`}
+					alt={`${place} Logo`}
 				/>
 				{
 					imgDark && (
 						<img
 							src={imgDark}
-							width="36"
-							height="36"
+							width="44"
+							height="44"
 							loading="lazy"
 							decoding="async"
-							class="hidden dark:block object-contain p-1 border bg-gray-800 border-gray-700 rounded-xl h-9 w-9 shadow-md shadow-black/40 shrink-0"
-							alt={`${title} ${place} Logo`}
+							class="hidden h-11 w-11 shrink-0 rounded-xl border border-white/15 bg-gray-800 object-contain p-1.5 shadow-sm shadow-black/40 dark:block"
+							alt={`${place} Logo`}
 						/>
 					)
 				}
-				<a
-					href={url}
-					target="_blank"
-					rel="noopener noreferrer"
-					aria-label={`Visitar sitio de ${place} (se abre en nueva pestaña)`}
-					class="rounded-sm focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-sky-500 focus-visible:ring-offset-1"
-				>
-					<p
-						class="text-lg sm:text-xl font-bold text-slate-900 dark:text-slate-100 hover:underline hover:text-sky-600 dark:hover:text-sky-400"
+
+				<div class="flex min-w-0 flex-col gap-1">
+					<h3
+						class="text-xl font-bold leading-tight text-slate-900 dark:text-slate-100 sm:text-2xl"
 					>
-						{place}
+						{title}
+					</h3>
+					<p class="text-sm font-medium text-slate-500 dark:text-slate-400">
+						en
+						<a
+							href={url}
+							target="_blank"
+							rel="noopener noreferrer"
+							aria-label={`Visitar sitio de ${place} (se abre en nueva pestaña)`}
+							class="rounded-sm font-semibold text-slate-700 transition-colors hover:text-sky-600 hover:underline focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-sky-500 focus-visible:ring-offset-1 dark:text-slate-300 dark:hover:text-sky-300"
+						>
+							{place}
+						</a>
 					</p>
-				</a>
+				</div>
 			</div>
+
 			<time
-				class="text-sm font-medium text-slate-500 dark:text-slate-400"
+				class="text-sm font-medium text-slate-500 dark:text-slate-400 md:justify-self-end md:pt-1"
 				datetime={datetime ?? date}>{date}</time
 			>
-		</div>
+		</header>
 
-		<div
-			class="md:row-start-2 md:col-start-2 md:self-center flex flex-col gap-2.5"
-		>
-			<p class="text-xs sm:text-sm font-medium text-slate-500 dark:text-slate-400">
-				Trabajando en {place} logré:
+		<div class="flex w-full max-w-3xl flex-col gap-2.5">
+			<p
+				class="text-xs sm:text-sm font-medium text-slate-500 dark:text-slate-400"
+			>
+				Durante este período logré:
 			</p>
 			<ol class="pl-4 flex flex-col gap-2.5">
 				{

@@ -3,13 +3,13 @@ const { text, variant = "default" } = Astro.props;
 ---
 
 <div
-  class:list={[
-    "flex gap-2 p-1 border rounded-md items-center",
-    variant === "boca"
-      ? "bg-amber-400 dark:bg-blue-900 border-2 border-amber-600 dark:border-yellow-200/20 text-amber-950 dark:text-yellow-300 shadow-sm shadow-amber-500/40 dark:shadow-none"
-      : "bg-slate-100 dark:bg-gray-700 border-slate-300 dark:border-white/10 text-slate-700 dark:text-slate-200",
-  ]}
+	class:list={[
+		"flex gap-2 p-1 border rounded-lg items-center transition-colors duration-200",
+		variant === "boca"
+			? "bg-amber-400 dark:bg-blue-900 border border-amber-600/70 hover:border-amber-700 dark:border-yellow-200/20 dark:hover:border-yellow-200/40 text-amber-950 dark:text-yellow-300 shadow-sm shadow-amber-500/40 dark:shadow-none"
+			: "bg-slate-100 dark:bg-gray-700 border-slate-300/60 hover:border-slate-400/90 dark:border-white/15 dark:hover:border-white/40 text-slate-700 dark:text-slate-200",
+	]}
 >
-  <slot name="icon" />
-  <small class="ui-text-caption">{text}</small>
+	<slot name="icon" />
+	<small class="ui-text-caption">{text}</small>
 </div>

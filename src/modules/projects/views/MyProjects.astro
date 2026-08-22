@@ -4,6 +4,7 @@ import { getImage } from "astro:assets";
 import FeaturedCard from "../components/FeaturedCard.astro";
 import ProjectCard from "../components/ProjectCard.astro";
 import ProjectCarousel from "../components/ProjectCarousel.jsx";
+import SectionHeader from "@/common/components/astroComponentes/SectionHeader.astro";
 import { getProjectsSorted, getCategoryLabel } from "../../../lib/projects.js";
 import { projectImages } from "@/lib/images";
 
@@ -44,16 +45,12 @@ const secondaryProjects = allProjects.filter((p) => !p.featured && p.imageMeta);
 	aria-label="Mis proyectos"
 >
 	<div
-		class="mb-6 flex items-center justify-start gap-2"
 		data-reveal-item
 		style="--motion-delay: 0ms; --motion-duration: var(--motion-duration-fast); --motion-distance: 12px;"
 	>
-		<Palette class="h-8 w-8 text-sky-500 dark:text-sky-300" />
-		<h2
-			class="title w-fit text-xl font-semibold text-slate-900 md:text-2xl dark:text-slate-50"
-		>
-			Proyectos
-		</h2>
+		<SectionHeader title="Proyectos">
+			<Palette slot="icon" class="h-8 w-8 text-sky-500 dark:text-sky-300" />
+		</SectionHeader>
 	</div>
 
 	{/* Carrusel en mobile */}
@@ -64,42 +61,52 @@ const secondaryProjects = allProjects.filter((p) => !p.featured && p.imageMeta);
 		baseMotionDelay={120}
 	/>
 
-	{/* Proyectos Destacados (2 columnas) */}
+	{/* Proyectos destacados */}
 	{
 		featuredProjects.length > 0 && (
-			<div class="mt-6 hidden gap-4 sm:grid sm:grid-cols-2">
-				{featuredProjects.map((project, idx) => (
-					<FeaturedCard
-						title={project.title}
-						shortDescription={project.shortDescription}
-						href={project.href}
-						image={project.imageMeta!}
-						role={project.role}
-						categoryLabel={project.categoryLabel}
-						tags={project.tags}
-						motionDelay={120 + idx * 80}
-					/>
-				))}
+			<div class="mt-6 hidden sm:block">
+				<p class="ui-text-badge mb-3 uppercase tracking-[0.14em] text-slate-500 dark:text-slate-400">
+					Casos destacados
+				</p>
+				<div class="grid gap-4 sm:grid-cols-2">
+					{featuredProjects.map((project, idx) => (
+						<FeaturedCard
+							title={project.title}
+							shortDescription={project.shortDescription}
+							href={project.href}
+							image={project.imageMeta!}
+							role={project.role}
+							categoryLabel={project.categoryLabel}
+							tags={project.tags}
+							motionDelay={120 + idx * 80}
+						/>
+					))}
+				</div>
 			</div>
 		)
 	}
 
-	{/* Otros Proyectos (2 columnas x 2 filas) */}
+	{/* Otros proyectos */}
 	{
 		secondaryProjects.length > 0 && (
-			<div class="mt-4 hidden w-full gap-4 sm:grid sm:grid-cols-2">
-				{secondaryProjects.map((project, idx) => (
-					<ProjectCard
-						title={project.title}
-						shortDescription={project.shortDescription}
-						href={project.href}
-						image={project.imageMeta!}
-						categoryLabel={project.categoryLabel}
-						tags={project.tags}
-						compact
-						motionDelay={200 + idx * 80}
-					/>
-				))}
+			<div class="mt-8 hidden sm:block">
+				<p class="ui-text-badge mb-3 uppercase tracking-[0.14em] text-slate-500 dark:text-slate-400">
+					Otros proyectos
+				</p>
+				<div class="grid w-full gap-4 sm:grid-cols-2">
+					{secondaryProjects.map((project, idx) => (
+						<ProjectCard
+							title={project.title}
+							shortDescription={project.shortDescription}
+							href={project.href}
+							image={project.imageMeta!}
+							categoryLabel={project.categoryLabel}
+							tags={project.tags}
+							compact
+							motionDelay={200 + idx * 80}
+						/>
+					))}
+				</div>
 			</div>
 		)
 	}

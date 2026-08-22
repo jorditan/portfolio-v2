@@ -5,14 +5,13 @@ const { tittle, text, periodo, empresa, destacado } = Astro.props;
 
 <details
 	class="group overflow-hidden w-full flex transition-colors dark:hover:bg-black/18
-        hover:bg-gray-100 border-gray-500 hover:bg-opacity-50 dark:border-white/30 flex-col gap-2 border-solid border-2 rounded-lg"
+        hover:bg-gray-100 border-slate-300/60 hover:border-slate-400/90 hover:bg-opacity-50 dark:border-white/15 dark:hover:border-white/40 flex-col gap-2 border-solid border rounded-xl"
 	onclick="handleClick()"
 >
 	<summary class="flex justify-between items-start sm:items-center px-3 pt-3">
 		<div class="flex flex-col gap-2 sm:gap-0">
 			<div class="flex gap-2 sm:gap-4 flex-col sm:flex-row">
-				<span
-					class="ui-text-card-title text-slate-900 dark:text-slate-50"
+				<span class="ui-text-card-title text-slate-900 dark:text-slate-50"
 					><span class="">{tittle}</span> - {empresa}</span
 				>
 			</div>

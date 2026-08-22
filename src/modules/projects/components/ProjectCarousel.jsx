@@ -90,7 +90,7 @@ function ProjectCarousel({ projects, compact = false, baseMotionDelay = 200 }) {
             type="button"
             onClick={goToPrevious}
             aria-label="Proyecto anterior"
-            className="inline-flex h-10 w-10 items-center justify-center rounded-md border border-slate-200 bg-gray-100 text-slate-700 transition hover:border-sky-400 hover:text-sky-600 dark:border-white/10 dark:bg-slate-900/60 dark:text-slate-200 dark:hover:border-slate-50 dark:hover:text-slate-50"
+            className="inline-flex h-10 w-10 items-center justify-center rounded-lg border border-slate-300/60 bg-gray-100 text-slate-700 transition hover:border-slate-400/90 hover:text-sky-600 dark:border-white/15 dark:bg-slate-900/60 dark:text-slate-200 dark:hover:border-white/40 dark:hover:text-slate-50"
           >
             <ChevronLeft className="h-4 w-4" />
           </button>
@@ -98,7 +98,7 @@ function ProjectCarousel({ projects, compact = false, baseMotionDelay = 200 }) {
             type="button"
             onClick={goToNext}
             aria-label="Proyecto siguiente"
-            className="inline-flex h-10 w-10 items-center justify-center rounded-md border border-slate-200 bg-gray-100 text-slate-700 transition hover:border-sky-400 hover:text-sky-600 dark:border-white/10 dark:bg-slate-900/60 dark:text-slate-200 dark:hover:border-slate-50 dark:hover:text-slate-50"
+            className="inline-flex h-10 w-10 items-center justify-center rounded-lg border border-slate-300/60 bg-gray-100 text-slate-700 transition hover:border-slate-400/90 hover:text-sky-600 dark:border-white/15 dark:bg-slate-900/60 dark:text-slate-200 dark:hover:border-white/40 dark:hover:text-slate-50"
           >
             <ChevronRight className="h-4 w-4" />
           </button>

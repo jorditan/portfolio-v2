@@ -1,19 +1,10 @@
 ---
 const { tooltip } = Astro.props;
-
-const seed = [...tooltip].reduce((acc, char) => acc + char.charCodeAt(0), 0);
-const duration = 3 + (seed % 5) * 0.4;
-const delay = (seed % 7) * 0.45;
 ---
 
 <div class="group relative flex justify-center items-center">
 	<div
-		class="tech-card w-[4rem] animate animate-pulse flex-col transition-transform duration-500 ease-[cubic-bezier(0.22,1,0.36,1)] hover:scale-[1.18] flex justify-center items-center h-[4rem] rounded-lg hover:will-change-transform bg-gray-100/80
-	       dark:bg-white/5
-	       border border-slate-300/40 dark:border-white/15
-	       backdrop-blur-md
-	       shadow-sm shadow-black/5 dark:shadow-black/25"
-		style={`--tech-card-duration:${duration}s; --tech-card-delay:-${delay}s;`}
+		class="tech-card flex h-[4rem] w-[4rem] flex-col items-center justify-center rounded-lg border border-slate-300/60 bg-gray-100/80 shadow-sm shadow-black/5 backdrop-blur-md transition-[transform,border-color] duration-300 ease-out hover:scale-[1.08] hover:border-slate-400/90 dark:border-white/15 dark:bg-white/5 dark:shadow-black/25 dark:hover:border-white/40"
 	>
 		<slot name="icon" />
 	</div>
@@ -25,31 +16,3 @@ const delay = (seed % 7) * 0.45;
 		{tooltip}
 	</span>
 </div>
-
-<style>
-	.tech-card {
-		animation: tech-card-breathe var(--tech-card-duration)
-			cubic-bezier(0.45, 0.05, 0.55, 0.95) var(--tech-card-delay) infinite;
-	}
-
-	.tech-card:hover {
-		animation-play-state: paused;
-	}
-
-	@keyframes tech-card-breathe {
-		0%,
-		100% {
-			transform: scale(1);
-		}
-
-		50% {
-			transform: scale(1.18);
-		}
-	}
-
-	@media (prefers-reduced-motion: reduce) {
-		.tech-card {
-			animation: none;
-		}
-	}
-</style>
