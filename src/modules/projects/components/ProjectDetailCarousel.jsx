@@ -2,6 +2,11 @@ import React from "react";
 import ReactDOM from "react-dom";
 import { useProjectDetailCarousel } from "../hooks/useProjectDetailCarousel";
 
+/**
+ * @param {object} props
+ * @param {Array<string | { src: string; alt?: string; type?: string; poster?: string }>} [props.images]
+ * @param {string} [props.title]
+ */
 export default function ProjectDetailCarousel({ images = [], title = "" }) {
   const total = images ? images.length : 0;
   const {
@@ -25,6 +30,7 @@ export default function ProjectDetailCarousel({ images = [], title = "" }) {
     typeof activeImg === "string"
       ? `${title} - imagen ${activeIndex + 1}`
       : activeImg?.alt || title;
+  const activeIsVideo = typeof activeImg === "object" && activeImg?.type === "video";
 
   return (
     <div className="relative flex w-full flex-col gap-3">
@@ -40,6 +46,7 @@ export default function ProjectDetailCarousel({ images = [], title = "" }) {
             typeof img === "string"
               ? `${title} - imagen ${index + 1}`
               : img.alt || title;
+          const isVideo = typeof img === "object" && img?.type === "video";
           const isActive = index === activeIndex;
 
           return (
@@ -57,13 +64,27 @@ export default function ProjectDetailCarousel({ images = [], title = "" }) {
                 aria-label={`Ver ${alt} a pantalla completa`}
                 className="h-full w-full block overflow-hidden rounded-md text-left cursor-zoom-in group border-0 bg-transparent p-0"
               >
-                <img
-                  src={src}
-                  alt={alt}
-                  loading={index === 0 ? "eager" : "lazy"}
-                  decoding="async"
-                  className="h-full w-full object-cover object-top rounded-md shadow-md transition-transform duration-300 group-hover:scale-[1.01]"
-                />
+                {isVideo ? (
+                  <video
+                    src={src}
+                    poster={img.poster}
+                    autoPlay={isActive}
+                    muted
+                    loop
+                    playsInline
+                    preload="none"
+                    aria-label={alt}
+                    className="h-full w-full object-cover object-top rounded-md shadow-md transition-transform duration-300 group-hover:scale-[1.01]"
+                  />
+                ) : (
+                  <img
+                    src={src}
+                    alt={alt}
+                    loading={index === 0 ? "eager" : "lazy"}
+                    decoding="async"
+                    className="h-full w-full object-cover object-top rounded-md shadow-md transition-transform duration-300 group-hover:scale-[1.01]"
+                  />
+                )}
               </button>
             </div>
           );
@@ -203,13 +224,27 @@ export default function ProjectDetailCarousel({ images = [], title = "" }) {
               </button>
             )}
 
-            {/* Imagen Ampliada SIN bordes redondeados (rounded-none) */}
-            <img
-              src={activeSrc}
-              alt={activeAlt}
-              className="max-h-[88vh] max-w-[88vw] object-contain rounded-none shadow-2xl transition-all duration-300"
-              onClick={(e) => e.stopPropagation()}
-            />
+            {/* Imagen o Video Ampliado SIN bordes redondeados (rounded-none) */}
+            {activeIsVideo ? (
+              <video
+                src={activeSrc}
+                poster={activeImg.poster}
+                controls
+                autoPlay
+                loop
+                playsInline
+                aria-label={activeAlt}
+                className="max-h-[88vh] max-w-[88vw] object-contain rounded-none shadow-2xl transition-all duration-300"
+                onClick={(e) => e.stopPropagation()}
+              />
+            ) : (
+              <img
+                src={activeSrc}
+                alt={activeAlt}
+                className="max-h-[88vh] max-w-[88vw] object-contain rounded-none shadow-2xl transition-all duration-300"
+                onClick={(e) => e.stopPropagation()}
+              />
+            )}
 
             {/* Botón Navegación Siguiente */}
             {total > 1 && (

@@ -28,6 +28,10 @@ export const projects = [
         "Sistema de componentes escalable construido en Figma para facilitar futuras iteraciones del diseño.",
       ],
     },
+    videoDemo: {
+      src: "/videos/letterboxd-demo.mp4",
+      poster: "/videos/letterboxd-poster.jpg",
+    },
     linkLabel: "Ver caso de estudio",
     link: "https://www.behance.net/gallery/208245225/Letterboxd-redesign-Case-of-study-UXUI",
   },
@@ -61,6 +65,10 @@ export const projects = [
         "Arquitectura completa de punta a punta: React + TypeScript, Supabase y APIs externas protegidas mediante un Cloudflare Worker Proxy.",
       ],
     },
+    videoDemo: {
+      src: "/videos/la-12-digital-demo.mp4",
+      poster: "/videos/la-12-digital-poster.jpg",
+    },
     linkLabel: "Visitar La 12 Digital",
     link: "https://la12digital.dev/",
   },
@@ -93,6 +101,10 @@ export const projects = [
         "Tono educativo (no punitivo) validado con usuarios, clave para la adopción en equipos no técnicos.",
         "Pieza activa para medir y fortalecer la cultura de ciberseguridad de los clientes de Hackmetrix.",
       ],
+    },
+    videoDemo: {
+      src: "/videos/test-phishing-demo.mp4",
+      poster: "/videos/test-phishing-poster.jpg",
     },
     linkLabel: "Probar la herramienta",
     link: "https://test-phishing.hackmetrix.com/",
@@ -159,6 +171,10 @@ export const projects = [
         "Uno de los canales principales de inbound marketing y captación de leads cualificados.",
         "Reportes personalizados instantáneos que eliminaron la fricción comercial en la etapa de descubrimiento.",
       ],
+    },
+    videoDemo: {
+      src: "/videos/diagnostico-ciberseguridad-demo.mp4",
+      poster: "/videos/diagnostico-ciberseguridad-poster.jpg",
     },
     linkLabel: "Hacer el diagnóstico",
     link:

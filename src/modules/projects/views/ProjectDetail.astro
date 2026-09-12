@@ -25,8 +25,23 @@ const gifSrc =
 	project.hasGif && project.gifImage && existsSync(`public${project.gifImage}`)
 		? project.gifImage
 		: null;
+const videoSrc =
+	project.videoDemo?.src && existsSync(`public${project.videoDemo.src}`)
+		? project.videoDemo.src
+		: null;
 
-const slides = [
+type Slide = { src: string; alt: string; type?: string; poster?: string };
+const slides: Slide[] = [
+	...(videoSrc
+		? [
+				{
+					type: "video",
+					src: videoSrc,
+					poster: project.videoDemo?.poster,
+					alt: `${project.title} - Video demo`,
+				},
+			]
+		: []),
 	...(heroImage
 		? [{ src: heroImage.src, alt: `${project.title} - Imagen principal` }]
 		: []),
