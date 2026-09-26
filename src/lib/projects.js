@@ -212,6 +212,10 @@ export const projects = [
         "Landing page institucional en producción desplegada en Vercel con rendimiento 100/100 en Lighthouse y navegación fluida.",
       ],
     },
+    videoDemo: {
+      src: "/videos/marki_onboarding.webm",
+      poster: "/videos/marki_onboarding-poster.webp",
+    },
     linkLabel: "Visitar la landing",
     link: "https://marki-landing-page.vercel.app/",
   },
